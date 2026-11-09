@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
   return (
     <main style={{ padding: '2rem' }}>
@@ -32,24 +36,22 @@ export default function Home() {
 }
 
 function ProjectCard({ title, description, href }: { title: string; description: string; href: string }) {
+  const [hover, setHover] = useState(false);
+
   return (
     <a
       href={href}
       style={{
         display: 'block',
         padding: '1.5rem',
-        border: '1px solid #ddd',
+        border: `1px solid ${hover ? '#999' : '#ddd'}`,
         borderRadius: '8px',
         textDecoration: 'none',
         color: 'inherit',
         transition: 'border-color 0.2s',
       }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = '#999';
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = '#ddd';
-      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <h3>{title}</h3>
       <p style={{ color: '#666' }}>{description}</p>
