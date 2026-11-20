@@ -15,14 +15,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-          <Link href="/" style={{ marginRight: '2rem', fontWeight: 'bold' }}>
+        <nav style={{ display: 'flex', flexWrap: 'wrap', columnGap: 'clamp(1rem, 4vw, 2rem)', padding: '1rem', borderBottom: '1px solid #ccc' }}>
+          <Link href="/" style={{ fontWeight: 'bold' }}>
             Strata Builds
           </Link>
-          <Link href="/studio" style={{ marginRight: '2rem' }}>
+          <Link href="/studio">
             Studio
           </Link>
           <Link href="/atlas">Atlas</Link>
+          <Link href="/signals">Signals</Link>
         </nav>
         {children}
       </body>
