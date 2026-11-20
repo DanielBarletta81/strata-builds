@@ -6,7 +6,7 @@ export default function StudioPage() {
         Engineering studio portfolio. Full-stack product work, scientific interfaces,
         and systems that hold under load.
       </p>
-      <p style={{ marginTop: '2rem', color: '#999' }}>
+      <p style={{ marginTop: '2rem', color: '#666' }}>
         [Strata Works portfolio coming soon]
       </p>
     </main>
