@@ -140,7 +140,7 @@ test('fetch preserves distinct observation and retrieval timestamps and applies 
   let callCount = 0;
   const started = new Date('2026-11-14T01:12:00Z');
   const fetched = new Date('2026-11-14T01:12:01Z');
-  const snapshot = await fetchNoaa(24, {
+  const snapshot = await fetchNoaa(window, {
     now: () => callCount === 0 ? started : fetched,
     fetchImpl: async (actualUrl, options) => {
       callCount++;
@@ -162,10 +162,10 @@ test('timeouts include a stalled response body and failures never expose upstrea
     const waitForAbort = (signal) => new Promise((_, reject) => {
       signal.addEventListener('abort', () => reject(signal.reason), { once: true });
     });
-    await assert.rejects(fetchNoaa(24, {
+    await assert.rejects(fetchNoaa(window, {
       timeoutMs: 30, fetchImpl: async (_url, { signal }) => waitForAbort(signal),
     }), { code: 'upstream_timeout' });
-    await assert.rejects(fetchNoaa(24, {
+    await assert.rejects(fetchNoaa(window, {
       timeoutMs: 30,
       fetchImpl: async (_url, { signal }) => new Response(new ReadableStream({
         async pull() { await waitForAbort(signal); },
@@ -180,7 +180,7 @@ test('timeouts include a stalled response body and failures never expose upstrea
     async () => new Response('x'.repeat(256 * 1024 + 1)),
     async () => { throw new Error('upstream debug log'); },
   ]) {
-    await assert.rejects(fetchNoaa(24, { fetchImpl }), (error) => {
+    await assert.rejects(fetchNoaa(window, { fetchImpl }), (error) => {
       assert.equal(error.code, 'upstream_unavailable');
       assert.doesNotMatch(error.message, /invalid station|debug/i);
       return true;

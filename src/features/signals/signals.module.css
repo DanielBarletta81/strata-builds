@@ -109,12 +109,20 @@
   background: #004750;
 }
 
+.checkStatus {
+  width: min(100%, 49ch);
+}
+
 .status {
-  max-width: 43ch;
   margin: 0;
-  padding-bottom: 0.45rem;
   color: var(--muted);
   font-size: 0.89rem;
+}
+
+.cachePolicy {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .status[data-state="attention"],
@@ -535,9 +543,8 @@
     flex: 1;
   }
 
-  .status {
+  .checkStatus {
     flex-basis: 100%;
-    padding: 0;
   }
 
   .readout {

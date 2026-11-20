@@ -67,8 +67,6 @@ export type SignalsSnapshot = {
   gaps: SourceGap[];
 };
 
-export type SignalsApiError = { error: { code: string; message: string } };
-
 export function hourlyInterval(startMs: number): TimeInterval {
   return {
     startUtc: new Date(startMs).toISOString(),

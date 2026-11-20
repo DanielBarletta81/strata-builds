@@ -1,24 +1,25 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { REUSE_MINUTES, signalsStatus, type SignalsApiError, type SignalsDelivery, type SignalsResponse } from './delivery';
 import { EvidenceInspector } from './evidence-inspector';
 import { TemperatureChart } from './temperature-chart';
 import {
-  DEFAULT_HOURS, FRESHNESS_MS, HOUR_MS, MAX_HOURS, NOAA_SCHEMA, STATION,
-  hasUninterpretedQuality, qualityLabel, type SignalsApiError, type SignalsSnapshot,
+  DEFAULT_HOURS, MAX_HOURS, NOAA_SCHEMA, STATION,
+  hasUninterpretedQuality, qualityLabel, type SignalsSnapshot,
 } from './observations';
 import { formatFullUtc, formatRaw, formatTemperature, formatUtc } from './display';
 import styles from './signals.module.css';
 
 const availableHours = Array.from({ length: MAX_HOURS }, (_, index) => index + 1);
 
-type Result = { requestId: number; error: string | null };
+type Result = { requestId: number; error: string | null; failedDelivery?: SignalsDelivery };
 
 export function SignalsInstrument() {
   const [draftHours, setDraftHours] = useState(DEFAULT_HOURS);
   const [request, setRequest] = useState({ hours: DEFAULT_HOURS, id: 0 });
   const [result, setResult] = useState<Result | null>(null);
-  const [lastSnapshot, setLastSnapshot] = useState<SignalsSnapshot | null>(null);
+  const [lastSnapshot, setLastSnapshot] = useState<SignalsResponse | null>(null);
   const [clock, setClock] = useState(0);
 
   useEffect(() => {
@@ -32,11 +33,12 @@ export function SignalsInstrument() {
         if (!response.ok) {
           const body = await response.json() as SignalsApiError;
           if (!controller.signal.aborted) {
-            setResult({ requestId: request.id, error: body.error?.message || fallback });
+            setClock(Date.now());
+            setResult({ requestId: request.id, error: body.error?.message || fallback, failedDelivery: body.delivery });
           }
           return;
         }
-        const data = await response.json() as SignalsSnapshot;
+        const data = await response.json() as SignalsResponse;
         if (controller.signal.aborted) return;
         setLastSnapshot(data);
         setClock(Date.now());
@@ -51,29 +53,17 @@ export function SignalsInstrument() {
   }, [request]);
 
   useEffect(() => {
-    if (!lastSnapshot) return;
+    if (!result && !lastSnapshot) return;
     const tick = window.setInterval(() => setClock(Date.now()), 15_000);
     return () => window.clearInterval(tick);
-  }, [lastSnapshot]);
+  }, [result, lastSnapshot]);
 
   const snapshot = lastSnapshot?.window.hours === request.hours ? lastSnapshot : null;
   const pending = result?.requestId !== request.id;
   const error = pending ? null : result.error;
-  const stale = snapshot && (
-    Boolean(error) ||
-    clock - Date.parse(snapshot.retrievedAt) >= FRESHNESS_MS ||
-    clock >= Date.parse(snapshot.window.endUtcExclusive) + HOUR_MS
-  );
-  const statusText = pending
-    ? snapshot ? 'Refreshing observations. The previous response remains visible.' : 'Loading NOAA observations…'
-    : error
-      ? snapshot ? 'Refresh failed. Showing the previous NOAA response.' : 'NOAA observations are unavailable.'
-      : stale ? 'Saved response may be out of date. Refresh for the latest available window.'
-      : snapshot?.status === 'complete' ? 'All expected hours are represented.'
-      : snapshot?.status === 'partial' ? 'Partial response. Review coverage and excluded rows.'
-      : snapshot?.emptyReason === 'noaa_no_data' ? 'NOAA returned an ambiguous no-data response.'
-      : snapshot?.emptyReason === 'all_rows_excluded' ? 'The response included rows, but none passed validation.'
-      : 'NOAA returned an empty observation list.';
+  const failedDelivery = pending ? undefined : result.failedDelivery;
+  const status = signalsStatus({ response: snapshot, nowMs: clock, pending, error, failedDelivery });
+  const nextCheckAt = (error ? failedDelivery : snapshot?.delivery)?.nextCheckAt;
 
   return (
     <>
@@ -90,18 +80,25 @@ export function SignalsInstrument() {
             <button type="submit">{draftHours === request.hours ? 'Refresh data' : 'Apply window'}</button>
           </div>
         </form>
-        <p className={styles.status} role="status" aria-atomic="true" data-state={error || stale ? 'attention' : snapshot?.status}>
-          {statusText}
-        </p>
+        <div className={styles.checkStatus}>
+          <p className={styles.status} role="status" aria-atomic="true" data-state={error || status.stale ? 'attention' : snapshot?.status}>
+            {status.text}
+          </p>
+          <p className={styles.cachePolicy}>
+            Refresh checks the shared cache. Equivalent requests can reuse a response or failure within each {REUSE_MINUTES}-minute UTC slot.
+            {nextCheckAt && clock < Date.parse(nextCheckAt) && (
+              <> Next cache slot starts at <time dateTime={nextCheckAt}>{formatUtc(nextCheckAt)}</time>.</>
+            )}
+          </p>
+        </div>
       </div>
       {error && !snapshot && (
         <section className={styles.panel} aria-labelledby="signals-error">
           <h2 id="signals-error">Could not load the observation window</h2>
-          <p>{error}</p>
           <a href={STATION.url}>Check the NOAA station page</a>
         </section>
       )}
-      {snapshot && <SnapshotView snapshot={snapshot} stale={Boolean(stale)} />}
+      {snapshot && <SnapshotView snapshot={snapshot} stale={status.stale} />}
     </>
   );
 }

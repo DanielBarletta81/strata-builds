@@ -299,10 +299,9 @@ async function boundedJson(response: Response): Promise<unknown> {
 }
 
 export async function fetchNoaa(
-  hours: number,
+  window: ObservationWindow,
   { fetchImpl = fetch, now = () => new Date(), timeoutMs = 8_000 } = {},
 ) {
-  const window = observationWindow(hours, now());
   const sourceUrl = noaaSourceUrl(window);
   const signal = AbortSignal.timeout(timeoutMs);
   try {

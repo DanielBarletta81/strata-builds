@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
+import { cp, mkdtemp, readFile, rename, rm, symlink, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 import { after, before, test } from 'node:test';
 import { URL } from 'node:url';
 import atlasFixture from './fixtures/atlas-pinned-demo.json' with { type: 'json' };
@@ -9,10 +12,45 @@ import atlasFixture from './fixtures/atlas-pinned-demo.json' with { type: 'json'
 const nextCli = createRequire(import.meta.url).resolve('next/dist/bin/next');
 let server;
 let origin;
+let buildDirectory;
+let clockFile;
+let requestLog;
 
 before(async () => {
+  buildDirectory = await mkdtemp(join(tmpdir(), 'strata-route-smoke-'));
+  const build = resolve('.next');
+  await cp(build, join(buildDirectory, '.next'), {
+    recursive: true,
+    filter: (source) => source !== join(build, 'cache'),
+  });
+  await cp(resolve('package.json'), join(buildDirectory, 'package.json'));
+  await cp(resolve('next.config.mjs'), join(buildDirectory, 'next.config.mjs'));
+  await symlink(resolve('node_modules'), join(buildDirectory, 'node_modules'), 'dir');
+  clockFile = join(buildDirectory, 'fixture-clock');
+  requestLog = join(buildDirectory, 'noaa-requests.ndjson');
+  await writeFile(requestLog, '');
+  await setClock('2026-11-14T00:57:19Z');
+  await startServer();
+});
+
+async function setClock(iso) {
+  await writeFile(clockFile + '.tmp', String(Date.parse(iso)));
+  await rename(clockFile + '.tmp', clockFile);
+}
+
+async function upstreamCalls(hours) {
+  const lines = (await readFile(requestLog, 'utf8')).trim();
+  if (!lines) return 0;
+  return lines.split('\n').map((line) => JSON.parse(line)).filter((request) => request.hours === hours).length;
+}
+
+async function startServer() {
   server = spawn(process.execPath, ['--import', new URL('./fixtures/noaa/fetch-stub.mjs', import.meta.url).href, nextCli, 'start', '--hostname', '127.0.0.1', '--port', '0'], {
-    env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
+    cwd: buildDirectory,
+    env: {
+      ...process.env, NEXT_TELEMETRY_DISABLED: '1',
+      STRATA_TEST_NOAA_CLOCK: clockFile, STRATA_TEST_NOAA_REQUESTS: requestLog,
+    },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
   server.stdout.setEncoding('utf8');
@@ -38,9 +76,14 @@ before(async () => {
   } finally {
     clearTimeout(timeout);
   }
-});
+}
 
 after(async () => {
+  await stopServer();
+  if (buildDirectory) await rm(buildDirectory, { recursive: true, force: true });
+});
+
+async function stopServer() {
   if (!server?.pid || server.exitCode !== null || server.signalCode !== null) return;
   const exited = once(server, 'exit', { signal: AbortSignal.timeout(5_000) });
   server.kill();
@@ -49,7 +92,7 @@ after(async () => {
   } finally {
     if (server.exitCode === null && server.signalCode === null) server.kill('SIGKILL');
   }
-});
+}
 
 async function fetchRoute(path, contentType) {
   const response = await fetch(`${origin}${path}`, {
@@ -141,6 +184,53 @@ test('GET /sitemap.xml publishes all four canonical URLs', async () => {
   );
 });
 
+test('equivalent Signals requests reuse the Data Cache across a server restart and preserve provenance', async () => {
+  const read = async (query = '') => JSON.parse(await fetchRoute('/api/signals' + query, 'application/json'));
+  const first = await read();
+  assert.equal(first.delivery.source, 'noaa');
+  assert.equal(first.retrievedAt, '2026-11-14T00:57:19.000Z');
+  assert.equal(first.delivery.nextCheckAt, '2026-11-14T01:00:00.000Z');
+  assert.equal(await upstreamCalls(24), 1);
+
+  await stopServer();
+  await startServer();
+  await setClock('2026-11-14T00:59:59.999Z');
+  const same = await read('?product=water_temperature&range=24&station=8454000');
+  assert.deepEqual(same, { ...first, delivery: { ...first.delivery, source: 'cache' } });
+  assert.equal(await upstreamCalls(24), 1);
+
+  const different = await read('?range=1');
+  assert.equal(different.window.hours, 1);
+  assert.equal(different.summary.count, 1);
+  assert.equal(different.window.endUtcExclusive, first.window.endUtcExclusive);
+  assert.equal(different.delivery.source, 'noaa');
+
+  await setClock('2026-11-14T01:00:00Z');
+  const rollover = await read();
+  assert.equal(rollover.delivery.source, 'noaa');
+  assert.equal(rollover.window.endUtcExclusive, '2026-11-14T01:00:00.000Z');
+  assert.equal(rollover.retrievedAt, '2026-11-14T01:00:00.000Z');
+  assert.equal(Date.parse(rollover.summary.latest.observedAt) - Date.parse(first.summary.latest.observedAt), 3_600_000);
+  assert.equal(await upstreamCalls(24), 2);
+
+  await setClock('2026-11-14T01:05:00Z');
+  const expired = await read();
+  assert.equal(expired.delivery.source, 'noaa');
+  assert.equal(expired.retrievedAt, '2026-11-14T01:05:00.000Z');
+  assert.equal(expired.summary.latest.observedAt, rollover.summary.latest.observedAt);
+  assert.deepEqual(expired.window, rollover.window);
+  assert.equal(await upstreamCalls(24), 3);
+});
+
+test('simultaneous cold requests within one instance share an upstream retrieval', async () => {
+  const read = async () => JSON.parse(await fetchRoute('/api/signals?range=3', 'application/json'));
+  const pair = await Promise.all([read(), read()]);
+  assert.deepEqual(pair.map(({ delivery }) => delivery.source).sort(), ['in_flight', 'noaa']);
+  assert.equal(pair[0].retrievedAt, pair[1].retrievedAt);
+  assert.deepEqual(pair[0].observations, pair[1].observations);
+  assert.equal(await upstreamCalls(3), 1);
+});
+
 test('GET /api/signals serves fixture-backed partial and ambiguous responses', async () => {
   const snapshot = JSON.parse(await fetchRoute('/api/signals?range=24', 'application/json'));
   assert.equal(snapshot.status, 'partial');
@@ -153,6 +243,9 @@ test('GET /api/signals serves fixture-backed partial and ambiguous responses', a
   const unknown = JSON.parse(await fetchRoute('/api/signals?range=12', 'application/json'));
   assert.equal(unknown.emptyReason, 'noaa_no_data');
   assert.equal(unknown.coverage.missingHours, null);
+  const cached = JSON.parse(await fetchRoute('/api/signals?range=12&station=8454000', 'application/json'));
+  assert.deepEqual(cached, { ...unknown, delivery: { ...unknown.delivery, source: 'cache' } });
+  assert.equal(await upstreamCalls(12), 1);
 });
 
 test('GET /api/signals rejects unsupported input and sanitizes upstream failures', async () => {
@@ -168,4 +261,31 @@ test('GET /api/signals rejects unsupported input and sanitizes upstream failures
     assert.equal(payload.error.code, code);
     assert.doesNotMatch(JSON.stringify(payload), /0000000|datagetter/);
   }
+});
+
+test('NOAA HTTP failures and timeouts retain their status and reuse the same-slot retry hold', async () => {
+  async function failure(hours, status, code) {
+    const response = await fetch(origin + '/api/signals?range=' + hours, { signal: AbortSignal.timeout(15_000) });
+    assert.equal(response.status, status);
+    assert.equal(response.headers.get('retry-after'), '300');
+    const payload = await response.json();
+    assert.equal(payload.error.code, code);
+    assert.equal(payload.delivery.nextCheckAt, '2026-11-14T01:10:00.000Z');
+    assert.ok(!('retrievedAt' in payload));
+    return payload;
+  }
+
+  const reused = await failure(6, 502, 'upstream_unavailable');
+  assert.equal(reused.delivery.source, 'cache');
+  assert.equal(await upstreamCalls(6), 1);
+  const timeout = await failure(8, 504, 'upstream_timeout');
+  assert.equal(timeout.delivery.source, 'noaa');
+  const retry = await failure(8, 504, 'upstream_timeout');
+  assert.deepEqual(retry, { ...timeout, delivery: { ...timeout.delivery, source: 'cache' } });
+  assert.equal(await upstreamCalls(8), 1);
+  await setClock('2026-11-14T01:10:00Z');
+  const newAttempt = await fetch(origin + '/api/signals?range=6', { signal: AbortSignal.timeout(10_000) });
+  assert.equal(newAttempt.status, 502);
+  assert.equal((await newAttempt.json()).delivery.source, 'noaa');
+  assert.equal(await upstreamCalls(6), 2);
 });
