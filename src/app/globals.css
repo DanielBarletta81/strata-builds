@@ -41,3 +41,32 @@ h3 {
 p {
   margin-bottom: 1rem;
 }
+
+a:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: #999;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-card {
+    transition: border-color 0.2s;
+  }
+}

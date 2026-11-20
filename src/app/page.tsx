@@ -1,7 +1,3 @@
-'use client';
-
-import { useState } from 'react';
-
 export default function Home() {
   return (
     <main style={{ padding: '2rem' }}>
@@ -18,7 +14,7 @@ export default function Home() {
 
       <section>
         <h2>Featured Projects</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div className="project-grid">
           <ProjectCard
             title="Studio"
             description="Engineering studio portfolio. Full-stack product work, scientific interfaces, and systems that hold under load."
@@ -36,23 +32,8 @@ export default function Home() {
 }
 
 function ProjectCard({ title, description, href }: { title: string; description: string; href: string }) {
-  const [hover, setHover] = useState(false);
-
   return (
-    <a
-      href={href}
-      style={{
-        display: 'block',
-        padding: '1.5rem',
-        border: `1px solid ${hover ? '#999' : '#ddd'}`,
-        borderRadius: '8px',
-        textDecoration: 'none',
-        color: 'inherit',
-        transition: 'border-color 0.2s',
-      }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+    <a className="project-card" href={href}>
       <h3>{title}</h3>
       <p style={{ color: '#666' }}>{description}</p>
     </a>
