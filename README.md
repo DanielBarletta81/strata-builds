@@ -18,20 +18,20 @@ We build research instruments rather than decorative dashboards: interfaces that
 | --- | --- | --- | --- |
 | Strata Hub | `/` | Introduction and scientific product showcase | Existing landing page |
 | Studio | `/studio` | Design and engineering portfolio | Existing placeholder route |
-| Microsat Atlas | `/atlas` | Population genetics, geography, and sampling interpretation | Existing placeholder route. Synthetic demo integration is planned. |
+| Microsat Atlas | `/atlas` | Population genetics, geography, and sampling interpretation | Synthetic demo implemented in STRATA-003 |
 | NOAA Signals | `/signals` | Water and environmental signals, flags, coverage, and provenance | Planned integration |
 | Orbital Observatory | `/observatory` | Small-body dynamics, time navigation, and validated 3D exploration | Planned |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |
 
-The reviewed production deployment serves the hub and both placeholder routes. Verify the deployed commit and live behavior before updating the status of an experience.
+This table describes the checked-out code. The running site reflects the current production deployment.
 
 ## Research and data strategy
 
 ### Microsat Atlas
 
-The first Strata version will integrate the existing [Microsat Atlas](https://github.com/DanielBarletta81/microsat-atlas) SVG map, population-composition panels, and **clearly labeled synthetic demonstration dataset**. It must expose source/coastline attribution and a keyboard-accessible data table.
+The first Strata version adapts the existing [Microsat Atlas](https://github.com/DanielBarletta81/microsat-atlas) SVG map and site-composition panel. The clearly labeled synthetic demo includes coastal attribution and a keyboard-accessible records table. [STRATA-003 methodology and source pin](docs/STRATA-003.md)
 
 A separate future milestone, **STRATA-003B**, will seek suitable **published Chesapeake Bay microsatellite or genotype datasets**. Documented water-quality observations may provide environmental context alongside genetic measurements. Establish the dataset, species and markers, site metadata, licensing, and statistical methods before displaying research conclusions.
 
@@ -69,7 +69,7 @@ The core application uses **Next.js App Router, React, and TypeScript**. Select 
 
 Integrations should separate upstream API adapters, schema validation, normalized domain data, calculations, visualization models, and presentation. Avoid collecting dependencies before a feature needs them. Never expose provider keys in the browser.
 
-**Runtime:** The STRATA-002 baseline uses Node.js 24.22.3, bundled npm 11.19.1, Next.js 16.4.6, React and React DOM 19.3.1, TypeScript 5.9.3, and ESLint 10.15.0. [PR #1](https://github.com/DanielBarletta81/strata-builds/pull/1) tracks the migration and its quality checks. The reviewed production `main` baseline still uses Next.js 14 and React 18.
+**Runtime:** The STRATA-002 baseline uses Node.js 24.22.3, bundled npm 11.19.1, Next.js 16.4.6, React and React DOM 19.3.1, TypeScript 5.9.3, and ESLint 10.15.0. [PR #1](https://github.com/DanielBarletta81/strata-builds/pull/1) tracks the migration and its quality checks. The stabilization baseline is merged into `main`.
 
 ## Local development
 
@@ -84,7 +84,7 @@ npm run dev
 
 Visit [http://localhost:3000](http://localhost:3000).
 
-`npm ci` uses the lockfile tracked on the stabilization branch. Use the approved baseline for the mission you are working on.
+`npm ci` uses the tracked lockfile. Use the approved baseline for the mission you are working on.
 
 ### Quality checks
 
@@ -114,7 +114,7 @@ Agent contributors must follow [`AGENTS.md`](./AGENTS.md), the shared engineerin
 ## Roadmap
 
 1. **STRATA-002 — Stabilize:** runtime, lockfile, quality workflow, tests, and closeout in [PR #1](https://github.com/DanielBarletta81/strata-builds/pull/1). Check the PR for current review and CI status.
-2. **STRATA-003 — Integrate Atlas:** planned reuse of the pinned standalone map and panels with synthetic labeling, source credits, and accessible inspection.
+2. **STRATA-003 — Integrate Atlas:** the demo slice adds the pinned standalone map and composition view, synthetic labeling, and accessible inspection.
 3. **STRATA-003B — Chesapeake Bay:** published research-genetic data, reviewed methods and environmental context (future requirement).
 4. **STRATA-004 — NOAA:** validated source adapters and quality-aware time-series analysis.
 5. **STRATA-005 — Orbital Observatory:** a single validated, fully documented 3D orbital instrument.

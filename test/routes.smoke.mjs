@@ -3,6 +3,7 @@ import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { createRequire } from 'node:module';
 import { after, before, test } from 'node:test';
+import atlasFixture from './fixtures/atlas-pinned-demo.json' with { type: 'json' };
 
 const nextCli = createRequire(import.meta.url).resolve('next/dist/bin/next');
 let server;
@@ -62,7 +63,7 @@ async function fetchRoute(path, contentType) {
 
 const pages = [
   ['/', 'Strata Builds', 'Featured Projects'],
-  ['/atlas', 'Atlas', 'Microsat Atlas app coming soon'],
+  ['/atlas', 'Microsat Atlas', 'SYNTHETIC DEMONSTRATION DATA'],
   ['/studio', 'Studio', 'Strata Works portfolio coming soon'],
 ];
 
@@ -81,6 +82,31 @@ for (const [path, heading, content] of pages) {
     assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas']]);
   });
 }
+
+test('GET /atlas renders the synthetic map, composition and matching accessible records', async () => {
+  const html = await fetchRoute('/atlas', 'text/html');
+  const map = html.match(/<svg\b[^>]*role="group"[^>]*>([\s\S]*?)<\/svg>/)?.[1] ?? '';
+  assert.match(map, /<title[^>]*>Atlantic coastal map of synthetic striped bass assignments<\/title>/);
+  assert.match(html, /id="atlas-composition">Site composition<\/h2>/);
+  assert.match(html, /Assignment legend/);
+  assert.match(html, /U\.S\. Census Bureau cartographic boundary files/);
+  assert.match(html, /at least three of its five closest samples share the same/);
+  const caption = html.match(/<caption>(.*?)<\/caption>/)?.[1].replaceAll('<!-- -->', '');
+  assert.equal(caption, `All ${atlasFixture.recordCount} plotted synthetic records`);
+
+  const markers = [...map.matchAll(/<g\b[^>]*data-map-sample="([^"]+)"/g)].map(([, id]) => id);
+  const rows = [...html.matchAll(/<tr\b[^>]*data-record-sample="([^"]+)"/g)].map(([, id]) => id);
+  assert.equal(markers.length, atlasFixture.recordCount);
+  assert.equal(new Set(markers).size, markers.length);
+  assert.deepEqual(markers, rows);
+  assert.equal(markers[0], atlasFixture.firstRecord.id);
+  assert.equal(markers.at(-1), atlasFixture.lastRecord.id);
+  assert.equal([...map.matchAll(/aria-pressed="true"/g)].length, 1);
+  assert.equal([...map.matchAll(/tabindex="0"/gi)].length, 1);
+  assert.match(html, /<label for="atlas-sample">Sample<\/label>/);
+  assert.match(html, /<th scope="col">Assignment<\/th>/);
+  assert.match(html, /<th scope="row">MSX-001/);
+});
 
 test('GET /robots.txt preserves the public crawl and sitemap directives', async () => {
   const robots = await fetchRoute('/robots.txt', 'text/plain');

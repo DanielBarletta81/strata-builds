@@ -22,7 +22,7 @@ export default function Home() {
           />
           <ProjectCard
             title="Atlas"
-            description="Population genetics on an interactive map. Load microsatellite data and read structure as geography."
+            description="Explore synthetic population assignments on an interactive coastal map and compare sample composition by site."
             href="/atlas"
           />
         </div>
