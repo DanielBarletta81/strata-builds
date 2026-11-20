@@ -10,7 +10,7 @@ Build **Strata Builds** (`strata-builds.tech`) as a scientifically credible, use
 
 - `/` — Strata hub (existing).
 - `/studio` — engineering and studio portfolio placeholder (existing route).
-- `/atlas` — Microsat Atlas placeholder (existing route). An **explicitly synthetic demo** is planned for STRATA-003. Published Chesapeake Bay genetic research data is separately scoped.
+- `/atlas` — Microsat Atlas with an **explicitly synthetic demo**. Published Chesapeake Bay genetic research data is separately scoped.
 - `/signals` — NOAA Signals Lab (planned).
 - `/observatory` — orbital dynamics and 3D instrument (planned).
 - `/collections` — Smithsonian collections and research context (planned).
@@ -105,7 +105,7 @@ npm run build
 npm run test:routes
 ```
 
-The production `main` baseline predates STRATA-002 until the stabilization PR is merged. Record actual results. Use browser checks for visual rendering, keyboard usability, and responsive layout. Report screen-reader verification only when it was actually performed.
+The STRATA-002 stabilization baseline is merged into `main`. Record actual results. Use browser checks for visual rendering, keyboard usability, and responsive layout. Report screen-reader verification only when it was actually performed.
 
 ## Agent ownership and coordination
 
@@ -124,7 +124,7 @@ Report mission ID, branch/HEAD/status, files changed, relevant pinned upstream r
 ## Current sequence (verify before updating)
 
 1. **STRATA-002** — stabilization and closeout submitted for review in [PR #1](https://github.com/DanielBarletta81/strata-builds/pull/1). See the current PR checks and [closeout report](docs/STRATA-002.md).
-2. **STRATA-003** — planned integration of the existing Microsat Atlas at `/atlas` with an explicitly synthetic demo, attribution, and an accessible records table. Start on a separate branch from updated `main` after approval.
+2. **STRATA-003** — the Atlas demo integration is documented in [STRATA-003](docs/STRATA-003.md). Verify the checked-out branch and deployment before reporting release status.
 3. **STRATA-003B** — Chesapeake Bay research-genetics connection; future requirement, not authorized to implement yet.
 4. **STRATA-004** — validated NOAA Signals data integration.
 5. **STRATA-005** — first scientifically validated Orbital Observatory instrument.

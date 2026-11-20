@@ -1,0 +1,161 @@
+{
+  "revision": "591b3b8afd1650028a5fbc68c08576e9c2a92a96",
+  "recordCount": 108,
+  "recordsSha256": "95d8fbb45ee50a5f2375d19319d8d3709cea747f5bc0661381c89586decf2f9c",
+  "firstRecord": {
+    "id": "MSX-001",
+    "lat": 41.6236,
+    "lon": -70.7853,
+    "assignment": "Hudson",
+    "site": "Buzzards Bay, MA"
+  },
+  "lastRecord": {
+    "id": "MSX-108",
+    "lat": 37.0404,
+    "lon": -76.3906,
+    "assignment": "Chesapeake",
+    "site": "James River, VA"
+  },
+  "sites": [
+    {
+      "site": "Buzzards Bay, MA",
+      "total": 9,
+      "counts": {
+        "Hudson": 7,
+        "Chesapeake": 1,
+        "Delaware": 1
+      }
+    },
+    {
+      "site": "Narragansett Bay, RI",
+      "total": 8,
+      "counts": {
+        "Hudson": 5,
+        "Chesapeake": 1,
+        "Delaware": 2
+      }
+    },
+    {
+      "site": "Montauk, NY",
+      "total": 9,
+      "counts": {
+        "Hudson": 5,
+        "Chesapeake": 3,
+        "Delaware": 1
+      }
+    },
+    {
+      "site": "Western LI Sound, NY",
+      "total": 8,
+      "counts": {
+        "Hudson": 8,
+        "Chesapeake": 0,
+        "Delaware": 0
+      }
+    },
+    {
+      "site": "NY Harbor / Hudson, NY",
+      "total": 10,
+      "counts": {
+        "Hudson": 9,
+        "Chesapeake": 1,
+        "Delaware": 0
+      }
+    },
+    {
+      "site": "Sandy Hook, NJ",
+      "total": 8,
+      "counts": {
+        "Hudson": 7,
+        "Chesapeake": 0,
+        "Delaware": 1
+      }
+    },
+    {
+      "site": "Barnegat Inlet, NJ",
+      "total": 8,
+      "counts": {
+        "Hudson": 2,
+        "Chesapeake": 4,
+        "Delaware": 2
+      }
+    },
+    {
+      "site": "Great Bay / Mullica, NJ",
+      "total": 7,
+      "counts": {
+        "Hudson": 1,
+        "Chesapeake": 4,
+        "Delaware": 2
+      }
+    },
+    {
+      "site": "Delaware Bay, DE",
+      "total": 8,
+      "counts": {
+        "Hudson": 1,
+        "Chesapeake": 7,
+        "Delaware": 0
+      }
+    },
+    {
+      "site": "Cape May, NJ",
+      "total": 8,
+      "counts": {
+        "Hudson": 2,
+        "Chesapeake": 4,
+        "Delaware": 2
+      }
+    },
+    {
+      "site": "Choptank River, MD",
+      "total": 9,
+      "counts": {
+        "Hudson": 1,
+        "Chesapeake": 8,
+        "Delaware": 0
+      }
+    },
+    {
+      "site": "Potomac mouth, VA",
+      "total": 8,
+      "counts": {
+        "Hudson": 0,
+        "Chesapeake": 8,
+        "Delaware": 0
+      }
+    },
+    {
+      "site": "James River, VA",
+      "total": 8,
+      "counts": {
+        "Hudson": 2,
+        "Chesapeake": 6,
+        "Delaware": 0
+      }
+    }
+  ],
+  "flags": {
+    "MSX-003": "Hudson",
+    "MSX-006": "Hudson",
+    "MSX-010": "Hudson",
+    "MSX-014": "Hudson",
+    "MSX-015": "Hudson",
+    "MSX-020": "Hudson",
+    "MSX-021": "Hudson",
+    "MSX-022": "Chesapeake",
+    "MSX-025": "Hudson",
+    "MSX-026": "Hudson",
+    "MSX-043": "Hudson",
+    "MSX-048": "Hudson",
+    "MSX-053": "Chesapeake",
+    "MSX-058": "Chesapeake",
+    "MSX-064": "Chesapeake",
+    "MSX-065": "Chesapeake",
+    "MSX-067": "Chesapeake",
+    "MSX-077": "Chesapeake",
+    "MSX-088": "Chesapeake",
+    "MSX-101": "Chesapeake",
+    "MSX-105": "Chesapeake"
+  }
+}
