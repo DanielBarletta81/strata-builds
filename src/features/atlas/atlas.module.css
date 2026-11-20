@@ -69,10 +69,15 @@
 }
 
 .mapHeading p,
-.mapHelp {
+.mapHelp p {
   margin: 0;
   color: #bdcbd0;
   font-size: 0.875rem;
+}
+
+.mapHeading .mapSelection {
+  margin-top: 0.5rem;
+  color: #f3f4ef;
 }
 
 .map {
@@ -148,7 +153,27 @@
 }
 
 .mapHelp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  align-items: center;
   padding: 0.75rem 1rem 0;
+}
+
+.atlas .mapPickerLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: 0.65rem;
+  border: 1px solid #77949a;
+  border-radius: 0.25rem;
+  color: #f3f4ef;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.atlas .mapPickerLink:focus-visible {
+  outline-color: #81d9ff;
 }
 
 .mapKey {
@@ -219,6 +244,12 @@
   text-underline-offset: 0.15em;
 }
 
+.samplePicker {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
 .inspector label {
   display: block;
   margin-bottom: 0.25rem;
@@ -237,7 +268,8 @@
 }
 
 .inspector select:focus-visible,
-.tableScroll:focus-visible {
+.tableScroll:focus-visible,
+.recordButton:focus-visible {
   outline: 2px solid #005fcc;
   outline-offset: 2px;
 }
@@ -273,8 +305,16 @@
   border-top: 1px solid var(--border);
 }
 
-.siteList .selectedSite {
+.siteList > li[aria-current="true"] {
   background: #f4e8d8;
+  box-shadow: inset 3px 0 var(--accent);
+}
+
+.siteHeading small {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .siteHeading {
@@ -315,8 +355,14 @@
   margin-top: 1.75rem;
 }
 
+.recordsHelp {
+  color: var(--secondary);
+  font-size: 0.875rem;
+}
+
 .tableScroll {
   max-height: 30rem;
+  scroll-padding-top: 2.6rem;
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -356,6 +402,26 @@
   white-space: nowrap;
 }
 
+.recordButton {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.15rem;
+  background: transparent;
+  color: #0b5864;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+
+.recordButton[aria-pressed="true"] {
+  color: var(--accent);
+}
+
 .table small {
   display: block;
   margin-top: 0.15rem;
@@ -386,6 +452,14 @@
 }
 
 @media (max-width: 30rem) {
+  .mapLabel {
+    font-size: 30px;
+  }
+
+  .samplePicker {
+    grid-template-columns: 1fr;
+  }
+
   .table {
     min-width: 20.75rem;
     table-layout: fixed;

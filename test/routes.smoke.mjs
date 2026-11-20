@@ -103,9 +103,16 @@ test('GET /atlas renders the synthetic map, composition and matching accessible 
   assert.equal(markers.at(-1), atlasFixture.lastRecord.id);
   assert.equal([...map.matchAll(/aria-pressed="true"/g)].length, 1);
   assert.equal([...map.matchAll(/tabindex="0"/gi)].length, 1);
+  assert.match(html, /<label for="atlas-site">Site<\/label>/);
   assert.match(html, /<label for="atlas-sample">Sample<\/label>/);
+  assert.match(html, /href="#atlas-inspector">Choose a site or sample<\/a>/);
   assert.match(html, /<th scope="col">Assignment<\/th>/);
-  assert.match(html, /<th scope="row">MSX-001/);
+  const table = html.match(/<table\b[^>]*>([\s\S]*?)<\/table>/)?.[1] ?? '';
+  const recordButtons = [...table.matchAll(/<button\b[^>]*aria-label="Select sample ([^"]+)"[^>]*>/g)];
+  assert.deepEqual(recordButtons.map(([, id]) => id), rows);
+  assert.equal(recordButtons.filter(([button]) => button.includes('tabindex="0"')).length, 1);
+  assert.equal(recordButtons.find(([button]) => button.includes('aria-pressed="true"'))?.[1], markers[0]);
+  assert.match(table, /<th scope="row"><button/);
 });
 
 test('GET /robots.txt preserves the public crawl and sitemap directives', async () => {
