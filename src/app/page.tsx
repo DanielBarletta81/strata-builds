@@ -25,6 +25,11 @@ export default function Home() {
             description="Explore synthetic population assignments on an interactive coastal map and compare sample composition by site."
             href="/atlas"
           />
+          <ProjectCard
+            title="NOAA Signals Lab"
+            description="Inspect hourly water temperature at Providence and trace gaps, exclusions, and NOAA quality flags to the source."
+            href="/signals"
+          />
         </div>
       </section>
     </main>

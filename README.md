@@ -19,7 +19,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | Strata Hub | `/` | Introduction and scientific product showcase | Existing landing page |
 | Studio | `/studio` | Design and engineering portfolio | Existing placeholder route |
 | Microsat Atlas | `/atlas` | Population genetics, geography, and sampling interpretation | Synthetic demo implemented in STRATA-003 |
-| NOAA Signals | `/signals` | Water and environmental signals, flags, coverage, and provenance | Planned integration |
+| NOAA Signals | `/signals` | Providence hourly water temperature, quality flags, coverage, and evidence gaps | Implemented in STRATA-004 |
 | Orbital Observatory | `/observatory` | Small-body dynamics, time navigation, and validated 3D exploration | Planned |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
@@ -37,7 +37,9 @@ A separate future milestone, **STRATA-003B**, will seek suitable **published Che
 
 ### NOAA Signals Lab
 
-The [NOAA Signals Lab](https://github.com/DanielBarletta81/noaa-signals-lab) has feature-branch work on stricter request validation, UTC timestamps, quality flags, coverage, caching, and test fixtures. Strata should adapt these validated data boundaries rather than copy hardcoded readings or assume the older default branch is production-grade.
+The NOAA Signals Lab retrieves hourly NOAA CO-OPS water temperature observations for Providence, Rhode Island (station 8454000). Review a window of 1–72 completed UTC hours, follow the original source request, and inspect quality fields, exclusions, and missing intervals. An ambiguous NOAA response leaves coverage unknown. [STRATA-004 data contract and source pin](docs/STRATA-004.md)
+
+The Evidence Frontier contract distinguishes station-level findings from research gaps that require cross-source investigation. See the [research philosophy](docs/RESEARCH_PHILOSOPHY.md) and [Evidence Frontier roadmap](docs/EVIDENCE_FRONTIER_ROADMAP.md).
 
 ### Orbital Observatory
 
@@ -99,7 +101,7 @@ npm run build
 npm run test:routes
 ```
 
-`npm run test:routes` serves the production build on a temporary loopback port and checks the pages, shared layout, robots response, and sitemap. Run `npm start` to serve the build locally. The same command sequence runs in the [PR quality workflow](.github/workflows/quality.yml). Browser checks cover rendering, keyboard navigation, and responsive layouts. See the [closeout report](docs/STRATA-002.md) for the hosting and verification evidence.
+`npm run test:routes` serves the production build on a temporary loopback port and checks the pages, shared layout, robots response, sitemap, and the Signals API with deterministic NOAA fixtures. Automated checks run independently of NOAA uptime. Run `npm start` to serve the build locally. The same command sequence runs in the [PR quality workflow](.github/workflows/quality.yml). Browser checks cover rendering, keyboard navigation, and responsive layouts. See the [closeout report](docs/STRATA-002.md) for the hosting and verification evidence.
 
 ## Design and engineering standards
 
@@ -116,7 +118,7 @@ Agent contributors must follow [`AGENTS.md`](./AGENTS.md), the shared engineerin
 1. **STRATA-002 — Stabilize:** runtime, lockfile, quality workflow, tests, and closeout in [PR #1](https://github.com/DanielBarletta81/strata-builds/pull/1). Check the PR for current review and CI status.
 2. **STRATA-003 — Integrate Atlas:** the demo slice adds the pinned standalone map and composition view, synthetic labeling, and accessible inspection.
 3. **STRATA-003B — Chesapeake Bay:** published research-genetic data, reviewed methods and environmental context (future requirement).
-4. **STRATA-004 — NOAA:** validated source adapters and quality-aware time-series analysis.
+4. **STRATA-004 — NOAA:** Providence water temperature, a source-scoped Gap Inspector, and the Evidence Frontier contract. Cross-source research discovery remains planned.
 5. **STRATA-005 — Orbital Observatory:** a single validated, fully documented 3D orbital instrument.
 6. **Later modules:** Deep Time, Smithsonian Collections, and cross-module research storytelling.
 

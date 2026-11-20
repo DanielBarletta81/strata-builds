@@ -3,6 +3,7 @@ import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { createRequire } from 'node:module';
 import { after, before, test } from 'node:test';
+import { URL } from 'node:url';
 import atlasFixture from './fixtures/atlas-pinned-demo.json' with { type: 'json' };
 
 const nextCli = createRequire(import.meta.url).resolve('next/dist/bin/next');
@@ -10,7 +11,7 @@ let server;
 let origin;
 
 before(async () => {
-  server = spawn(process.execPath, [nextCli, 'start', '--hostname', '127.0.0.1', '--port', '0'], {
+  server = spawn(process.execPath, ['--import', new URL('./fixtures/noaa/fetch-stub.mjs', import.meta.url).href, nextCli, 'start', '--hostname', '127.0.0.1', '--port', '0'], {
     env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
@@ -58,6 +59,7 @@ async function fetchRoute(path, contentType) {
 
   assert.equal(response.status, 200, path);
   assert.equal(response.headers.get('content-type')?.split(';')[0], contentType, path);
+  if (path.startsWith('/api/signals')) assert.equal(response.headers.get('cache-control'), 'no-store');
   return response.text();
 }
 
@@ -65,21 +67,28 @@ const pages = [
   ['/', 'Strata Builds', 'Featured Projects'],
   ['/atlas', 'Microsat Atlas', 'SYNTHETIC DEMONSTRATION DATA'],
   ['/studio', 'Studio', 'Strata Works portfolio coming soon'],
+  ['/signals', 'NOAA Signals Lab', 'Loading NOAA observations'],
 ];
 
 for (const [path, heading, content] of pages) {
   test(`GET ${path} renders its content and the shared layout`, async () => {
     const html = await fetchRoute(path, 'text/html');
     assert.match(html, /<html[^>]*\blang="en"/);
-    assert.match(html, /<title>Strata Builds<\/title>/);
-    assert.match(html, /<meta name="description" content="Design, data, structure — visualizations and digital products"/);
+    if (path === '/signals') {
+      assert.match(html, /<title>NOAA Signals Lab \| Strata Builds<\/title>/);
+      assert.match(html, /<label for="signals-hours">Observation window<\/label>/);
+      assert.match(html, /role="status"/);
+    } else {
+      assert.match(html, /<title>Strata Builds<\/title>/);
+      assert.match(html, /<meta name="description" content="Design, data, structure — visualizations and digital products"/);
+    }
     assert.match(html, new RegExp(`<h1\\b[^>]*>${heading}</h1>`));
     assert.ok(html.includes(content));
 
     const nav = html.match(/<nav\b[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([^<]+)<\/a>/g)]
       .map(([, href, label]) => [href, label]);
-    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas']]);
+    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals']]);
   });
 }
 
@@ -123,11 +132,40 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all three canonical URLs', async () => {
+test('GET /sitemap.xml publishes all four canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals'],
   );
+});
+
+test('GET /api/signals serves fixture-backed partial and ambiguous responses', async () => {
+  const snapshot = JSON.parse(await fetchRoute('/api/signals?range=24', 'application/json'));
+  assert.equal(snapshot.status, 'partial');
+  assert.equal(snapshot.station.id, '8454000');
+  assert.equal(snapshot.receivedRows, 23);
+  assert.equal(snapshot.observations.length, 22);
+  assert.equal(snapshot.exclusions.length, 1);
+  assert.equal(snapshot.coverage.missingHours, 2);
+  assert.equal(snapshot.gaps.length, 4);
+  const unknown = JSON.parse(await fetchRoute('/api/signals?range=12', 'application/json'));
+  assert.equal(unknown.emptyReason, 'noaa_no_data');
+  assert.equal(unknown.coverage.missingHours, null);
+});
+
+test('GET /api/signals rejects unsupported input and sanitizes upstream failures', async () => {
+  for (const [query, status, code] of [
+    ['station=0000000', 400, 'invalid_request'],
+    ['range=24&range=12', 400, 'invalid_request'],
+    ['range=6', 502, 'upstream_unavailable'],
+  ]) {
+    const response = await fetch(origin + '/api/signals?' + query, { signal: AbortSignal.timeout(10_000) });
+    assert.equal(response.status, status);
+    assert.equal(response.headers.get('cache-control'), 'no-store');
+    const payload = await response.json();
+    assert.equal(payload.error.code, code);
+    assert.doesNotMatch(JSON.stringify(payload), /0000000|datagetter/);
+  }
 });
