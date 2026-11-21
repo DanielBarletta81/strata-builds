@@ -30,3 +30,7 @@ Obtain same-event, tide-stamped nutrients, surface-to-bottom salinity and oxygen
 ## Verification
 
 Node 24.22.3 and npm 11.19.1. Lint, typecheck, 43 unit tests, production build and 18 route smoke tests passed. Both data fixtures reproduced byte for byte. Chromium checks at 375, 768 and 1440 px exercised all station selections, the observed/conceptual switch, the time and source-row controls, focus outlines and disclosures. The page fit at each width with disclosures open and had no hydration errors. [Desktop screenshot](review/strata-008-desktop.png) · [Mobile screenshot](review/strata-008-mobile.png)
+
+## Pawtuxet Water Column Explorer
+
+`/oceanography/pawtuxet` inspects NBC’s 2014 and 2016 Pawtuxet Cove casts. Use the date and metric controls to compare measured depth-bin records and read their original workbook locators. The separate density column, repeated-depth handling and documented oxygen screen are in the [Pawtuxet source audit](PAWTUXET_WATER_COLUMN_SOURCE_AUDIT.md).

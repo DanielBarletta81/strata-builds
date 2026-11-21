@@ -181,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all eight canonical URLs', async () => {
+test('GET /sitemap.xml publishes all nine canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
   );
 });
 
@@ -352,5 +352,14 @@ test('GET /oceanography renders the station locator, paired records and depth pr
     'Estuarine Gradient Observatory', 'Narragansett Bay station locator', 'Phillipsdale Landing',
     '9 of 14 reviewed surface rows', 'Salt-wedge explorer', 'Sampling coverage and gaps',
     'PD!Y11480', 'CB85102', 'Mid-depth sensor only', 'Source records and file fingerprints',
+  ]) assert.ok(html.includes(label), label);
+});
+
+test('GET /oceanography/pawtuxet exposes profiler observations, limits and source locators', async () => {
+  const html = (await fetchRoute('/oceanography/pawtuxet', 'text/html')).replaceAll('<!-- -->', '');
+  for (const label of [
+    'Pawtuxet Water Column Explorer', '49 published casts', '2014-01-15 · metadata only',
+    '3 published depth readings below 3 mg/L', '2.69799', '2016 Data!J2046',
+    'Published density difference', 'oyster-bearing rocks beneath the bridge', 'https://dem.ri.gov/latest-bay-area-report',
   ]) assert.ok(html.includes(label), label);
 });

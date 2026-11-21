@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { NutrientInspector } from './nutrient-inspector';
 import { profileAt, reading, sources, stations, type StationId } from './observations';
@@ -17,6 +18,7 @@ export function Observatory() {
         <h1>Estuarine Gradient Observatory</h1>
         <p>Follow five stations from the Seekonk River to the lower West Passage. Compare nutrients and salinity from surface samples, then inspect how salinity, oxygen and temperature differ by depth.</p>
       </header>
+      <p><Link href="/oceanography/pawtuxet">Inspect historical casts in the Pawtuxet Water Column Explorer</Link></p>
       <div className={styles.stationGrid}>
         <section className={styles.panel} aria-labelledby="locator-title">
           <header className={styles.panelHeader}><h2 id="locator-title">Station locator</h2></header>

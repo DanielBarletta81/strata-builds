@@ -1,0 +1,5236 @@
+{
+  "station": "Pawtuxet Cove",
+  "hashes": {
+    "2014": "7bdd16823a2d46199e6a4eb0939067b4b20d7a1d1a2858443779a10c20ddeaed",
+    "2016": "9a6e14530f83ef7eece531a45ffc3a41053681cc5421d1db1157155dcdb51086"
+  },
+  "events": [
+    {
+      "date": "2014-01-15",
+      "metadataRow": 3,
+      "mark": "X",
+      "note": "Data available upon request - YSI sonde used",
+      "year": 2014,
+      "clock": null,
+      "records": []
+    },
+    {
+      "date": "2014-05-21",
+      "metadataRow": 4,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:50:00",
+      "records": [
+        {
+          "row": 128,
+          "depth": 0.25,
+          "temperature": 19.4382,
+          "oxygen": 7.75264,
+          "density": 1002.9051,
+          "salinity": 6.0259
+        },
+        {
+          "row": 129,
+          "depth": 0.5,
+          "temperature": 19.0796,
+          "oxygen": 9.55689,
+          "density": 1003.1799,
+          "salinity": 6.2879
+        },
+        {
+          "row": 130,
+          "depth": 0.75,
+          "temperature": 18.1874,
+          "oxygen": 6.32146,
+          "density": 1003.8824,
+          "salinity": 6.9696
+        },
+        {
+          "row": 131,
+          "depth": 1,
+          "temperature": 18.0892,
+          "oxygen": 9.14044,
+          "density": 1005.2983,
+          "salinity": 8.8062
+        },
+        {
+          "row": 132,
+          "depth": 1.25,
+          "temperature": 17.123,
+          "oxygen": 9.02032,
+          "density": 1008.1662,
+          "salinity": 12.3191
+        },
+        {
+          "row": 133,
+          "depth": 1.5,
+          "temperature": 16.6029,
+          "oxygen": 8.35129,
+          "density": 1011.0231,
+          "salinity": 15.9297
+        },
+        {
+          "row": 134,
+          "depth": 1.75,
+          "temperature": 16.2488,
+          "oxygen": 8.09738,
+          "density": 1012.7775,
+          "salinity": 18.1337
+        },
+        {
+          "row": 135,
+          "depth": 2,
+          "temperature": 15.8348,
+          "oxygen": 7.90124,
+          "density": 1014.2609,
+          "salinity": 19.9643
+        },
+        {
+          "row": 136,
+          "depth": 2.25,
+          "temperature": 15.5649,
+          "oxygen": 7.66121,
+          "density": 1015.0533,
+          "salinity": 20.9278
+        },
+        {
+          "row": 137,
+          "depth": 2.5,
+          "temperature": 15.181,
+          "oxygen": 8.28638,
+          "density": 1016.0585,
+          "salinity": 22.1389
+        },
+        {
+          "row": 138,
+          "depth": 2.75,
+          "temperature": 14.9891,
+          "oxygen": 8.69255,
+          "density": 1017.0588,
+          "salinity": 23.3921
+        },
+        {
+          "row": 139,
+          "depth": 3,
+          "temperature": 14.8294,
+          "oxygen": 9.14842,
+          "density": 1017.9999,
+          "salinity": 24.5752
+        },
+        {
+          "row": 140,
+          "depth": 3.25,
+          "temperature": 14.6873,
+          "oxygen": 9.0681,
+          "density": 1018.621,
+          "salinity": 25.3456
+        },
+        {
+          "row": 141,
+          "depth": 3.5,
+          "temperature": 14.6336,
+          "oxygen": 8.99552,
+          "density": 1018.7598,
+          "salinity": 25.5108
+        },
+        {
+          "row": 142,
+          "depth": 3.75,
+          "temperature": 14.5895,
+          "oxygen": 8.87032,
+          "density": 1018.8551,
+          "salinity": 25.6219
+        },
+        {
+          "row": 143,
+          "depth": 4,
+          "temperature": 14.5788,
+          "oxygen": 8.89207,
+          "density": 1018.8944,
+          "salinity": 25.6688
+        }
+      ]
+    },
+    {
+      "date": "2014-05-28",
+      "metadataRow": 5,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "10:58:00",
+      "records": [
+        {
+          "row": 304,
+          "depth": 0.25,
+          "temperature": 15.86,
+          "oxygen": 7.85195,
+          "density": 1004.1107,
+          "salinity": 6.7022
+        },
+        {
+          "row": 305,
+          "depth": 0.5,
+          "temperature": 16.062,
+          "oxygen": 8.21853,
+          "density": 1004.6162,
+          "salinity": 7.4073
+        },
+        {
+          "row": 306,
+          "depth": 0.75,
+          "temperature": 16.1705,
+          "oxygen": 7.13084,
+          "density": 1006.5349,
+          "salinity": 9.9446
+        },
+        {
+          "row": 307,
+          "depth": 1,
+          "temperature": 16.4663,
+          "oxygen": 7.7441,
+          "density": 1010.2675,
+          "salinity": 14.9066
+        },
+        {
+          "row": 308,
+          "depth": 1.25,
+          "temperature": 16.3724,
+          "oxygen": 7.41827,
+          "density": 1012.7212,
+          "salinity": 18.0955
+        },
+        {
+          "row": 309,
+          "depth": 1.5,
+          "temperature": 16.3414,
+          "oxygen": 6.66805,
+          "density": 1014.8013,
+          "salinity": 20.8088
+        },
+        {
+          "row": 310,
+          "depth": 1.75,
+          "temperature": 16.0112,
+          "oxygen": 6.82051,
+          "density": 1015.8285,
+          "salinity": 22.0619
+        },
+        {
+          "row": 311,
+          "depth": 2,
+          "temperature": 15.7336,
+          "oxygen": 6.47666,
+          "density": 1016.1739,
+          "salinity": 22.4373
+        },
+        {
+          "row": 312,
+          "depth": 2.25,
+          "temperature": 15.8073,
+          "oxygen": 5.90851,
+          "density": 1016.374,
+          "salinity": 22.7168
+        },
+        {
+          "row": 313,
+          "depth": 2.5,
+          "temperature": 15.7503,
+          "oxygen": 5.80401,
+          "density": 1016.513,
+          "salinity": 22.8817
+        },
+        {
+          "row": 314,
+          "depth": 2.75,
+          "temperature": 15.4325,
+          "oxygen": 5.8525,
+          "density": 1017.2904,
+          "salinity": 23.8101
+        }
+      ]
+    },
+    {
+      "date": "2014-06-04",
+      "metadataRow": 6,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:30:00",
+      "records": [
+        {
+          "row": 495,
+          "depth": 0.25,
+          "temperature": 19.3414,
+          "oxygen": 5.78522,
+          "density": 1004.4424,
+          "salinity": 8.0267
+        },
+        {
+          "row": 496,
+          "depth": 0.5,
+          "temperature": 19.3971,
+          "oxygen": 7.39561,
+          "density": 1005.1009,
+          "salinity": 8.9097
+        },
+        {
+          "row": 497,
+          "depth": 0.75,
+          "temperature": 19.2324,
+          "oxygen": 6.87539,
+          "density": 1006.3489,
+          "salinity": 10.508
+        },
+        {
+          "row": 498,
+          "depth": 1,
+          "temperature": 19.2661,
+          "oxygen": 10.73681,
+          "density": 1013.314,
+          "salinity": 19.7033
+        },
+        {
+          "row": 499,
+          "depth": 1.25,
+          "temperature": 19.0252,
+          "oxygen": 9.33703,
+          "density": 1015.5914,
+          "salinity": 22.6265
+        },
+        {
+          "row": 500,
+          "depth": 1.5,
+          "temperature": 18.8338,
+          "oxygen": 9.27845,
+          "density": 1016.4136,
+          "salinity": 23.6472
+        },
+        {
+          "row": 501,
+          "depth": 1.75,
+          "temperature": 18.7381,
+          "oxygen": 9.21609,
+          "density": 1016.9701,
+          "salinity": 24.3476
+        },
+        {
+          "row": 502,
+          "depth": 2,
+          "temperature": 18.6291,
+          "oxygen": 9.08767,
+          "density": 1017.4434,
+          "salinity": 24.9342
+        },
+        {
+          "row": 503,
+          "depth": 2.25,
+          "temperature": 18.5329,
+          "oxygen": 9.01244,
+          "density": 1017.7657,
+          "salinity": 25.3263
+        },
+        {
+          "row": 504,
+          "depth": 2.5,
+          "temperature": 18.4978,
+          "oxygen": 8.97526,
+          "density": 1017.8651,
+          "salinity": 25.4445
+        },
+        {
+          "row": 505,
+          "depth": 2.75,
+          "temperature": 18.4848,
+          "oxygen": 8.95598,
+          "density": 1017.9016,
+          "salinity": 25.4869
+        },
+        {
+          "row": 506,
+          "depth": 3,
+          "temperature": 18.4741,
+          "oxygen": 8.88914,
+          "density": 1017.9359,
+          "salinity": 25.5271
+        },
+        {
+          "row": 507,
+          "depth": 3.25,
+          "temperature": 18.4381,
+          "oxygen": 8.63636,
+          "density": 1018.0359,
+          "salinity": 25.6458
+        },
+        {
+          "row": 508,
+          "depth": 3.5,
+          "temperature": 18.2701,
+          "oxygen": 8.31675,
+          "density": 1018.3643,
+          "salinity": 26.0236
+        },
+        {
+          "row": 509,
+          "depth": 3.75,
+          "temperature": 18.114,
+          "oxygen": 8.13476,
+          "density": 1018.6722,
+          "salinity": 26.3781
+        },
+        {
+          "row": 510,
+          "depth": 4,
+          "temperature": 18.0412,
+          "oxygen": 8.09085,
+          "density": 1018.8154,
+          "salinity": 26.5422
+        }
+      ]
+    },
+    {
+      "date": "2014-06-11",
+      "metadataRow": 7,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "08:30:00",
+      "records": [
+        {
+          "row": 567,
+          "depth": 0.25,
+          "temperature": 19.0412,
+          "oxygen": 9.04212,
+          "density": 1001.4571,
+          "salinity": 4.0136
+        },
+        {
+          "row": 568,
+          "depth": 0.5,
+          "temperature": 19.4409,
+          "oxygen": 7.96505,
+          "density": 1003.3927,
+          "salinity": 6.6686
+        },
+        {
+          "row": 569,
+          "depth": 0.75,
+          "temperature": 19.5952,
+          "oxygen": 7.01181,
+          "density": 1009.4238,
+          "salinity": 14.6732
+        },
+        {
+          "row": 570,
+          "depth": 1,
+          "temperature": 19.3325,
+          "oxygen": 7.77351,
+          "density": 1011.0614,
+          "salinity": 16.7542
+        },
+        {
+          "row": 571,
+          "depth": 1.25,
+          "temperature": 19.7148,
+          "oxygen": 8.02315,
+          "density": 1014.158,
+          "salinity": 20.954
+        },
+        {
+          "row": 572,
+          "depth": 1.5,
+          "temperature": 19.6023,
+          "oxygen": 8.1795,
+          "density": 1014.5739,
+          "salinity": 21.4654
+        },
+        {
+          "row": 573,
+          "depth": 1.75,
+          "temperature": 19.5755,
+          "oxygen": 8.12782,
+          "density": 1014.814,
+          "salinity": 21.7719
+        },
+        {
+          "row": 574,
+          "depth": 2,
+          "temperature": 19.5732,
+          "oxygen": 7.99175,
+          "density": 1015.0672,
+          "salinity": 22.1033
+        },
+        {
+          "row": 575,
+          "depth": 2.25,
+          "temperature": 19.569,
+          "oxygen": 7.85572,
+          "density": 1015.381,
+          "salinity": 22.514
+        },
+        {
+          "row": 576,
+          "depth": 2.5,
+          "temperature": 19.5484,
+          "oxygen": 7.70448,
+          "density": 1015.645,
+          "salinity": 22.8537
+        },
+        {
+          "row": 577,
+          "depth": 2.75,
+          "temperature": 19.5503,
+          "oxygen": 7.30121,
+          "density": 1015.9153,
+          "salinity": 23.2088
+        },
+        {
+          "row": 578,
+          "depth": 3,
+          "temperature": 19.5563,
+          "oxygen": 6.9079,
+          "density": 1016.2236,
+          "salinity": 23.6153
+        },
+        {
+          "row": 579,
+          "depth": 3.25,
+          "temperature": 19.5314,
+          "oxygen": 6.92633,
+          "density": 1016.4806,
+          "salinity": 23.9443
+        },
+        {
+          "row": 580,
+          "depth": 3,
+          "temperature": 19.3965,
+          "oxygen": 6.02578,
+          "density": 1017.1656,
+          "salinity": 24.8042
+        }
+      ]
+    },
+    {
+      "date": "2014-06-18",
+      "metadataRow": 8,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "14:20:00",
+      "records": [
+        {
+          "row": 926,
+          "depth": 0.25,
+          "temperature": 22.0333,
+          "oxygen": 7.16179,
+          "density": 1014.2146,
+          "salinity": 21.7996
+        },
+        {
+          "row": 927,
+          "depth": 0.5,
+          "temperature": 21.9058,
+          "oxygen": 9.67312,
+          "density": 1015.9206,
+          "salinity": 24.0138
+        },
+        {
+          "row": 928,
+          "depth": 0.75,
+          "temperature": 21.8763,
+          "oxygen": 8.70501,
+          "density": 1015.9764,
+          "salinity": 24.0764
+        },
+        {
+          "row": 929,
+          "depth": 1,
+          "temperature": 21.6003,
+          "oxygen": 11.06447,
+          "density": 1015.961,
+          "salinity": 23.9585
+        },
+        {
+          "row": 930,
+          "depth": 1.25,
+          "temperature": 21.5415,
+          "oxygen": 10.7771,
+          "density": 1016.0137,
+          "salinity": 24.0064
+        },
+        {
+          "row": 931,
+          "depth": 1.5,
+          "temperature": 21.4339,
+          "oxygen": 10.47051,
+          "density": 1016.1114,
+          "salinity": 24.0972
+        },
+        {
+          "row": 932,
+          "depth": 1.75,
+          "temperature": 21.3237,
+          "oxygen": 10.24686,
+          "density": 1016.2699,
+          "salinity": 24.2674
+        },
+        {
+          "row": 933,
+          "depth": 2,
+          "temperature": 21.2074,
+          "oxygen": 9.89511,
+          "density": 1016.5427,
+          "salinity": 24.5867
+        },
+        {
+          "row": 934,
+          "depth": 2.25,
+          "temperature": 21.0824,
+          "oxygen": 9.4451,
+          "density": 1016.9236,
+          "salinity": 25.0456
+        },
+        {
+          "row": 935,
+          "depth": 2.5,
+          "temperature": 20.8731,
+          "oxygen": 8.44559,
+          "density": 1017.3399,
+          "salinity": 25.5225
+        },
+        {
+          "row": 936,
+          "depth": 2.75,
+          "temperature": 20.3357,
+          "oxygen": 7.26694,
+          "density": 1018.1927,
+          "salinity": 26.4647
+        },
+        {
+          "row": 937,
+          "depth": 3,
+          "temperature": 19.9076,
+          "oxygen": 7.04354,
+          "density": 1018.8158,
+          "salinity": 27.1415
+        },
+        {
+          "row": 938,
+          "depth": 3.25,
+          "temperature": 19.7731,
+          "oxygen": 7.11572,
+          "density": 1019.0815,
+          "salinity": 27.4452
+        },
+        {
+          "row": 939,
+          "depth": 3.5,
+          "temperature": 19.6429,
+          "oxygen": 7.07102,
+          "density": 1019.3456,
+          "salinity": 27.7484
+        },
+        {
+          "row": 940,
+          "depth": 3.75,
+          "temperature": 19.5665,
+          "oxygen": 6.94511,
+          "density": 1019.4453,
+          "salinity": 27.853
+        },
+        {
+          "row": 941,
+          "depth": 4,
+          "temperature": 19.5038,
+          "oxygen": 6.7389,
+          "density": 1019.5122,
+          "salinity": 27.919
+        },
+        {
+          "row": 942,
+          "depth": 4.25,
+          "temperature": 19.3654,
+          "oxygen": 6.65138,
+          "density": 1019.6447,
+          "salinity": 28.0465
+        },
+        {
+          "row": 943,
+          "depth": 4.5,
+          "temperature": 19.2976,
+          "oxygen": 6.52062,
+          "density": 1019.7028,
+          "salinity": 28.0994
+        },
+        {
+          "row": 944,
+          "depth": 4.75,
+          "temperature": 19.2063,
+          "oxygen": 6.37562,
+          "density": 1019.8025,
+          "salinity": 28.1993
+        },
+        {
+          "row": 945,
+          "depth": 5,
+          "temperature": 19.0938,
+          "oxygen": 6.22855,
+          "density": 1019.9075,
+          "salinity": 28.2994
+        },
+        {
+          "row": 946,
+          "depth": 5.25,
+          "temperature": 19.0351,
+          "oxygen": 6.18375,
+          "density": 1019.9483,
+          "salinity": 28.3326
+        },
+        {
+          "row": 947,
+          "depth": 5.5,
+          "temperature": 19.0308,
+          "oxygen": 6.18783,
+          "density": 1019.9537,
+          "salinity": 28.3369
+        },
+        {
+          "row": 948,
+          "depth": 5.25,
+          "temperature": 19.035,
+          "oxygen": 6.17024,
+          "density": 1019.9524,
+          "salinity": 28.3381
+        }
+      ]
+    },
+    {
+      "date": "2014-06-19",
+      "metadataRow": 9,
+      "mark": "X",
+      "note": "Special sampling day, out of routine schedule",
+      "year": 2014,
+      "clock": "12:50:00",
+      "records": [
+        {
+          "row": 1029,
+          "depth": 0.25,
+          "temperature": 20.1134,
+          "oxygen": 6.02013,
+          "density": 1013.939,
+          "salinity": 20.7975
+        },
+        {
+          "row": 1030,
+          "depth": 0.5,
+          "temperature": 20.0879,
+          "oxygen": 6.29551,
+          "density": 1014.6242,
+          "salinity": 21.6921
+        },
+        {
+          "row": 1031,
+          "depth": 0.75,
+          "temperature": 20.044,
+          "oxygen": 6.30758,
+          "density": 1014.839,
+          "salinity": 21.9598
+        },
+        {
+          "row": 1032,
+          "depth": 1,
+          "temperature": 20.0372,
+          "oxygen": 6.49147,
+          "density": 1014.8446,
+          "salinity": 21.9636
+        },
+        {
+          "row": 1033,
+          "depth": 1.25,
+          "temperature": 19.9556,
+          "oxygen": 5.95106,
+          "density": 1015.193,
+          "salinity": 22.3953
+        },
+        {
+          "row": 1034,
+          "depth": 1.5,
+          "temperature": 19.7041,
+          "oxygen": 5.50465,
+          "density": 1016.4763,
+          "salinity": 24.0041
+        },
+        {
+          "row": 1035,
+          "depth": 1.75,
+          "temperature": 19.3842,
+          "oxygen": 5.408,
+          "density": 1017.5444,
+          "salinity": 25.306
+        },
+        {
+          "row": 1036,
+          "depth": 2,
+          "temperature": 19.135,
+          "oxygen": 5.34533,
+          "density": 1018.344,
+          "salinity": 26.2765
+        },
+        {
+          "row": 1037,
+          "depth": 2.25,
+          "temperature": 18.9626,
+          "oxygen": 5.36442,
+          "density": 1019.0212,
+          "salinity": 27.1097
+        },
+        {
+          "row": 1038,
+          "depth": 2.5,
+          "temperature": 18.9158,
+          "oxygen": 5.46009,
+          "density": 1019.5132,
+          "salinity": 27.7393
+        },
+        {
+          "row": 1039,
+          "depth": 2.75,
+          "temperature": 18.8975,
+          "oxygen": 5.46512,
+          "density": 1019.6841,
+          "salinity": 27.9564
+        },
+        {
+          "row": 1040,
+          "depth": 3,
+          "temperature": 18.8663,
+          "oxygen": 5.45048,
+          "density": 1019.7568,
+          "salinity": 28.0405
+        },
+        {
+          "row": 1041,
+          "depth": 3.25,
+          "temperature": 18.8125,
+          "oxygen": 5.34243,
+          "density": 1019.7877,
+          "salinity": 28.0624
+        },
+        {
+          "row": 1042,
+          "depth": 3.5,
+          "temperature": 18.7506,
+          "oxygen": 5.14844,
+          "density": 1019.835,
+          "salinity": 28.1032
+        },
+        {
+          "row": 1043,
+          "depth": 3.75,
+          "temperature": 18.6415,
+          "oxygen": 4.96063,
+          "density": 1019.9377,
+          "salinity": 28.202
+        },
+        {
+          "row": 1044,
+          "depth": 4,
+          "temperature": 18.5618,
+          "oxygen": 4.70624,
+          "density": 1020.0099,
+          "salinity": 28.27
+        },
+        {
+          "row": 1045,
+          "depth": 4.25,
+          "temperature": 18.446,
+          "oxygen": 4.68459,
+          "density": 1020.1279,
+          "salinity": 28.3868
+        }
+      ]
+    },
+    {
+      "date": "2014-07-02",
+      "metadataRow": 11,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:55:00",
+      "records": [
+        {
+          "row": 1402,
+          "depth": 0.25,
+          "temperature": 26.9669,
+          "oxygen": 6.04021,
+          "density": 1006.233,
+          "salinity": 12.9828
+        },
+        {
+          "row": 1403,
+          "depth": 0.5,
+          "temperature": 26.8341,
+          "oxygen": 7.89193,
+          "density": 1008.4032,
+          "salinity": 15.8362
+        },
+        {
+          "row": 1404,
+          "depth": 0.75,
+          "temperature": 26.5651,
+          "oxygen": 7.53345,
+          "density": 1012.8614,
+          "salinity": 21.6905
+        },
+        {
+          "row": 1405,
+          "depth": 1,
+          "temperature": 26.3628,
+          "oxygen": 7.0862,
+          "density": 1010.3049,
+          "salinity": 18.1921
+        },
+        {
+          "row": 1406,
+          "depth": 1.25,
+          "temperature": 26.2285,
+          "oxygen": 7.6407,
+          "density": 1010.7882,
+          "salinity": 18.7839
+        },
+        {
+          "row": 1407,
+          "depth": 1.5,
+          "temperature": 25.792,
+          "oxygen": 7.94435,
+          "density": 1012.1535,
+          "salinity": 20.4352
+        },
+        {
+          "row": 1408,
+          "depth": 1.75,
+          "temperature": 25.1468,
+          "oxygen": 7.60568,
+          "density": 1014.5608,
+          "salinity": 23.3922
+        },
+        {
+          "row": 1409,
+          "depth": 2,
+          "temperature": 24.7997,
+          "oxygen": 7.92367,
+          "density": 1015.9984,
+          "salinity": 25.1696
+        },
+        {
+          "row": 1410,
+          "depth": 2.25,
+          "temperature": 24.5781,
+          "oxygen": 7.37042,
+          "density": 1016.6976,
+          "salinity": 26.0123
+        },
+        {
+          "row": 1411,
+          "depth": 2.5,
+          "temperature": 24.4323,
+          "oxygen": 6.11934,
+          "density": 1017.0004,
+          "salinity": 26.3572
+        },
+        {
+          "row": 1412,
+          "depth": 2.75,
+          "temperature": 24.3272,
+          "oxygen": 5.16214,
+          "density": 1017.1635,
+          "salinity": 26.5321
+        },
+        {
+          "row": 1413,
+          "depth": 3,
+          "temperature": 24.2635,
+          "oxygen": 4.79409,
+          "density": 1017.243,
+          "salinity": 26.6118
+        },
+        {
+          "row": 1414,
+          "depth": 3.25,
+          "temperature": 24.2437,
+          "oxygen": 4.69275,
+          "density": 1017.2622,
+          "salinity": 26.6284
+        },
+        {
+          "row": 1415,
+          "depth": 3.5,
+          "temperature": 24.1891,
+          "oxygen": 3.92461,
+          "density": 1017.3497,
+          "salinity": 26.7222
+        }
+      ]
+    },
+    {
+      "date": "2014-07-09",
+      "metadataRow": 12,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:00:00",
+      "records": [
+        {
+          "row": 1536,
+          "depth": 0.25,
+          "temperature": 26.1431,
+          "oxygen": 7.81735,
+          "density": 1004.3041,
+          "salinity": 10.0854
+        },
+        {
+          "row": 1537,
+          "depth": 0.5,
+          "temperature": 26.0201,
+          "oxygen": 7.10189,
+          "density": 1004.8234,
+          "salinity": 10.7326
+        },
+        {
+          "row": 1538,
+          "depth": 0.75,
+          "temperature": 25.473,
+          "oxygen": 6.73601,
+          "density": 1007.4149,
+          "salinity": 13.9905
+        },
+        {
+          "row": 1539,
+          "depth": 1,
+          "temperature": 25.2197,
+          "oxygen": 8.78713,
+          "density": 1012.894,
+          "salinity": 21.2045
+        },
+        {
+          "row": 1540,
+          "depth": 1.25,
+          "temperature": 25.1331,
+          "oxygen": 8.71703,
+          "density": 1014.3339,
+          "salinity": 23.0879
+        },
+        {
+          "row": 1541,
+          "depth": 1.5,
+          "temperature": 25.1153,
+          "oxygen": 8.6576,
+          "density": 1014.5079,
+          "salinity": 23.3112
+        },
+        {
+          "row": 1542,
+          "depth": 1.75,
+          "temperature": 25.0954,
+          "oxygen": 8.63131,
+          "density": 1014.5968,
+          "salinity": 23.4205
+        },
+        {
+          "row": 1543,
+          "depth": 2,
+          "temperature": 25.0856,
+          "oxygen": 8.57898,
+          "density": 1014.6375,
+          "salinity": 23.4694
+        },
+        {
+          "row": 1544,
+          "depth": 2.25,
+          "temperature": 25.0662,
+          "oxygen": 8.41899,
+          "density": 1014.665,
+          "salinity": 23.497
+        },
+        {
+          "row": 1545,
+          "depth": 2.5,
+          "temperature": 24.9867,
+          "oxygen": 8.28481,
+          "density": 1014.738,
+          "salinity": 23.5622
+        },
+        {
+          "row": 1546,
+          "depth": 2.75,
+          "temperature": 24.8927,
+          "oxygen": 8.08885,
+          "density": 1014.8209,
+          "salinity": 23.635
+        },
+        {
+          "row": 1547,
+          "depth": 3,
+          "temperature": 24.7969,
+          "oxygen": 7.93755,
+          "density": 1014.9049,
+          "salinity": 23.7085
+        },
+        {
+          "row": 1548,
+          "depth": 3.25,
+          "temperature": 24.6703,
+          "oxygen": 7.82841,
+          "density": 1015.0457,
+          "salinity": 23.846
+        }
+      ]
+    },
+    {
+      "date": "2014-07-16",
+      "metadataRow": 13,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "14:27:00",
+      "records": [
+        {
+          "row": 1759,
+          "depth": 0.25,
+          "temperature": 23.8929,
+          "oxygen": 7.39106,
+          "density": 1003.7753,
+          "salinity": 8.5693
+        },
+        {
+          "row": 1760,
+          "depth": 0.5,
+          "temperature": 23.9726,
+          "oxygen": 5.42788,
+          "density": 1004.8024,
+          "salinity": 9.9639
+        },
+        {
+          "row": 1761,
+          "depth": 0.75,
+          "temperature": 24.1427,
+          "oxygen": 4.53845,
+          "density": 1008.1592,
+          "salinity": 14.4959
+        },
+        {
+          "row": 1762,
+          "depth": 1,
+          "temperature": 24.3716,
+          "oxygen": 4.69787,
+          "density": 1011.5444,
+          "salinity": 19.0875
+        },
+        {
+          "row": 1763,
+          "depth": 1.25,
+          "temperature": 24.4464,
+          "oxygen": 4.13081,
+          "density": 1013.0755,
+          "salinity": 21.1518
+        },
+        {
+          "row": 1764,
+          "depth": 1.5,
+          "temperature": 24.536,
+          "oxygen": 3.94412,
+          "density": 1015.591,
+          "salinity": 24.5298
+        },
+        {
+          "row": 1765,
+          "depth": 1.75,
+          "temperature": 24.5614,
+          "oxygen": 3.85564,
+          "density": 1016.1017,
+          "salinity": 25.2171
+        }
+      ]
+    },
+    {
+      "date": "2014-07-23",
+      "metadataRow": 14,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:50:00",
+      "records": [
+        {
+          "row": 1837,
+          "depth": 0.25,
+          "temperature": 25.9365,
+          "oxygen": 7.79925,
+          "density": 1007.1308,
+          "salinity": 13.788
+        },
+        {
+          "row": 1838,
+          "depth": 0.5,
+          "temperature": 25.7219,
+          "oxygen": 8.30796,
+          "density": 1009.3286,
+          "salinity": 16.6422
+        },
+        {
+          "row": 1839,
+          "depth": 0.75,
+          "temperature": 25.6563,
+          "oxygen": 7.71904,
+          "density": 1016.3228,
+          "salinity": 25.9433
+        },
+        {
+          "row": 1840,
+          "depth": 1,
+          "temperature": 25.2276,
+          "oxygen": 10.43123,
+          "density": 1016.5782,
+          "salinity": 26.1124
+        },
+        {
+          "row": 1841,
+          "depth": 1.25,
+          "temperature": 25.1169,
+          "oxygen": 9.99727,
+          "density": 1016.9308,
+          "salinity": 26.5366
+        },
+        {
+          "row": 1842,
+          "depth": 1.5,
+          "temperature": 24.9468,
+          "oxygen": 9.79365,
+          "density": 1017.0073,
+          "salinity": 26.5705
+        },
+        {
+          "row": 1843,
+          "depth": 1.75,
+          "temperature": 24.7628,
+          "oxygen": 8.58617,
+          "density": 1017.0697,
+          "salinity": 26.5807
+        },
+        {
+          "row": 1844,
+          "depth": 2,
+          "temperature": 24.5654,
+          "oxygen": 7.33385,
+          "density": 1017.2049,
+          "salinity": 26.6826
+        },
+        {
+          "row": 1845,
+          "depth": 2.25,
+          "temperature": 24.4422,
+          "oxygen": 6.82626,
+          "density": 1017.3039,
+          "salinity": 26.7654
+        },
+        {
+          "row": 1846,
+          "depth": 2.5,
+          "temperature": 24.3859,
+          "oxygen": 6.3357,
+          "density": 1017.3527,
+          "salinity": 26.8071
+        },
+        {
+          "row": 1847,
+          "depth": 2.75,
+          "temperature": 24.3266,
+          "oxygen": 5.80871,
+          "density": 1017.4038,
+          "salinity": 26.8509
+        },
+        {
+          "row": 1848,
+          "depth": 3,
+          "temperature": 24.2874,
+          "oxygen": 5.59888,
+          "density": 1017.4451,
+          "salinity": 26.8892
+        }
+      ]
+    },
+    {
+      "date": "2014-07-30",
+      "metadataRow": 15,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:28:00",
+      "records": [
+        {
+          "row": 2117,
+          "depth": 0.25,
+          "temperature": 24.0056,
+          "oxygen": 7.47431,
+          "density": 1004.7072,
+          "salinity": 9.8528
+        },
+        {
+          "row": 2118,
+          "depth": 0.5,
+          "temperature": 24.4242,
+          "oxygen": 8.27431,
+          "density": 1008.246,
+          "salinity": 14.7154
+        },
+        {
+          "row": 2119,
+          "depth": 0.75,
+          "temperature": 24.6011,
+          "oxygen": 10.07133,
+          "density": 1012.9263,
+          "salinity": 21.0135
+        },
+        {
+          "row": 2120,
+          "depth": 1,
+          "temperature": 24.8383,
+          "oxygen": 13.87145,
+          "density": 1015.262,
+          "salinity": 24.2111
+        },
+        {
+          "row": 2121,
+          "depth": 1.25,
+          "temperature": 24.5998,
+          "oxygen": 11.1779,
+          "density": 1015.4572,
+          "salinity": 24.378
+        },
+        {
+          "row": 2122,
+          "depth": 1.5,
+          "temperature": 24.3857,
+          "oxygen": 10.32651,
+          "density": 1015.9684,
+          "salinity": 24.9745
+        },
+        {
+          "row": 2123,
+          "depth": 1.75,
+          "temperature": 24.2748,
+          "oxygen": 8.64583,
+          "density": 1016.2882,
+          "salinity": 25.3557
+        },
+        {
+          "row": 2124,
+          "depth": 2,
+          "temperature": 24.2862,
+          "oxygen": 6.70206,
+          "density": 1016.6635,
+          "salinity": 25.857
+        },
+        {
+          "row": 2125,
+          "depth": 2.25,
+          "temperature": 24.2572,
+          "oxygen": 5.58203,
+          "density": 1017.0355,
+          "salinity": 26.3384
+        },
+        {
+          "row": 2126,
+          "depth": 2.5,
+          "temperature": 24.1671,
+          "oxygen": 5.4323,
+          "density": 1017.4957,
+          "salinity": 26.9135
+        }
+      ]
+    },
+    {
+      "date": "2014-08-06",
+      "metadataRow": 16,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:47:00",
+      "records": [
+        {
+          "row": 2210,
+          "depth": 0.25,
+          "temperature": 25.0502,
+          "oxygen": 8.33625,
+          "density": 1006.6697,
+          "salinity": 12.8412
+        },
+        {
+          "row": 2211,
+          "depth": 0.5,
+          "temperature": 25.025,
+          "oxygen": 9.8396,
+          "density": 1009.337,
+          "salinity": 16.3905
+        },
+        {
+          "row": 2212,
+          "depth": 0.75,
+          "temperature": 25.725,
+          "oxygen": 8.05304,
+          "density": 1016.2786,
+          "salinity": 25.9122
+        },
+        {
+          "row": 2213,
+          "depth": 1,
+          "temperature": 25.6039,
+          "oxygen": 11.36206,
+          "density": 1016.0705,
+          "salinity": 25.5851
+        },
+        {
+          "row": 2214,
+          "depth": 1.25,
+          "temperature": 25.1144,
+          "oxygen": 10.89881,
+          "density": 1016.5456,
+          "salinity": 26.0235
+        },
+        {
+          "row": 2215,
+          "depth": 1.5,
+          "temperature": 25.0323,
+          "oxygen": 10.16241,
+          "density": 1016.6266,
+          "salinity": 26.0978
+        },
+        {
+          "row": 2216,
+          "depth": 1.75,
+          "temperature": 24.9849,
+          "oxygen": 9.70787,
+          "density": 1016.6751,
+          "salinity": 26.1423
+        },
+        {
+          "row": 2217,
+          "depth": 2,
+          "temperature": 24.9615,
+          "oxygen": 9.04301,
+          "density": 1016.7043,
+          "salinity": 26.1706
+        },
+        {
+          "row": 2218,
+          "depth": 2.25,
+          "temperature": 24.9266,
+          "oxygen": 8.16551,
+          "density": 1016.7473,
+          "salinity": 26.2128
+        },
+        {
+          "row": 2219,
+          "depth": 2.5,
+          "temperature": 24.8737,
+          "oxygen": 7.65791,
+          "density": 1016.8106,
+          "salinity": 26.2749
+        },
+        {
+          "row": 2220,
+          "depth": 2.75,
+          "temperature": 24.8248,
+          "oxygen": 7.58547,
+          "density": 1016.8688,
+          "salinity": 26.3319
+        }
+      ]
+    },
+    {
+      "date": "2014-08-20",
+      "metadataRow": 17,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "08:36:00",
+      "records": [
+        {
+          "row": 2322,
+          "depth": 0.25,
+          "temperature": 21.7245,
+          "oxygen": 7.94921,
+          "density": 1006.9902,
+          "salinity": 12.1207
+        },
+        {
+          "row": 2323,
+          "depth": 0.5,
+          "temperature": 21.9849,
+          "oxygen": 7.07859,
+          "density": 1009.1469,
+          "salinity": 15.0649
+        },
+        {
+          "row": 2324,
+          "depth": 0.75,
+          "temperature": 22.2547,
+          "oxygen": 8.87789,
+          "density": 1010.195,
+          "salinity": 16.5453
+        },
+        {
+          "row": 2325,
+          "depth": 1,
+          "temperature": 23.0573,
+          "oxygen": 11.02638,
+          "density": 1016.2484,
+          "salinity": 24.8536
+        },
+        {
+          "row": 2326,
+          "depth": 1.25,
+          "temperature": 22.8933,
+          "oxygen": 7.10622,
+          "density": 1017.0041,
+          "salinity": 25.795
+        },
+        {
+          "row": 2327,
+          "depth": 1.5,
+          "temperature": 22.7125,
+          "oxygen": 4.95436,
+          "density": 1018.4769,
+          "salinity": 27.6774
+        },
+        {
+          "row": 2328,
+          "depth": 1.75,
+          "temperature": 22.6345,
+          "oxygen": 4.27919,
+          "density": 1018.8174,
+          "salinity": 28.0978
+        },
+        {
+          "row": 2329,
+          "depth": 2,
+          "temperature": 22.5952,
+          "oxygen": 3.99931,
+          "density": 1018.9541,
+          "salinity": 28.2629
+        },
+        {
+          "row": 2330,
+          "depth": 2.25,
+          "temperature": 22.6,
+          "oxygen": 3.96132,
+          "density": 1018.942,
+          "salinity": 28.2472
+        },
+        {
+          "row": 2331,
+          "depth": 2.5,
+          "temperature": 22.5998,
+          "oxygen": 3.92073,
+          "density": 1018.9468,
+          "salinity": 28.2519
+        },
+        {
+          "row": 2332,
+          "depth": 2.75,
+          "temperature": 22.563,
+          "oxygen": 3.17181,
+          "density": 1018.9579,
+          "salinity": 28.2518
+        },
+        {
+          "row": 2333,
+          "depth": 3,
+          "temperature": 22.5811,
+          "oxygen": 3.24235,
+          "density": 1018.937,
+          "salinity": 28.2294
+        }
+      ]
+    },
+    {
+      "date": "2014-08-27",
+      "metadataRow": 18,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:55:00",
+      "records": [
+        {
+          "row": 2645,
+          "depth": 0.25,
+          "temperature": 25.4862,
+          "oxygen": 7.81257,
+          "density": 1007.5235,
+          "salinity": 14.1428
+        },
+        {
+          "row": 2646,
+          "depth": 0.5,
+          "temperature": 25.4704,
+          "oxygen": 7.71503,
+          "density": 1009.6627,
+          "salinity": 16.9921
+        },
+        {
+          "row": 2647,
+          "depth": 0.75,
+          "temperature": 24.5341,
+          "oxygen": 7.1694,
+          "density": 1018.137,
+          "salinity": 27.9181
+        },
+        {
+          "row": 2648,
+          "depth": 1,
+          "temperature": 23.7425,
+          "oxygen": 8.18893,
+          "density": 1018.5024,
+          "salinity": 28.0962
+        },
+        {
+          "row": 2649,
+          "depth": 1.25,
+          "temperature": 23.6966,
+          "oxygen": 8.02946,
+          "density": 1018.5667,
+          "salinity": 28.1627
+        },
+        {
+          "row": 2650,
+          "depth": 1.5,
+          "temperature": 23.6374,
+          "oxygen": 7.11701,
+          "density": 1018.6205,
+          "salinity": 28.2101
+        },
+        {
+          "row": 2651,
+          "depth": 1.75,
+          "temperature": 23.2922,
+          "oxygen": 5.82693,
+          "density": 1018.8871,
+          "salinity": 28.4326
+        },
+        {
+          "row": 2652,
+          "depth": 2,
+          "temperature": 23.001,
+          "oxygen": 5.08687,
+          "density": 1019.1048,
+          "salinity": 28.611
+        },
+        {
+          "row": 2653,
+          "depth": 2.25,
+          "temperature": 22.9141,
+          "oxygen": 4.7826,
+          "density": 1019.1993,
+          "salinity": 28.7026
+        },
+        {
+          "row": 2654,
+          "depth": 2.5,
+          "temperature": 22.8801,
+          "oxygen": 4.82824,
+          "density": 1019.254,
+          "salinity": 28.761
+        }
+      ]
+    },
+    {
+      "date": "2014-09-03",
+      "metadataRow": 19,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:30:00",
+      "records": [
+        {
+          "row": 2768,
+          "depth": 0.25,
+          "temperature": 24.2513,
+          "oxygen": 7.19496,
+          "density": 1017.3532,
+          "salinity": 26.7651
+        },
+        {
+          "row": 2769,
+          "depth": 0.5,
+          "temperature": 23.9929,
+          "oxygen": 6.30624,
+          "density": 1019.7542,
+          "salinity": 29.8522
+        },
+        {
+          "row": 2770,
+          "depth": 0.75,
+          "temperature": 23.8322,
+          "oxygen": 6.23288,
+          "density": 1019.9846,
+          "salinity": 30.0952
+        },
+        {
+          "row": 2771,
+          "depth": 1,
+          "temperature": 23.653,
+          "oxygen": 6.86042,
+          "density": 1020.0047,
+          "salinity": 30.0519
+        },
+        {
+          "row": 2772,
+          "depth": 1.25,
+          "temperature": 23.624,
+          "oxygen": 6.86636,
+          "density": 1020.013,
+          "salinity": 30.0504
+        },
+        {
+          "row": 2773,
+          "depth": 1.5,
+          "temperature": 23.5997,
+          "oxygen": 6.87495,
+          "density": 1020.0211,
+          "salinity": 30.0505
+        },
+        {
+          "row": 2774,
+          "depth": 1.75,
+          "temperature": 23.5845,
+          "oxygen": 6.8661,
+          "density": 1020.0285,
+          "salinity": 30.0531
+        },
+        {
+          "row": 2775,
+          "depth": 2,
+          "temperature": 23.5724,
+          "oxygen": 6.85891,
+          "density": 1020.035,
+          "salinity": 30.0557
+        },
+        {
+          "row": 2776,
+          "depth": 2.25,
+          "temperature": 23.5574,
+          "oxygen": 6.85291,
+          "density": 1020.0433,
+          "salinity": 30.0595
+        },
+        {
+          "row": 2777,
+          "depth": 2.5,
+          "temperature": 23.5375,
+          "oxygen": 6.81378,
+          "density": 1020.0554,
+          "salinity": 30.0665
+        },
+        {
+          "row": 2778,
+          "depth": 2.75,
+          "temperature": 23.5176,
+          "oxygen": 6.78005,
+          "density": 1020.0716,
+          "salinity": 30.079
+        },
+        {
+          "row": 2779,
+          "depth": 3,
+          "temperature": 23.4948,
+          "oxygen": 6.73326,
+          "density": 1020.0917,
+          "salinity": 30.0955
+        },
+        {
+          "row": 2780,
+          "depth": 3.25,
+          "temperature": 23.4683,
+          "oxygen": 6.70776,
+          "density": 1020.1135,
+          "salinity": 30.1129
+        },
+        {
+          "row": 2781,
+          "depth": 3.5,
+          "temperature": 23.4526,
+          "oxygen": 6.60394,
+          "density": 1020.1268,
+          "salinity": 30.1232
+        },
+        {
+          "row": 2782,
+          "depth": 3.75,
+          "temperature": 23.3936,
+          "oxygen": 6.23483,
+          "density": 1020.1693,
+          "salinity": 30.1557
+        },
+        {
+          "row": 2783,
+          "depth": 4,
+          "temperature": 23.3037,
+          "oxygen": 5.99848,
+          "density": 1020.2349,
+          "salinity": 30.2072
+        },
+        {
+          "row": 2784,
+          "depth": 4.25,
+          "temperature": 23.2683,
+          "oxygen": 5.83657,
+          "density": 1020.263,
+          "salinity": 30.2296
+        },
+        {
+          "row": 2785,
+          "depth": 4.5,
+          "temperature": 23.233,
+          "oxygen": 5.63634,
+          "density": 1020.295,
+          "salinity": 30.2572
+        }
+      ]
+    },
+    {
+      "date": "2014-09-10",
+      "metadataRow": 20,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:55:00",
+      "records": [
+        {
+          "row": 2974,
+          "depth": 0.25,
+          "temperature": 22.6867,
+          "oxygen": 7.97587,
+          "density": 1006.4465,
+          "salinity": 11.7117
+        },
+        {
+          "row": 2975,
+          "depth": 0.5,
+          "temperature": 22.0634,
+          "oxygen": 6.87713,
+          "density": 1010.7187,
+          "salinity": 17.1761
+        },
+        {
+          "row": 2976,
+          "depth": 0.75,
+          "temperature": 22.0723,
+          "oxygen": 5.38347,
+          "density": 1011.6416,
+          "salinity": 18.4023
+        },
+        {
+          "row": 2977,
+          "depth": 1,
+          "temperature": 22.3181,
+          "oxygen": 5.31282,
+          "density": 1011.3836,
+          "salinity": 18.1422
+        },
+        {
+          "row": 2978,
+          "depth": 1.25,
+          "temperature": 22.1451,
+          "oxygen": 5.25414,
+          "density": 1011.3132,
+          "salinity": 17.9883
+        },
+        {
+          "row": 2979,
+          "depth": 1.5,
+          "temperature": 22.1654,
+          "oxygen": 4.9245,
+          "density": 1011.3438,
+          "salinity": 18.0343
+        },
+        {
+          "row": 2980,
+          "depth": 1.75,
+          "temperature": 22.5552,
+          "oxygen": 4.39342,
+          "density": 1020.6377,
+          "salinity": 30.4785
+        }
+      ]
+    },
+    {
+      "date": "2014-09-17",
+      "metadataRow": 21,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "09:55:00",
+      "records": [
+        {
+          "row": 3140,
+          "depth": 0.25,
+          "temperature": 19.2982,
+          "oxygen": 8.35108,
+          "density": 1008.1844,
+          "salinity": 12.953
+        },
+        {
+          "row": 3141,
+          "depth": 0.5,
+          "temperature": 19.5695,
+          "oxygen": 7.17082,
+          "density": 1010.661,
+          "salinity": 16.3006
+        },
+        {
+          "row": 3142,
+          "depth": 0.75,
+          "temperature": 20.6804,
+          "oxygen": 6.05651,
+          "density": 1017.3392,
+          "salinity": 25.4695
+        },
+        {
+          "row": 3143,
+          "depth": 1,
+          "temperature": 21.184,
+          "oxygen": 5.89047,
+          "density": 1019.2973,
+          "salinity": 28.2199
+        },
+        {
+          "row": 3144,
+          "depth": 1.25,
+          "temperature": 21.2053,
+          "oxygen": 5.7868,
+          "density": 1019.5183,
+          "salinity": 28.5171
+        },
+        {
+          "row": 3145,
+          "depth": 1.5,
+          "temperature": 21.1304,
+          "oxygen": 5.62205,
+          "density": 1019.5935,
+          "salinity": 28.5887
+        },
+        {
+          "row": 3146,
+          "depth": 1.75,
+          "temperature": 20.996,
+          "oxygen": 5.48602,
+          "density": 1019.6666,
+          "salinity": 28.6371
+        },
+        {
+          "row": 3147,
+          "depth": 2,
+          "temperature": 20.882,
+          "oxygen": 5.42728,
+          "density": 1019.7083,
+          "salinity": 28.6512
+        },
+        {
+          "row": 3148,
+          "depth": 2.25,
+          "temperature": 20.8509,
+          "oxygen": 5.40591,
+          "density": 1019.7222,
+          "salinity": 28.6573
+        },
+        {
+          "row": 3149,
+          "depth": 2.5,
+          "temperature": 20.8405,
+          "oxygen": 5.35442,
+          "density": 1019.7284,
+          "salinity": 28.6604
+        },
+        {
+          "row": 3150,
+          "depth": 2.75,
+          "temperature": 20.8344,
+          "oxygen": 5.28712,
+          "density": 1019.7405,
+          "salinity": 28.6728
+        }
+      ]
+    },
+    {
+      "date": "2014-09-24",
+      "metadataRow": 22,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:45:00",
+      "records": [
+        {
+          "row": 3386,
+          "depth": 0.5,
+          "temperature": 18.6241,
+          "oxygen": 8.51238,
+          "density": 1011.1658,
+          "salinity": 16.6819
+        },
+        {
+          "row": 3387,
+          "depth": 0.75,
+          "temperature": 18.8245,
+          "oxygen": 7.37545,
+          "density": 1011.6949,
+          "salinity": 17.4385
+        },
+        {
+          "row": 3388,
+          "depth": 1,
+          "temperature": 20.4641,
+          "oxygen": 5.65406,
+          "density": 1019.1145,
+          "salinity": 27.7309
+        },
+        {
+          "row": 3389,
+          "depth": 1.25,
+          "temperature": 20.5415,
+          "oxygen": 6.3722,
+          "density": 1019.8291,
+          "salinity": 28.698
+        },
+        {
+          "row": 3390,
+          "depth": 1.5,
+          "temperature": 20.2981,
+          "oxygen": 5.77492,
+          "density": 1020.0046,
+          "salinity": 28.845
+        },
+        {
+          "row": 3391,
+          "depth": 1.75,
+          "temperature": 20.3298,
+          "oxygen": 5.39015,
+          "density": 1020.1164,
+          "salinity": 29.0013
+        },
+        {
+          "row": 3392,
+          "depth": 2,
+          "temperature": 20.2886,
+          "oxygen": 5.40399,
+          "density": 1020.1837,
+          "salinity": 29.0745
+        },
+        {
+          "row": 3393,
+          "depth": 2.25,
+          "temperature": 20.2715,
+          "oxygen": 5.51122,
+          "density": 1020.1848,
+          "salinity": 29.0687
+        }
+      ]
+    },
+    {
+      "date": "2014-10-01",
+      "metadataRow": 23,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "12:56:00",
+      "records": [
+        {
+          "row": 3502,
+          "depth": 0.25,
+          "temperature": 17.462,
+          "oxygen": 8.59209,
+          "density": 1009.8846,
+          "salinity": 14.6755
+        },
+        {
+          "row": 3503,
+          "depth": 0.5,
+          "temperature": 17.8675,
+          "oxygen": 7.7492,
+          "density": 1012.9283,
+          "salinity": 18.7838
+        },
+        {
+          "row": 3504,
+          "depth": 0.75,
+          "temperature": 18.0659,
+          "oxygen": 5.59307,
+          "density": 1014.9273,
+          "salinity": 21.4666
+        },
+        {
+          "row": 3505,
+          "depth": 1,
+          "temperature": 18.5989,
+          "oxygen": 5.61532,
+          "density": 1017.4976,
+          "salinity": 25.002
+        },
+        {
+          "row": 3506,
+          "depth": 1.25,
+          "temperature": 18.8586,
+          "oxygen": 5.30729,
+          "density": 1018.9215,
+          "salinity": 26.9517
+        },
+        {
+          "row": 3507,
+          "depth": 1.5,
+          "temperature": 18.9728,
+          "oxygen": 5.35362,
+          "density": 1019.955,
+          "salinity": 28.3433
+        },
+        {
+          "row": 3508,
+          "depth": 1.75,
+          "temperature": 18.9151,
+          "oxygen": 5.4977,
+          "density": 1020.2118,
+          "salinity": 28.6603
+        },
+        {
+          "row": 3509,
+          "depth": 2,
+          "temperature": 18.8552,
+          "oxygen": 5.50661,
+          "density": 1020.3131,
+          "salinity": 28.7727
+        },
+        {
+          "row": 3510,
+          "depth": 2.25,
+          "temperature": 18.8555,
+          "oxygen": 5.49645,
+          "density": 1020.324,
+          "salinity": 28.7856
+        },
+        {
+          "row": 3511,
+          "depth": 2.5,
+          "temperature": 18.8524,
+          "oxygen": 5.40585,
+          "density": 1020.3325,
+          "salinity": 28.7943
+        },
+        {
+          "row": 3512,
+          "depth": 2.75,
+          "temperature": 18.8325,
+          "oxygen": 5.34978,
+          "density": 1020.3414,
+          "salinity": 28.7982
+        },
+        {
+          "row": 3513,
+          "depth": 3,
+          "temperature": 18.8155,
+          "oxygen": 5.28575,
+          "density": 1020.3486,
+          "salinity": 28.8007
+        },
+        {
+          "row": 3514,
+          "depth": 3.25,
+          "temperature": 18.806,
+          "oxygen": 5.18035,
+          "density": 1020.3576,
+          "salinity": 28.808
+        },
+        {
+          "row": 3515,
+          "depth": 3.5,
+          "temperature": 18.8033,
+          "oxygen": 5.10858,
+          "density": 1020.3667,
+          "salinity": 28.8177
+        },
+        {
+          "row": 3516,
+          "depth": 3.75,
+          "temperature": 18.8013,
+          "oxygen": 5.21203,
+          "density": 1020.3729,
+          "salinity": 28.8237
+        },
+        {
+          "row": 3517,
+          "depth": 3.5,
+          "temperature": 18.8561,
+          "oxygen": 5.17989,
+          "density": 1020.3831,
+          "salinity": 28.856
+        }
+      ]
+    },
+    {
+      "date": "2014-10-08",
+      "metadataRow": 24,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "14:53:00",
+      "records": [
+        {
+          "row": 3820,
+          "depth": 0.25,
+          "temperature": 18.1384,
+          "oxygen": 7.44516,
+          "density": 1009.2152,
+          "salinity": 13.979
+        },
+        {
+          "row": 3821,
+          "depth": 0.5,
+          "temperature": 18.3283,
+          "oxygen": 6.7489,
+          "density": 1011.6904,
+          "salinity": 17.2885
+        },
+        {
+          "row": 3822,
+          "depth": 0.75,
+          "temperature": 18.7738,
+          "oxygen": 5.54368,
+          "density": 1019.7023,
+          "salinity": 27.9536
+        },
+        {
+          "row": 3823,
+          "depth": 1,
+          "temperature": 18.8116,
+          "oxygen": 7.13754,
+          "density": 1020.5089,
+          "salinity": 29.0214
+        },
+        {
+          "row": 3824,
+          "depth": 1.25,
+          "temperature": 18.8086,
+          "oxygen": 7.06498,
+          "density": 1020.6576,
+          "salinity": 29.2141
+        },
+        {
+          "row": 3825,
+          "depth": 1.5,
+          "temperature": 18.7857,
+          "oxygen": 6.98526,
+          "density": 1020.7684,
+          "salinity": 29.3506
+        },
+        {
+          "row": 3826,
+          "depth": 1.75,
+          "temperature": 18.7663,
+          "oxygen": 6.96244,
+          "density": 1020.839,
+          "salinity": 29.4355
+        },
+        {
+          "row": 3827,
+          "depth": 2,
+          "temperature": 18.7585,
+          "oxygen": 6.90284,
+          "density": 1020.8589,
+          "salinity": 29.4576
+        },
+        {
+          "row": 3828,
+          "depth": 2.25,
+          "temperature": 18.7457,
+          "oxygen": 6.86997,
+          "density": 1020.8972,
+          "salinity": 29.5023
+        },
+        {
+          "row": 3829,
+          "depth": 2.5,
+          "temperature": 18.7401,
+          "oxygen": 6.86413,
+          "density": 1020.911,
+          "salinity": 29.5172
+        },
+        {
+          "row": 3830,
+          "depth": 2.75,
+          "temperature": 18.7417,
+          "oxygen": 6.87241,
+          "density": 1020.9116,
+          "salinity": 29.5169
+        },
+        {
+          "row": 3831,
+          "depth": 2.5,
+          "temperature": 18.7401,
+          "oxygen": 6.86413,
+          "density": 1020.911,
+          "salinity": 29.5172
+        },
+        {
+          "row": 3832,
+          "depth": 2.75,
+          "temperature": 18.7417,
+          "oxygen": 6.87241,
+          "density": 1020.9116,
+          "salinity": 29.5169
+        }
+      ]
+    },
+    {
+      "date": "2014-10-15",
+      "metadataRow": 25,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "13:41:00",
+      "records": [
+        {
+          "row": 3987,
+          "depth": 0.25,
+          "temperature": 18.1137,
+          "oxygen": 8.84636,
+          "density": 1005.6738,
+          "salinity": 9.3111
+        },
+        {
+          "row": 3988,
+          "depth": 0.5,
+          "temperature": 17.8133,
+          "oxygen": 7.72436,
+          "density": 1007.2033,
+          "salinity": 11.2413
+        },
+        {
+          "row": 3989,
+          "depth": 0.75,
+          "temperature": 18.51,
+          "oxygen": 6.37143,
+          "density": 1016.1287,
+          "salinity": 23.178
+        },
+        {
+          "row": 3990,
+          "depth": 1,
+          "temperature": 17.9526,
+          "oxygen": 7.47253,
+          "density": 1019.0561,
+          "salinity": 26.8483
+        },
+        {
+          "row": 3991,
+          "depth": 1.25,
+          "temperature": 17.6625,
+          "oxygen": 7.14851,
+          "density": 1020.0038,
+          "salinity": 27.9997
+        },
+        {
+          "row": 3992,
+          "depth": 1.5,
+          "temperature": 17.5334,
+          "oxygen": 7.12359,
+          "density": 1020.4138,
+          "salinity": 28.4957
+        },
+        {
+          "row": 3993,
+          "depth": 1.75,
+          "temperature": 17.5154,
+          "oxygen": 7.12544,
+          "density": 1020.5278,
+          "salinity": 28.6379
+        },
+        {
+          "row": 3994,
+          "depth": 2,
+          "temperature": 17.5138,
+          "oxygen": 7.12863,
+          "density": 1020.5691,
+          "salinity": 28.69
+        },
+        {
+          "row": 3995,
+          "depth": 2.25,
+          "temperature": 17.5144,
+          "oxygen": 7.13062,
+          "density": 1020.5875,
+          "salinity": 28.7127
+        },
+        {
+          "row": 3996,
+          "depth": 2.5,
+          "temperature": 17.5156,
+          "oxygen": 7.1423,
+          "density": 1020.6069,
+          "salinity": 28.7371
+        },
+        {
+          "row": 3997,
+          "depth": 2.75,
+          "temperature": 17.5112,
+          "oxygen": 7.12441,
+          "density": 1020.6523,
+          "salinity": 28.7936
+        },
+        {
+          "row": 3998,
+          "depth": 3,
+          "temperature": 17.5007,
+          "oxygen": 7.0808,
+          "density": 1020.6865,
+          "salinity": 28.8338
+        },
+        {
+          "row": 3999,
+          "depth": 3.25,
+          "temperature": 17.4907,
+          "oxygen": 7.05812,
+          "density": 1020.7088,
+          "salinity": 28.8585
+        },
+        {
+          "row": 4000,
+          "depth": 3.5,
+          "temperature": 17.4774,
+          "oxygen": 7.02806,
+          "density": 1020.7393,
+          "salinity": 28.8928
+        },
+        {
+          "row": 4001,
+          "depth": 3.75,
+          "temperature": 17.4619,
+          "oxygen": 7.01639,
+          "density": 1020.782,
+          "salinity": 28.9426
+        },
+        {
+          "row": 4002,
+          "depth": 3.5,
+          "temperature": 17.4726,
+          "oxygen": 7.03508,
+          "density": 1020.7629,
+          "salinity": 28.9222
+        },
+        {
+          "row": 4003,
+          "depth": 3.25,
+          "temperature": 17.488,
+          "oxygen": 7.06628,
+          "density": 1020.7135,
+          "salinity": 28.8637
+        }
+      ]
+    },
+    {
+      "date": "2014-10-29",
+      "metadataRow": 26,
+      "mark": "X",
+      "note": null,
+      "year": 2014,
+      "clock": "10:35:00",
+      "records": [
+        {
+          "row": 4174,
+          "depth": 0.25,
+          "temperature": 14.9731,
+          "oxygen": 8.04838,
+          "density": 1010.3874,
+          "salinity": 14.6987
+        },
+        {
+          "row": 4175,
+          "depth": 0.5,
+          "temperature": 14.9852,
+          "oxygen": 6.8293,
+          "density": 1012.1649,
+          "salinity": 17.0209
+        },
+        {
+          "row": 4176,
+          "depth": 0.75,
+          "temperature": 15.3395,
+          "oxygen": 4.53932,
+          "density": 1018.8584,
+          "salinity": 25.8423
+        },
+        {
+          "row": 4177,
+          "depth": 1,
+          "temperature": 15.3753,
+          "oxygen": 4.08027,
+          "density": 1017.2175,
+          "salinity": 23.7103
+        },
+        {
+          "row": 4178,
+          "depth": 1.25,
+          "temperature": 15.3766,
+          "oxygen": 5.51099,
+          "density": 1017.2694,
+          "salinity": 23.7768
+        },
+        {
+          "row": 4179,
+          "depth": 1.5,
+          "temperature": 15.3279,
+          "oxygen": 6.7577,
+          "density": 1019.102,
+          "salinity": 26.1511
+        },
+        {
+          "row": 4180,
+          "depth": 1.75,
+          "temperature": 15.2999,
+          "oxygen": 6.86006,
+          "density": 1020.2487,
+          "salinity": 27.6359
+        },
+        {
+          "row": 4181,
+          "depth": 2,
+          "temperature": 15.3039,
+          "oxygen": 6.90539,
+          "density": 1020.3523,
+          "salinity": 27.7704
+        },
+        {
+          "row": 4182,
+          "depth": 2.25,
+          "temperature": 15.2993,
+          "oxygen": 6.88713,
+          "density": 1020.38,
+          "salinity": 27.8039
+        },
+        {
+          "row": 4183,
+          "depth": 2.5,
+          "temperature": 15.2909,
+          "oxygen": 6.79998,
+          "density": 1020.5485,
+          "salinity": 28.0195
+        },
+        {
+          "row": 4184,
+          "depth": 2.75,
+          "temperature": 15.2872,
+          "oxygen": 6.75857,
+          "density": 1020.6844,
+          "salinity": 28.1939
+        },
+        {
+          "row": 4185,
+          "depth": 3,
+          "temperature": 15.2838,
+          "oxygen": 6.73647,
+          "density": 1020.7431,
+          "salinity": 28.2679
+        },
+        {
+          "row": 4186,
+          "depth": 3.25,
+          "temperature": 15.2835,
+          "oxygen": 6.72371,
+          "density": 1020.7633,
+          "salinity": 28.2926
+        },
+        {
+          "row": 4187,
+          "depth": 3.5,
+          "temperature": 15.2853,
+          "oxygen": 6.71303,
+          "density": 1020.783,
+          "salinity": 28.3173
+        },
+        {
+          "row": 4188,
+          "depth": 3.75,
+          "temperature": 15.2872,
+          "oxygen": 6.70696,
+          "density": 1020.7877,
+          "salinity": 28.3225
+        },
+        {
+          "row": 4189,
+          "depth": 4,
+          "temperature": 15.2946,
+          "oxygen": 6.71073,
+          "density": 1020.8163,
+          "salinity": 28.3603
+        }
+      ]
+    },
+    {
+      "date": "2016-04-20",
+      "metadataRow": 4,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:50:00",
+      "records": [
+        {
+          "row": 104,
+          "depth": 1,
+          "temperature": 11.6161,
+          "oxygen": 9.63454,
+          "density": 1009.4524,
+          "salinity": 12.777
+        },
+        {
+          "row": 105,
+          "depth": 1.25,
+          "temperature": 11.4433,
+          "oxygen": 10.24091,
+          "density": 1011.3188,
+          "salinity": 15.1579
+        },
+        {
+          "row": 106,
+          "depth": 1.5,
+          "temperature": 10.7427,
+          "oxygen": 10.04579,
+          "density": 1016.5962,
+          "salinity": 21.8384
+        },
+        {
+          "row": 107,
+          "depth": 1.75,
+          "temperature": 10.1763,
+          "oxygen": 9.97773,
+          "density": 1018.2283,
+          "salinity": 23.8295
+        },
+        {
+          "row": 108,
+          "depth": 2,
+          "temperature": 10.0672,
+          "oxygen": 10.14997,
+          "density": 1018.3308,
+          "salinity": 23.9389
+        },
+        {
+          "row": 109,
+          "depth": 2.25,
+          "temperature": 10.0221,
+          "oxygen": 10.01493,
+          "density": 1018.4016,
+          "salinity": 24.0199
+        },
+        {
+          "row": 110,
+          "depth": 2.5,
+          "temperature": 10.0713,
+          "oxygen": 9.75668,
+          "density": 1018.5336,
+          "salinity": 24.1975
+        },
+        {
+          "row": 111,
+          "depth": 2.75,
+          "temperature": 10.1101,
+          "oxygen": 9.88191,
+          "density": 1018.7433,
+          "salinity": 24.4731
+        },
+        {
+          "row": 112,
+          "depth": 3,
+          "temperature": 9.9976,
+          "oxygen": 9.66469,
+          "density": 1019.6408,
+          "salinity": 25.6035
+        },
+        {
+          "row": 113,
+          "depth": 3.25,
+          "temperature": 9.6735,
+          "oxygen": 9.32196,
+          "density": 1020.7946,
+          "salinity": 27.0209
+        },
+        {
+          "row": 114,
+          "depth": 3.5,
+          "temperature": 9.3985,
+          "oxygen": 9.36838,
+          "density": 1021.5336,
+          "salinity": 27.9144
+        }
+      ]
+    },
+    {
+      "date": "2016-04-27",
+      "metadataRow": 5,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "09:00:00",
+      "records": [
+        {
+          "row": 202,
+          "depth": 0.75,
+          "temperature": 11.7781,
+          "oxygen": 7.32544,
+          "density": 1007.4813,
+          "salinity": 10.2569
+        },
+        {
+          "row": 203,
+          "depth": 1,
+          "temperature": 11.6066,
+          "oxygen": 7.50534,
+          "density": 1008.2283,
+          "salinity": 11.1917
+        },
+        {
+          "row": 204,
+          "depth": 1.25,
+          "temperature": 11.44,
+          "oxygen": 7.47321,
+          "density": 1010.4323,
+          "salinity": 14.011
+        },
+        {
+          "row": 205,
+          "depth": 1.5,
+          "temperature": 11.2088,
+          "oxygen": 7.2519,
+          "density": 1012.5654,
+          "salinity": 16.7242
+        },
+        {
+          "row": 206,
+          "depth": 1.75,
+          "temperature": 11.1199,
+          "oxygen": 7.09528,
+          "density": 1014.2771,
+          "salinity": 18.9171
+        },
+        {
+          "row": 207,
+          "depth": 2,
+          "temperature": 11.0927,
+          "oxygen": 7.01574,
+          "density": 1015.7458,
+          "salinity": 20.8065
+        },
+        {
+          "row": 208,
+          "depth": 2.25,
+          "temperature": 11.0641,
+          "oxygen": 6.69612,
+          "density": 1016.2212,
+          "salinity": 21.4129
+        },
+        {
+          "row": 209,
+          "depth": 2.5,
+          "temperature": 11.0183,
+          "oxygen": 6.78742,
+          "density": 1016.6716,
+          "salinity": 21.9835
+        },
+        {
+          "row": 210,
+          "depth": 2.75,
+          "temperature": 10.9969,
+          "oxygen": 6.79845,
+          "density": 1017.0842,
+          "salinity": 22.5099
+        },
+        {
+          "row": 211,
+          "depth": 3,
+          "temperature": 11.0358,
+          "oxygen": 6.79878,
+          "density": 1017.5497,
+          "salinity": 23.1167
+        },
+        {
+          "row": 212,
+          "depth": 3.25,
+          "temperature": 11.0513,
+          "oxygen": 7.13329,
+          "density": 1017.853,
+          "salinity": 23.5094
+        }
+      ]
+    },
+    {
+      "date": "2016-05-04",
+      "metadataRow": 6,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:02:00",
+      "records": [
+        {
+          "row": 487,
+          "depth": 0.75,
+          "temperature": 12.1923,
+          "oxygen": 9.59696,
+          "density": 1005.2716,
+          "salinity": 7.4695
+        },
+        {
+          "row": 488,
+          "depth": 1,
+          "temperature": 11.9175,
+          "oxygen": 8.9708,
+          "density": 1010.5255,
+          "salinity": 14.2211
+        },
+        {
+          "row": 489,
+          "depth": 1.25,
+          "temperature": 11.6428,
+          "oxygen": 8.3238,
+          "density": 1014.9607,
+          "salinity": 19.9059
+        },
+        {
+          "row": 490,
+          "depth": 1.5,
+          "temperature": 11.535,
+          "oxygen": 8.09913,
+          "density": 1016.3459,
+          "salinity": 21.6731
+        },
+        {
+          "row": 491,
+          "depth": 1.75,
+          "temperature": 11.443,
+          "oxygen": 7.85167,
+          "density": 1017.6316,
+          "salinity": 23.313
+        },
+        {
+          "row": 492,
+          "depth": 2,
+          "temperature": 11.3539,
+          "oxygen": 7.39065,
+          "density": 1019.05,
+          "salinity": 25.1235
+        },
+        {
+          "row": 493,
+          "depth": 2.25,
+          "temperature": 11.3382,
+          "oxygen": 7.23414,
+          "density": 1019.7108,
+          "salinity": 25.9712
+        }
+      ]
+    },
+    {
+      "date": "2016-05-11",
+      "metadataRow": 7,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:48:00",
+      "records": [
+        {
+          "row": 509,
+          "depth": 0.75,
+          "temperature": 12.5137,
+          "oxygen": 6.66088,
+          "density": 1017.0753,
+          "salinity": 22.8302
+        },
+        {
+          "row": 510,
+          "depth": 1,
+          "temperature": 12.2641,
+          "oxygen": 7.65749,
+          "density": 1017.1619,
+          "salinity": 22.8859
+        },
+        {
+          "row": 511,
+          "depth": 1.25,
+          "temperature": 12.1751,
+          "oxygen": 7.28177,
+          "density": 1017.2135,
+          "salinity": 22.9317
+        },
+        {
+          "row": 512,
+          "depth": 1.5,
+          "temperature": 12.1627,
+          "oxygen": 7.20588,
+          "density": 1017.2283,
+          "salinity": 22.9467
+        },
+        {
+          "row": 513,
+          "depth": 1.75,
+          "temperature": 12.1712,
+          "oxygen": 7.12582,
+          "density": 1017.2487,
+          "salinity": 22.9734
+        },
+        {
+          "row": 514,
+          "depth": 2,
+          "temperature": 12.1976,
+          "oxygen": 7.0724,
+          "density": 1017.3305,
+          "salinity": 23.0836
+        },
+        {
+          "row": 515,
+          "depth": 2.25,
+          "temperature": 12.2214,
+          "oxygen": 7.02513,
+          "density": 1017.5403,
+          "salinity": 23.3587
+        },
+        {
+          "row": 516,
+          "depth": 2.5,
+          "temperature": 12.1914,
+          "oxygen": 6.89785,
+          "density": 1017.7825,
+          "salinity": 23.664
+        },
+        {
+          "row": 517,
+          "depth": 2.75,
+          "temperature": 12.0461,
+          "oxygen": 7.09838,
+          "density": 1018.1671,
+          "salinity": 24.128
+        },
+        {
+          "row": 518,
+          "depth": 3,
+          "temperature": 11.9359,
+          "oxygen": 7.14399,
+          "density": 1018.6396,
+          "salinity": 24.7132
+        },
+        {
+          "row": 519,
+          "depth": 3.25,
+          "temperature": 11.7735,
+          "oxygen": 7.3282,
+          "density": 1019.4122,
+          "salinity": 25.6741
+        },
+        {
+          "row": 520,
+          "depth": 3.5,
+          "temperature": 11.4527,
+          "oxygen": 7.62203,
+          "density": 1020.3241,
+          "salinity": 26.7794
+        },
+        {
+          "row": 521,
+          "depth": 3.75,
+          "temperature": 11.2366,
+          "oxygen": 7.69183,
+          "density": 1020.9931,
+          "salinity": 27.5934
+        },
+        {
+          "row": 522,
+          "depth": 4,
+          "temperature": 11.1276,
+          "oxygen": 7.46943,
+          "density": 1021.2561,
+          "salinity": 27.9072
+        },
+        {
+          "row": 523,
+          "depth": 4.25,
+          "temperature": 10.9397,
+          "oxygen": 6.5803,
+          "density": 1021.6876,
+          "salinity": 28.4208
+        }
+      ]
+    },
+    {
+      "date": "2016-05-25",
+      "metadataRow": 8,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "10:25:00",
+      "records": [
+        {
+          "row": 708,
+          "depth": 0.75,
+          "temperature": 15.3624,
+          "oxygen": 8.76991,
+          "density": 1017.5685,
+          "salinity": 24.1663
+        },
+        {
+          "row": 709,
+          "depth": 1,
+          "temperature": 15.202,
+          "oxygen": 8.9097,
+          "density": 1018.2677,
+          "salinity": 25.0335
+        },
+        {
+          "row": 710,
+          "depth": 1.25,
+          "temperature": 14.9613,
+          "oxygen": 9.43342,
+          "density": 1018.8663,
+          "salinity": 25.7481
+        },
+        {
+          "row": 711,
+          "depth": 1.5,
+          "temperature": 14.7394,
+          "oxygen": 9.20243,
+          "density": 1019.4773,
+          "salinity": 26.4836
+        },
+        {
+          "row": 712,
+          "depth": 1.75,
+          "temperature": 14.5983,
+          "oxygen": 8.83,
+          "density": 1019.7612,
+          "salinity": 26.8145
+        },
+        {
+          "row": 713,
+          "depth": 2,
+          "temperature": 14.4514,
+          "oxygen": 8.84926,
+          "density": 1020.0677,
+          "salinity": 27.1732
+        },
+        {
+          "row": 714,
+          "depth": 2.25,
+          "temperature": 14.3746,
+          "oxygen": 8.79885,
+          "density": 1020.2281,
+          "salinity": 27.3602
+        },
+        {
+          "row": 715,
+          "depth": 2.5,
+          "temperature": 14.3527,
+          "oxygen": 8.74619,
+          "density": 1020.276,
+          "salinity": 27.4152
+        },
+        {
+          "row": 716,
+          "depth": 2.75,
+          "temperature": 14.3293,
+          "oxygen": 8.58238,
+          "density": 1020.3231,
+          "salinity": 27.469
+        },
+        {
+          "row": 717,
+          "depth": 3,
+          "temperature": 14.282,
+          "oxygen": 8.19426,
+          "density": 1020.4144,
+          "salinity": 27.5738
+        },
+        {
+          "row": 718,
+          "depth": 3.25,
+          "temperature": 14.1662,
+          "oxygen": 7.84805,
+          "density": 1020.6356,
+          "salinity": 27.8297
+        },
+        {
+          "row": 719,
+          "depth": 3.5,
+          "temperature": 14.1127,
+          "oxygen": 7.78104,
+          "density": 1020.7322,
+          "salinity": 27.9399
+        },
+        {
+          "row": 720,
+          "depth": 3.75,
+          "temperature": 14.1011,
+          "oxygen": 7.75292,
+          "density": 1020.752,
+          "salinity": 27.961
+        },
+        {
+          "row": 721,
+          "depth": 4,
+          "temperature": 14.0982,
+          "oxygen": 7.75117,
+          "density": 1020.7598,
+          "salinity": 27.9691
+        }
+      ]
+    },
+    {
+      "date": "2016-06-02",
+      "metadataRow": 9,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:38:00",
+      "records": [
+        {
+          "row": 964,
+          "depth": 1,
+          "temperature": 20.3011,
+          "oxygen": 11.09221,
+          "density": 1012.6014,
+          "salinity": 19.0873
+        },
+        {
+          "row": 965,
+          "depth": 1.25,
+          "temperature": 19.9616,
+          "oxygen": 9.8826,
+          "density": 1013.9267,
+          "salinity": 20.7271
+        },
+        {
+          "row": 966,
+          "depth": 1.5,
+          "temperature": 19.7202,
+          "oxygen": 9.47505,
+          "density": 1014.6096,
+          "salinity": 21.5496
+        },
+        {
+          "row": 967,
+          "depth": 1.75,
+          "temperature": 19.5812,
+          "oxygen": 9.11608,
+          "density": 1014.9071,
+          "salinity": 21.8964
+        },
+        {
+          "row": 968,
+          "depth": 2,
+          "temperature": 19.4958,
+          "oxygen": 8.91699,
+          "density": 1015.0885,
+          "salinity": 22.1069
+        },
+        {
+          "row": 969,
+          "depth": 2.25,
+          "temperature": 19.4638,
+          "oxygen": 8.61143,
+          "density": 1015.213,
+          "salinity": 22.2595
+        },
+        {
+          "row": 970,
+          "depth": 2.5,
+          "temperature": 19.4619,
+          "oxygen": 8.31818,
+          "density": 1015.4053,
+          "salinity": 22.5107
+        },
+        {
+          "row": 971,
+          "depth": 2.75,
+          "temperature": 19.4951,
+          "oxygen": 8.07892,
+          "density": 1015.6118,
+          "salinity": 22.7916
+        },
+        {
+          "row": 972,
+          "depth": 3,
+          "temperature": 19.533,
+          "oxygen": 7.85962,
+          "density": 1015.7515,
+          "salinity": 22.9862
+        },
+        {
+          "row": 973,
+          "depth": 3.25,
+          "temperature": 19.5621,
+          "oxygen": 8.24265,
+          "density": 1015.8878,
+          "salinity": 23.1734
+        }
+      ]
+    },
+    {
+      "date": "2016-06-09",
+      "metadataRow": 10,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "09:25:00",
+      "records": [
+        {
+          "row": 1073,
+          "depth": 0.75,
+          "temperature": 19.5769,
+          "oxygen": 7.59839,
+          "density": 1014.8862,
+          "salinity": 21.8733
+        },
+        {
+          "row": 1074,
+          "depth": 1,
+          "temperature": 19.6256,
+          "oxygen": 6.82369,
+          "density": 1015.298,
+          "salinity": 22.4299
+        },
+        {
+          "row": 1075,
+          "depth": 1.25,
+          "temperature": 19.4422,
+          "oxygen": 5.50167,
+          "density": 1016.5581,
+          "salinity": 24.0295
+        },
+        {
+          "row": 1076,
+          "depth": 1.5,
+          "temperature": 18.7846,
+          "oxygen": 5.18357,
+          "density": 1017.7585,
+          "salinity": 25.3995
+        },
+        {
+          "row": 1077,
+          "depth": 1.75,
+          "temperature": 18.5787,
+          "oxygen": 5.11524,
+          "density": 1018.1007,
+          "salinity": 25.7832
+        },
+        {
+          "row": 1078,
+          "depth": 2,
+          "temperature": 18.5509,
+          "oxygen": 5.16057,
+          "density": 1018.1839,
+          "salinity": 25.8823
+        },
+        {
+          "row": 1079,
+          "depth": 2.25,
+          "temperature": 18.5256,
+          "oxygen": 5.19926,
+          "density": 1018.2228,
+          "salinity": 25.9241
+        }
+      ]
+    },
+    {
+      "date": "2016-06-16",
+      "metadataRow": 11,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:00:00",
+      "records": [
+        {
+          "row": 1324,
+          "depth": 1,
+          "temperature": 20.5048,
+          "oxygen": 10.81388,
+          "density": 1018.2145,
+          "salinity": 26.5603
+        },
+        {
+          "row": 1325,
+          "depth": 1.25,
+          "temperature": 20.3669,
+          "oxygen": 11.60542,
+          "density": 1018.5761,
+          "salinity": 26.9889
+        },
+        {
+          "row": 1326,
+          "depth": 1.5,
+          "temperature": 19.9684,
+          "oxygen": 10.74906,
+          "density": 1019.26,
+          "salinity": 27.7551
+        },
+        {
+          "row": 1327,
+          "depth": 1.75,
+          "temperature": 19.3055,
+          "oxygen": 10.75837,
+          "density": 1019.8741,
+          "salinity": 28.3431
+        },
+        {
+          "row": 1328,
+          "depth": 2,
+          "temperature": 19.2247,
+          "oxygen": 10.75681,
+          "density": 1019.9288,
+          "salinity": 28.3872
+        },
+        {
+          "row": 1329,
+          "depth": 2.25,
+          "temperature": 19.2088,
+          "oxygen": 10.71235,
+          "density": 1019.9388,
+          "salinity": 28.3937
+        },
+        {
+          "row": 1330,
+          "depth": 2.5,
+          "temperature": 19.1631,
+          "oxygen": 10.41397,
+          "density": 1019.9686,
+          "salinity": 28.4167
+        },
+        {
+          "row": 1331,
+          "depth": 2.75,
+          "temperature": 19.0815,
+          "oxygen": 10.33526,
+          "density": 1020.0236,
+          "salinity": 28.4611
+        },
+        {
+          "row": 1332,
+          "depth": 3,
+          "temperature": 19.0456,
+          "oxygen": 9.9766,
+          "density": 1020.0521,
+          "salinity": 28.4854
+        },
+        {
+          "row": 1333,
+          "depth": 3.25,
+          "temperature": 18.9628,
+          "oxygen": 9.92991,
+          "density": 1020.1165,
+          "salinity": 28.5419
+        }
+      ]
+    },
+    {
+      "date": "2016-06-22",
+      "metadataRow": 12,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "10:00:00",
+      "records": [
+        {
+          "row": 1399,
+          "depth": 0.75,
+          "temperature": 21.7362,
+          "oxygen": 9.76087,
+          "density": 1016.3261,
+          "salinity": 24.4896
+        },
+        {
+          "row": 1400,
+          "depth": 1,
+          "temperature": 21.8478,
+          "oxygen": 8.74432,
+          "density": 1016.4292,
+          "salinity": 24.6634
+        },
+        {
+          "row": 1401,
+          "depth": 1.25,
+          "temperature": 21.857,
+          "oxygen": 8.23827,
+          "density": 1016.8347,
+          "salinity": 25.2014
+        },
+        {
+          "row": 1402,
+          "depth": 1.5,
+          "temperature": 21.8674,
+          "oxygen": 7.82929,
+          "density": 1017.025,
+          "salinity": 25.4551
+        },
+        {
+          "row": 1403,
+          "depth": 1.75,
+          "temperature": 21.8592,
+          "oxygen": 7.20947,
+          "density": 1017.2184,
+          "salinity": 25.7065
+        },
+        {
+          "row": 1404,
+          "depth": 2,
+          "temperature": 21.8575,
+          "oxygen": 6.93887,
+          "density": 1017.3696,
+          "salinity": 25.9043
+        },
+        {
+          "row": 1405,
+          "depth": 2.25,
+          "temperature": 21.8497,
+          "oxygen": 6.83668,
+          "density": 1017.4863,
+          "salinity": 26.0544
+        },
+        {
+          "row": 1406,
+          "depth": 2.5,
+          "temperature": 21.8443,
+          "oxygen": 6.37926,
+          "density": 1017.5579,
+          "salinity": 26.1456
+        },
+        {
+          "row": 1407,
+          "depth": 2.75,
+          "temperature": 21.8306,
+          "oxygen": 6.32539,
+          "density": 1017.801,
+          "salinity": 26.4605
+        },
+        {
+          "row": 1408,
+          "depth": 3,
+          "temperature": 21.8172,
+          "oxygen": 6.25563,
+          "density": 1017.9857,
+          "salinity": 26.6983
+        },
+        {
+          "row": 1409,
+          "depth": 3.25,
+          "temperature": 21.7962,
+          "oxygen": 5.9271,
+          "density": 1018.1207,
+          "salinity": 26.8679
+        },
+        {
+          "row": 1410,
+          "depth": 3.5,
+          "temperature": 21.6316,
+          "oxygen": 5.45845,
+          "density": 1018.5265,
+          "salinity": 27.3444
+        }
+      ]
+    },
+    {
+      "date": "2016-06-29",
+      "metadataRow": 13,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:00:00",
+      "records": [
+        {
+          "row": 1585,
+          "depth": 1,
+          "temperature": 23.7282,
+          "oxygen": 7.10248,
+          "density": 1015.552,
+          "salinity": 24.1775
+        },
+        {
+          "row": 1586,
+          "depth": 1.25,
+          "temperature": 23.4931,
+          "oxygen": 6.84869,
+          "density": 1016.6199,
+          "salinity": 25.506
+        },
+        {
+          "row": 1587,
+          "depth": 1.5,
+          "temperature": 23.4049,
+          "oxygen": 6.86507,
+          "density": 1017.1474,
+          "salinity": 26.1714
+        },
+        {
+          "row": 1588,
+          "depth": 1.75,
+          "temperature": 23.42,
+          "oxygen": 6.86829,
+          "density": 1017.2928,
+          "salinity": 26.3682
+        },
+        {
+          "row": 1589,
+          "depth": 2,
+          "temperature": 23.4316,
+          "oxygen": 6.87067,
+          "density": 1017.3389,
+          "salinity": 26.4321
+        },
+        {
+          "row": 1590,
+          "depth": 2.25,
+          "temperature": 23.4405,
+          "oxygen": 6.9297,
+          "density": 1017.3557,
+          "salinity": 26.4562
+        },
+        {
+          "row": 1591,
+          "depth": 2.5,
+          "temperature": 23.4615,
+          "oxygen": 7.01797,
+          "density": 1017.373,
+          "salinity": 26.4855
+        },
+        {
+          "row": 1592,
+          "depth": 2.75,
+          "temperature": 23.5043,
+          "oxygen": 7.00196,
+          "density": 1017.3977,
+          "salinity": 26.5327
+        },
+        {
+          "row": 1593,
+          "depth": 3,
+          "temperature": 23.5113,
+          "oxygen": 7.04875,
+          "density": 1017.4002,
+          "salinity": 26.5371
+        },
+        {
+          "row": 1594,
+          "depth": 3.25,
+          "temperature": 23.5164,
+          "oxygen": 7.02172,
+          "density": 1017.4024,
+          "salinity": 26.5405
+        },
+        {
+          "row": 1595,
+          "depth": 3.5,
+          "temperature": 23.5147,
+          "oxygen": 5.91454,
+          "density": 1017.3424,
+          "salinity": 26.4588
+        }
+      ]
+    },
+    {
+      "date": "2016-07-06",
+      "metadataRow": 14,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "09:50:00",
+      "records": [
+        {
+          "row": 1716,
+          "depth": 1,
+          "temperature": 23.8862,
+          "oxygen": 10.27587,
+          "density": 1016.4365,
+          "salinity": 25.4106
+        },
+        {
+          "row": 1717,
+          "depth": 1.25,
+          "temperature": 23.8396,
+          "oxygen": 8.92692,
+          "density": 1016.7653,
+          "salinity": 25.8279
+        },
+        {
+          "row": 1718,
+          "depth": 1.5,
+          "temperature": 23.7103,
+          "oxygen": 7.64942,
+          "density": 1017.2621,
+          "salinity": 26.4371
+        },
+        {
+          "row": 1719,
+          "depth": 1.75,
+          "temperature": 23.613,
+          "oxygen": 7.58396,
+          "density": 1017.65,
+          "salinity": 26.9135
+        },
+        {
+          "row": 1720,
+          "depth": 2,
+          "temperature": 23.5939,
+          "oxygen": 7.45819,
+          "density": 1017.7486,
+          "salinity": 27.0355
+        },
+        {
+          "row": 1721,
+          "depth": 2.25,
+          "temperature": 23.5885,
+          "oxygen": 7.25,
+          "density": 1017.7852,
+          "salinity": 27.0806
+        },
+        {
+          "row": 1722,
+          "depth": 2.5,
+          "temperature": 23.5678,
+          "oxygen": 6.45975,
+          "density": 1017.8438,
+          "salinity": 27.1491
+        },
+        {
+          "row": 1723,
+          "depth": 2.75,
+          "temperature": 23.5108,
+          "oxygen": 6.08048,
+          "density": 1018.0004,
+          "salinity": 27.3338
+        },
+        {
+          "row": 1724,
+          "depth": 3,
+          "temperature": 23.4958,
+          "oxygen": 5.96815,
+          "density": 1018.06,
+          "salinity": 27.4057
+        },
+        {
+          "row": 1725,
+          "depth": 3.25,
+          "temperature": 23.5026,
+          "oxygen": 5.47794,
+          "density": 1018.0746,
+          "salinity": 27.4261
+        },
+        {
+          "row": 1726,
+          "depth": 3.5,
+          "temperature": 23.4349,
+          "oxygen": 4.30424,
+          "density": 1018.2305,
+          "salinity": 27.606
+        },
+        {
+          "row": 1727,
+          "depth": 3.75,
+          "temperature": 23.131,
+          "oxygen": 3.78684,
+          "density": 1018.6387,
+          "salinity": 28.0322
+        },
+        {
+          "row": 1728,
+          "depth": 4,
+          "temperature": 22.965,
+          "oxygen": 3.76936,
+          "density": 1018.8354,
+          "salinity": 28.2297
+        }
+      ]
+    },
+    {
+      "date": "2016-07-13",
+      "metadataRow": 15,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:25:00",
+      "records": [
+        {
+          "row": 1953,
+          "depth": 0.75,
+          "temperature": 24.9772,
+          "oxygen": 8.91962,
+          "density": 1014.9279,
+          "salinity": 23.8215
+        },
+        {
+          "row": 1954,
+          "depth": 1,
+          "temperature": 24.9413,
+          "oxygen": 8.84771,
+          "density": 1015.0565,
+          "salinity": 23.9772
+        },
+        {
+          "row": 1955,
+          "depth": 1.25,
+          "temperature": 24.7689,
+          "oxygen": 8.69649,
+          "density": 1015.5873,
+          "salinity": 24.6156
+        },
+        {
+          "row": 1956,
+          "depth": 1.5,
+          "temperature": 24.5335,
+          "oxygen": 8.41208,
+          "density": 1016.1888,
+          "salinity": 25.3235
+        },
+        {
+          "row": 1957,
+          "depth": 1.75,
+          "temperature": 24.3375,
+          "oxygen": 8.22762,
+          "density": 1016.8015,
+          "salinity": 26.0612
+        },
+        {
+          "row": 1958,
+          "depth": 2,
+          "temperature": 24.1881,
+          "oxygen": 7.98962,
+          "density": 1017.3242,
+          "salinity": 26.6968
+        },
+        {
+          "row": 1959,
+          "depth": 2.25,
+          "temperature": 24.1066,
+          "oxygen": 7.87917,
+          "density": 1017.817,
+          "salinity": 27.3181
+        },
+        {
+          "row": 1960,
+          "depth": 2.5,
+          "temperature": 24.0375,
+          "oxygen": 8.00319,
+          "density": 1018.2204,
+          "salinity": 27.8253
+        },
+        {
+          "row": 1961,
+          "depth": 2.75,
+          "temperature": 23.9586,
+          "oxygen": 9.00453,
+          "density": 1018.5566,
+          "salinity": 28.2397
+        },
+        {
+          "row": 1962,
+          "depth": 3,
+          "temperature": 23.8764,
+          "oxygen": 8.84144,
+          "density": 1018.7377,
+          "salinity": 28.4469
+        },
+        {
+          "row": 1963,
+          "depth": 3.25,
+          "temperature": 23.7114,
+          "oxygen": 7.74042,
+          "density": 1018.8064,
+          "salinity": 28.4741
+        },
+        {
+          "row": 1964,
+          "depth": 3.5,
+          "temperature": 23.5509,
+          "oxygen": 7.90616,
+          "density": 1018.852,
+          "salinity": 28.4726
+        }
+      ]
+    },
+    {
+      "date": "2016-07-20",
+      "metadataRow": 16,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "10:00:00",
+      "records": [
+        {
+          "row": 2036,
+          "depth": 1.25,
+          "temperature": 25.2498,
+          "oxygen": 5.33,
+          "density": 1016.7244,
+          "salinity": 26.3142
+        },
+        {
+          "row": 2037,
+          "depth": 1.5,
+          "temperature": 24.894,
+          "oxygen": 4.4589,
+          "density": 1017.0082,
+          "salinity": 26.5513
+        },
+        {
+          "row": 2038,
+          "depth": 1.75,
+          "temperature": 24.6541,
+          "oxygen": 4.57284,
+          "density": 1017.3861,
+          "salinity": 26.9589
+        },
+        {
+          "row": 2039,
+          "depth": 2,
+          "temperature": 24.6118,
+          "oxygen": 4.33473,
+          "density": 1017.429,
+          "salinity": 26.9981
+        },
+        {
+          "row": 2040,
+          "depth": 2.25,
+          "temperature": 24.5317,
+          "oxygen": 4.34812,
+          "density": 1017.5512,
+          "salinity": 27.128
+        },
+        {
+          "row": 2041,
+          "depth": 2.5,
+          "temperature": 24.4338,
+          "oxygen": 4.16878,
+          "density": 1017.7591,
+          "salinity": 27.3649
+        },
+        {
+          "row": 2042,
+          "depth": 2.75,
+          "temperature": 24.3379,
+          "oxygen": 3.45202,
+          "density": 1018.0031,
+          "salinity": 27.6504
+        },
+        {
+          "row": 2043,
+          "depth": 3,
+          "temperature": 24.2274,
+          "oxygen": 3.29456,
+          "density": 1018.3208,
+          "salinity": 28.0281
+        },
+        {
+          "row": 2044,
+          "depth": 3.25,
+          "temperature": 24.0207,
+          "oxygen": 2.79513,
+          "density": 1018.7292,
+          "salinity": 28.4893
+        },
+        {
+          "row": 2045,
+          "depth": 3.5,
+          "temperature": 23.8225,
+          "oxygen": 2.66952,
+          "density": 1019.1078,
+          "salinity": 28.9141
+        },
+        {
+          "row": 2046,
+          "depth": 3.75,
+          "temperature": 23.7477,
+          "oxygen": 2.69799,
+          "density": 1019.2272,
+          "salinity": 29.0424
+        }
+      ]
+    },
+    {
+      "date": "2016-07-27",
+      "metadataRow": 17,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "12:50:00",
+      "records": [
+        {
+          "row": 2269,
+          "depth": 1,
+          "temperature": 27.279,
+          "oxygen": 9.05337,
+          "density": 1014.9569,
+          "salinity": 24.7762
+        },
+        {
+          "row": 2270,
+          "depth": 1.25,
+          "temperature": 27.0486,
+          "oxygen": 8.5334,
+          "density": 1016.2276,
+          "salinity": 26.3758
+        },
+        {
+          "row": 2271,
+          "depth": 1.5,
+          "temperature": 26.8262,
+          "oxygen": 8.38038,
+          "density": 1016.568,
+          "salinity": 26.7368
+        },
+        {
+          "row": 2272,
+          "depth": 1.75,
+          "temperature": 26.5453,
+          "oxygen": 7.77537,
+          "density": 1016.9842,
+          "salinity": 27.1752
+        },
+        {
+          "row": 2273,
+          "depth": 2,
+          "temperature": 26.3267,
+          "oxygen": 7.00025,
+          "density": 1017.3011,
+          "salinity": 27.5067
+        },
+        {
+          "row": 2274,
+          "depth": 2.25,
+          "temperature": 26.1239,
+          "oxygen": 6.59967,
+          "density": 1017.5856,
+          "salinity": 27.8019
+        },
+        {
+          "row": 2275,
+          "depth": 2.5,
+          "temperature": 26.0346,
+          "oxygen": 6.17737,
+          "density": 1017.7204,
+          "salinity": 27.9439
+        },
+        {
+          "row": 2276,
+          "depth": 2.75,
+          "temperature": 25.9933,
+          "oxygen": 5.97414,
+          "density": 1017.825,
+          "salinity": 28.0648
+        },
+        {
+          "row": 2277,
+          "depth": 3,
+          "temperature": 25.971,
+          "oxygen": 5.31775,
+          "density": 1017.8968,
+          "salinity": 28.1499
+        },
+        {
+          "row": 2278,
+          "depth": 3.25,
+          "temperature": 25.8221,
+          "oxygen": 5.02218,
+          "density": 1018.0907,
+          "salinity": 28.3465
+        },
+        {
+          "row": 2279,
+          "depth": 3.5,
+          "temperature": 25.7434,
+          "oxygen": 4.96151,
+          "density": 1018.1663,
+          "salinity": 28.4139
+        }
+      ]
+    },
+    {
+      "date": "2016-08-03",
+      "metadataRow": 18,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:00:00",
+      "records": [
+        {
+          "row": 2415,
+          "depth": 1,
+          "temperature": 24.8965,
+          "oxygen": 6.26526,
+          "density": 1017.1784,
+          "salinity": 26.7812
+        },
+        {
+          "row": 2416,
+          "depth": 1.25,
+          "temperature": 24.8071,
+          "oxygen": 7.62589,
+          "density": 1017.3257,
+          "salinity": 26.9408
+        },
+        {
+          "row": 2417,
+          "depth": 1.5,
+          "temperature": 24.7457,
+          "oxygen": 7.52115,
+          "density": 1017.4347,
+          "salinity": 27.0604
+        },
+        {
+          "row": 2418,
+          "depth": 1.75,
+          "temperature": 24.7135,
+          "oxygen": 7.86203,
+          "density": 1017.5749,
+          "salinity": 27.2326
+        },
+        {
+          "row": 2419,
+          "depth": 2,
+          "temperature": 24.7253,
+          "oxygen": 7.54645,
+          "density": 1017.7586,
+          "salinity": 27.4796
+        },
+        {
+          "row": 2420,
+          "depth": 2.25,
+          "temperature": 24.7184,
+          "oxygen": 6.75611,
+          "density": 1017.853,
+          "salinity": 27.6008
+        },
+        {
+          "row": 2421,
+          "depth": 2.5,
+          "temperature": 24.6429,
+          "oxygen": 6.35908,
+          "density": 1017.9535,
+          "salinity": 27.7036
+        },
+        {
+          "row": 2422,
+          "depth": 2.75,
+          "temperature": 24.4888,
+          "oxygen": 6.53787,
+          "density": 1018.081,
+          "salinity": 27.8117
+        }
+      ]
+    },
+    {
+      "date": "2016-08-17",
+      "metadataRow": 20,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:10:00",
+      "records": [
+        {
+          "row": 2563,
+          "depth": 0.75,
+          "temperature": 26.421,
+          "oxygen": 3.09335,
+          "density": 1016.0866,
+          "salinity": 25.9345
+        },
+        {
+          "row": 2564,
+          "depth": 1,
+          "temperature": 26.3014,
+          "oxygen": 3.17545,
+          "density": 1017.027,
+          "salinity": 27.1373
+        },
+        {
+          "row": 2565,
+          "depth": 1.25,
+          "temperature": 26.1317,
+          "oxygen": 3.65379,
+          "density": 1017.6696,
+          "salinity": 27.9226
+        },
+        {
+          "row": 2566,
+          "depth": 1.5,
+          "temperature": 26.0741,
+          "oxygen": 3.45664,
+          "density": 1017.9015,
+          "salinity": 28.2064
+        },
+        {
+          "row": 2567,
+          "depth": 1.75,
+          "temperature": 26.0037,
+          "oxygen": 3.34164,
+          "density": 1018.0356,
+          "salinity": 28.355
+        },
+        {
+          "row": 2568,
+          "depth": 2,
+          "temperature": 25.9721,
+          "oxygen": 3.33592,
+          "density": 1018.087,
+          "salinity": 28.4091
+        },
+        {
+          "row": 2569,
+          "depth": 2.25,
+          "temperature": 25.9602,
+          "oxygen": 3.35853,
+          "density": 1018.1033,
+          "salinity": 28.4246
+        },
+        {
+          "row": 2570,
+          "depth": 2.5,
+          "temperature": 25.9325,
+          "oxygen": 3.24569,
+          "density": 1018.125,
+          "salinity": 28.4409
+        },
+        {
+          "row": 2571,
+          "depth": 2.75,
+          "temperature": 25.9128,
+          "oxygen": 3.68404,
+          "density": 1018.1476,
+          "salinity": 28.4616
+        },
+        {
+          "row": 2572,
+          "depth": 3,
+          "temperature": 25.8947,
+          "oxygen": 3.92614,
+          "density": 1018.2323,
+          "salinity": 28.5655
+        },
+        {
+          "row": 2573,
+          "depth": 3.25,
+          "temperature": 25.8865,
+          "oxygen": 3.91284,
+          "density": 1018.2846,
+          "salinity": 28.6302
+        },
+        {
+          "row": 2574,
+          "depth": 3.5,
+          "temperature": 25.879,
+          "oxygen": 3.36834,
+          "density": 1018.3109,
+          "salinity": 28.6607
+        },
+        {
+          "row": 2575,
+          "depth": 3.75,
+          "temperature": 25.8775,
+          "oxygen": 3.81212,
+          "density": 1018.1644,
+          "salinity": 28.4639
+        },
+        {
+          "row": 2576,
+          "depth": 4,
+          "temperature": 25.8741,
+          "oxygen": 3.84327,
+          "density": 1018.3358,
+          "salinity": 28.689
+        },
+        {
+          "row": 2577,
+          "depth": 4.25,
+          "temperature": 25.8715,
+          "oxygen": 3.84048,
+          "density": 1018.3959,
+          "salinity": 28.7664
+        }
+      ]
+    },
+    {
+      "date": "2016-08-24",
+      "metadataRow": 21,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "14:10:00",
+      "records": [
+        {
+          "row": 2886,
+          "depth": 0.75,
+          "temperature": 25.9736,
+          "oxygen": 4.71666,
+          "density": 1014.9718,
+          "salinity": 24.2694
+        },
+        {
+          "row": 2887,
+          "depth": 1,
+          "temperature": 25.8123,
+          "oxygen": 8.25276,
+          "density": 1015.0807,
+          "salinity": 24.349
+        },
+        {
+          "row": 2888,
+          "depth": 1.25,
+          "temperature": 25.3258,
+          "oxygen": 6.6547,
+          "density": 1017.0407,
+          "salinity": 26.7645
+        },
+        {
+          "row": 2889,
+          "depth": 1.5,
+          "temperature": 25.0979,
+          "oxygen": 5.81431,
+          "density": 1017.8086,
+          "salinity": 27.6943
+        },
+        {
+          "row": 2890,
+          "depth": 1.75,
+          "temperature": 24.9939,
+          "oxygen": 5.48831,
+          "density": 1018.0638,
+          "salinity": 27.9911
+        },
+        {
+          "row": 2891,
+          "depth": 2,
+          "temperature": 24.9577,
+          "oxygen": 5.2488,
+          "density": 1018.124,
+          "salinity": 28.0554
+        },
+        {
+          "row": 2892,
+          "depth": 2.25,
+          "temperature": 24.9092,
+          "oxygen": 5.02103,
+          "density": 1018.1864,
+          "salinity": 28.1178
+        },
+        {
+          "row": 2893,
+          "depth": 2.5,
+          "temperature": 24.8663,
+          "oxygen": 5.02397,
+          "density": 1018.2925,
+          "salinity": 28.2405
+        },
+        {
+          "row": 2894,
+          "depth": 2.75,
+          "temperature": 24.8669,
+          "oxygen": 5.08226,
+          "density": 1018.3057,
+          "salinity": 28.2568
+        },
+        {
+          "row": 2895,
+          "depth": 3,
+          "temperature": 24.8822,
+          "oxygen": 4.99579,
+          "density": 1018.3279,
+          "salinity": 28.2908
+        },
+        {
+          "row": 2896,
+          "depth": 3.25,
+          "temperature": 24.855,
+          "oxygen": 5.096,
+          "density": 1018.4093,
+          "salinity": 28.3868
+        },
+        {
+          "row": 2897,
+          "depth": 3.5,
+          "temperature": 24.7352,
+          "oxygen": 4.97537,
+          "density": 1018.5481,
+          "salinity": 28.5228
+        },
+        {
+          "row": 2898,
+          "depth": 3.75,
+          "temperature": 24.6405,
+          "oxygen": 4.70227,
+          "density": 1018.7006,
+          "salinity": 28.6869
+        },
+        {
+          "row": 2899,
+          "depth": 4,
+          "temperature": 24.6102,
+          "oxygen": 4.77625,
+          "density": 1018.8019,
+          "salinity": 28.8081
+        }
+      ]
+    },
+    {
+      "date": "2016-08-31",
+      "metadataRow": 22,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:45:00",
+      "records": [
+        {
+          "row": 2900,
+          "depth": 0.75,
+          "temperature": 25.0921,
+          "oxygen": 5.85023,
+          "density": 1017.2997,
+          "salinity": 27.0201
+        },
+        {
+          "row": 2901,
+          "depth": 1,
+          "temperature": 25.0257,
+          "oxygen": 4.57359,
+          "density": 1017.8537,
+          "salinity": 27.7287
+        },
+        {
+          "row": 2902,
+          "depth": 1.25,
+          "temperature": 25.0004,
+          "oxygen": 4.51591,
+          "density": 1018.1505,
+          "salinity": 28.1117
+        },
+        {
+          "row": 2903,
+          "depth": 1.5,
+          "temperature": 24.9424,
+          "oxygen": 4.36496,
+          "density": 1018.3829,
+          "salinity": 28.3962
+        },
+        {
+          "row": 2904,
+          "depth": 1.75,
+          "temperature": 24.8719,
+          "oxygen": 4.28278,
+          "density": 1018.5571,
+          "salinity": 28.5984
+        },
+        {
+          "row": 2905,
+          "depth": 2,
+          "temperature": 24.7965,
+          "oxygen": 4.25221,
+          "density": 1018.6563,
+          "salinity": 28.6991
+        },
+        {
+          "row": 2906,
+          "depth": 2.25,
+          "temperature": 24.723,
+          "oxygen": 4.21298,
+          "density": 1018.7105,
+          "salinity": 28.7409
+        },
+        {
+          "row": 2907,
+          "depth": 2.5,
+          "temperature": 24.667,
+          "oxygen": 4.29222,
+          "density": 1018.7595,
+          "salinity": 28.7827
+        },
+        {
+          "row": 2908,
+          "depth": 2.75,
+          "temperature": 24.6496,
+          "oxygen": 4.37534,
+          "density": 1018.7937,
+          "salinity": 28.8198
+        },
+        {
+          "row": 2909,
+          "depth": 3,
+          "temperature": 24.6477,
+          "oxygen": 4.38345,
+          "density": 1018.81,
+          "salinity": 28.8392
+        },
+        {
+          "row": 2910,
+          "depth": 3.25,
+          "temperature": 24.6483,
+          "oxygen": 4.41299,
+          "density": 1018.8136,
+          "salinity": 28.8428
+        },
+        {
+          "row": 2911,
+          "depth": 3.5,
+          "temperature": 24.6487,
+          "oxygen": 4.45588,
+          "density": 1018.8184,
+          "salinity": 28.8479
+        },
+        {
+          "row": 2912,
+          "depth": 3.75,
+          "temperature": 24.6506,
+          "oxygen": 4.64502,
+          "density": 1018.8259,
+          "salinity": 28.8571
+        },
+        {
+          "row": 2913,
+          "depth": 4,
+          "temperature": 24.6518,
+          "oxygen": 4.45952,
+          "density": 1018.8486,
+          "salinity": 28.8862
+        }
+      ]
+    },
+    {
+      "date": "2016-09-08",
+      "metadataRow": 23,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:00:00",
+      "records": [
+        {
+          "row": 3032,
+          "depth": 0.75,
+          "temperature": 22.2337,
+          "oxygen": 3.96486,
+          "density": 1015.5665,
+          "salinity": 23.6586
+        },
+        {
+          "row": 3033,
+          "depth": 1,
+          "temperature": 22.347,
+          "oxygen": 5.24466,
+          "density": 1017.5582,
+          "salinity": 26.333
+        },
+        {
+          "row": 3034,
+          "depth": 1.25,
+          "temperature": 22.4297,
+          "oxygen": 5.18679,
+          "density": 1018.7675,
+          "salinity": 27.9605
+        },
+        {
+          "row": 3035,
+          "depth": 1.5,
+          "temperature": 22.4547,
+          "oxygen": 5.18916,
+          "density": 1019.1303,
+          "salinity": 28.4477
+        },
+        {
+          "row": 3036,
+          "depth": 1.75,
+          "temperature": 22.4694,
+          "oxygen": 5.16538,
+          "density": 1019.2742,
+          "salinity": 28.6417
+        },
+        {
+          "row": 3037,
+          "depth": 2,
+          "temperature": 22.4787,
+          "oxygen": 4.93786,
+          "density": 1019.3636,
+          "salinity": 28.7617
+        },
+        {
+          "row": 3038,
+          "depth": 2.25,
+          "temperature": 22.4795,
+          "oxygen": 4.64945,
+          "density": 1019.5134,
+          "salinity": 28.9586
+        },
+        {
+          "row": 3039,
+          "depth": 2.5,
+          "temperature": 22.4786,
+          "oxygen": 4.66381,
+          "density": 1019.617,
+          "salinity": 29.0936
+        },
+        {
+          "row": 3040,
+          "depth": 2.75,
+          "temperature": 22.4787,
+          "oxygen": 4.59162,
+          "density": 1019.6346,
+          "salinity": 29.1155
+        },
+        {
+          "row": 3041,
+          "depth": 3,
+          "temperature": 22.4781,
+          "oxygen": 4.57777,
+          "density": 1019.6577,
+          "salinity": 29.1444
+        },
+        {
+          "row": 3042,
+          "depth": 3.25,
+          "temperature": 22.4781,
+          "oxygen": 4.58335,
+          "density": 1019.6605,
+          "salinity": 29.1466
+        },
+        {
+          "row": 3043,
+          "depth": 3.5,
+          "temperature": 22.4769,
+          "oxygen": 4.54055,
+          "density": 1019.6746,
+          "salinity": 29.1633
+        }
+      ]
+    },
+    {
+      "date": "2016-09-14",
+      "metadataRow": 24,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "09:45:00",
+      "records": [
+        {
+          "row": 3316,
+          "depth": 1.25,
+          "temperature": 23.2979,
+          "oxygen": 6.89979,
+          "density": 1019.319,
+          "salinity": 29.0093
+        },
+        {
+          "row": 3317,
+          "depth": 1.5,
+          "temperature": 23.1834,
+          "oxygen": 5.99512,
+          "density": 1019.5549,
+          "salinity": 29.2772
+        },
+        {
+          "row": 3318,
+          "depth": 1.75,
+          "temperature": 23.0186,
+          "oxygen": 5.60983,
+          "density": 1019.7626,
+          "salinity": 29.4891
+        },
+        {
+          "row": 3319,
+          "depth": 2,
+          "temperature": 22.9408,
+          "oxygen": 5.34181,
+          "density": 1019.9179,
+          "salinity": 29.6641
+        },
+        {
+          "row": 3320,
+          "depth": 2.25,
+          "temperature": 22.9577,
+          "oxygen": 5.27567,
+          "density": 1019.9742,
+          "salinity": 29.7433
+        },
+        {
+          "row": 3321,
+          "depth": 2.5,
+          "temperature": 22.9707,
+          "oxygen": 5.27883,
+          "density": 1019.9908,
+          "salinity": 29.7687
+        },
+        {
+          "row": 3322,
+          "depth": 2.75,
+          "temperature": 22.9763,
+          "oxygen": 5.36025,
+          "density": 1020.0042,
+          "salinity": 29.7871
+        },
+        {
+          "row": 3323,
+          "depth": 3,
+          "temperature": 22.9695,
+          "oxygen": 5.39393,
+          "density": 1020.0207,
+          "salinity": 29.8049
+        },
+        {
+          "row": 3324,
+          "depth": 3.25,
+          "temperature": 22.9633,
+          "oxygen": 5.35376,
+          "density": 1020.0245,
+          "salinity": 29.8061
+        }
+      ]
+    },
+    {
+      "date": "2016-09-21",
+      "metadataRow": 25,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:15:00",
+      "records": [
+        {
+          "row": 3499,
+          "depth": 1,
+          "temperature": 23.7646,
+          "oxygen": 4.15301,
+          "density": 1018.2722,
+          "salinity": 27.7995
+        },
+        {
+          "row": 3500,
+          "depth": 1.25,
+          "temperature": 23.5747,
+          "oxygen": 5.47427,
+          "density": 1018.347,
+          "salinity": 27.8257
+        },
+        {
+          "row": 3501,
+          "depth": 1.5,
+          "temperature": 23.5372,
+          "oxygen": 5.41126,
+          "density": 1018.3952,
+          "salinity": 27.874
+        },
+        {
+          "row": 3502,
+          "depth": 1.75,
+          "temperature": 23.5122,
+          "oxygen": 5.75994,
+          "density": 1018.4545,
+          "salinity": 27.9418
+        },
+        {
+          "row": 3503,
+          "depth": 2,
+          "temperature": 23.4331,
+          "oxygen": 5.60097,
+          "density": 1018.5968,
+          "salinity": 28.0992
+        },
+        {
+          "row": 3504,
+          "depth": 2.25,
+          "temperature": 22.9726,
+          "oxygen": 5.18074,
+          "density": 1019.2588,
+          "salinity": 28.8028
+        },
+        {
+          "row": 3505,
+          "depth": 2.5,
+          "temperature": 22.8935,
+          "oxygen": 5.26795,
+          "density": 1019.3631,
+          "salinity": 28.9101
+        },
+        {
+          "row": 3506,
+          "depth": 2.75,
+          "temperature": 22.8878,
+          "oxygen": 5.13941,
+          "density": 1019.3812,
+          "salinity": 28.9306
+        },
+        {
+          "row": 3507,
+          "depth": 3,
+          "temperature": 22.8494,
+          "oxygen": 4.89289,
+          "density": 1019.469,
+          "salinity": 29.031
+        },
+        {
+          "row": 3508,
+          "depth": 3.25,
+          "temperature": 22.8252,
+          "oxygen": 4.77534,
+          "density": 1019.5253,
+          "salinity": 29.095
+        },
+        {
+          "row": 3509,
+          "depth": 3.5,
+          "temperature": 22.8221,
+          "oxygen": 4.45677,
+          "density": 1019.5451,
+          "salinity": 29.1186
+        },
+        {
+          "row": 3510,
+          "depth": 3.75,
+          "temperature": 22.8277,
+          "oxygen": 3.89211,
+          "density": 1019.5781,
+          "salinity": 29.1629
+        },
+        {
+          "row": 3511,
+          "depth": 4,
+          "temperature": 22.8295,
+          "oxygen": 3.67175,
+          "density": 1019.6524,
+          "salinity": 29.2603
+        },
+        {
+          "row": 3512,
+          "depth": 4.25,
+          "temperature": 22.832,
+          "oxygen": 3.73131,
+          "density": 1019.6637,
+          "salinity": 29.2747
+        }
+      ]
+    },
+    {
+      "date": "2016-09-28",
+      "metadataRow": 26,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:45:00",
+      "records": [
+        {
+          "row": 3710,
+          "depth": 1,
+          "temperature": 19.739,
+          "oxygen": 5.9845,
+          "density": 1017.2541,
+          "salinity": 25.0426
+        },
+        {
+          "row": 3711,
+          "depth": 1.25,
+          "temperature": 19.7577,
+          "oxygen": 5.54556,
+          "density": 1017.3615,
+          "salinity": 25.1886
+        },
+        {
+          "row": 3712,
+          "depth": 1.5,
+          "temperature": 19.7738,
+          "oxygen": 5.04956,
+          "density": 1017.3996,
+          "salinity": 25.2426
+        },
+        {
+          "row": 3713,
+          "depth": 1.75,
+          "temperature": 19.8086,
+          "oxygen": 4.90508,
+          "density": 1017.3798,
+          "salinity": 25.2262
+        },
+        {
+          "row": 3714,
+          "depth": 2,
+          "temperature": 19.7991,
+          "oxygen": 5.24761,
+          "density": 1017.4134,
+          "salinity": 25.2659
+        },
+        {
+          "row": 3715,
+          "depth": 2.25,
+          "temperature": 19.8217,
+          "oxygen": 5.74076,
+          "density": 1017.512,
+          "salinity": 25.4017
+        },
+        {
+          "row": 3716,
+          "depth": 2.5,
+          "temperature": 19.8128,
+          "oxygen": 6.01481,
+          "density": 1017.7723,
+          "salinity": 25.74
+        },
+        {
+          "row": 3717,
+          "depth": 2.75,
+          "temperature": 19.8824,
+          "oxygen": 6.89045,
+          "density": 1018.5104,
+          "salinity": 26.7328
+        },
+        {
+          "row": 3718,
+          "depth": 3,
+          "temperature": 20.1059,
+          "oxygen": 6.70511,
+          "density": 1020.092,
+          "salinity": 28.8865
+        },
+        {
+          "row": 3719,
+          "depth": 3.25,
+          "temperature": 20.1265,
+          "oxygen": 6.64477,
+          "density": 1020.1942,
+          "salinity": 29.0264
+        }
+      ]
+    },
+    {
+      "date": "2016-10-05",
+      "metadataRow": 27,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "13:04:00",
+      "records": [
+        {
+          "row": 3862,
+          "depth": 1,
+          "temperature": 18.568,
+          "oxygen": 6.86031,
+          "density": 1019.957,
+          "salinity": 28.2202
+        },
+        {
+          "row": 3863,
+          "depth": 1.25,
+          "temperature": 18.5528,
+          "oxygen": 6.86117,
+          "density": 1020.2428,
+          "salinity": 28.5887
+        },
+        {
+          "row": 3864,
+          "depth": 1.5,
+          "temperature": 18.5415,
+          "oxygen": 6.86441,
+          "density": 1020.4208,
+          "salinity": 28.817
+        },
+        {
+          "row": 3865,
+          "depth": 1.75,
+          "temperature": 18.5157,
+          "oxygen": 6.86344,
+          "density": 1020.6481,
+          "salinity": 29.1055
+        },
+        {
+          "row": 3866,
+          "depth": 2,
+          "temperature": 18.4798,
+          "oxygen": 6.84857,
+          "density": 1020.8133,
+          "salinity": 29.3091
+        },
+        {
+          "row": 3867,
+          "depth": 2.25,
+          "temperature": 18.4464,
+          "oxygen": 6.84619,
+          "density": 1020.9572,
+          "salinity": 29.4857
+        },
+        {
+          "row": 3868,
+          "depth": 2.5,
+          "temperature": 18.5127,
+          "oxygen": 6.77163,
+          "density": 1021.0568,
+          "salinity": 29.6357
+        },
+        {
+          "row": 3869,
+          "depth": 2.75,
+          "temperature": 18.6016,
+          "oxygen": 6.53242,
+          "density": 1021.111,
+          "salinity": 29.7336
+        },
+        {
+          "row": 3870,
+          "depth": 3,
+          "temperature": 18.5518,
+          "oxygen": 6.52486,
+          "density": 1021.1814,
+          "salinity": 29.8085
+        },
+        {
+          "row": 3871,
+          "depth": 3.25,
+          "temperature": 18.5212,
+          "oxygen": 6.49303,
+          "density": 1021.207,
+          "salinity": 29.8309
+        },
+        {
+          "row": 3872,
+          "depth": 3.5,
+          "temperature": 18.5218,
+          "oxygen": 6.50929,
+          "density": 1021.2127,
+          "salinity": 29.8371
+        },
+        {
+          "row": 3873,
+          "depth": 3.75,
+          "temperature": 18.5285,
+          "oxygen": 6.56605,
+          "density": 1021.2199,
+          "salinity": 29.8472
+        },
+        {
+          "row": 3874,
+          "depth": 4,
+          "temperature": 18.5154,
+          "oxygen": 6.46306,
+          "density": 1021.236,
+          "salinity": 29.8627
+        }
+      ]
+    },
+    {
+      "date": "2016-10-12",
+      "metadataRow": 28,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "09:50:00",
+      "records": [
+        {
+          "row": 3964,
+          "depth": 1.5,
+          "temperature": 17.105,
+          "oxygen": 6.68797,
+          "density": 1020.9718,
+          "salinity": 29.0964
+        },
+        {
+          "row": 3965,
+          "depth": 1.75,
+          "temperature": 17.0997,
+          "oxygen": 6.6572,
+          "density": 1020.9835,
+          "salinity": 29.1086
+        },
+        {
+          "row": 3966,
+          "depth": 2,
+          "temperature": 17.0933,
+          "oxygen": 6.65203,
+          "density": 1020.9924,
+          "salinity": 29.1168
+        },
+        {
+          "row": 3967,
+          "depth": 2.25,
+          "temperature": 17.0951,
+          "oxygen": 6.67036,
+          "density": 1020.9986,
+          "salinity": 29.1241
+        }
+      ]
+    },
+    {
+      "date": "2016-10-26",
+      "metadataRow": 30,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "08:50:00",
+      "records": [
+        {
+          "row": 4250,
+          "depth": 1,
+          "temperature": 12.8821,
+          "oxygen": 7.7492,
+          "density": 1015.778,
+          "salinity": 21.2234
+        },
+        {
+          "row": 4251,
+          "depth": 1.25,
+          "temperature": 14.3763,
+          "oxygen": 6.58603,
+          "density": 1018.9261,
+          "salinity": 25.6778
+        },
+        {
+          "row": 4252,
+          "depth": 1.5,
+          "temperature": 15.2251,
+          "oxygen": 6.29885,
+          "density": 1020.4363,
+          "salinity": 27.862
+        },
+        {
+          "row": 4253,
+          "depth": 1.75,
+          "temperature": 15.4394,
+          "oxygen": 6.30183,
+          "density": 1020.761,
+          "salinity": 28.3414
+        },
+        {
+          "row": 4254,
+          "depth": 2,
+          "temperature": 15.4788,
+          "oxygen": 6.27113,
+          "density": 1020.9009,
+          "salinity": 28.5328
+        },
+        {
+          "row": 4255,
+          "depth": 2.25,
+          "temperature": 15.4824,
+          "oxygen": 6.22725,
+          "density": 1020.9317,
+          "salinity": 28.5725
+        },
+        {
+          "row": 4256,
+          "depth": 2.5,
+          "temperature": 15.4917,
+          "oxygen": 6.19462,
+          "density": 1020.9607,
+          "salinity": 28.6113
+        },
+        {
+          "row": 4257,
+          "depth": 2.75,
+          "temperature": 15.4962,
+          "oxygen": 6.16,
+          "density": 1020.9733,
+          "salinity": 28.6276
+        }
+      ]
+    },
+    {
+      "date": "2016-11-09",
+      "metadataRow": 32,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "14:40:00",
+      "records": [
+        {
+          "row": 4719,
+          "depth": 0.75,
+          "temperature": 12.941,
+          "oxygen": 8.32052,
+          "density": 1021.1881,
+          "salinity": 28.2543
+        },
+        {
+          "row": 4720,
+          "depth": 1,
+          "temperature": 12.9546,
+          "oxygen": 8.3499,
+          "density": 1021.2271,
+          "salinity": 28.3066
+        },
+        {
+          "row": 4721,
+          "depth": 1.25,
+          "temperature": 12.9115,
+          "oxygen": 8.35879,
+          "density": 1021.0319,
+          "salinity": 28.0421
+        },
+        {
+          "row": 4722,
+          "depth": 1.5,
+          "temperature": 12.8753,
+          "oxygen": 8.37828,
+          "density": 1020.9526,
+          "salinity": 27.9293
+        },
+        {
+          "row": 4723,
+          "depth": 1.75,
+          "temperature": 12.9057,
+          "oxygen": 8.30699,
+          "density": 1021.1185,
+          "salinity": 28.1498
+        },
+        {
+          "row": 4724,
+          "depth": 2,
+          "temperature": 12.9745,
+          "oxygen": 8.25773,
+          "density": 1021.3308,
+          "salinity": 28.4398
+        },
+        {
+          "row": 4725,
+          "depth": 2.25,
+          "temperature": 13.0294,
+          "oxygen": 8.34376,
+          "density": 1021.4837,
+          "salinity": 28.6495
+        },
+        {
+          "row": 4726,
+          "depth": 2.5,
+          "temperature": 13.056,
+          "oxygen": 8.49972,
+          "density": 1021.5711,
+          "salinity": 28.7678
+        },
+        {
+          "row": 4727,
+          "depth": 2.75,
+          "temperature": 13.0683,
+          "oxygen": 8.5106,
+          "density": 1021.6325,
+          "salinity": 28.8487
+        },
+        {
+          "row": 4728,
+          "depth": 3,
+          "temperature": 13.0743,
+          "oxygen": 8.40086,
+          "density": 1021.647,
+          "salinity": 28.8676
+        },
+        {
+          "row": 4729,
+          "depth": 3.25,
+          "temperature": 13.1305,
+          "oxygen": 8.13106,
+          "density": 1021.7684,
+          "salinity": 29.037
+        },
+        {
+          "row": 4730,
+          "depth": 3.5,
+          "temperature": 13.2258,
+          "oxygen": 7.70834,
+          "density": 1021.9676,
+          "salinity": 29.317
+        },
+        {
+          "row": 4731,
+          "depth": 3.75,
+          "temperature": 13.3663,
+          "oxygen": 7.33222,
+          "density": 1022.2491,
+          "salinity": 29.7152
+        },
+        {
+          "row": 4732,
+          "depth": 4,
+          "temperature": 13.453,
+          "oxygen": 7.34218,
+          "density": 1022.4229,
+          "salinity": 29.9606
+        },
+        {
+          "row": 4733,
+          "depth": 4.25,
+          "temperature": 13.4598,
+          "oxygen": 7.42427,
+          "density": 1022.4368,
+          "salinity": 29.9789
+        }
+      ]
+    },
+    {
+      "date": "2016-11-23",
+      "metadataRow": 33,
+      "mark": "X",
+      "note": null,
+      "year": 2016,
+      "clock": "14:00:00",
+      "records": [
+        {
+          "row": 4858,
+          "depth": 1.25,
+          "temperature": 7.9681,
+          "oxygen": 7.73347,
+          "density": 1019.3563,
+          "salinity": 24.8898
+        },
+        {
+          "row": 4859,
+          "depth": 1.5,
+          "temperature": 7.991,
+          "oxygen": 7.77565,
+          "density": 1019.2887,
+          "salinity": 24.8056
+        },
+        {
+          "row": 4860,
+          "depth": 1.75,
+          "temperature": 8.0085,
+          "oxygen": 7.72892,
+          "density": 1019.2908,
+          "salinity": 24.8096
+        },
+        {
+          "row": 4861,
+          "depth": 2,
+          "temperature": 8.0002,
+          "oxygen": 7.62779,
+          "density": 1019.2849,
+          "salinity": 24.7992
+        },
+        {
+          "row": 4862,
+          "depth": 2.25,
+          "temperature": 8.0024,
+          "oxygen": 7.64285,
+          "density": 1019.2945,
+          "salinity": 24.8103
+        },
+        {
+          "row": 4863,
+          "depth": 2.5,
+          "temperature": 8.031,
+          "oxygen": 9.05401,
+          "density": 1019.3637,
+          "salinity": 24.9019
+        },
+        {
+          "row": 4864,
+          "depth": 2.75,
+          "temperature": 8.4329,
+          "oxygen": 9.54111,
+          "density": 1020.8064,
+          "salinity": 26.8127
+        },
+        {
+          "row": 4865,
+          "depth": 3,
+          "temperature": 8.8842,
+          "oxygen": 8.80398,
+          "density": 1022.1716,
+          "salinity": 28.6371
+        }
+      ]
+    }
+  ]
+}

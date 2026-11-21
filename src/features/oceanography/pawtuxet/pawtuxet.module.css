@@ -1,0 +1,76 @@
+.page {
+  max-width: 67rem;
+}
+
+.page .back {
+  color: #a9e4dc;
+}
+
+.section,
+.grid {
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.archiveNote {
+  padding: 0.55rem 0.7rem;
+  border-left: 3px solid #9b651e;
+  background: #faf1df;
+  color: var(--amber);
+  font-size: 0.92rem;
+}
+
+.plot svg {
+  background: #f2f8f7;
+}
+
+.plot text {
+  fill: #264c55;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.plot line {
+  stroke: #c5dcda;
+}
+
+.plot .threshold {
+  stroke: #995029;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.point {
+  fill: var(--ocean);
+}
+
+.lowPoint {
+  fill: #b65b20;
+}
+
+.selectedPoint {
+  stroke: #163138;
+  stroke-width: 2;
+}
+
+.recordValues {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
+.recordValues > div {
+  padding: 0.55rem;
+  border-radius: 0.35rem;
+  background: var(--surface);
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
