@@ -20,7 +20,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | Studio | `/studio` | Design and engineering portfolio | Existing placeholder route |
 | Microsat Atlas | `/atlas` | Population genetics, geography, and sampling interpretation | Synthetic demo implemented in STRATA-003 |
 | NOAA Signals | `/signals` | Providence hourly water temperature, quality flags, coverage, and evidence gaps | Implemented in STRATA-004 |
-| Orbital Observatory | `/observatory` | Small-body dynamics, time navigation, and validated 3D exploration | Planned |
+| Orbital Observatory | `/orbital` | Bounded time inspection of 1 Ceres with saved JPL model states and evidence limits | First instrument implemented in STRATA-005 |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |
@@ -43,7 +43,7 @@ The Evidence Frontier contract distinguishes station-level findings from researc
 
 ### Orbital Observatory
 
-A future React Three Fiber instrument will present a scientifically supported asteroid orbit, controllable time, labeled coordinate/epoch assumptions, source records, and numerical-validation methodology. Three-dimensional design should reveal dynamics, not conceal approximations.
+Inspect 1 Ceres in a saved NASA/JPL Horizons ephemeris. The first instrument provides a 2D J2000 ecliptic projection and a numerical state table across 262 sampled TDB epochs. It exposes the orbit solution epoch, retrieval timestamps, and open evidence questions. [STRATA-005 source audit and method](docs/STRATA-005.md)
 
 ### Deep Time Observatory
 
@@ -119,7 +119,7 @@ Agent contributors must follow [`AGENTS.md`](./AGENTS.md), the shared engineerin
 2. **STRATA-003 — Integrate Atlas:** the demo slice adds the pinned standalone map and composition view, synthetic labeling, and accessible inspection.
 3. **STRATA-003B — Chesapeake Bay:** published research-genetic data, reviewed methods and environmental context (future requirement).
 4. **STRATA-004 — NOAA:** Providence water temperature, a source-scoped Gap Inspector, and the Evidence Frontier contract. Cross-source research discovery remains planned.
-5. **STRATA-005 — Orbital Observatory:** a single validated, fully documented 3D orbital instrument.
+5. **STRATA-005 — Orbital Observatory:** a validated Ceres ephemeris instrument with accessible time inspection.
 6. **Later modules:** Deep Time, Smithsonian Collections, and cross-module research storytelling.
 
 ## Related work

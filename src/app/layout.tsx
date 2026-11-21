@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav style={{ display: 'flex', flexWrap: 'wrap', columnGap: 'clamp(1rem, 4vw, 2rem)', padding: '1rem', borderBottom: '1px solid #ccc' }}>
+        <nav style={{ display: 'flex', flexWrap: 'wrap', columnGap: 'clamp(0.65rem, 3vw, 2rem)', padding: '1rem', borderBottom: '1px solid #ccc' }}>
           <Link href="/" style={{ fontWeight: 'bold' }}>
             Strata Builds
           </Link>
@@ -24,6 +24,7 @@ export default function RootLayout({
           </Link>
           <Link href="/atlas">Atlas</Link>
           <Link href="/signals">Signals</Link>
+          <Link href="/orbital">Orbital</Link>
         </nav>
         {children}
       </body>

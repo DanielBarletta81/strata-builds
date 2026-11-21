@@ -30,6 +30,11 @@ export default function Home() {
             description="Inspect hourly water temperature at Providence and trace gaps, exclusions, and NOAA quality flags to the source."
             href="/signals"
           />
+          <ProjectCard
+            title="Orbital Observatory"
+            description="Inspect modeled states of the dwarf planet 1 Ceres in a captured NASA/JPL ephemeris."
+            href="/orbital"
+          />
         </div>
       </section>
     </main>
