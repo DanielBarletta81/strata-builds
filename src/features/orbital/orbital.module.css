@@ -163,6 +163,11 @@
   align-items: center;
 }
 
+.plotNote {
+  flex-basis: 100%;
+  margin: 0;
+}
+
 .markerKey {
   width: 0.65rem;
   height: 0.65rem;
@@ -412,8 +417,23 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .source div {
+    font-size: 1rem;
+  }
+
+  .source + .links,
+  .captureNote {
+    font-size: 0.95rem;
+  }
+
   .figure svg text {
-    font-size: 13px;
+    font-size: 17px;
+  }
+
+  .figure figcaption,
+  .timelineBounds,
+  .timeActions p {
+    font-size: 0.875rem;
   }
 
   .state {

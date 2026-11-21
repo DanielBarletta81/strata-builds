@@ -58,6 +58,7 @@ export function OrbitPlot({ samples, index }: { samples: StateSample[]; index: n
         <span><i className={styles.markerKey} aria-hidden="true" /> Selected state</span>
         <span><i className={styles.lineKey} aria-hidden="true" /> Earlier samples</span>
         <span><i className={styles.dashKey} aria-hidden="true" /> Later samples</span>
+        <p className={styles.plotNote}>Seven-day modeled samples; connecting lines are visual guides.</p>
       </figcaption>
     </figure>
   );
