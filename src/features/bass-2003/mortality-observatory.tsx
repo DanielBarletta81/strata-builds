@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { comparisonSeries, methodsReferences, mortality, mortalityMetrics, mortalityRecord, periodsFor, recordsForPeriod, report, type MortalityMetric, type MortalityRow } from './report';
+import { comparisonSeries, methodsReferences, mortality, mortalityMetrics, mortalityRecord, mortalityRowId, periodsFor, recordsForPeriod, report, type MortalityMetric, type MortalityRow } from './report';
 import styles from './bass.module.css';
 
 const unstockedPeriods = periodsFor('Unstocked');
@@ -107,7 +107,7 @@ export function MortalityObservatory() {
       <details className={styles.disclosure}>
         <summary>Selected estimate provenance</summary>
         <p>{report.reference} · {mortality.locator} · {selected.period} · {selected.season} · {selected.method} · {selected.group} systems.</p>
-        <p>The two-decimal values come from the researcher-supplied transcription. The original page and its page number await direct verification.</p>
+        <p>The two-decimal values were checked against Table 1 in IMG_3952.jpg.</p>
         <p>The report used ages 3–10 for the catch curve. In this method, the decline in observed numbers across ages can also be sensitive to recruitment and how well the gear samples those ages. <a href={methodsReferences.mortality}>FAO background on mortality estimates</a></p>
       </details>
 
@@ -121,7 +121,7 @@ export function MortalityObservatory() {
         <tbody>
           {mortality.rows.map((row) => (
             <tr key={`${row.period}-${row.method}`} aria-current={row === selected ? 'true' : undefined}>
-              <th scope="row">{row.period}<small>{row.group} systems</small></th>
+              <th scope="row" id={mortalityRowId(row)} tabIndex={-1}>{row.period}<small>{row.group} systems</small></th>
               <td>{row.season}<small>{row.method}</small></td>
               <td>{row.z}</td><td>{row.s}</td><td>{row.a}</td>
             </tr>

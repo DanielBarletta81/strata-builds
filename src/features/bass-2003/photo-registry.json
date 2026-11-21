@@ -1,0 +1,218 @@
+{
+  "archiveSha256": "472d4de57ab91b7e732f6a1b5fef6a35125e9bb746af829145b39cc81fc5dacb",
+  "manifestSha256": "b1651d7346864bbda210d463e741e688d98c145f70b6674366b1c783172aca0f",
+  "photos": {
+    "IMG_3929.jpeg": {
+      "sha256": "3a97c6efac8df02da1d8cbf2432d20abf08855efc53d6688b7d826b7ae21bfd2",
+      "content": "Title page, authors, publisher and November 2003 date"
+    },
+    "IMG_3947.jpg": {
+      "sha256": "37afc34666d2be4e5cb364c2dcef0df2cc73fb770e6c017cbfaa261fcef99b26",
+      "content": "Introduction, Methods and opening Results with catch-curve figure references"
+    },
+    "IMG_3948.jpg": {
+      "sha256": "b82d5dd19ee71e997d1a5b66a531e1542be33dd88a4010c95c9d331f1506f22a",
+      "content": "Results continued, fitting ages, growth-figure references and opening Discussion"
+    },
+    "IMG_3949.jpg": {
+      "sha256": "23b6e0ea6c87e804ff1b83c86ab448b330c9cfcfe87bcdb771a5f5ff48742a86",
+      "content": "Overlapping Results and Discussion on age distributions and mortality"
+    },
+    "IMG_3950.jpg": {
+      "sha256": "846f9e5b15357436053e28c7bc05e711c127536183b0b327b4d19a8a447f9f09",
+      "content": "Discussion continuation on gear, fitted growth and competition or forage hypotheses"
+    },
+    "IMG_3951.jpg": {
+      "sha256": "a888f6e4467bfea9c417eb280793e0bf7058efe625a15d50fe6b4553b3cd6d77",
+      "content": "Literature Cited, including Ricker (1975)"
+    },
+    "IMG_3952.jpg": {
+      "sha256": "a86af2c95176f3c8be5b0efa2fa81b3b1337586137a1969b430b7741e2d92b64",
+      "content": "Table 1 with all 15 rows and the top of Table 2"
+    },
+    "IMG_3953.jpg": {
+      "sha256": "c892ec11d032678af31a293dd9070489a2b9a7e764aded7d523595eef2e3b189",
+      "content": "Table 2 with both parameter rows and sampling footnotes"
+    },
+    "IMG_3954.jpg": {
+      "sha256": "ff5470607326715580300c37ef6d08dc00dfded287a75fe06ab55001a4597297",
+      "content": "1995 electrofishing catch curve. Caption number cropped."
+    },
+    "IMG_3955.jpg": {
+      "sha256": "3c1051faf973a581a652df22a4b8de5ae076bc973bc52bbcfba2a52406e33334",
+      "content": "Figure 2. 1996 electrofishing catch curve. Caption number visible."
+    },
+    "IMG_3956.jpg": {
+      "sha256": "0321094cbe674fc047ca1c3370513c360f7246aae219c1993161f20cc59e5b3c",
+      "content": "Figure 4. 1998 electrofishing catch curve. Caption number visible."
+    },
+    "IMG_3957.jpg": {
+      "sha256": "a1ed211f3df3183ffe3c1e6903963777695caa61c5ab546dad861be5ae66074c",
+      "content": "1995–1998 pooled electrofishing catch curve. Results identifies Figure 5."
+    },
+    "IMG_3960.jpg": {
+      "sha256": "6f90c7f08a3a2439fe6417b1b0f1929b49778d362d98e21841c5a63cfacd771b",
+      "content": "2000 angling catch curve. Caption number unreadable."
+    },
+    "IMG_3962.jpg": {
+      "sha256": "0e9a5b9923c98965124d8ffea7618d7b00c7eb43842dc8af7321ba1f86652d48",
+      "content": "2001 electrofishing catch curve. Caption number partly obscured."
+    },
+    "IMG_3966.jpg": {
+      "sha256": "b4acdb55deca2c35df6bc5ff88f4566961c8f4eadb3a9861bb03de81f7d0adad",
+      "content": "1999–2002 pooled electrofishing catch curve. Results identifies Figure 15."
+    },
+    "IMG_3968.jpg": {
+      "sha256": "e8a9055d43df1dbebc659d340e91ef76253fdcece811799d58f3a492421c6beb",
+      "content": "Growth plot with Actual and Predicted length-at-age series. Figure number outside crop."
+    }
+  },
+  "printedFitAges": [
+    3,
+    10
+  ],
+  "extractedCoordinates": null,
+  "tracedRegression": null,
+  "catchCurves": [
+    {
+      "period": "1995",
+      "method": "Electrofishing",
+      "scope": "Annual",
+      "title": "1995 Catch Curve (Electrofishing)",
+      "printedZ": "0.604",
+      "sourceFile": "IMG_3954.jpg",
+      "captionNumber": null,
+      "locator": "1995–1998 annual electrofishing series, Figures 1–4 in Results. Caption number cropped.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0.00",
+        "5.00"
+      ],
+      "legibility": "A baseline diamond and a diamond close to the fit require independent classification.",
+      "ageUpperBoundCropped": false
+    },
+    {
+      "period": "1996",
+      "method": "Electrofishing",
+      "scope": "Annual",
+      "title": "1996 Catch Curve (Electrofishing)",
+      "printedZ": "0.573",
+      "sourceFile": "IMG_3955.jpg",
+      "captionNumber": "Figure 2",
+      "locator": "Caption number visible.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0.00",
+        "5.00"
+      ],
+      "legibility": "Shadow at upper left. A diamond at the zero axis and a mark touching the fit need verification.",
+      "ageUpperBoundCropped": false
+    },
+    {
+      "period": "1998",
+      "method": "Electrofishing",
+      "scope": "Annual",
+      "title": "1998 Catch Curve (Electrofishing)",
+      "printedZ": "0.472",
+      "sourceFile": "IMG_3956.jpg",
+      "captionNumber": "Figure 4",
+      "locator": "Caption number visible.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0.00",
+        "5.00"
+      ],
+      "legibility": "Several diamonds lie on the zero axis, including one at the corner.",
+      "ageUpperBoundCropped": false
+    },
+    {
+      "period": "1995–1998 pooled",
+      "method": "Electrofishing",
+      "scope": "Pooled",
+      "title": "1995-1998 Catch Curve (Electrofishing)",
+      "printedZ": "0.638",
+      "sourceFile": "IMG_3957.jpg",
+      "captionNumber": null,
+      "locator": "Results explicitly identifies this pooled series as Figure 5. Caption number unreadable.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0.00",
+        "5.00"
+      ],
+      "legibility": "Curved page and cropped upper right. A diamond touches the fit and another lies at the baseline corner.",
+      "ageUpperBoundCropped": false
+    },
+    {
+      "period": "2000",
+      "method": "Angling",
+      "scope": "Annual",
+      "title": "2000 Catch Curve (Angling)",
+      "printedZ": "0.660",
+      "sourceFile": "IMG_3960.jpg",
+      "captionNumber": null,
+      "locator": "1999–2002 angling series, Figures 6, 8, 10 and 12 in Results. Caption number unreadable.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0",
+        "5"
+      ],
+      "legibility": "Curved baseline with several zero-axis diamonds and a diamond on the fitted line.",
+      "ageUpperBoundCropped": false
+    },
+    {
+      "period": "2001",
+      "method": "Electrofishing",
+      "scope": "Annual",
+      "title": "2001 Catch Curve (Electrofishing)",
+      "printedZ": "0.487",
+      "sourceFile": "IMG_3962.jpg",
+      "captionNumber": null,
+      "locator": "1999–2002 electrofishing series, Figures 7, 9, 11 and 13 in Results. Caption number partly obscured.",
+      "ageTicks": [
+        "0",
+        "10"
+      ],
+      "lnFrequencyTicks": [
+        "0",
+        "5"
+      ],
+      "legibility": "Right-hand axis end cropped beyond the last readable tick at age 10. Page curvature and line/axis overlaps prevent full calibration.",
+      "ageUpperBoundCropped": true
+    },
+    {
+      "period": "1999–2002 pooled",
+      "method": "Electrofishing",
+      "scope": "Pooled",
+      "title": "1999-2002 Pooled Catch Curve (Electrofishing)",
+      "printedZ": "0.573",
+      "sourceFile": "IMG_3966.jpg",
+      "captionNumber": null,
+      "locator": "Results explicitly identifies this pooled series as Figure 15. Caption outside crop.",
+      "ageTicks": [
+        "0",
+        "12"
+      ],
+      "lnFrequencyTicks": [
+        "0",
+        "5"
+      ],
+      "legibility": "Curved page. Diamonds touch the axis and fit, and faint background marks need independent classification.",
+      "ageUpperBoundCropped": false
+    }
+  ]
+}

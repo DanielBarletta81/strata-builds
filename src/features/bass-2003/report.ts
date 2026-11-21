@@ -1,6 +1,6 @@
 import transcription from './transcription.json' with { type: 'json' };
 
-export const { report, mortality, growth, figureArchive } = transcription;
+export const { report, mortality, growth } = transcription;
 export type MortalityRow = typeof mortality.rows[number];
 export type MortalityMetric = 'z' | 's' | 'a';
 
@@ -27,6 +27,10 @@ export function recordsForPeriod(period: string) {
 
 export function mortalityRecord(period: string, method: string) {
   return recordsForPeriod(period).find((row) => row.method === method);
+}
+
+export function mortalityRowId({ period, method }: MortalityRow) {
+  return `table-1-${period.replace(/[^a-z0-9]+/gi, '-')}-${method.toLowerCase()}`;
 }
 
 export function comparisonSeries(selected: MortalityRow) {
