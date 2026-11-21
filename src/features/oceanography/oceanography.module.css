@@ -1,0 +1,386 @@
+.page {
+  --ink: #163138;
+  --muted: #3d5c65;
+  --ocean: #075661;
+  --surface: #edf6f4;
+  --line: #c6dcd8;
+  --amber: #714000;
+  max-width: 76rem;
+  margin: auto;
+  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.85rem, 3vw, 2.5rem) 3rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.page a {
+  color: var(--ocean);
+  text-underline-offset: 0.18em;
+}
+
+.page :is(a, select, button, summary, input):focus-visible {
+  outline: 3px solid #087ba5;
+  outline-offset: 3px;
+}
+
+.hero {
+  background: #102f36;
+  border-radius: 0.8rem;
+  color: #eafbf9;
+  padding: clamp(1.35rem, 5vw, 3.6rem);
+}
+
+.hero p:first-child {
+  color: #a9e4dc;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero h1 {
+  max-width: 23ch;
+  margin: 0.45rem 0;
+  font-size: clamp(2.05rem, 5.65vw, 4.25rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.hero p:last-child {
+  margin: 0.85rem 0 0;
+  max-width: 68ch;
+  color: #d2e8e7;
+}
+
+.stationGrid,
+.dataGrid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.dataGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(0.9rem, 2.6vw, 1.6rem);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+
+.page > .panel + .panel {
+  margin-top: 1rem;
+}
+
+.panelHeader h2 {
+  font-size: clamp(1.25rem, 2.25vw, 1.75rem);
+  letter-spacing: -0.026em;
+  line-height: 1.16;
+  margin: 0 0 0.65rem;
+}
+
+.panel p {
+  margin: 0.45rem 0 0.8rem;
+}
+
+.panelHeader p,
+.quiet,
+.panel figcaption {
+  color: var(--muted);
+  font-size: 0.89rem;
+}
+
+.panel figure {
+  margin: 0;
+}
+
+.panel figcaption {
+  margin-top: 0.4rem;
+}
+
+.panel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.45rem;
+}
+
+.map {
+  max-width: 27rem;
+  margin-inline: auto;
+}
+
+.land {
+  fill: #e7eeea;
+}
+
+.water {
+  fill: #9bced1;
+}
+
+.mapLabel {
+  fill: #164a55;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pin circle,
+.selectedPin circle {
+  stroke: #f4fffd;
+  stroke-width: 2.25;
+  fill: #225665;
+}
+
+.selectedPin circle {
+  stroke: #633500;
+  stroke-width: 3;
+  fill: #ffe0a6;
+}
+
+.pin text,
+.selectedPin text {
+  fill: #fff;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.selectedPin text {
+  fill: #3f2605;
+}
+
+.stations {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.stations button {
+  appearance: none;
+  width: 100%;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.stations button[aria-pressed='true'] {
+  background: #fff3d9;
+  border-color: #947036;
+}
+
+.stationNumber {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: #225665;
+  color: #fff;
+  font-weight: 750;
+}
+
+.stations [aria-pressed='true'] .stationNumber {
+  background: #7a4b13;
+}
+
+.stationNote,
+.record,
+.notice {
+  padding: 0.8rem 0.95rem;
+  background: var(--surface);
+  border-radius: 0.45rem;
+}
+
+.page h3 {
+  margin: 0 0 0.38rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.page small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.81rem;
+}
+
+.record {
+  margin-top: 0.85rem;
+}
+
+.page label,
+.page legend {
+  font-weight: 650;
+}
+
+.page select {
+  display: block;
+  min-height: 2.75rem;
+  max-width: 100%;
+  margin: 0.25rem 0 0.65rem;
+  border: 1px solid #65888d;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  padding-inline: 0.55rem;
+}
+
+.chart svg {
+  background: #f2f8f7;
+}
+
+.chart text,
+.concept text {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.chart text {
+  fill: #264c55;
+}
+
+.chart line {
+  stroke: #c5dcda;
+}
+
+.point {
+  fill: var(--ocean);
+}
+
+.activePoint {
+  fill: #e9ab54;
+  stroke: #613700;
+  stroke-width: 2;
+}
+
+.readout {
+  display: grid;
+  gap: 0.55rem 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0.55rem 0;
+}
+
+.readout dt {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.readout dd {
+  margin: 0;
+  font-weight: 620;
+}
+
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+  border: 0;
+  padding: 0;
+  margin: 0 0 0.65rem;
+}
+
+.modes legend {
+  margin-bottom: 0.25rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.modes label {
+  border: 1px solid var(--line);
+  border-radius: 0.32rem;
+  padding: 0.4rem 0.65rem;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.modes label:has(input:checked) {
+  background: var(--surface);
+  border-color: #587e81;
+}
+
+.modes input {
+  accent-color: var(--ocean);
+}
+
+.depths {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.depths article {
+  background: var(--surface);
+  border-left: 4px solid #468a91;
+  padding: 0.65rem 0.8rem;
+}
+
+.page .warning {
+  color: var(--amber);
+}
+
+.page details {
+  margin-top: 0.55rem;
+  padding: 0.1rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+}
+
+.page summary {
+  color: var(--ocean);
+  min-height: 2.75rem;
+  align-content: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table caption {
+  text-align: left;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.table :is(th, td) {
+  padding: 0.38rem 0.35rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  background: var(--surface);
+}
+
+.receipts {
+  padding-left: 1.05rem;
+}
+
+.receipts li + li {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .stationGrid,
+  .dataGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

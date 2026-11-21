@@ -36,6 +36,11 @@ export default function Home() {
             href="/orbital"
           />
           <ProjectCard
+            title="Estuarine Gradient Observatory"
+            description="Compare verified nutrients, salinity and depth observations across Narragansett Bay."
+            href="/oceanography"
+          />
+          <ProjectCard
             title="Evidence Frontier"
             description="Trace documented gaps in Narragansett Bay monitoring to source records, schedules, and the next useful investigation."
             href="/frontier"

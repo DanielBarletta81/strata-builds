@@ -181,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all seven canonical URLs', async () => {
+test('GET /sitemap.xml publishes all nine canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
   );
 });
 
@@ -344,4 +344,23 @@ test('GET /frontier/reconciliation renders two evidence case files with locators
   for (const [, , , hash] of exactValues) {
     assert.equal(hash, 'b670816f7d53de5f783edb4db0f0de1bf490283afc04948b8865fb3f6e68fd83');
   }
+});
+
+test('GET /oceanography renders the station locator, paired records and depth provenance', async () => {
+  const html = (await fetchRoute('/oceanography', 'text/html')).replaceAll('<!-- -->', '');
+  for (const label of [
+    'Estuarine Gradient Observatory', 'Narragansett Bay station locator', 'Phillipsdale Landing',
+    '9 of 14 reviewed surface rows', 'Salt-wedge explorer', 'Sampling coverage and gaps',
+    'PD!Y11480', 'CB85102', 'Mid-depth sensor only', 'Source records and file fingerprints',
+  ]) assert.ok(html.includes(label), label);
+});
+
+test('GET /oceanography/pawtuxet exposes profiler observations, limits and source locators', async () => {
+  const html = (await fetchRoute('/oceanography/pawtuxet', 'text/html')).replaceAll('<!-- -->', '');
+  for (const label of [
+    'Pawtuxet Water Column Explorer', '49 published casts', '2014-01-15 · metadata only',
+    '3 published depth readings below 3 mg/L</strong> in one cast on <time', '>2016-07-20</time>',
+    '2.69799', '1016.7244', '1019.2272', '2016 Data!J2046', 'Selected reading',
+    'Published density difference', 'oyster-bearing rocks beneath the bridge', 'https://dem.ri.gov/latest-bay-area-report',
+  ]) assert.ok(html.includes(label), label);
 });

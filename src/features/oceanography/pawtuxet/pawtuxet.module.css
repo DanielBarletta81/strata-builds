@@ -1,0 +1,125 @@
+.page {
+  max-width: 67rem;
+}
+
+.page .back {
+  color: #a9e4dc;
+}
+
+.section,
+.grid {
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.archiveNote {
+  padding: 0.55rem 0.7rem;
+  border-left: 3px solid #9b651e;
+  background: #faf1df;
+  color: var(--amber);
+  font-size: 0.92rem;
+}
+
+.castDate {
+  white-space: nowrap;
+}
+
+.plot svg {
+  background: #f2f8f7;
+}
+
+.plot text {
+  fill: #264c55;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.plot line {
+  stroke: #c5dcda;
+}
+
+.plot .threshold {
+  stroke: #995029;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.point {
+  fill: var(--ocean);
+}
+
+.lowPoint {
+  fill: #b65b20;
+}
+
+.selectedPoint {
+  fill: none;
+  stroke: #163138;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.plotKey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+
+.plotKey li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.selectedKey {
+  width: 0.78rem;
+  height: 0.78rem;
+  border: 2px solid #163138;
+  border-radius: 50%;
+}
+
+.lowKey {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-inline: 0.11rem;
+  background: #b65b20;
+  transform: rotate(45deg);
+}
+
+.page .comparison :is(th[scope='col']:not(:first-child), td) {
+  text-align: right;
+}
+
+.comparison td {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+.recordValues {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
+.recordValues > div {
+  padding: 0.55rem;
+  border-radius: 0.35rem;
+  background: var(--surface);
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plot text {
+    font-size: 18px;
+  }
+}
