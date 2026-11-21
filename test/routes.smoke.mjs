@@ -111,6 +111,7 @@ const pages = [
   ['/atlas', 'Microsat Atlas', 'SYNTHETIC DEMONSTRATION DATA'],
   ['/studio', 'Studio', 'Strata Works portfolio coming soon'],
   ['/signals', 'NOAA Signals Lab', 'Loading NOAA observations'],
+  ['/orbital', '1 Ceres', 'Modeled geometric state from JPL'],
 ];
 
 for (const [path, heading, content] of pages) {
@@ -121,6 +122,8 @@ for (const [path, heading, content] of pages) {
       assert.match(html, /<title>NOAA Signals Lab \| Strata Builds<\/title>/);
       assert.match(html, /<label for="signals-hours">Observation window<\/label>/);
       assert.match(html, /role="status"/);
+    } else if (path === '/orbital') {
+      assert.match(html, /<title>Orbital Observatory \| Strata Builds<\/title>/);
     } else {
       assert.match(html, /<title>Strata Builds<\/title>/);
       assert.match(html, /<meta name="description" content="Design, data, structure — visualizations and digital products"/);
@@ -131,7 +134,7 @@ for (const [path, heading, content] of pages) {
     const nav = html.match(/<nav\b[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([^<]+)<\/a>/g)]
       .map(([, href, label]) => [href, label]);
-    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals']]);
+    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals'], ['/orbital', 'Orbital']]);
   });
 }
 
@@ -175,12 +178,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all four canonical URLs', async () => {
+test('GET /sitemap.xml publishes all five canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital'],
   );
 });
 
@@ -288,4 +291,20 @@ test('NOAA HTTP failures and timeouts retain their status and reuse the same-slo
   assert.equal(newAttempt.status, 502);
   assert.equal((await newAttempt.json()).delivery.source, 'noaa');
   assert.equal(await upstreamCalls(6), 2);
+});
+
+test('GET /orbital publishes provenance and the same accessible sample in the plot and table', async () => {
+  const html = await fetchRoute('/orbital', 'text/html');
+  assert.match(html, /<label for="orbital-sample">Ephemeris sample<\/label>/);
+  assert.match(html, /type="range"[^>]*min="0"[^>]*max="261"/);
+  assert.match(html, /<svg[^>]*role="img"[^>]*aria-labelledby="orbit-svg-title orbit-svg-desc"/);
+  const marker = html.match(/<circle[^>]*data-sample-jd="([^"]+)"/)?.[1];
+  const table = html.match(/<table[^>]*data-sample-jd="([^"]+)"/)?.[1];
+  assert.equal(marker, '2461220.5');
+  assert.equal(table, marker);
+  assert.match(html, /<caption>JPL state vector components<\/caption>/);
+  assert.match(html, /JPL Horizons manual/);
+  assert.match(html, /2026-11-20T23:53:46\.724Z/);
+  assert.match(html, /J2000 ecliptic plane/);
+  assert.match(html, /Evidence gaps and limits/);
 });

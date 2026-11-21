@@ -23,6 +23,7 @@ test('sitemap keeps the canonical URLs, crawl hints, and modification dates', ()
       { url: 'https://strata-builds.tech/studio', changeFrequency: 'monthly', priority: 0.9 },
       { url: 'https://strata-builds.tech/atlas', changeFrequency: 'monthly', priority: 0.9 },
       { url: 'https://strata-builds.tech/signals', changeFrequency: 'monthly', priority: 0.9 },
+      { url: 'https://strata-builds.tech/orbital', changeFrequency: 'monthly', priority: 0.9 },
     ],
   );
 

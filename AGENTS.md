@@ -18,7 +18,7 @@ Make existing, excluded, inaccessible, and undiscovered evidence distinguishable
 - `/studio` — engineering and studio portfolio placeholder (existing route).
 - `/atlas` — Microsat Atlas with an **explicitly synthetic demo**. Published Chesapeake Bay genetic research data is separately scoped.
 - `/signals` — NOAA Signals Lab with Providence hourly water temperature and source-scoped evidence gaps (implemented).
-- `/observatory` — orbital dynamics and 3D instrument (planned).
+- `/orbital` — Orbital Observatory with bounded, modeled JPL states for 1 Ceres (implemented).
 - `/collections` — Smithsonian collections and research context (planned).
 - `/deep-time` — Earth systems across geological history (planned).
 - `/methods` — source provenance, assumptions, models, and limitations (planned).
@@ -133,7 +133,7 @@ Report mission ID, branch/HEAD/status, files changed, relevant pinned upstream r
 2. **STRATA-003** — the Atlas demo integration is documented in [STRATA-003](docs/STRATA-003.md). Verify the checked-out branch and deployment before reporting release status.
 3. **STRATA-003B** — Chesapeake Bay research-genetics connection; future requirement, not authorized to implement yet.
 4. **STRATA-004** — Providence NOAA observations, quality inspection, and the Evidence Frontier contract. See [STRATA-004](docs/STRATA-004.md).
-5. **STRATA-005** — first scientifically validated Orbital Observatory instrument.
+5. **STRATA-005** — Orbital Observatory’s first instrument uses a frozen JPL ephemeris for 1 Ceres. See [STRATA-005](docs/STRATA-005.md).
 6. **Deep Time and Collections** — subsequent separately scoped releases.
 
 Keep status claims tied to verified commits and deployments.
