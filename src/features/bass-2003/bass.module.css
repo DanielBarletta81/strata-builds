@@ -4,7 +4,6 @@
   --accent: #005d60;
   --line: #c9dcd8;
   --paper: #eff7f5;
-  --brass: #815519;
   width: min(100%, 73rem);
   margin-inline: auto;
   padding: clamp(0.85rem, 3vw, 2.5rem) clamp(0.85rem, 3vw, 2.4rem) 3rem;
@@ -18,7 +17,7 @@
   text-underline-offset: 0.18em;
 }
 
-.page :is(a, button, select, summary):focus-visible {
+.page :is(a, button, select, summary, th):focus-visible {
   outline: 3px solid #076fa2;
   outline-offset: 3px;
 }
@@ -370,6 +369,12 @@
   background: var(--paper);
 }
 
+.sourceTable th:target {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  scroll-margin-top: 1rem;
+}
+
 .sourceTable :is(th, td):nth-child(n+3) {
   text-align: right;
   white-space: nowrap;
@@ -423,21 +428,50 @@
   margin: 0.15rem 0 0.65rem;
 }
 
-.archive {
-  list-style: none;
+.figureControl {
+  max-width: 28rem;
 }
 
-.archive li {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
+.figureSelection {
+  margin-top: 1rem;
+}
+
+.figureSelection .context {
+  margin-top: 0.2rem;
+}
+
+.figureEstimates {
+  margin-top: 0.6rem;
+}
+
+.axisRanges {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.9rem;
   border-top: 1px solid var(--line);
-  padding: 0.6rem 0;
+  padding-top: 0.7rem;
 }
 
-.archive li span {
-  color: var(--brass);
+.axisRanges dt,
+.figureSource dt {
+  font-weight: 680;
+}
+
+.axisRanges dd,
+.figureSource dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.figureSource {
+  display: grid;
+  gap: 0.55rem;
+  padding-bottom: 0.65rem;
+}
+
+.figureSource code {
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 680px) {

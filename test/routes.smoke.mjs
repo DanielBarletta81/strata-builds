@@ -369,10 +369,16 @@ test('GET /research/bass-2003 renders the study, exact reported tables and evide
   const html = (await fetchRoute('/research/bass-2003', 'text/html')).replaceAll('<!-- -->', '');
   for (const marker of [
     '<title>Bass Population Observatory | Strata Builds</title>', 'Research Reference Document #2003/1',
-    'original pages pending verification', '1999 · Stocked systems · Fall · Electrofishing · Annual estimate',
+    'Values checked against recovered report photographs', '1999 · Stocked systems · Fall · Electrofishing · Annual estimate',
     'Selected estimate provenance', 'Table 1 · all reported mortality estimates', '1995–1998 pooled',
-    '573.84', '491.80', 'Growth parameter provenance', 'Original page pending', '2026 research questions',
+    '573.84', '491.80', 'Growth parameter provenance', 'Stocked Systems (2002)**', '2026 research questions',
+    'Catch Curve Laboratory', 'Catch-curve figure', 'Figure annotation Z', 'Table 1 estimate Z', '0.604',
+    'Catch-curve source inspector', 'How to read a catch curve', 'IMG_3954.jpg', 'ff5470607326715580',
+    'id="table-1-1995-electrofishing"', 'href="#table-1-1995-electrofishing"',
+    'Figure metadata verified', 'Whether they come from the same fit remains unverified',
+    'Original kept in the private archive', 'Strata research philosophy', 'value="figure-4"',
   ]) assert.ok(html.includes(marker), marker);
+  assert.doesNotMatch(html, /\/(?:originals|\.research-local)\/IMG_/);
   const studio = await fetchRoute('/studio', 'text/html');
   assert.match(studio, /href="\/research\/bass-2003"/);
 });

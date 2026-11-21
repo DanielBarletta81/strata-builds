@@ -10,12 +10,14 @@ The route reads a frozen transcription under `src/features/bass-2003/`. Mortalit
 
 ## Evidence scope
 
-The current source is the researcher-supplied transcription of 15 Table 1 estimates and two Table 2 fits. Original pages and the complete growth equation remain pending. The figure register tracks reported availability without adding numeric annotations. The comparison preserves differences in period, season, gear and pond grouping. The historical stocking objective requires its own legal-size abundance evidence. [Source inventory](BASS_2003_SOURCE_INVENTORY.md) · [Reconstruction and intake method](BASS_2003_RECONSTRUCTION_METHOD.md)
+Phase 1 used the researcher-supplied transcription of 15 Table 1 estimates and two Table 2 fits. Its figure register tracked reported availability. The mortality comparison preserves differences in period, season, gear and pond grouping. The historical stocking objective requires its own legal-size abundance evidence. [Source inventory](BASS_2003_SOURCE_INVENTORY.md) · [Reconstruction and intake method](BASS_2003_RECONSTRUCTION_METHOD.md)
 
-The smallest next step is to verify local images of Tables 1 and 2 and the growth method page against the transcription. That would add direct page locators and resolve the actual equation before any numerical length-at-age work.
-
-## Verification
+## Phase 1 verification
 
 - Node.js 24.22.3 and npm 11.19.1. Clean install, lint, typecheck, 52 unit tests, production build and 20 route smoke tests passed.
 - Chromium at 375, 768 and 1440 px verified Studio navigation, all 15 mortality rows, period and gear changes, metric changes, keyboard selection with visible focus, and both provenance disclosures. The page had no horizontal overflow or browser errors at these widths.
 - Full-page captures from the local production build are available for [375 px mobile](review/strata-009-mobile.png) and [1440 px desktop](review/strata-009-desktop.png).
+
+## Phase 2 · Catch Curve Laboratory
+
+The laboratory adds seven source-verified figure annotations with their linked Table 1 rows. Source coverage, verification and browser captures are documented in the [Phase 2 closeout](STRATA-009-PHASE2.md).

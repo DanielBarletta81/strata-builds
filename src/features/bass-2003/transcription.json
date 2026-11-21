@@ -37,11 +37,5 @@
       { "group": "Unstocked systems", "period": "1995–1998 pooled", "asymptoteMm": "573.84", "t0Years": "0.14", "k": "0.21" },
       { "group": "Stocked systems", "period": "2002", "asymptoteMm": "491.80", "t0Years": "0.58", "k": "0.24" }
     ]
-  },
-  "figureArchive": {
-    "sourceFileVerification": "pending",
-    "typesReportedByResearcher": ["Individual-year catch curves", "Pooled catch curves"],
-    "annotationDecimalPlacesReportedByResearcher": 3,
-    "records": []
   }
 }
