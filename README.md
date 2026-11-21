@@ -22,6 +22,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | NOAA Signals | `/signals` | Providence hourly water temperature, quality flags, coverage, and evidence gaps | Implemented in STRATA-004 |
 | Orbital Observatory | `/orbital` | Bounded time inspection of 1 Ceres with saved JPL model states and evidence limits | First instrument implemented in STRATA-005 |
 | Evidence Frontier | `/frontier` | Narragansett Bay source coverage, monitoring schedules, and research questions | First investigation implemented in STRATA-006 |
+| Evidence Reconciliation | `/frontier/reconciliation` | Record-level Bullock Reach and Station II temperature investigations | Case files implemented in STRATA-007 |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |

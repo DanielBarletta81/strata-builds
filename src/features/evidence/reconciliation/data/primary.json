@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "files": {
+    "ridem": {
+      "file": "nbfsmn12.zip",
+      "sha256": "faa31c9b5bc784cd1971807fa873d4f7242f87bb662798374bbc837e1a48e8e4"
+    },
+    "rawArchive": {
+      "file": "nbfsmn12/B4.NBC.Bullock Reach/B4.nbc.Bullock Reach 2012 Raw Files.zip",
+      "sha256": "ebf0c24f61233114a9fa2a1b201af1d7e7eb2e2f5d11bb5564a438e2fd091fc0"
+    },
+    "rawText": {
+      "file": "B4.nbc.Bullock Reach 2012 Raw Files/B4.nbc.Bullock Reach Surface Raw Files 2012/BullocksReach_Surface.txt",
+      "sha256": "84103ccb372e3d89dbc8fec632d3db0737196627c09aaaf73984b53046caca35"
+    },
+    "rawWorkbook": {
+      "file": "B4.nbc.Bullock Reach 2012 Raw Files/B4.nbc.Bullock Reach Surface Raw Files 2012/BR_2012_Surface.xls",
+      "sha256": "66930d8a0ac5ec25d4c05d1204f9cfb951845279d3fe221522f4e2ad312d580c"
+    },
+    "editedArchive": {
+      "file": "nbfsmn12/B4.NBC.Bullock Reach/B4.nbcBR2012.editted.zip",
+      "sha256": "7db9af65c133b831e7298f1865959f5a05729df32e7eeb36641c9700a39f3cd1"
+    },
+    "edited": {
+      "file": "B4.nbcBR2012.editted.xls",
+      "sha256": "b801a00f9c73810a90fcae3830194133dfda4a9cc044e936fe390cdad3b4d0be"
+    },
+    "correctedArchive": {
+      "file": "nbfsmn12/B4.NBC.Bullock Reach/B4.nbcBR2012.corrected.zip",
+      "sha256": "6bcd5641605745bf4633699fbf78002f7ebd33142649de9bfba7b2aef19663fa"
+    },
+    "corrected": {
+      "file": "B4.nbcBR2012.corrected..xlsx",
+      "sha256": "b670816f7d53de5f783edb4db0f0de1bf490283afc04948b8865fb3f6e68fd83"
+    },
+    "field": {
+      "file": "nbfsmn12/B4.NBC.Bullock Reach/Bullock's Reach Surface  Metadata 2012.doc",
+      "sha256": "983522956961d44658e3c977b1605f27f7eb05ec4db16bdd4a66f67dacd408f2"
+    },
+    "intro": {
+      "file": "nbfsmn12/MetadataIntro2012.doc",
+      "sha256": "205292321f8f80f8c4c3cfda684a16d87e953a16bde0fb4c77b4f134658a994e"
+    },
+    "station": {
+      "file": "nbpts_data_1959-2019_final.csv",
+      "sha256": "4b3a66d2e6aeead290bbd148d03aee727112b6be461366196fc32360cdf2f252"
+    },
+    "legacyArchive": {
+      "file": "Temperature.zip",
+      "sha256": "18795da2d309b6efbaccf887525c272b3db59fce25dc497bdf4d2ceb75efec3a"
+    },
+    "legacy": {
+      "file": "Temperature.xls",
+      "sha256": "d0130bb3b5951ca38ff2e28edac3d801f83a29e67d780fb37ec9643ff7a887a9"
+    }
+  },
+  "bullock": {
+    "rawText": [
+      {
+        "row": 20147,
+        "recordNumber": 20151,
+        "date": "2012-07-10",
+        "clock": "09:01:04",
+        "value": "23.27"
+      },
+      {
+        "row": 20148,
+        "recordNumber": 20152,
+        "date": "2012-07-10",
+        "clock": "09:16:04",
+        "value": "23.49"
+      },
+      {
+        "row": 20149,
+        "recordNumber": 20153,
+        "date": "2012-07-10",
+        "clock": "10:01:04",
+        "value": "23.37"
+      },
+      {
+        "row": 20150,
+        "recordNumber": 20154,
+        "date": "2012-07-10",
+        "clock": "10:16:04",
+        "value": "23.35"
+      }
+    ],
+    "rawWorkbook": [
+      {
+        "row": 5181,
+        "date": "2012-07-10",
+        "clock": "09:01:04",
+        "value": "23.27",
+        "bold": false
+      },
+      {
+        "row": 5182,
+        "date": "2012-07-10",
+        "clock": "09:16:04",
+        "value": "23.49",
+        "bold": false
+      },
+      {
+        "row": 5183,
+        "date": "2012-07-10",
+        "clock": "10:01:04",
+        "value": "23.37",
+        "bold": false
+      },
+      {
+        "row": 5184,
+        "date": "2012-07-10",
+        "clock": "10:16:04",
+        "value": "23.35",
+        "bold": false
+      }
+    ],
+    "edited": [
+      {
+        "row": 5228,
+        "date": "2012-07-10",
+        "clock": "09:00:00",
+        "value": "23.27",
+        "bold": false
+      },
+      {
+        "row": 5229,
+        "date": "2012-07-10",
+        "clock": "09:15:00",
+        "value": "23.49",
+        "bold": false
+      },
+      {
+        "row": 5230,
+        "date": "2012-07-10",
+        "clock": "09:30:00",
+        "value": null,
+        "bold": false
+      },
+      {
+        "row": 5231,
+        "date": "2012-07-10",
+        "clock": "09:45:00",
+        "value": null,
+        "bold": false
+      },
+      {
+        "row": 5232,
+        "date": "2012-07-10",
+        "clock": "10:00:00",
+        "value": "23.37",
+        "bold": false
+      },
+      {
+        "row": 5233,
+        "date": "2012-07-10",
+        "clock": "10:15:00",
+        "value": "23.35",
+        "bold": false
+      }
+    ],
+    "corrected": [
+      {
+        "row": 5228,
+        "date": "2012-07-10",
+        "clock": "09:00:00",
+        "value": "23.27",
+        "bold": false,
+        "formula": null
+      },
+      {
+        "row": 5229,
+        "date": "2012-07-10",
+        "clock": "09:15:00",
+        "value": "23.49",
+        "bold": false,
+        "formula": null
+      },
+      {
+        "row": 5230,
+        "date": "2012-07-10",
+        "clock": "09:30:00",
+        "value": "23.473333333333333",
+        "bold": true,
+        "formula": null
+      },
+      {
+        "row": 5231,
+        "date": "2012-07-10",
+        "clock": "09:45:00",
+        "value": "23.509999999999998",
+        "bold": true,
+        "formula": null
+      },
+      {
+        "row": 5232,
+        "date": "2012-07-10",
+        "clock": "10:00:00",
+        "value": "23.37",
+        "bold": false,
+        "formula": null
+      },
+      {
+        "row": 5233,
+        "date": "2012-07-10",
+        "clock": "10:15:00",
+        "value": "23.35",
+        "bold": false,
+        "formula": null
+      }
+    ],
+    "clockChecks": {
+      "rawText": [
+        {
+          "row": 25705,
+          "recordNumber": 25709,
+          "date": "2012-09-06",
+          "clock": "07:31:04",
+          "value": "21.57"
+        },
+        {
+          "row": 30983,
+          "recordNumber": 30987,
+          "date": "2012-10-31",
+          "clock": "07:31:04",
+          "value": "11.55"
+        }
+      ],
+      "edited": [
+        {
+          "row": 10790,
+          "date": "2012-09-06",
+          "clock": "07:30:00",
+          "value": null,
+          "bold": false
+        },
+        {
+          "row": 16070,
+          "date": "2012-10-31",
+          "clock": "07:30:00",
+          "value": null,
+          "bold": false
+        }
+      ]
+    }
+  },
+  "station": [
+    {
+      "row": 1978,
+      "year": 1997,
+      "week": 1,
+      "field": "numeric"
+    },
+    {
+      "row": 1979,
+      "year": 1997,
+      "week": 2,
+      "field": "numeric"
+    },
+    {
+      "row": 1980,
+      "year": 1997,
+      "week": 3,
+      "field": "numeric"
+    },
+    {
+      "row": 1981,
+      "year": 1997,
+      "week": 4,
+      "field": "numeric"
+    },
+    {
+      "row": 1982,
+      "year": 1997,
+      "week": 5,
+      "field": "numeric"
+    },
+    {
+      "row": 1983,
+      "year": 1997,
+      "week": 6,
+      "field": "numeric"
+    },
+    {
+      "row": 1984,
+      "year": 1997,
+      "week": 7,
+      "field": "nd"
+    },
+    {
+      "row": 1985,
+      "year": 1997,
+      "week": 8,
+      "field": "numeric"
+    },
+    {
+      "row": 1986,
+      "year": 1997,
+      "week": 9,
+      "field": "numeric"
+    },
+    {
+      "row": 1987,
+      "year": 1997,
+      "week": 10,
+      "field": "numeric"
+    },
+    {
+      "row": 1988,
+      "year": 1997,
+      "week": 11,
+      "field": "numeric"
+    },
+    {
+      "row": 1989,
+      "year": 1997,
+      "week": 12,
+      "field": "numeric"
+    },
+    {
+      "row": 1990,
+      "year": 1997,
+      "week": 13,
+      "field": "numeric"
+    },
+    {
+      "row": 1991,
+      "year": 1997,
+      "week": 14,
+      "field": "numeric"
+    },
+    {
+      "row": 1992,
+      "year": 1997,
+      "week": 15,
+      "field": "numeric"
+    },
+    {
+      "row": 1993,
+      "year": 1997,
+      "week": 16,
+      "field": "numeric"
+    },
+    {
+      "row": 1994,
+      "year": 1997,
+      "week": 17,
+      "field": "numeric"
+    },
+    {
+      "row": 1995,
+      "year": 1997,
+      "week": 18,
+      "field": "nd"
+    },
+    {
+      "row": 1996,
+      "year": 1997,
+      "week": 19,
+      "field": "nd"
+    },
+    {
+      "row": 1997,
+      "year": 1997,
+      "week": 20,
+      "field": "nd"
+    },
+    {
+      "row": 1998,
+      "year": 1997,
+      "week": 21,
+      "field": "nd"
+    },
+    {
+      "row": 1999,
+      "year": 1997,
+      "week": 22,
+      "field": "nd"
+    },
+    {
+      "row": 2000,
+      "year": 1997,
+      "week": 23,
+      "field": "nd"
+    },
+    {
+      "row": 2001,
+      "year": 1997,
+      "week": 24,
+      "field": "nd"
+    },
+    {
+      "row": 2002,
+      "year": 1997,
+      "week": 25,
+      "field": "nd"
+    },
+    {
+      "row": 2003,
+      "year": 1997,
+      "week": 26,
+      "field": "nd"
+    },
+    {
+      "row": 2004,
+      "year": 1997,
+      "week": 27,
+      "field": "nd"
+    },
+    {
+      "row": 2005,
+      "year": 1997,
+      "week": 28,
+      "field": "nd"
+    },
+    {
+      "row": 2006,
+      "year": 1997,
+      "week": 29,
+      "field": "nd"
+    },
+    {
+      "row": 2007,
+      "year": 1997,
+      "week": 30,
+      "field": "nd"
+    },
+    {
+      "row": 2008,
+      "year": 1997,
+      "week": 31,
+      "field": "nd"
+    },
+    {
+      "row": 2009,
+      "year": 1997,
+      "week": 32,
+      "field": "nd"
+    },
+    {
+      "row": 2010,
+      "year": 1997,
+      "week": 33,
+      "field": "nd"
+    },
+    {
+      "row": 2011,
+      "year": 1997,
+      "week": 34,
+      "field": "nd"
+    },
+    {
+      "row": 2012,
+      "year": 1997,
+      "week": 35,
+      "field": "nd"
+    },
+    {
+      "row": 2013,
+      "year": 1997,
+      "week": 36,
+      "field": "nd"
+    },
+    {
+      "row": 2014,
+      "year": 1997,
+      "week": 37,
+      "field": "nd"
+    },
+    {
+      "row": 2015,
+      "year": 1997,
+      "week": 38,
+      "field": "nd"
+    },
+    {
+      "row": 2016,
+      "year": 1997,
+      "week": 39,
+      "field": "nd"
+    },
+    {
+      "row": 2017,
+      "year": 1997,
+      "week": 40,
+      "field": "nd"
+    },
+    {
+      "row": 2018,
+      "year": 1997,
+      "week": 41,
+      "field": "nd"
+    },
+    {
+      "row": 2019,
+      "year": 1997,
+      "week": 42,
+      "field": "nd"
+    },
+    {
+      "row": 2020,
+      "year": 1997,
+      "week": 43,
+      "field": "nd"
+    },
+    {
+      "row": 2021,
+      "year": 1997,
+      "week": 44,
+      "field": "nd"
+    },
+    {
+      "row": 2022,
+      "year": 1997,
+      "week": 45,
+      "field": "nd"
+    },
+    {
+      "row": 2023,
+      "year": 1997,
+      "week": 46,
+      "field": "nd"
+    },
+    {
+      "row": 2024,
+      "year": 1997,
+      "week": 47,
+      "field": "nd"
+    },
+    {
+      "row": 2025,
+      "year": 1997,
+      "week": 48,
+      "field": "nd"
+    },
+    {
+      "row": 2026,
+      "year": 1997,
+      "week": 49,
+      "field": "nd"
+    },
+    {
+      "row": 2027,
+      "year": 1997,
+      "week": 50,
+      "field": "nd"
+    },
+    {
+      "row": 2028,
+      "year": 1997,
+      "week": 51,
+      "field": "nd"
+    },
+    {
+      "row": 2029,
+      "year": 1997,
+      "week": 52,
+      "field": "nd"
+    },
+    {
+      "row": 2030,
+      "year": 1998,
+      "week": 1,
+      "field": "nd"
+    },
+    {
+      "row": 2031,
+      "year": 1998,
+      "week": 2,
+      "field": "nd"
+    },
+    {
+      "row": 2032,
+      "year": 1998,
+      "week": 3,
+      "field": "nd"
+    },
+    {
+      "row": 2033,
+      "year": 1998,
+      "week": 4,
+      "field": "nd"
+    },
+    {
+      "row": 2034,
+      "year": 1998,
+      "week": 5,
+      "field": "nd"
+    },
+    {
+      "row": 2035,
+      "year": 1998,
+      "week": 6,
+      "field": "nd"
+    },
+    {
+      "row": 2036,
+      "year": 1998,
+      "week": 7,
+      "field": "nd"
+    },
+    {
+      "row": 2037,
+      "year": 1998,
+      "week": 8,
+      "field": "nd"
+    },
+    {
+      "row": 2038,
+      "year": 1998,
+      "week": 9,
+      "field": "nd"
+    },
+    {
+      "row": 2039,
+      "year": 1998,
+      "week": 10,
+      "field": "nd"
+    },
+    {
+      "row": 2040,
+      "year": 1998,
+      "week": 11,
+      "field": "nd"
+    },
+    {
+      "row": 2041,
+      "year": 1998,
+      "week": 12,
+      "field": "nd"
+    },
+    {
+      "row": 2042,
+      "year": 1998,
+      "week": 13,
+      "field": "nd"
+    },
+    {
+      "row": 2043,
+      "year": 1998,
+      "week": 14,
+      "field": "nd"
+    },
+    {
+      "row": 2044,
+      "year": 1998,
+      "week": 15,
+      "field": "nd"
+    },
+    {
+      "row": 2045,
+      "year": 1998,
+      "week": 16,
+      "field": "nd"
+    },
+    {
+      "row": 2046,
+      "year": 1998,
+      "week": 17,
+      "field": "nd"
+    },
+    {
+      "row": 2047,
+      "year": 1998,
+      "week": 18,
+      "field": "nd"
+    },
+    {
+      "row": 2048,
+      "year": 1998,
+      "week": 19,
+      "field": "nd"
+    },
+    {
+      "row": 2049,
+      "year": 1998,
+      "week": 20,
+      "field": "nd"
+    },
+    {
+      "row": 2050,
+      "year": 1998,
+      "week": 21,
+      "field": "nd"
+    },
+    {
+      "row": 2051,
+      "year": 1998,
+      "week": 22,
+      "field": "nd"
+    },
+    {
+      "row": 2052,
+      "year": 1998,
+      "week": 23,
+      "field": "nd"
+    },
+    {
+      "row": 2053,
+      "year": 1998,
+      "week": 24,
+      "field": "nd"
+    },
+    {
+      "row": 2054,
+      "year": 1998,
+      "week": 25,
+      "field": "nd"
+    },
+    {
+      "row": 2055,
+      "year": 1998,
+      "week": 26,
+      "field": "nd"
+    },
+    {
+      "row": 2056,
+      "year": 1998,
+      "week": 27,
+      "field": "nd"
+    },
+    {
+      "row": 2057,
+      "year": 1998,
+      "week": 28,
+      "field": "nd"
+    },
+    {
+      "row": 2058,
+      "year": 1998,
+      "week": 29,
+      "field": "nd"
+    },
+    {
+      "row": 2059,
+      "year": 1998,
+      "week": 30,
+      "field": "nd"
+    },
+    {
+      "row": 2060,
+      "year": 1998,
+      "week": 31,
+      "field": "nd"
+    },
+    {
+      "row": 2061,
+      "year": 1998,
+      "week": 32,
+      "field": "nd"
+    },
+    {
+      "row": 2062,
+      "year": 1998,
+      "week": 33,
+      "field": "nd"
+    },
+    {
+      "row": 2063,
+      "year": 1998,
+      "week": 34,
+      "field": "nd"
+    },
+    {
+      "row": 2064,
+      "year": 1998,
+      "week": 35,
+      "field": "nd"
+    },
+    {
+      "row": 2065,
+      "year": 1998,
+      "week": 36,
+      "field": "nd"
+    },
+    {
+      "row": 2066,
+      "year": 1998,
+      "week": 37,
+      "field": "nd"
+    },
+    {
+      "row": 2067,
+      "year": 1998,
+      "week": 38,
+      "field": "nd"
+    },
+    {
+      "row": 2068,
+      "year": 1998,
+      "week": 39,
+      "field": "nd"
+    },
+    {
+      "row": 2069,
+      "year": 1998,
+      "week": 40,
+      "field": "nd"
+    },
+    {
+      "row": 2070,
+      "year": 1998,
+      "week": 41,
+      "field": "nd"
+    },
+    {
+      "row": 2071,
+      "year": 1998,
+      "week": 42,
+      "field": "nd"
+    },
+    {
+      "row": 2072,
+      "year": 1998,
+      "week": 43,
+      "field": "nd"
+    },
+    {
+      "row": 2073,
+      "year": 1998,
+      "week": 44,
+      "field": "nd"
+    },
+    {
+      "row": 2074,
+      "year": 1998,
+      "week": 45,
+      "field": "nd"
+    },
+    {
+      "row": 2075,
+      "year": 1998,
+      "week": 46,
+      "field": "nd"
+    },
+    {
+      "row": 2076,
+      "year": 1998,
+      "week": 47,
+      "field": "nd"
+    },
+    {
+      "row": 2077,
+      "year": 1998,
+      "week": 48,
+      "field": "nd"
+    },
+    {
+      "row": 2078,
+      "year": 1998,
+      "week": 49,
+      "field": "nd"
+    },
+    {
+      "row": 2079,
+      "year": 1998,
+      "week": 50,
+      "field": "nd"
+    },
+    {
+      "row": 2080,
+      "year": 1998,
+      "week": 51,
+      "field": "nd"
+    },
+    {
+      "row": 2081,
+      "year": 1998,
+      "week": 52,
+      "field": "nd"
+    },
+    {
+      "row": 2082,
+      "year": 1999,
+      "week": 1,
+      "field": "nd"
+    },
+    {
+      "row": 2083,
+      "year": 1999,
+      "week": 2,
+      "field": "nd"
+    },
+    {
+      "row": 2084,
+      "year": 1999,
+      "week": 3,
+      "field": "nd"
+    },
+    {
+      "row": 2085,
+      "year": 1999,
+      "week": 4,
+      "field": "numeric"
+    },
+    {
+      "row": 2086,
+      "year": 1999,
+      "week": 5,
+      "field": "numeric"
+    },
+    {
+      "row": 2087,
+      "year": 1999,
+      "week": 6,
+      "field": "numeric"
+    },
+    {
+      "row": 2088,
+      "year": 1999,
+      "week": 7,
+      "field": "numeric"
+    },
+    {
+      "row": 2089,
+      "year": 1999,
+      "week": 8,
+      "field": "numeric"
+    },
+    {
+      "row": 2090,
+      "year": 1999,
+      "week": 9,
+      "field": "numeric"
+    },
+    {
+      "row": 2091,
+      "year": 1999,
+      "week": 10,
+      "field": "numeric"
+    },
+    {
+      "row": 2092,
+      "year": 1999,
+      "week": 11,
+      "field": "numeric"
+    },
+    {
+      "row": 2093,
+      "year": 1999,
+      "week": 12,
+      "field": "numeric"
+    },
+    {
+      "row": 2094,
+      "year": 1999,
+      "week": 13,
+      "field": "numeric"
+    },
+    {
+      "row": 2095,
+      "year": 1999,
+      "week": 14,
+      "field": "numeric"
+    },
+    {
+      "row": 2096,
+      "year": 1999,
+      "week": 15,
+      "field": "numeric"
+    },
+    {
+      "row": 2097,
+      "year": 1999,
+      "week": 16,
+      "field": "numeric"
+    },
+    {
+      "row": 2098,
+      "year": 1999,
+      "week": 17,
+      "field": "numeric"
+    },
+    {
+      "row": 2099,
+      "year": 1999,
+      "week": 18,
+      "field": "numeric"
+    },
+    {
+      "row": 2100,
+      "year": 1999,
+      "week": 19,
+      "field": "nd"
+    },
+    {
+      "row": 2101,
+      "year": 1999,
+      "week": 20,
+      "field": "numeric"
+    },
+    {
+      "row": 2102,
+      "year": 1999,
+      "week": 21,
+      "field": "numeric"
+    },
+    {
+      "row": 2103,
+      "year": 1999,
+      "week": 22,
+      "field": "numeric"
+    },
+    {
+      "row": 2104,
+      "year": 1999,
+      "week": 23,
+      "field": "nd"
+    },
+    {
+      "row": 2105,
+      "year": 1999,
+      "week": 24,
+      "field": "numeric"
+    },
+    {
+      "row": 2106,
+      "year": 1999,
+      "week": 25,
+      "field": "numeric"
+    },
+    {
+      "row": 2107,
+      "year": 1999,
+      "week": 26,
+      "field": "numeric"
+    },
+    {
+      "row": 2108,
+      "year": 1999,
+      "week": 27,
+      "field": "numeric"
+    },
+    {
+      "row": 2109,
+      "year": 1999,
+      "week": 28,
+      "field": "nd"
+    },
+    {
+      "row": 2110,
+      "year": 1999,
+      "week": 29,
+      "field": "numeric"
+    },
+    {
+      "row": 2111,
+      "year": 1999,
+      "week": 30,
+      "field": "numeric"
+    },
+    {
+      "row": 2112,
+      "year": 1999,
+      "week": 31,
+      "field": "numeric"
+    },
+    {
+      "row": 2113,
+      "year": 1999,
+      "week": 32,
+      "field": "numeric"
+    },
+    {
+      "row": 2114,
+      "year": 1999,
+      "week": 33,
+      "field": "nd"
+    },
+    {
+      "row": 2115,
+      "year": 1999,
+      "week": 34,
+      "field": "numeric"
+    },
+    {
+      "row": 2116,
+      "year": 1999,
+      "week": 35,
+      "field": "nd"
+    },
+    {
+      "row": 2117,
+      "year": 1999,
+      "week": 36,
+      "field": "nd"
+    },
+    {
+      "row": 2118,
+      "year": 1999,
+      "week": 37,
+      "field": "nd"
+    },
+    {
+      "row": 2119,
+      "year": 1999,
+      "week": 38,
+      "field": "numeric"
+    },
+    {
+      "row": 2120,
+      "year": 1999,
+      "week": 39,
+      "field": "numeric"
+    },
+    {
+      "row": 2121,
+      "year": 1999,
+      "week": 40,
+      "field": "numeric"
+    },
+    {
+      "row": 2122,
+      "year": 1999,
+      "week": 41,
+      "field": "numeric"
+    },
+    {
+      "row": 2123,
+      "year": 1999,
+      "week": 42,
+      "field": "numeric"
+    },
+    {
+      "row": 2124,
+      "year": 1999,
+      "week": 43,
+      "field": "numeric"
+    },
+    {
+      "row": 2125,
+      "year": 1999,
+      "week": 44,
+      "field": "numeric"
+    },
+    {
+      "row": 2126,
+      "year": 1999,
+      "week": 45,
+      "field": "numeric"
+    },
+    {
+      "row": 2127,
+      "year": 1999,
+      "week": 46,
+      "field": "numeric"
+    },
+    {
+      "row": 2128,
+      "year": 1999,
+      "week": 47,
+      "field": "numeric"
+    },
+    {
+      "row": 2129,
+      "year": 1999,
+      "week": 48,
+      "field": "numeric"
+    },
+    {
+      "row": 2130,
+      "year": 1999,
+      "week": 49,
+      "field": "numeric"
+    },
+    {
+      "row": 2131,
+      "year": 1999,
+      "week": 50,
+      "field": "numeric"
+    },
+    {
+      "row": 2132,
+      "year": 1999,
+      "week": 51,
+      "field": "numeric"
+    },
+    {
+      "row": 2133,
+      "year": 1999,
+      "week": 52,
+      "field": "numeric"
+    },
+    {
+      "row": 2758,
+      "year": 2012,
+      "week": 1,
+      "field": "nd"
+    },
+    {
+      "row": 2759,
+      "year": 2012,
+      "week": 2,
+      "field": "nd"
+    },
+    {
+      "row": 2760,
+      "year": 2012,
+      "week": 3,
+      "field": "nd"
+    },
+    {
+      "row": 2761,
+      "year": 2012,
+      "week": 4,
+      "field": "nd"
+    },
+    {
+      "row": 2762,
+      "year": 2012,
+      "week": 5,
+      "field": "nd"
+    },
+    {
+      "row": 2763,
+      "year": 2012,
+      "week": 6,
+      "field": "nd"
+    },
+    {
+      "row": 2764,
+      "year": 2012,
+      "week": 7,
+      "field": "nd"
+    },
+    {
+      "row": 2765,
+      "year": 2012,
+      "week": 8,
+      "field": "nd"
+    },
+    {
+      "row": 2766,
+      "year": 2012,
+      "week": 9,
+      "field": "nd"
+    },
+    {
+      "row": 2767,
+      "year": 2012,
+      "week": 10,
+      "field": "nd"
+    },
+    {
+      "row": 2768,
+      "year": 2012,
+      "week": 11,
+      "field": "nd"
+    },
+    {
+      "row": 2769,
+      "year": 2012,
+      "week": 12,
+      "field": "nd"
+    },
+    {
+      "row": 2770,
+      "year": 2012,
+      "week": 13,
+      "field": "nd"
+    },
+    {
+      "row": 2771,
+      "year": 2012,
+      "week": 14,
+      "field": "nd"
+    },
+    {
+      "row": 2772,
+      "year": 2012,
+      "week": 15,
+      "field": "nd"
+    },
+    {
+      "row": 2773,
+      "year": 2012,
+      "week": 16,
+      "field": "nd"
+    },
+    {
+      "row": 2774,
+      "year": 2012,
+      "week": 17,
+      "field": "nd"
+    },
+    {
+      "row": 2775,
+      "year": 2012,
+      "week": 18,
+      "field": "nd"
+    },
+    {
+      "row": 2776,
+      "year": 2012,
+      "week": 19,
+      "field": "nd"
+    },
+    {
+      "row": 2777,
+      "year": 2012,
+      "week": 20,
+      "field": "nd"
+    },
+    {
+      "row": 2778,
+      "year": 2012,
+      "week": 21,
+      "field": "nd"
+    },
+    {
+      "row": 2779,
+      "year": 2012,
+      "week": 22,
+      "field": "nd"
+    },
+    {
+      "row": 2780,
+      "year": 2012,
+      "week": 23,
+      "field": "nd"
+    },
+    {
+      "row": 2781,
+      "year": 2012,
+      "week": 24,
+      "field": "nd"
+    },
+    {
+      "row": 2782,
+      "year": 2012,
+      "week": 25,
+      "field": "nd"
+    },
+    {
+      "row": 2783,
+      "year": 2012,
+      "week": 26,
+      "field": "nd"
+    },
+    {
+      "row": 2784,
+      "year": 2012,
+      "week": 27,
+      "field": "nd"
+    },
+    {
+      "row": 2785,
+      "year": 2012,
+      "week": 28,
+      "field": "nd"
+    },
+    {
+      "row": 2786,
+      "year": 2012,
+      "week": 29,
+      "field": "nd"
+    },
+    {
+      "row": 2787,
+      "year": 2012,
+      "week": 30,
+      "field": "nd"
+    },
+    {
+      "row": 2788,
+      "year": 2012,
+      "week": 31,
+      "field": "nd"
+    },
+    {
+      "row": 2789,
+      "year": 2012,
+      "week": 32,
+      "field": "nd"
+    },
+    {
+      "row": 2790,
+      "year": 2012,
+      "week": 33,
+      "field": "nd"
+    },
+    {
+      "row": 2791,
+      "year": 2012,
+      "week": 34,
+      "field": "nd"
+    },
+    {
+      "row": 2792,
+      "year": 2012,
+      "week": 35,
+      "field": "nd"
+    },
+    {
+      "row": 2793,
+      "year": 2012,
+      "week": 36,
+      "field": "nd"
+    },
+    {
+      "row": 2794,
+      "year": 2012,
+      "week": 37,
+      "field": "nd"
+    },
+    {
+      "row": 2795,
+      "year": 2012,
+      "week": 38,
+      "field": "nd"
+    },
+    {
+      "row": 2796,
+      "year": 2012,
+      "week": 39,
+      "field": "nd"
+    },
+    {
+      "row": 2797,
+      "year": 2012,
+      "week": 40,
+      "field": "nd"
+    },
+    {
+      "row": 2798,
+      "year": 2012,
+      "week": 41,
+      "field": "nd"
+    },
+    {
+      "row": 2799,
+      "year": 2012,
+      "week": 42,
+      "field": "nd"
+    },
+    {
+      "row": 2800,
+      "year": 2012,
+      "week": 43,
+      "field": "nd"
+    },
+    {
+      "row": 2801,
+      "year": 2012,
+      "week": 44,
+      "field": "nd"
+    },
+    {
+      "row": 2802,
+      "year": 2012,
+      "week": 45,
+      "field": "nd"
+    },
+    {
+      "row": 2803,
+      "year": 2012,
+      "week": 46,
+      "field": "nd"
+    },
+    {
+      "row": 2804,
+      "year": 2012,
+      "week": 47,
+      "field": "nd"
+    },
+    {
+      "row": 2805,
+      "year": 2012,
+      "week": 48,
+      "field": "nd"
+    },
+    {
+      "row": 2806,
+      "year": 2012,
+      "week": 49,
+      "field": "nd"
+    },
+    {
+      "row": 2807,
+      "year": 2012,
+      "week": 50,
+      "field": "nd"
+    },
+    {
+      "row": 2808,
+      "year": 2012,
+      "week": 51,
+      "field": "nd"
+    },
+    {
+      "row": 2809,
+      "year": 2012,
+      "week": 52,
+      "field": "nd"
+    }
+  ],
+  "legacy1997": [
+    {
+      "row": 1978,
+      "week": 1,
+      "legacyDate": "1997-01-06",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1979,
+      "week": 2,
+      "legacyDate": "1997-01-13",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1980,
+      "week": 3,
+      "legacyDate": "1997-01-20",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1981,
+      "week": 4,
+      "legacyDate": "1997-01-27",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1982,
+      "week": 5,
+      "legacyDate": "1997-02-03",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1983,
+      "week": 6,
+      "legacyDate": "1997-02-10",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1984,
+      "week": 7,
+      "legacyDate": "1997-02-20",
+      "relation": "different"
+    },
+    {
+      "row": 1985,
+      "week": 8,
+      "legacyDate": "1997-02-24",
+      "relation": "different"
+    },
+    {
+      "row": 1986,
+      "week": 9,
+      "legacyDate": "1997-03-03",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1987,
+      "week": 10,
+      "legacyDate": "1997-03-11",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1988,
+      "week": 11,
+      "legacyDate": "1997-03-17",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1989,
+      "week": 12,
+      "legacyDate": "1997-03-24",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1990,
+      "week": 13,
+      "legacyDate": "1997-03-31",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1991,
+      "week": 14,
+      "legacyDate": "1997-04-07",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1992,
+      "week": 15,
+      "legacyDate": "1997-04-14",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1993,
+      "week": 16,
+      "legacyDate": "1997-04-21",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1994,
+      "week": 17,
+      "legacyDate": "1997-04-28",
+      "relation": "same_numeric"
+    },
+    {
+      "row": 1995,
+      "week": 18,
+      "legacyDate": "1997-05-05",
+      "relation": "both_missing"
+    }
+  ]
+}
