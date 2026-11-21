@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { FrontierInstrument } from '@/features/frontier/frontier-instrument';
 import { loadInvestigation } from '@/features/frontier/investigation';
 import styles from '@/features/frontier/frontier.module.css';
@@ -16,6 +17,7 @@ export default function FrontierPage() {
         <h1>Where does the record break?</h1>
         <p>Inspect 2012 surface temperature coverage and distinguish seasonal schedules, blank records, and unresolved availability.</p>
       </header>
+      <p><Link href="/frontier/reconciliation">Read the evidence reconciliation case files</Link></p>
       <FrontierInstrument data={loadInvestigation()} />
     </main>
   );
