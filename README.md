@@ -21,6 +21,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | Microsat Atlas | `/atlas` | Population genetics, geography, and sampling interpretation | Synthetic demo implemented in STRATA-003 |
 | NOAA Signals | `/signals` | Providence hourly water temperature, quality flags, coverage, and evidence gaps | Implemented in STRATA-004 |
 | Orbital Observatory | `/orbital` | Bounded time inspection of 1 Ceres with saved JPL model states and evidence limits | First instrument implemented in STRATA-005 |
+| Evidence Frontier | `/frontier` | Narragansett Bay source coverage, monitoring schedules, and research questions | First investigation implemented in STRATA-006 |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |

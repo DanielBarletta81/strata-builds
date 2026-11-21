@@ -35,6 +35,11 @@ export default function Home() {
             description="Inspect modeled states of the dwarf planet 1 Ceres in a captured NASA/JPL ephemeris."
             href="/orbital"
           />
+          <ProjectCard
+            title="Evidence Frontier"
+            description="Trace documented gaps in Narragansett Bay monitoring to source records, schedules, and the next useful investigation."
+            href="/frontier"
+          />
         </div>
       </section>
     </main>

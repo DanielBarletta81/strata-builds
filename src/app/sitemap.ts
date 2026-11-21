@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/atlas', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/signals', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/orbital', changeFrequency: 'monthly', priority: 0.9 },
+    { url: '/frontier', changeFrequency: 'monthly', priority: 0.9 },
   ] as const;
 
   return routes.map(({ url, changeFrequency, priority }) => ({
