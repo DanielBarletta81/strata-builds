@@ -10,6 +10,10 @@ Reported Z is instantaneous mortality estimated from catch curves for ages 3–1
 
 The instrument compares the two reported fits as parameters. L∞ is the model asymptote in mm, K describes the approach to that asymptote, and t₀ is printed in years. The transcription gives no unit for K. The complete report method must establish its t₀ sign, model equation and implementation before a numerical prediction is appropriate. The two groups and periods also differ in design, so the fitted contrast alone leaves stocking effects unresolved. [FAO general growth model and Ford–Walford method](https://www.fao.org/4/w5449e/w5449e04.pdf)
 
+Fleet Command found all 15 Table 1 rows and both Table 2 parameter rows consistent with the photographs in ChatGPT. In that review, original Table 2 identifies the stocked fit as `Stocked Systems (2002)**`. The original Results narrative states that post-stocking data from 1999–2002 were pooled to determine the von Bertalanffy growth curves in Figure 17. Record the table label and the Figure 17 scope as separate source statements. Whether they describe the same fit remains unresolved. Keep the existing Table 2 label and parameters, and defer numerical reconstruction.
+
+The local intake should capture the Table 2 footnote, the Results passage, the Figure 17 caption and relevant Methods pages under their own locators as those records become available. Fleet Command can access the researcher’s photographs in ChatGPT, including the Introduction, Methods, Results, Discussion, references and several catch curves. The original files and hashes remain pending local verification.
+
 ## Keep four evidence classes distinct
 
 | Class | Meaning | Current availability |
