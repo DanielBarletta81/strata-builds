@@ -7,12 +7,24 @@ import styles from './reconciliation.module.css';
 function RecordValue({ record, rawNumber }: { record: EvidenceRecord | null; rawNumber?: number | null }) {
   if (!record) return <span className={styles.missing}>No row found</span>;
 
+  if (record.status === 'derived') {
+    return (
+      <>
+        <strong className={styles.derived}>{Number(record.originalValue).toFixed(2)} {record.unit}</strong>
+        <small>Calculated · display rounded</small>
+        <small>{record.locator}</small>
+        <details className={styles.exactValue}>
+          <summary aria-label={`Exact workbook value at ${record.locator}`}>Exact workbook value</summary>
+          <small><code>{record.originalValue}</code> {record.unit}</small>
+          {record.source.sha256 && <small>SHA-256 <code>{record.source.sha256}</code></small>}
+        </details>
+      </>
+    );
+  }
+
   return (
     <>
-      <strong className={record.status === 'derived' ? styles.derived : undefined}>
-        {record.originalValue === null ? 'Blank' : `${record.originalValue} ${record.unit}`}
-      </strong>
-      {record.status === 'derived' && <small>Calculated in source</small>}
+      <strong>{record.originalValue === null ? 'Blank' : `${record.originalValue} ${record.unit}`}</strong>
       {record.status === 'excluded' && <small>Edited exclusion marker</small>}
       <small>{record.locator}{rawNumber !== undefined && rawNumber !== null && ` · logger #${rawNumber}`}</small>
       {rawNumber !== undefined && <small>{record.time.split(' ')[1]} logger clock</small>}

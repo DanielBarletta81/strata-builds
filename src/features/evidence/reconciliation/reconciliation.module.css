@@ -210,6 +210,16 @@
   font-size: 0.81rem;
 }
 
+.exactValue summary {
+  display: list-item;
+  min-height: 2.75rem;
+  align-content: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
 .derived {
   color: var(--amber);
   font-weight: 700;

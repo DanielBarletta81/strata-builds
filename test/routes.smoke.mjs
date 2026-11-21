@@ -331,8 +331,17 @@ test('GET /frontier/reconciliation renders two evidence case files with locators
   assert.match(html, /<h1>Trace the missing measurements<\/h1>/);
   for (const marker of [
     'Partially resolved', 'Unresolved source conflict', 'BR!F5230', 'BR!F5231',
-    '23.473333333333333', '23.509999999999998', 'No corresponding raw value found',
+    '23.47 °C', '23.51 °C', 'Calculated · display rounded', 'No corresponding raw value found',
     '1997 week records', '1999 week records', 'Temperature_SURF record locators',
     'https://datadem.ri.gov/documents/bart/nbfsmn12.zip', 'https://www.bco-dmo.org/dataset/874956',
   ]) assert.ok(html.includes(marker), marker);
+
+  const exactValues = [...html.matchAll(/<details[^>]*><summary aria-label="Exact workbook value at (BR!F\d+)">Exact workbook value<\/summary><small><code>([^<]+)<\/code> °C<\/small><small>SHA-256 <code>([a-f0-9]{64})<\/code>/g)];
+  assert.deepEqual(exactValues.map(([, locator, value]) => [locator, value]), [
+    ['BR!F5230', '23.473333333333333'],
+    ['BR!F5231', '23.509999999999998'],
+  ]);
+  for (const [, , , hash] of exactValues) {
+    assert.equal(hash, 'b670816f7d53de5f783edb4db0f0de1bf490283afc04948b8865fb3f6e68fd83');
+  }
 });
