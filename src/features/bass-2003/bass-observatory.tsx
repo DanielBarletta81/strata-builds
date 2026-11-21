@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CatchCurveLaboratory } from './catch-curve-laboratory';
+import { catchCurves } from './catch-curves';
 import { MortalityObservatory } from './mortality-observatory';
 import { growth, growthUnits, methodsReferences, report } from './report';
 import styles from './bass.module.css';
@@ -82,7 +83,7 @@ export function BassObservatory() {
 
       <MortalityObservatory />
       <GrowthObservatory />
-      <CatchCurveLaboratory />
+      <CatchCurveLaboratory figures={catchCurves} />
 
       <section className={styles.panel} id="open-questions" aria-labelledby="questions-title">
         <header className={styles.sectionHeader}><h2 id="questions-title">Open research questions</h2></header>

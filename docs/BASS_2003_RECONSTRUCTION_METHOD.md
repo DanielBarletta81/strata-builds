@@ -6,6 +6,8 @@ Preserve the printed strings from the supplied transcription. The key is period 
 
 Reported Z is instantaneous mortality estimated from catch curves for ages 3–10. The plot describes the rate on an annual age-step basis. S and A are unitless fractions over one year. Tests compare rounded S to the general constant-rate exponential relationship and check that S and A complement each other. The interface uses only the printed cells. It leaves catch-curve estimates in scope of the sampled gear and ages. Recruitment, sample selectivity, effort and the different sampling seasons can affect interpretation. [FAO background on mortality and survival](https://www.fao.org/4/x5685e/x5685e05.htm)
 
+The laboratory links a figure to Table 1 only when a single row matches its period, gear, pond group, season and annual or pooled scope. All seven figure annotations agree with the linked Table 1 Z when expressed at two decimal places. That agreement establishes consistency at the printed precision. Whether both records came from the same regression fit remains unverified.
+
 ## Table 2
 
 The instrument compares the two reported fits as parameters. L∞ is the model asymptote in mm, K describes the approach to that asymptote, and t₀ is printed in years. The transcription gives no unit for K. The complete report method must establish its t₀ sign, model equation and implementation before a numerical prediction is appropriate. The two groups and periods also differ in design, so the fitted contrast alone leaves stocking effects unresolved. [FAO general growth model and Ford–Walford method](https://www.fao.org/4/w5449e/w5449e04.pdf)

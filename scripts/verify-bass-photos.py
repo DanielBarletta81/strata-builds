@@ -25,13 +25,24 @@ def verify(name, data, expected):
         raise SystemExit(f"SHA-256 mismatch: {name}")
 
 
+def photo_hashes(manifest):
+    return dict(re.findall(
+        r"^\| `(IMG_\d+\.jpe?g)` \| .*? \| `([a-f0-9]{64})` \|$",
+        manifest,
+        re.MULTILINE,
+    ))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("archive", type=Path)
     parser.add_argument("--extracted", type=Path, help="Optional extracted archive directory")
+    parser.add_argument("--source-manifest", type=Path, help="Optional separate researcher manifest")
     args = parser.parse_args()
     registry = json.loads(REGISTRY.read_text())
     expected_photos = {name: record["sha256"] for name, record in registry["photos"].items()}
+    if args.source_manifest and photo_hashes(args.source_manifest.read_text()) != expected_photos:
+        raise SystemExit("Separate source manifest entries differ from the photo registry")
 
     verify(args.archive.name, args.archive.read_bytes(), registry["archiveSha256"])
     with ZipFile(args.archive) as archive:
@@ -39,11 +50,7 @@ def main():
         verify(MANIFEST, manifest, registry["manifestSha256"])
         if args.extracted:
             verify(f"extracted {MANIFEST}", (args.extracted / MANIFEST).read_bytes(), registry["manifestSha256"])
-        entries = dict(re.findall(
-            r"^\| `(IMG_\d+\.jpe?g)` \| .*? \| `([a-f0-9]{64})` \|$",
-            manifest.decode(),
-            re.MULTILINE,
-        ))
+        entries = photo_hashes(manifest.decode())
         if entries != expected_photos:
             raise SystemExit("Manifest entries differ from the photo registry")
 

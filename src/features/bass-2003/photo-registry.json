@@ -92,7 +92,11 @@
         "5.00"
       ],
       "legibility": "A baseline diamond and a diamond close to the fit require independent classification.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "img_3954",
+      "pageNumber": null,
+      "group": "Unstocked",
+      "season": "Spring"
     },
     {
       "period": "1996",
@@ -112,7 +116,11 @@
         "5.00"
       ],
       "legibility": "Shadow at upper left. A diamond at the zero axis and a mark touching the fit need verification.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "figure-2",
+      "pageNumber": null,
+      "group": "Unstocked",
+      "season": "Spring"
     },
     {
       "period": "1998",
@@ -132,7 +140,11 @@
         "5.00"
       ],
       "legibility": "Several diamonds lie on the zero axis, including one at the corner.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "figure-4",
+      "pageNumber": null,
+      "group": "Unstocked",
+      "season": "Spring"
     },
     {
       "period": "1995–1998 pooled",
@@ -152,7 +164,11 @@
         "5.00"
       ],
       "legibility": "Curved page and cropped upper right. A diamond touches the fit and another lies at the baseline corner.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "img_3957",
+      "pageNumber": null,
+      "group": "Unstocked",
+      "season": "Spring"
     },
     {
       "period": "2000",
@@ -172,7 +188,11 @@
         "5"
       ],
       "legibility": "Curved baseline with several zero-axis diamonds and a diamond on the fitted line.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "img_3960",
+      "pageNumber": null,
+      "group": "Stocked",
+      "season": "Fall"
     },
     {
       "period": "2001",
@@ -192,7 +212,11 @@
         "5"
       ],
       "legibility": "Right-hand axis end cropped beyond the last readable tick at age 10. Page curvature and line/axis overlaps prevent full calibration.",
-      "ageUpperBoundCropped": true
+      "ageUpperBoundCropped": true,
+      "id": "img_3962",
+      "pageNumber": null,
+      "group": "Stocked",
+      "season": "Fall"
     },
     {
       "period": "1999–2002 pooled",
@@ -212,7 +236,19 @@
         "5"
       ],
       "legibility": "Curved page. Diamonds touch the axis and fit, and faint background marks need independent classification.",
-      "ageUpperBoundCropped": false
+      "ageUpperBoundCropped": false,
+      "id": "img_3966",
+      "pageNumber": null,
+      "group": "Stocked",
+      "season": "Fall"
     }
-  ]
+  ],
+  "audit": {
+    "reviewDate": "2026-11-21",
+    "status": "verified_metadata",
+    "ageAxis": "Age (years)",
+    "frequencyAxis": "ln Frequency",
+    "photoDistribution": "private",
+    "photoReuseRights": "unresolved"
+  }
 }

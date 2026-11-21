@@ -20,11 +20,4 @@ Phase 1 used the researcher-supplied transcription of 15 Table 1 estimates and t
 
 ## Phase 2 · Catch Curve Laboratory
 
-The second worktree started at Phase 1 squash merge `0349df77c50519a58da78b6dd5921acb6c3d345d` on `strata-009/phase-2-catch-curves`. All 16 recovered photographs matched the supplied manifest and the local extracted copies. The laboratory lets visitors inspect five annual and two pooled figure annotations, compare their printed Z with the corresponding Table 1 row, and review each source receipt.
-
-Printed captions and Results references have separate provenance. Unreadable captions and the cropped 2001 age axis remain visible in the audit. Plotted coordinates and a traced regression await independent extraction. The recovered Table 2 and Results show the unresolved 2002 versus pooled 1999–2002 scope discrepancy. The recovered Methods names the growth fit procedure, and the complete fitted equation and t₀ convention remain unresolved. [Figure audit](BASS_2003_FIGURE_DIGITIZATION.md)
-
-- Local source verification passed for the pinned archive, manifest and all 16 originals. The verifier rejected a deliberately modified copy of the ZIP.
-- Clean install, lint, typecheck, 54 unit tests, production build and 20 route smoke tests passed on Node.js 24.22.3 and npm 11.19.1.
-- Chromium at 375, 768 and 1440 px verified Studio navigation, keyboard operation, all figure–table pairs, the focused Table 1 link and the disclosure controls. No horizontal overflow, browser errors or requests for original photographs occurred.
-- Laboratory captures with the source inspector and methods expanded. [375 px viewport](review/strata-009-phase-2-mobile.png) · [1440 px viewport](review/strata-009-phase-2-desktop.png)
+The laboratory adds seven source-verified figure annotations with their linked Table 1 rows. Source coverage, verification and browser captures are documented in the [Phase 2 closeout](STRATA-009-PHASE2.md).

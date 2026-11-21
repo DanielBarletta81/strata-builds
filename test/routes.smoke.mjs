@@ -375,7 +375,8 @@ test('GET /research/bass-2003 renders the study, exact reported tables and evide
     'Catch Curve Laboratory', 'Catch-curve figure', 'Figure annotation Z', 'Table 1 estimate Z', '0.604',
     'Catch-curve source inspector', 'How to read a catch curve', 'IMG_3954.jpg', 'ff5470607326715580',
     'id="table-1-1995-electrofishing"', 'href="#table-1-1995-electrofishing"',
-    'Digitized points and a traced regression line await independent validation',
+    'Figure metadata verified', 'Whether they come from the same fit remains unverified',
+    'Original kept in the private archive', 'Strata research philosophy', 'value="figure-4"',
   ]) assert.ok(html.includes(marker), marker);
   assert.doesNotMatch(html, /\/(?:originals|\.research-local)\/IMG_/);
   const studio = await fetchRoute('/studio', 'text/html');

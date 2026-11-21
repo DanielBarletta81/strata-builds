@@ -4,7 +4,7 @@ Stephen Fernandes, Daniel Barletta and Phil Edwards. *Comparison of the Age Dist
 
 ## Verified photographs
 
-The 16 original photo files matched the SHA-256 values in `STRATA009_PHOTO_SOURCE_MANIFEST.md`. The locally extracted copies also matched the archive members byte for byte. Original photos and working derivatives are stored separately under the gitignored research directory. The photographs are available for local audit. Report reproduction permissions are unverified.
+On November 21, 2026, the 16 original photo files matched both `SOURCE_PHOTOS_MANIFEST.md` and the `STRATA009_PHOTO_SOURCE_MANIFEST.md` bundled with the local archive. The locally extracted copies also matched the archive members byte for byte. The input order names `PRIVATE_BASS_SOURCE_PHOTOS.zip`. The available worktree copy is named `STRATA009_bass_2003_source_photos.zip`, and its 16 original files match the separately supplied manifest. Original photos and working derivatives are stored separately for local audit. Report reproduction permissions remain unverified.
 
 | Filename | Inspected content and locator | SHA-256 |
 | --- | --- | --- |

@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import { URL } from 'node:url';
 import registry from '../src/features/bass-2003/photo-registry.json' with { type: 'json' };
-import { catchCurveTableRecord, catchCurves, photoReceipts, printedFitAges } from '../src/features/bass-2003/catch-curves.ts';
+import { catchCurveAudit, catchCurveTableRecord, catchCurves, photoReceipts, printedFitAges, selectedCatchCurve } from '../src/features/bass-2003/catch-curves.ts';
 import { comparisonSeries, growth, growthUnits, mortality, mortalityMetrics, mortalityRecord, mortalityRowId, periodsFor, recordsForPeriod, report } from '../src/features/bass-2003/report.ts';
 
 test('Table 1 preserves every printed estimate, period, method and season', () => {
@@ -51,6 +54,15 @@ test('rounded survival and mortality are printed as supplied while comparable ch
   assert.equal(mortalityRecord('2002', 'Electrofishing').s, '0.60');
 });
 
+test('both literal table row blocks match their SHA-256 digests from the Phase 1 squash merge', () => {
+  const input = readFileSync(new URL('../src/features/bass-2003/transcription.json', import.meta.url), 'utf8');
+  const rows = input.match(/^ {4}"rows": \[\n.*?^ {4}\]/gms);
+  assert.deepEqual(rows?.map((block) => createHash('sha256').update(block).digest('hex')), [
+    'aa526db0849deb342d5feefc976812eb649dfb85e5d648f6946c8d39cef4a6f7',
+    'a223541adfb80b26295c183c59b23e69fc8cf2b00ffe0bd83fd2a8ec729c9909',
+  ]);
+});
+
 test('Table 2 preserves exact parameter values and keeps the trajectory convention unresolved', () => {
   assert.equal(growth.locator, 'Table 2');
   assert.equal(growth.t0Convention, 'unverified');
@@ -77,6 +89,8 @@ test('retains all seven exact figure annotations alongside the corresponding pri
     assert.equal(table.period, figure.period);
     assert.equal(table.method, figure.method);
     assert.equal(table.scope, figure.scope);
+    assert.equal(table.group, figure.group);
+    assert.equal(table.season, figure.season);
     assert.match(figure.printedZ, /^0\.\d{3}$/);
     assert.match(table.z, /^0\.\d{2}$/);
     return [figure.sourceFile, figure.period, figure.method, figure.scope, figure.printedZ, table.z, table.season];
@@ -90,8 +104,20 @@ test('retains all seven exact figure annotations alongside the corresponding pri
     ['IMG_3966.jpg', '1999–2002 pooled', 'Electrofishing', 'Pooled', '0.573', '0.57', 'Fall'],
   ]);
   assert.equal(catchCurveTableRecord({ ...catchCurves[0], scope: 'Pooled' }), undefined);
+  assert.equal(catchCurveTableRecord({ ...catchCurves[0], group: 'Stocked' }), undefined);
+  assert.equal(catchCurveTableRecord({ ...catchCurves[0], season: 'Fall' }), undefined);
+  assert.equal(catchCurveTableRecord({ ...catchCurves[0], method: 'Angling' }), undefined);
   assert.equal(mortalityRowId(catchCurveTableRecord(catchCurves.at(-1))), 'table-1-1999-2002-pooled-electrofishing');
   assert.equal(new Set(mortality.rows.map(mortalityRowId)).size, 15);
+});
+
+test('selects verified figure identifiers and handles unavailable sources', () => {
+  assert.deepEqual(catchCurves.map(({ id }) => id), ['img_3954', 'figure-2', 'figure-4', 'img_3957', 'img_3960', 'img_3962', 'img_3966']);
+  assert.ok(catchCurves.every(({ pageNumber }) => pageNumber === null));
+  assert.equal(catchCurveAudit.status, 'verified_metadata');
+  assert.equal(selectedCatchCurve(catchCurves, 'figure-4').sourceFile, 'IMG_3956.jpg');
+  assert.equal(selectedCatchCurve(catchCurves, 'missing').id, 'img_3954');
+  assert.equal(selectedCatchCurve([], 'img_3954'), undefined);
 });
 
 test('pins photo receipts and preserves missing bounds, obscured captions and unvalidated coordinates', () => {

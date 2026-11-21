@@ -15,7 +15,7 @@ source_dir=.research-local/bass-2003
 python3 scripts/verify-bass-photos.py "$source_dir/STRATA009_bass_2003_source_photos.zip" --extracted "$source_dir/STRATA009_bass_2003_source_photos"
 ```
 
-The supplied ZIP and its manifest are pinned in [photo-registry.json](../src/features/bass-2003/photo-registry.json). The [source inventory](BASS_2003_SOURCE_INVENTORY.md) records the matching SHA-256 for each photograph. Figures were read directly from intact or rotated local views. ImageMagick 7.1.2-12 rotated the sideways views by −90°, with unrotated source files preserved. Caption detail crops were used for the curved lower margins. Coordinate extraction is pending.
+Pass `--source-manifest` with the path to the separately supplied `SOURCE_PHOTOS_MANIFEST.md` to check it as well. The supplied ZIP and its bundled manifest are pinned in [photo-registry.json](../src/features/bass-2003/photo-registry.json). The [source inventory](BASS_2003_SOURCE_INVENTORY.md) records the matching SHA-256 for each photograph. Figures were read directly from intact or rotated local views. ImageMagick 7.1.2-12 rotated the sideways views by −90°, with unrotated source files preserved. Caption detail crops were used for the curved lower margins. Coordinate extraction is pending.
 
 The ranges below describe the outer **labeled ticks**. The upper plot border extends past the highest labeled log-frequency tick. All seven figure annotations print ages 3–10 and the Results in `IMG_3948.jpg` confirms that analysis interval.
 
