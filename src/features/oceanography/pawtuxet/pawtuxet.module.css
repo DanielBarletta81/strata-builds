@@ -26,6 +26,10 @@
   font-size: 0.92rem;
 }
 
+.castDate {
+  white-space: nowrap;
+}
+
 .plot svg {
   background: #f2f8f7;
 }
@@ -55,8 +59,49 @@
 }
 
 .selectedPoint {
+  fill: none;
   stroke: #163138;
   stroke-width: 2;
+  pointer-events: none;
+}
+
+.plotKey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+
+.plotKey li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.selectedKey {
+  width: 0.78rem;
+  height: 0.78rem;
+  border: 2px solid #163138;
+  border-radius: 50%;
+}
+
+.lowKey {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-inline: 0.11rem;
+  background: #b65b20;
+  transform: rotate(45deg);
+}
+
+.page .comparison :is(th[scope='col']:not(:first-child), td) {
+  text-align: right;
+}
+
+.comparison td {
+  white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 .recordValues {
@@ -72,5 +117,9 @@
 @media (max-width: 720px) {
   .grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plot text {
+    font-size: 18px;
   }
 }

@@ -74,14 +74,17 @@ export function PawtuxetExplorer() {
             <ProfilePlot records={cast.records} metric={metric} selectedRow={selected?.row} lowRows={lowRows} />
             {repeated && <p className={styles.archiveNote}>Repeated depth labels are retained as separate source rows. A repeated endpoint is excluded from the depth comparison.</p>}
             {lowRows.length > 0
-              ? <p className={styles.archiveNote}><strong>{lowRows.length} published depth readings below 3 mg/L</strong> · {lowRows.map(({ depth }) => depth).join(', ')} m.</p>
+              ? <p className={styles.archiveNote}>
+                  <strong>{lowRows.length} published depth readings below 3 mg/L</strong> in one cast on <time dateTime={cast.date} className={styles.castDate}>{cast.date}</time>.
+                  {' '}The bins were at {lowRows.map(({ depth }) => depth).join(', ')} m.
+                </p>
               : <p className={common.quiet}>{oxygenAssessable ? 'No unique-depth reading in this cast falls below 3 mg/L.' : 'Oxygen screening is unavailable for this cast.'}</p>}
             <p className={common.quiet}><a href={oxygenReference}>RIDEM’s 3 mg/L reporting threshold</a> is used as a screening reference. A cast leaves duration, spatial extent and species-specific exposure unresolved.</p>
           </section>
 
           <section className={common.panel} aria-labelledby="pair-heading">
             <header className={common.panelHeader}><h2 id="pair-heading">Compare sampled depths</h2></header>
-            <table className={common.table}>
+            <table className={`${common.table} ${styles.comparison}`}>
               <caption>Shallowest and deepest published depth bins of the same cast</caption>
               <thead><tr><th scope="col">Measure</th><th scope="col">Shallow</th><th scope="col">Deep</th></tr></thead>
               <tbody>

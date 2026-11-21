@@ -359,7 +359,8 @@ test('GET /oceanography/pawtuxet exposes profiler observations, limits and sourc
   const html = (await fetchRoute('/oceanography/pawtuxet', 'text/html')).replaceAll('<!-- -->', '');
   for (const label of [
     'Pawtuxet Water Column Explorer', '49 published casts', '2014-01-15 · metadata only',
-    '3 published depth readings below 3 mg/L', '2.69799', '2016 Data!J2046',
+    '3 published depth readings below 3 mg/L</strong> in one cast on <time', '>2016-07-20</time>',
+    '2.69799', '1016.7244', '1019.2272', '2016 Data!J2046', 'Selected reading',
     'Published density difference', 'oyster-bearing rocks beneath the bridge', 'https://dem.ri.gov/latest-bay-area-report',
   ]) assert.ok(html.includes(label), label);
 });
