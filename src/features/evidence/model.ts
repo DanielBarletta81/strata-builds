@@ -44,4 +44,16 @@ export type ResearchGap = GapDetails & {
   crossSourceReview: string;
 };
 
-export type EvidenceGap = SourceGap | ResearchGap;
+export type CoverageFinding = Omit<GapDetails, 'interval'> & {
+  type: 'confirmed_missing_observation' | 'planned_seasonal_non_sampling' |
+    'source_not_yet_inspected' | 'known_dataset_inaccessible' | 'uncertain_monitoring_continuation' |
+    'incompatible_sampling_methods' | 'conflicting_records' | 'potentially_outdated_findings';
+  verification: SourceGap['verification'];
+  scope: SourceScope & {
+    // Date-only and archive week scopes are kept apart from UTC instants.
+    period: { start: string; endInclusive: string; precision: 'civil_date' | 'year' };
+  };
+  sources: [SourceRecord, ...SourceRecord[]];
+};
+
+export type EvidenceGap = SourceGap | ResearchGap | CoverageFinding;

@@ -112,6 +112,7 @@ const pages = [
   ['/studio', 'Studio', 'Strata Works portfolio coming soon'],
   ['/signals', 'NOAA Signals Lab', 'Loading NOAA observations'],
   ['/orbital', '1 Ceres', 'Modeled geometric state from JPL'],
+  ['/frontier', 'Where does the record break[?]', 'Surface temperature coverage'],
 ];
 
 for (const [path, heading, content] of pages) {
@@ -124,6 +125,8 @@ for (const [path, heading, content] of pages) {
       assert.match(html, /role="status"/);
     } else if (path === '/orbital') {
       assert.match(html, /<title>Orbital Observatory \| Strata Builds<\/title>/);
+    } else if (path === '/frontier') {
+      assert.match(html, /<title>Evidence Frontier \| Strata Builds<\/title>/);
     } else {
       assert.match(html, /<title>Strata Builds<\/title>/);
       assert.match(html, /<meta name="description" content="Design, data, structure — visualizations and digital products"/);
@@ -134,7 +137,7 @@ for (const [path, heading, content] of pages) {
     const nav = html.match(/<nav\b[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([^<]+)<\/a>/g)]
       .map(([, href, label]) => [href, label]);
-    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals'], ['/orbital', 'Orbital']]);
+    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals'], ['/orbital', 'Orbital'], ['/frontier', 'Frontier']]);
   });
 }
 
@@ -178,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all five canonical URLs', async () => {
+test('GET /sitemap.xml publishes all six canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/frontier'],
   );
 });
 
@@ -307,4 +310,17 @@ test('GET /orbital publishes provenance and the same accessible sample in the pl
   assert.match(html, /2026-11-20T23:53:46\.724Z/);
   assert.match(html, /J2000 ecliptic plane/);
   assert.match(html, /Evidence gaps and limits/);
+});
+
+test('GET /frontier renders source coverage, locators and inspectable evidence', async () => {
+  const html = await fetchRoute('/frontier', 'text/html');
+  assert.match(html, /18,421(?:<!-- -->)? \/ (?:<!-- -->)?18,432/);
+  assert.match(html, /11.*blank slots across 10 dates/);
+  assert.match(html, /All 52 temperature entries are nd in 2012/);
+  assert.match(html, /data-site-id="B4-S"/);
+  assert.match(html, /data-site-id="BCO-DMO 874956"/);
+  assert.match(html, /<caption>Blank surface-temperature cells in the edited workbook<\/caption>/);
+  assert.match(html, /What would resolve this\?/);
+  assert.match(html, /https:\/\/datadem.ri.gov\/documents\/bart\/nbfsmn12.zip/);
+  assert.match(html, /cannot establish when, or whether, temperature collection stopped/);
 });

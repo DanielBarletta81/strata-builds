@@ -1,0 +1,372 @@
+.page {
+  --ink: #172a31;
+  --muted: #435960;
+  --border: #d1dcdb;
+  --paper: #f3f7f6;
+  --dark: #12272d;
+  --light: #f2faf9;
+  --soft: #bfd5d5;
+  --link: #005b65;
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 2.65rem) clamp(1rem, 3vw, 2.5rem) 3rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.page :is(h1, h2, h3) {
+  line-height: 1.18;
+  letter-spacing: -0.024em;
+}
+
+.page h1 {
+  font-size: clamp(2rem, 4.8vw, 3.4rem);
+}
+
+.page h2 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.25rem, 2.1vw, 1.55rem);
+}
+
+.page h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.03rem;
+}
+
+.page a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.page :is(a, summary):focus-visible {
+  outline: 3px solid #0065bd;
+  outline-offset: 3px;
+}
+
+.header {
+  margin-bottom: 1.45rem;
+}
+
+.header > p:last-child {
+  max-width: 66ch;
+  color: var(--muted);
+  margin: 0;
+}
+
+.kicker {
+  color: var(--link);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.timeline,
+.panel {
+  min-width: 0;
+  border-radius: 0.6rem;
+  padding: clamp(0.9rem, 2.2vw, 1.5rem);
+}
+
+.timeline {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.timeline p {
+  color: var(--soft);
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+
+.series + .series {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #405d64;
+}
+
+.years,
+.months {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.years {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.months {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.years li,
+.months li {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.45rem 0.53rem;
+  border: 1px solid #567478;
+  border-radius: 0.28rem;
+  font-size: 0.82rem;
+  color: var(--soft);
+}
+
+.years strong {
+  color: var(--light);
+  font-size: clamp(1rem, 2.1vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.years small {
+  font-size: 0.78rem;
+}
+
+.timeline li[data-status="reported"] {
+  background: #1c4244;
+}
+
+.timeline li[data-status="gap"] {
+  border-color: #c49b63;
+  background: #413524;
+  color: #ffe0ae;
+}
+
+.timeline li[data-status="unknown"] {
+  border-style: dotted;
+}
+
+.timeline li[data-status="outside"] {
+  border-style: dashed;
+}
+
+.months abbr {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.timeline .total {
+  margin: 0.7rem 0 0.35rem;
+}
+
+.total strong {
+  color: #a4e7d9;
+}
+
+.monthCounts {
+  border-top: 1px solid #405d64;
+}
+
+.monthCounts summary {
+  padding: 0.65rem 0.1rem;
+  min-height: 44px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.monthCounts summary:focus-visible {
+  outline-color: #a4e7d9;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: var(--paper);
+}
+
+.page > .panel {
+  margin-top: 1rem;
+}
+
+.locator {
+  margin: 0;
+}
+
+.locator svg {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: #e6efed;
+  color: var(--ink);
+}
+
+.locator text {
+  font: 600 12px system-ui, sans-serif;
+  fill: currentColor;
+}
+
+.mapGrid {
+  fill: none;
+  stroke: #a9beba;
+  stroke-width: 1;
+}
+
+.bullock,
+.stationII {
+  fill: #005b65;
+  stroke: white;
+  stroke-width: 1.5;
+}
+
+.stationII {
+  fill: #8a5326;
+}
+
+.locator figcaption,
+.small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.locator figcaption {
+  margin-top: 0.38rem;
+}
+
+.sites {
+  margin: 0.65rem 0;
+}
+
+.sites div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.08rem 0.6rem;
+  padding: 0.45rem 0;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sites dt {
+  font-weight: 700;
+}
+
+.compatibility {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.compatibility p {
+  margin-bottom: 0.4rem;
+}
+
+.disclosure {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  margin-top: 0.55rem;
+  padding: 0 0.8rem;
+  scroll-margin-top: 1rem;
+}
+
+.disclosure summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0.65rem 0.05rem;
+  font-weight: 700;
+}
+
+.disclosure summary small {
+  display: block;
+  padding-left: 1.12rem;
+  color: var(--muted);
+  font-size: 0.79rem;
+  font-weight: 550;
+}
+
+.disclosure[open] {
+  padding-bottom: 0.8rem;
+}
+
+.disclosure > p {
+  margin: 0 0 0.55rem;
+}
+
+.findingDetails,
+.questions {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.findingDetails dt,
+.questions dt {
+  font-weight: 680;
+}
+
+.findingDetails dd,
+.questions dd {
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+.gridTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+  margin-block: 0.45rem;
+}
+
+.gridTable caption {
+  text-align: left;
+  font-weight: 650;
+  padding: 0.3rem 0;
+}
+
+.gridTable :is(th, td) {
+  padding: 0.34rem 0.32rem;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+
+.gridTable th:first-child {
+  text-align: left;
+}
+
+.timeline .gridTable :is(th, td) {
+  border-color: #405d64;
+}
+
+.recordLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.page > .panel > .small:last-child {
+  margin: 0.85rem 0 0;
+}
+
+@media (max-width: 53rem) {
+  .dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .locator svg {
+    max-width: 24rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .months {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .years li {
+    padding-inline: 0.38rem;
+  }
+
+  .panel,
+  .timeline {
+    overflow-wrap: anywhere;
+  }
+}

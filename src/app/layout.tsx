@@ -25,6 +25,7 @@ export default function RootLayout({
           <Link href="/atlas">Atlas</Link>
           <Link href="/signals">Signals</Link>
           <Link href="/orbital">Orbital</Link>
+          <Link href="/frontier">Frontier</Link>
         </nav>
         {children}
       </body>

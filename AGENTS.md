@@ -19,6 +19,7 @@ Make existing, excluded, inaccessible, and undiscovered evidence distinguishable
 - `/atlas` — Microsat Atlas with an **explicitly synthetic demo**. Published Chesapeake Bay genetic research data is separately scoped.
 - `/signals` — NOAA Signals Lab with Providence hourly water temperature and source-scoped evidence gaps (implemented).
 - `/orbital` — Orbital Observatory with bounded, modeled JPL states for 1 Ceres (implemented).
+- `/frontier` — Evidence Frontier, source coverage and gaps in Narragansett Bay (implemented).
 - `/collections` — Smithsonian collections and research context (planned).
 - `/deep-time` — Earth systems across geological history (planned).
 - `/methods` — source provenance, assumptions, models, and limitations (planned).
