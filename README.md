@@ -24,6 +24,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | Evidence Frontier | `/frontier` | Narragansett Bay source coverage, monitoring schedules, and research questions | First investigation implemented in STRATA-006 |
 | Evidence Reconciliation | `/frontier/reconciliation` | Record-level Bullock Reach and Station II temperature investigations | Case files implemented in STRATA-007 |
 | Estuarine Gradient Observatory | `/oceanography` | Narragansett Bay nutrient pairs and water-column observations | First slice implemented in STRATA-008 |
+| Bass Population Observatory | `/research/bass-2003` | Historical Rhode Island largemouth bass mortality and growth estimates | Table-based reconstruction in STRATA-009 |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
 | Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |

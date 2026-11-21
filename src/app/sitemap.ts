@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/orbital', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/oceanography', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/oceanography/pawtuxet', changeFrequency: 'monthly', priority: 0.8 },
+    { url: '/research/bass-2003', changeFrequency: 'monthly', priority: 0.8 },
     { url: '/frontier', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/frontier/reconciliation', changeFrequency: 'monthly', priority: 0.8 },
   ] as const;
