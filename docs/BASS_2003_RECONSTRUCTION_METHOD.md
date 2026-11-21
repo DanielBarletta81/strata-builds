@@ -10,17 +10,17 @@ Reported Z is instantaneous mortality estimated from catch curves for ages 3–1
 
 The instrument compares the two reported fits as parameters. L∞ is the model asymptote in mm, K describes the approach to that asymptote, and t₀ is printed in years. The transcription gives no unit for K. The complete report method must establish its t₀ sign, model equation and implementation before a numerical prediction is appropriate. The two groups and periods also differ in design, so the fitted contrast alone leaves stocking effects unresolved. [FAO general growth model and Ford–Walford method](https://www.fao.org/4/w5449e/w5449e04.pdf)
 
-Fleet Command found all 15 Table 1 rows and both Table 2 parameter rows consistent with the photographs in ChatGPT. In that review, original Table 2 identifies the stocked fit as `Stocked Systems (2002)**`. The original Results narrative states that post-stocking data from 1999–2002 were pooled to determine the von Bertalanffy growth curves in Figure 17. Record the table label and the Figure 17 scope as separate source statements. Whether they describe the same fit remains unresolved. Keep the existing Table 2 label and parameters, and defer numerical reconstruction.
+The two rows were checked directly against `IMG_3953.jpg`. That photograph gives the stocked label `Stocked Systems (2002)**`. The footnote identifies five stocked ponds. The original Results in `IMG_3948.jpg` specifies pooled 1999–2002 post-stocking data for Figure 17. The relationship between the table fit and the Figure 17 curves remains unresolved.
 
-The local intake should capture the Table 2 footnote, the Results passage, the Figure 17 caption and relevant Methods pages under their own locators as those records become available. Fleet Command can access the researcher’s photographs in ChatGPT, including the Introduction, Methods, Results, Discussion, references and several catch curves. The original files and hashes remain pending local verification.
+The Methods in `IMG_3947.jpg` names Ricker (1975) and Ford–Walford plots. The complete fitted equation and its t₀ sign convention remain unresolved. The growth photograph `IMG_3968.jpg` distinguishes Actual and Predicted length-at-age. Its cropped figure number leaves its identification as Figure 16 or 17 unresolved. Numerical growth reconstruction awaits the equation and verified series identity.
 
 ## Keep four evidence classes distinct
 
 | Class | Meaning | Current availability |
 | --- | --- | --- |
-| Transcribed source value | The printed text or number supplied by the researcher, with table or figure locator and original precision. | Tables 1 and 2. |
+| Transcribed source value | The printed text or number supplied by the researcher, with table or figure locator and original precision. | Tables 1 and 2 and seven historical Z annotations. |
 | Reconstructed model output | A value calculated by a documented model replica with verified inputs, units and equation. | Pending original growth equation and methods. |
-| Digitized approximate figure value | A coordinate estimated from pixels, with calibrated axes, procedure and extraction uncertainty. | Pending legible, reusable images. |
+| Digitized approximate figure value | A coordinate estimated from pixels, with calibrated axes, procedure and extraction uncertainty. | Pending independent point and line extraction. |
 | Original individual fish measurement | A field or laboratory record tied to a fish, gear, pond, date, effort and age determination. | Pending recovery and validation. |
 
 A printed figure annotation belongs to the first class. Record its figure identifier, page, sampling scope and decimal string independently from Table 1. Fitted catch-curve slopes, digitized line points and individual fish counts retain their own provenance.
@@ -32,4 +32,4 @@ A printed figure annotation belongs to the first class. Record its figure identi
 3. Verify the method pages, figure legends and actual-versus-predicted notation before constructing or digitizing plots. If digitization is approved, document the image crop and axis transform, assess legibility and repeatability, and retain a locator and uncertainty for each estimate.
 4. If fish-level records are recovered, preserve row IDs, original units and age and gear codes. Validate duplicates, rejected records, effort and pond context before any model reproduction. Reports of length-at-age and legal-size abundance require their own evidence contracts.
 
-Routine tests build and check the route from the tracked transcription. They require no external files or data service.
+Routine tests use the tracked transcription and verified [figure registry](../src/features/bass-2003/photo-registry.json). The private archive check and the digitization procedure are documented in the [figure audit](BASS_2003_FIGURE_DIGITIZATION.md).

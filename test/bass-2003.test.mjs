@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { comparisonSeries, figureArchive, growth, growthUnits, mortality, mortalityMetrics, mortalityRecord, periodsFor, recordsForPeriod, report } from '../src/features/bass-2003/report.ts';
+import registry from '../src/features/bass-2003/photo-registry.json' with { type: 'json' };
+import { catchCurveTableRecord, catchCurves, photoReceipts, printedFitAges } from '../src/features/bass-2003/catch-curves.ts';
+import { comparisonSeries, growth, growthUnits, mortality, mortalityMetrics, mortalityRecord, mortalityRowId, periodsFor, recordsForPeriod, report } from '../src/features/bass-2003/report.ts';
 
 test('Table 1 preserves every printed estimate, period, method and season', () => {
   assert.equal(mortality.locator, 'Table 1');
@@ -59,7 +61,7 @@ test('Table 2 preserves exact parameter values and keeps the trajectory conventi
   assert.deepEqual(growthUnits, { asymptoteMm: 'mm', t0Years: 'years', k: 'Unit not supplied in the transcription' });
 });
 
-test('unavailable methods, source files and figure values stay missing', () => {
+test('unavailable methods and the complete original report file stay missing', () => {
   assert.deepEqual(recordsForPeriod('1995').map(({ method }) => method), ['Electrofishing']);
   assert.equal(mortalityRecord('1995', 'Angling'), undefined);
   assert.deepEqual(recordsForPeriod('2003'), []);
@@ -67,7 +69,46 @@ test('unavailable methods, source files and figure values stay missing', () => {
   assert.equal(report.sourceFileVerification, 'pending');
   assert.equal(report.sourceFile, null);
   assert.equal(report.sourceSha256, null);
-  assert.equal(figureArchive.sourceFileVerification, 'pending');
-  assert.equal(figureArchive.annotationDecimalPlacesReportedByResearcher, 3);
-  assert.deepEqual(figureArchive.records, []);
+});
+
+test('retains all seven exact figure annotations alongside the corresponding printed Table 1 record', () => {
+  assert.deepEqual(catchCurves.map((figure) => {
+    const table = catchCurveTableRecord(figure);
+    assert.equal(table.period, figure.period);
+    assert.equal(table.method, figure.method);
+    assert.equal(table.scope, figure.scope);
+    assert.match(figure.printedZ, /^0\.\d{3}$/);
+    assert.match(table.z, /^0\.\d{2}$/);
+    return [figure.sourceFile, figure.period, figure.method, figure.scope, figure.printedZ, table.z, table.season];
+  }), [
+    ['IMG_3954.jpg', '1995', 'Electrofishing', 'Annual', '0.604', '0.60', 'Spring'],
+    ['IMG_3955.jpg', '1996', 'Electrofishing', 'Annual', '0.573', '0.57', 'Spring'],
+    ['IMG_3956.jpg', '1998', 'Electrofishing', 'Annual', '0.472', '0.47', 'Spring'],
+    ['IMG_3957.jpg', '1995–1998 pooled', 'Electrofishing', 'Pooled', '0.638', '0.64', 'Spring'],
+    ['IMG_3960.jpg', '2000', 'Angling', 'Annual', '0.660', '0.66', 'Fall'],
+    ['IMG_3962.jpg', '2001', 'Electrofishing', 'Annual', '0.487', '0.49', 'Fall'],
+    ['IMG_3966.jpg', '1999–2002 pooled', 'Electrofishing', 'Pooled', '0.573', '0.57', 'Fall'],
+  ]);
+  assert.equal(catchCurveTableRecord({ ...catchCurves[0], scope: 'Pooled' }), undefined);
+  assert.equal(mortalityRowId(catchCurveTableRecord(catchCurves.at(-1))), 'table-1-1999-2002-pooled-electrofishing');
+  assert.equal(new Set(mortality.rows.map(mortalityRowId)).size, 15);
+});
+
+test('pins photo receipts and preserves missing bounds, obscured captions and unvalidated coordinates', () => {
+  assert.equal(Object.keys(photoReceipts).length, 16);
+  assert.equal(new Set(Object.values(photoReceipts).map(({ sha256 }) => sha256)).size, 16);
+  assert.equal(photoReceipts['IMG_3954.jpg'].sha256, 'ff5470607326715580300c37ef6d08dc00dfded287a75fe06ab55001a4597297');
+  assert.equal(photoReceipts['IMG_3966.jpg'].sha256, 'b4acdb55deca2c35df6bc5ff88f4566961c8f4eadb3a9861bb03de81f7d0adad');
+  for (const { sourceFile } of catchCurves) assert.match(photoReceipts[sourceFile].sha256, /^[0-9a-f]{64}$/);
+  assert.deepEqual(printedFitAges, [3, 10]);
+  assert.deepEqual(catchCurves.map(({ captionNumber }) => captionNumber), [null, 'Figure 2', 'Figure 4', null, null, null, null]);
+  assert.match(catchCurves[3].locator, /Results.*Figure 5/);
+  assert.match(catchCurves[6].locator, /Results.*Figure 15/);
+  assert.deepEqual(catchCurves[5].ageTicks, ['0', '10']);
+  assert.deepEqual(catchCurves.filter(({ ageUpperBoundCropped }) => ageUpperBoundCropped).map(({ period }) => period), ['2001']);
+  assert.deepEqual(catchCurves[0].lnFrequencyTicks, ['0.00', '5.00']);
+  assert.match(catchCurves[2].legibility, /zero axis/);
+  assert.equal(registry.extractedCoordinates, null);
+  assert.equal(registry.tracedRegression, null);
+  for (const figure of catchCurves) assert.equal(Object.hasOwn(figure, 'rawCounts'), false);
 });
