@@ -1,0 +1,47 @@
+{
+  "report": {
+    "title": "Comparison of the Age Distribution, Mortality, and Growth of Largemouth Bass (Micropterus salmoides) in Stocked and Unstocked Systems",
+    "authors": ["Stephen Fernandes", "Daniel C. Barletta", "Phil Edwards"],
+    "publisher": "Rhode Island Division of Fish and Wildlife",
+    "reference": "Research Reference Document #2003/1",
+    "publicationDate": "November 2003",
+    "sourceType": "researcher_supplied_transcription",
+    "sourceFile": null,
+    "sourceSha256": null,
+    "sourceFileVerification": "pending"
+  },
+  "mortality": {
+    "locator": "Table 1",
+    "rows": [
+      { "period": "1995", "season": "Spring", "method": "Electrofishing", "group": "Unstocked", "scope": "Annual", "z": "0.60", "s": "0.55", "a": "0.45" },
+      { "period": "1996", "season": "Spring", "method": "Electrofishing", "group": "Unstocked", "scope": "Annual", "z": "0.57", "s": "0.56", "a": "0.44" },
+      { "period": "1997", "season": "Spring", "method": "Electrofishing", "group": "Unstocked", "scope": "Annual", "z": "0.55", "s": "0.58", "a": "0.42" },
+      { "period": "1998", "season": "Spring", "method": "Electrofishing", "group": "Unstocked", "scope": "Annual", "z": "0.47", "s": "0.62", "a": "0.38" },
+      { "period": "1995–1998 pooled", "season": "Spring", "method": "Electrofishing", "group": "Unstocked", "scope": "Pooled", "z": "0.64", "s": "0.53", "a": "0.47" },
+      { "period": "1999", "season": "Fall", "method": "Angling", "group": "Stocked", "scope": "Annual", "z": "0.58", "s": "0.56", "a": "0.44" },
+      { "period": "1999", "season": "Fall", "method": "Electrofishing", "group": "Stocked", "scope": "Annual", "z": "0.39", "s": "0.68", "a": "0.32" },
+      { "period": "2000", "season": "Fall", "method": "Angling", "group": "Stocked", "scope": "Annual", "z": "0.66", "s": "0.52", "a": "0.48" },
+      { "period": "2000", "season": "Fall", "method": "Electrofishing", "group": "Stocked", "scope": "Annual", "z": "0.55", "s": "0.57", "a": "0.43" },
+      { "period": "2001", "season": "Fall", "method": "Angling", "group": "Stocked", "scope": "Annual", "z": "0.60", "s": "0.55", "a": "0.45" },
+      { "period": "2001", "season": "Fall", "method": "Electrofishing", "group": "Stocked", "scope": "Annual", "z": "0.49", "s": "0.61", "a": "0.39" },
+      { "period": "2002", "season": "Fall", "method": "Angling", "group": "Stocked", "scope": "Annual", "z": "0.49", "s": "0.61", "a": "0.39" },
+      { "period": "2002", "season": "Fall", "method": "Electrofishing", "group": "Stocked", "scope": "Annual", "z": "0.52", "s": "0.60", "a": "0.40" },
+      { "period": "1999–2002 pooled", "season": "Fall", "method": "Angling", "group": "Stocked", "scope": "Pooled", "z": "0.64", "s": "0.53", "a": "0.47" },
+      { "period": "1999–2002 pooled", "season": "Fall", "method": "Electrofishing", "group": "Stocked", "scope": "Pooled", "z": "0.57", "s": "0.56", "a": "0.44" }
+    ]
+  },
+  "growth": {
+    "locator": "Table 2",
+    "t0Convention": "unverified",
+    "rows": [
+      { "group": "Unstocked systems", "period": "1995–1998 pooled", "asymptoteMm": "573.84", "t0Years": "0.14", "k": "0.21" },
+      { "group": "Stocked systems", "period": "2002", "asymptoteMm": "491.80", "t0Years": "0.58", "k": "0.24" }
+    ]
+  },
+  "figureArchive": {
+    "sourceFileVerification": "pending",
+    "typesReportedByResearcher": ["Individual-year catch curves", "Pooled catch curves"],
+    "annotationDecimalPlacesReportedByResearcher": 3,
+    "records": []
+  }
+}

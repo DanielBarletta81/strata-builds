@@ -181,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all nine canonical URLs', async () => {
+test('GET /sitemap.xml publishes all ten canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/research/bass-2003', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
   );
 });
 
@@ -363,4 +363,16 @@ test('GET /oceanography/pawtuxet exposes profiler observations, limits and sourc
     '2.69799', '1016.7244', '1019.2272', '2016 Data!J2046', 'Selected reading',
     'Published density difference', 'oyster-bearing rocks beneath the bridge', 'https://dem.ri.gov/latest-bay-area-report',
   ]) assert.ok(html.includes(label), label);
+});
+
+test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {
+  const html = (await fetchRoute('/research/bass-2003', 'text/html')).replaceAll('<!-- -->', '');
+  for (const marker of [
+    '<title>Bass Population Observatory | Strata Builds</title>', 'Research Reference Document #2003/1',
+    'original pages pending verification', '1999 · Stocked systems · Fall · Electrofishing · Annual estimate',
+    'Selected estimate provenance', 'Table 1 · all reported mortality estimates', '1995–1998 pooled',
+    '573.84', '491.80', 'Growth parameter provenance', 'Original page pending', '2026 research questions',
+  ]) assert.ok(html.includes(marker), marker);
+  const studio = await fetchRoute('/studio', 'text/html');
+  assert.match(studio, /href="\/research\/bass-2003"/);
 });

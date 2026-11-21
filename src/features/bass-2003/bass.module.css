@@ -1,0 +1,484 @@
+.page {
+  --ink: #1b3438;
+  --muted: #3f5b5f;
+  --accent: #005d60;
+  --line: #c9dcd8;
+  --paper: #eff7f5;
+  --brass: #815519;
+  width: min(100%, 73rem);
+  margin-inline: auto;
+  padding: clamp(0.85rem, 3vw, 2.5rem) clamp(0.85rem, 3vw, 2.4rem) 3rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.page a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.page :is(a, button, select, summary):focus-visible {
+  outline: 3px solid #076fa2;
+  outline-offset: 3px;
+}
+
+.hero {
+  padding: clamp(1.25rem, 5vw, 3.4rem);
+  border-radius: 0.75rem;
+  background: #132e30;
+  color: #edf8f4;
+}
+
+.hero a {
+  color: #a8e4d6;
+}
+
+.hero a:focus-visible {
+  outline-color: #a8e4d6;
+}
+
+.hero p {
+  margin: 0 0 0.55rem;
+}
+
+.hero .back {
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  color: #add0c9;
+  font-size: 0.87rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  max-width: 20ch;
+  margin: 0.15rem 0 0.65rem;
+  font-size: clamp(2.12rem, 5.1vw, 4.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.reportTitle {
+  max-width: 63ch;
+  color: #dceee9;
+  font-size: clamp(1.05rem, 1.9vw, 1.27rem);
+}
+
+.authors {
+  font-weight: 650;
+}
+
+.publisher {
+  color: #bfd5d0;
+  font-size: 0.9rem;
+}
+
+.hero .sourceStatus {
+  margin-top: 0.8rem;
+  color: #ffe4b1;
+  font-size: 0.92rem;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.3rem;
+  margin-top: 1rem;
+  border-top: 1px solid #51716f;
+  padding-top: 0.45rem;
+}
+
+.contents a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.panel {
+  margin-top: 1rem;
+  padding: clamp(0.9rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #fff;
+  scroll-margin-top: 0.85rem;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+
+.sectionHeader p:not(.kicker) {
+  max-width: 74ch;
+  color: var(--muted);
+}
+
+.kicker {
+  color: var(--accent);
+  margin: 0 0 0.32rem;
+  font-size: 0.84rem;
+  font-weight: 720;
+}
+
+.page h3 {
+  margin: 0 0 0.33rem;
+  font-size: 1.08rem;
+  line-height: 1.22;
+}
+
+.studyGroups,
+.growthComparison,
+.definitions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.studyGroups article,
+.growthFit,
+.instrument {
+  background: var(--paper);
+  border-radius: 0.5rem;
+  padding: clamp(0.75rem, 2.1vw, 1.25rem);
+}
+
+.studyGroups article {
+  border-top: 3px solid #427b73;
+}
+
+.studyGroups p:last-child,
+.growthFit p {
+  margin: 0;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.91rem;
+  margin: 0.8rem 0 0;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 0.85rem;
+}
+
+.page label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.91rem;
+  font-weight: 650;
+}
+
+.page select {
+  width: 100%;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding-inline: 0.48rem;
+  border: 1px solid #72918e;
+  border-radius: 0.3rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.context {
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin: 0.82rem 0 0.38rem;
+}
+
+.estimates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.estimates > div {
+  min-width: 0;
+  padding: 0.55rem 0.62rem;
+  border-left: 3px solid #467e77;
+  border-radius: 0.2rem;
+  background: #fff;
+}
+
+.estimates dt {
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.25;
+}
+
+.estimates dd {
+  margin: 0.12rem 0 0;
+  color: var(--ink);
+  font-weight: 730;
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+  line-height: 1.24;
+}
+
+.growthFit .estimates {
+  margin-top: 0.6rem;
+}
+
+.growthFit .estimates dd {
+  font-size: clamp(1.1rem, 2.15vw, 1.65rem);
+}
+
+.growthFit small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 540;
+}
+
+.comparison {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.comparisonHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  align-items: end;
+}
+
+.comparisonHeader p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.89rem;
+}
+
+.plot {
+  --period-column: minmax(0, 10rem);
+  --value-column: 2.5rem;
+  --gap: 0.6rem;
+  --inset: 0.53rem;
+  margin: 0.8rem 0 0;
+}
+
+.plot figcaption {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0 0 0.3rem var(--inset);
+}
+
+.plot ul {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  gap: 0.2rem;
+}
+
+.scale {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: calc(10rem + var(--gap) + var(--inset)) calc(var(--value-column) + var(--gap) + var(--inset));
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.scale span:nth-child(2) {
+  left: 25%;
+}
+
+.scale span:nth-child(3) {
+  left: 50%;
+}
+
+.scale span:nth-child(4) {
+  left: 75%;
+}
+
+.scale span:nth-child(n+2):nth-child(-n+4) {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.plotRow {
+  display: grid;
+  grid-template-columns: var(--period-column) minmax(0, 1fr) var(--value-column);
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.34rem var(--inset);
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.plotRow[aria-pressed='true'] {
+  border-color: #638d86;
+  background: #fff;
+}
+
+.plotRow strong {
+  text-align: right;
+}
+
+.track {
+  background: #d9e8e4;
+  border-radius: 0.25rem;
+  height: 0.72rem;
+}
+
+.bar,
+.pooledBar {
+  display: block;
+  height: 100%;
+  border-radius: 0.25rem;
+  background: #24766e;
+}
+
+.pooledBar {
+  background: #9a6728;
+}
+
+.sourceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.sourceTable caption {
+  text-align: left;
+  color: var(--muted);
+  margin-bottom: 0.36rem;
+}
+
+.sourceTable :is(th, td) {
+  text-align: left;
+  padding: 0.5rem 0.52rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.sourceTable thead th,
+.sourceTable tr[aria-current='true'] {
+  background: var(--paper);
+}
+
+.sourceTable :is(th, td):nth-child(n+3) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sourceTable small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 500;
+}
+
+.definitions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.95rem;
+}
+
+.definitions dt {
+  font-weight: 680;
+}
+
+.definitions dd {
+  color: var(--muted);
+  margin: 0.18rem 0 0;
+}
+
+.notice {
+  margin: 1rem 0 0;
+  padding: 0.7rem 0.85rem;
+  border-left: 3px solid #a16c2a;
+  background: #fff5e2;
+  color: #613b10;
+}
+
+.disclosure {
+  margin-top: 0.7rem;
+  padding: 0.15rem 0.68rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+}
+
+.disclosure summary {
+  min-height: 2.75rem;
+  align-content: center;
+  color: var(--accent);
+  font-weight: 680;
+  cursor: pointer;
+}
+
+.disclosure p {
+  margin: 0.15rem 0 0.65rem;
+}
+
+.archive {
+  list-style: none;
+}
+
+.archive li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  border-top: 1px solid var(--line);
+  padding: 0.6rem 0;
+}
+
+.archive li span {
+  color: var(--brass);
+}
+
+@media (max-width: 680px) {
+  .studyGroups,
+  .growthComparison,
+  .definitions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plot {
+    --period-column: minmax(0, 6.3rem);
+    --gap: 0.4rem;
+  }
+
+  .scale {
+    margin-inline-start: calc(6.3rem + var(--gap) + var(--inset));
+  }
+
+  .sourceTable {
+    font-size: 0.9rem;
+  }
+
+  .sourceTable :is(th, td) {
+    padding-inline: 0.25rem;
+  }
+
+  .sourceTable small {
+    font-size: 0.81rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scale :is(:nth-child(2), :nth-child(4)) {
+    display: none;
+  }
+
+  .sourceTable :is(td, th):nth-child(-n+2) {
+    overflow-wrap: anywhere;
+  }
+}
