@@ -5,6 +5,7 @@ import test from 'node:test';
 import { URL } from 'node:url';
 import registry from '../src/features/bass-2003/photo-registry.json' with { type: 'json' };
 import { catchCurveAudit, catchCurveTableRecord, catchCurves, photoReceipts, printedFitAges, selectedCatchCurve } from '../src/features/bass-2003/catch-curves.ts';
+import { figure4AuditFor } from '../src/features/bass-2003/figure4-audit.ts';
 import { comparisonSeries, growth, growthUnits, mortality, mortalityMetrics, mortalityRecord, mortalityRowId, periodsFor, recordsForPeriod, report } from '../src/features/bass-2003/report.ts';
 
 test('Table 1 preserves every printed estimate, period, method and season', () => {
@@ -118,6 +119,33 @@ test('selects verified figure identifiers and handles unavailable sources', () =
   assert.equal(selectedCatchCurve(catchCurves, 'figure-4').sourceFile, 'IMG_3956.jpg');
   assert.equal(selectedCatchCurve(catchCurves, 'missing').id, 'img_3954');
   assert.equal(selectedCatchCurve([], 'img_3954'), undefined);
+});
+
+test('Figure 4 binds the source-quality audit to the pinned photograph and printed estimates', () => {
+  const figure = selectedCatchCurve(catchCurves, 'figure-4');
+  const audit = figure4AuditFor(figure);
+  assert.equal(audit.sourceFile, 'IMG_3956.jpg');
+  assert.equal(audit.sha256, photoReceipts['IMG_3956.jpg'].sha256);
+  assert.equal(audit.sourceType, 'photograph_of_printed_figure');
+  assert.deepEqual(audit.dimensions, [2048, 1536]);
+  assert.equal(figure.captionNumber, 'Figure 4');
+  assert.equal(figure.printedZ, '0.472');
+  assert.equal(catchCurveTableRecord(figure).z, '0.47');
+  assert.deepEqual(printedFitAges, [3, 10]);
+  assert.equal(figure4AuditFor({ ...figure, sourceFile: 'IMG_3955.jpg' }), undefined);
+  assert.equal(catchCurves.filter(figure4AuditFor).length, 1);
+});
+
+test('readable Figure 4 ticks do not authorize any calibration, plotted coordinates or trace', () => {
+  const audit = figure4AuditFor(selectedCatchCurve(catchCurves, 'figure-4'));
+  assert.equal(audit.status, 'reconstruction_blocked');
+  assert.deepEqual(audit.ageTickLabels, ['0', '2', '4', '6', '8', '10', '12']);
+  assert.deepEqual(audit.lnFrequencyTickLabels, ['0.00', '1.00', '2.00', '3.00', '4.00', '5.00']);
+  assert.equal(audit.calibration.pixelToDataTransform, null);
+  assert.equal(audit.calibration.independentReading, null);
+  assert.equal(audit.points, null);
+  assert.equal(audit.tracedRegression, null);
+  assert.match(audit.findings.find(({ label }) => label === 'Zero-axis marks').note, /meanings remain unresolved/);
 });
 
 test('pins photo receipts and preserves missing bounds, obscured captions and unvalidated coordinates', () => {

@@ -54,3 +54,5 @@ Keep raw individual fish counts, regression standard errors, significance and go
 ## Release check
 
 Select only figures whose identity and reported metadata pass the source audit. Publish a scatterplot only when a second extraction reproduces the coordinates within the documented per-axis uncertainties and the source review confirms the points and line are distinct. A metadata-only figure can still show its exact Z, source locator, corresponding Table 1 row and digitization status.
+
+The Figure 4 pilot documents the blocked coordinate state and exposes the source-quality assessment in the laboratory. [Phase 3 pilot](STRATA-009-PHASE3.md)
