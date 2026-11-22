@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { TimeEngine } from '@/features/deep-time/engine';
 import { Oxygenation } from '@/features/deep-time/oxygen';
-import { PrimordialOcean, TethysGateway } from '@/features/deep-time/sections';
+import { PrimordialOcean } from '@/features/deep-time/sections';
 import { SourceLinks } from '@/features/deep-time/evidence';
 import { sourceReviewDate, sources, type SourceId } from '@/features/deep-time/sources';
 import styles from '@/features/deep-time/deep-time.module.css';
@@ -30,10 +30,10 @@ export default function DeepTimePage() {
           </div>
         </header>
 
-        <TimeEngine />
-        <PrimordialOcean />
-        <Oxygenation />
-        <TethysGateway />
+        <TimeEngine>
+          <PrimordialOcean />
+          <Oxygenation />
+        </TimeEngine>
 
         <section id="sources" className={styles.sourceRegister} aria-labelledby="deep-time-sources">
           <p className={styles.eyebrow}>Provenance</p>

@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { chronology, type GeologicalEvent } from './chronology';
 import { EvidenceLabel, SourceLinks } from './evidence';
 import { axisLabel, initialSelection, position, scales, selectEvent, setZoom, timeWindow, visibleEvents, zoomLimit, type Selection, type TimeWindow } from './time';
+import { TethysChapter } from './tethys/chapter';
 import styles from './deep-time.module.css';
 
 const guideChapters = [
@@ -17,7 +18,7 @@ const guideChapters = [
 const chapterLinks = {
   'primordial-ocean': 'Explore Primordial Ocean',
   oxygenation: 'Explore oxygenation',
-  tethys: 'Read the Tethys model review',
+  tethys: 'Open the 111 Ma reconstruction',
 } as const;
 
 function Ruler({ selection, window }: { selection: Selection; window: TimeWindow }) {
@@ -48,7 +49,7 @@ function Ruler({ selection, window }: { selection: Selection; window: TimeWindow
   );
 }
 
-export function TimeEngine() {
+export function TimeEngine({ children }: { children: ReactNode }) {
   const [selection, setSelection] = useState(initialSelection);
   const currentIndex = chronology.findIndex(({ id }) => selection.id === id);
   const active = chronology[currentIndex];
@@ -65,7 +66,7 @@ export function TimeEngine() {
     if (event) choose(event);
   }
 
-  return (
+  const engine = (
     <section id="chronology" className={styles.engine} aria-labelledby="deep-time-engine-heading">
       <div className={styles.sectionHeading}>
         <div><p className={styles.eyebrow}>Geological time engine</p><h2 id="deep-time-engine-heading">Read the geological record</h2></div>
@@ -145,5 +146,13 @@ export function TimeEngine() {
         </table>
       </details>
     </section>
+  );
+
+  return (
+    <>
+      {engine}
+      {children}
+      <TethysChapter active={active} onSelect={() => chooseId('tethys')} />
+    </>
   );
 }

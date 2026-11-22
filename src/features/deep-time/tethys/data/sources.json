@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "ageMa": 111,
+  "anchorPlate": 0,
+  "comparisonAnchorPlate": 701,
+  "region": {
+    "west": -65,
+    "east": 110,
+    "south": -72,
+    "north": 42
+  },
+  "pipeline": {
+    "pygplates": "1.0.0",
+    "shapely": "2.1.2",
+    "numpy": "2.2.6",
+    "displayProjection": "Regional plate carrée (equirectangular)",
+    "tessellationDegrees": 0.35,
+    "simplificationDegrees": 0.12,
+    "coordinateDecimals": 5
+  },
+  "citations": {
+    "muller": {
+      "title": "Müller et al. (2019), A Global Plate Model Including Lithospheric Deformation Along Major Rifts and Orogens Since the Triassic",
+      "url": "https://doi.org/10.1029/2018TC005462"
+    },
+    "young": {
+      "title": "Young et al. (2019, published online 2018), Global kinematics of tectonic plates and subduction zones since the late Paleozoic Era",
+      "url": "https://doi.org/10.1016/j.gsf.2018.05.011"
+    },
+    "cao": {
+      "title": "Cao et al. (2020), A deforming plate tectonic model of the South China Block since the Jurassic, as cited by EarthByte",
+      "url": "https://www.earthbyte.org/gplates-2-3-software-and-data-sets/#Features"
+    },
+    "torsvik": {
+      "title": "Torsvik et al. (2019), Pacific-Panthalassic Reconstructions: Overview, Errata and the Way Forward",
+      "url": "https://doi.org/10.1029/2019GC008402"
+    },
+    "matthews": {
+      "title": "Matthews et al. (2016), Global plate boundary evolution and kinematics since the late Paleozoic",
+      "url": "https://doi.org/10.1016/j.gloplacha.2016.10.002"
+    }
+  },
+  "models": [
+    {
+      "role": "primary",
+      "directory": "23",
+      "id": "Muller2019-Young2019-Cao2020",
+      "version": "GPlates 2.3 GeoData (2021)",
+      "publisher": "EarthByte Group",
+      "packagePage": "https://www.earthbyte.org/gplates-2-3-software-and-data-sets/",
+      "referenceFrame": "Published plate 0, Müller (2019) mantle-frame basis at 111 Ma",
+      "ageCoverageMa": [
+        0,
+        250
+      ],
+      "coverageNote": "Conservative range of the Müller (2019) basis. The composite package includes older rotations and reports topology coverage to 410 Ma.",
+      "license": {
+        "name": "CC BY 3.0 Unported",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence": "EarthByte’s GPlates 2.3 data grant and each individually linked archive’s README identify the used files as the cited EarthByte datasets."
+      },
+      "archives": [
+        {
+          "kind": "lithosphere",
+          "name": "ContinentalPolygons.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/GPlates2.3_GeoData/Individual/ContinentalPolygons.zip",
+          "sha256": "e3fd552ba71d89992b79ab7d22b022878293b63cb2faff617ce0b131ceaa4ba9",
+          "retrievedAt": "2026-11-22T16:37:42.090986+00:00",
+          "publisherFileDate": "2021-06-25",
+          "citations": [
+            "muller"
+          ],
+          "requiredFiles": [
+            {
+              "path": "ContinentalPolygons/Global_EarthByte_GPlates_PresentDay_ContinentalPolygons.gpmlz",
+              "sha256": "7d6fd37fb88b083c4865c24936c6ea54acbca2693bc7458319cbe6335346a022",
+              "bytes": 543604
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "ContinentalPolygons/README.txt",
+              "sha256": "aacb7dd70eec2b6f85a45e15ad8e626202400596c28a0138ea93c94ad763e9f3",
+              "bytes": 2605
+            }
+          ]
+        },
+        {
+          "kind": "topology",
+          "name": "DynamicPolygons.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/GPlates2.3_GeoData/Individual/DynamicPolygons.zip",
+          "sha256": "5cd6ec45bfb5f501818d854e0cb845556633c22121157b112279cf3c05c4534f",
+          "retrievedAt": "2026-11-22T16:37:42.317756+00:00",
+          "publisherFileDate": "2021-06-25",
+          "citations": [
+            "muller",
+            "cao",
+            "young",
+            "torsvik"
+          ],
+          "requiredFiles": [
+            {
+              "path": "DynamicPolygons/Muller2019-Young2019-Cao2020_PlateBoundaries.gpmlz",
+              "sha256": "0870cf739d97b432b90699d7426ab3197d56c4488c193761384fb751ed889a72",
+              "bytes": 1966817
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "DynamicPolygons/README.txt",
+              "sha256": "876ab23ae030a0458e0e31df83f128b226c3c2b52b6a0bf875d7f1bc48ff3f29",
+              "bytes": 3096
+            }
+          ]
+        },
+        {
+          "kind": "rotations",
+          "name": "Rotations.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/GPlates2.3_GeoData/Individual/Rotations.zip",
+          "sha256": "2a0691866852520abe5665a58b6819bdd0e408cc4ecda3a9961413337b88e3da",
+          "retrievedAt": "2026-11-22T16:37:40.136791+00:00",
+          "publisherFileDate": "2021-08-03",
+          "citations": [
+            "muller",
+            "cao",
+            "young",
+            "torsvik"
+          ],
+          "requiredFiles": [
+            {
+              "path": "Rotations/Muller2019-Young2019-Cao2020_CombinedRotations.rot",
+              "sha256": "92fb809b1bbd88bed48810e625ae361c679d467b750789e8ae1de7f83dd3f295",
+              "bytes": 2878122
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "Rotations/README.txt",
+              "sha256": "b5735ff5c6c565906289c0a23b40f6a0191597af9569ae4ffdbc2ea634a7c84c",
+              "bytes": 2355
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "comparison",
+      "directory": "20",
+      "id": "Matthews2016-GK07",
+      "version": "GPlates 2.0 Sample Data (2016)",
+      "publisher": "EarthByte Group",
+      "packagePage": "https://www.earthbyte.org/gplates-2-0-software-and-data-sets/",
+      "referenceFrame": "Published plate 0, Matthews (2016) GPlates 2.0 GK07 rotation circuit",
+      "ageCoverageMa": [
+        0,
+        410
+      ],
+      "coverageNote": "The rotation file and complete topology collection document a 410–0 Ma range.",
+      "license": {
+        "name": "CC BY 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence": "Each selected download contains License.txt (CC BY 4.0). The landing page’s general CC BY 3.0 notice differs from the archive-level license."
+      },
+      "archives": [
+        {
+          "kind": "lithosphere",
+          "name": "ContinentalPolygons.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/SampleData_GPlates2.0/Individual/FeatureCollections/ContinentalPolygons.zip",
+          "sha256": "1d06d580f6bd84fbc72ee5c4f2814a4ad5d20d9408dcbb82bca719687d3d9afc",
+          "retrievedAt": "2026-11-22T16:37:43.541546+00:00",
+          "publisherFileDate": "2016-09-05",
+          "citations": [
+            "matthews"
+          ],
+          "requiredFiles": [
+            {
+              "path": "ContinentalPolygons/Matthews_etal_GPC_2016_ContinentalPolygons.gpmlz",
+              "sha256": "59f81a990c1add884cbd41deaa15d75f2f9c748625a847404a1f25f21c5dffc6",
+              "bytes": 533687
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "ContinentalPolygons/README.txt",
+              "sha256": "ad1a0ae39e39988640eb987144bedfe382003ceea4fa710c20073a8048ba3e9a",
+              "bytes": 2481
+            },
+            {
+              "path": "License.txt",
+              "sha256": "93b0e3272777ad090ca5720c30619412559831dcd8fccbac496cf1bec625dc8f",
+              "bytes": 253
+            }
+          ]
+        },
+        {
+          "kind": "topology",
+          "name": "DynamicPolygons.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/SampleData_GPlates2.0/Individual/FeatureCollections/DynamicPolygons.zip",
+          "sha256": "4451a2f9a307ada1ccf761208c40f8d61547f51babac58ea1a0190e8d0178cd1",
+          "retrievedAt": "2026-11-22T16:37:42.212427+00:00",
+          "publisherFileDate": "2016-09-05",
+          "citations": [
+            "matthews"
+          ],
+          "requiredFiles": [
+            {
+              "path": "DynamicPolygons/Matthews_etal_GPC_2016_MesozoicCenozoic_PlateTopologies.gpmlz",
+              "sha256": "70e0f9b129e91a0a4daf593813aad05fb31092c5f0cc29885866a2c6fc309d7f",
+              "bytes": 1522515
+            },
+            {
+              "path": "DynamicPolygons/Matthews_etal_GPC_2016_Paleozoic_PlateTopologies.gpmlz",
+              "sha256": "596b5b1c70cfc259dbb45341b85713c66199502b37f2c1e2df4a063a73034c22",
+              "bytes": 342146
+            },
+            {
+              "path": "DynamicPolygons/Matthews_etal_GPC_2016_TopologyBuildingBlocks.gpmlz",
+              "sha256": "eccfe7cbc8f6c836b7d9213d1909f23768bb7bf33d68a64f17bb2614dd4d672d",
+              "bytes": 93065
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "DynamicPolygons/README.txt",
+              "sha256": "acb734a5cf38ece957198a8ead4824cff27f8a3da1f0651373589833ef691cef",
+              "bytes": 2225
+            },
+            {
+              "path": "License.txt",
+              "sha256": "93b0e3272777ad090ca5720c30619412559831dcd8fccbac496cf1bec625dc8f",
+              "bytes": 253
+            }
+          ]
+        },
+        {
+          "kind": "rotations",
+          "name": "Rotations.zip",
+          "url": "https://www.earthbyte.org/webdav/ftp/earthbyte/GPlates/SampleData_GPlates2.0/Individual/FeatureCollections/Rotations.zip",
+          "sha256": "ad0042e768f9632d528f2b94cdbccc77a0c43621e1e359b6aa56274d131928b9",
+          "retrievedAt": "2026-11-22T16:37:41.517377+00:00",
+          "publisherFileDate": "2016-09-05",
+          "citations": [
+            "matthews"
+          ],
+          "requiredFiles": [
+            {
+              "path": "Rotations/Matthews_etal_GPC_2016_410-0Ma_GK07.rot",
+              "sha256": "4eff1b63e43a310a682a8ae298e660ffa6834012dafe94acd540570bdac65a9b",
+              "bytes": 646777
+            }
+          ],
+          "rightsAndProvenanceFiles": [
+            {
+              "path": "Rotations/README.txt",
+              "sha256": "7a03d02a6d6a800fac1d77b8cb368ff3e8ffccdb40bef946f23c1fb61ebc4448",
+              "bytes": 1491
+            },
+            {
+              "path": "License.txt",
+              "sha256": "93b0e3272777ad090ca5720c30619412559831dcd8fccbac496cf1bec625dc8f",
+              "bytes": 253
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
