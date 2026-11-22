@@ -99,7 +99,7 @@ export function TimeEngine() {
       <div className={styles.plot}>
         <p className={styles.windowLabel}><strong>Visible window</strong> {axisLabel(window.older, selection.level)} – {axisLabel(window.younger, selection.level)}</p>
         <Ruler selection={selection} window={window} />
-        <p className={styles.smallText}>{count} dated {count === 1 ? 'entry' : 'entries'} in view. Dots mark dated entries. Bars show published intervals.</p>
+        <p className={styles.smallText}>{count} dated {count === 1 ? 'entry' : 'entries'} in view. Dots mark dated entries. Bars mark the age bounds of cited intervals. Whether activity was continuous requires separate evidence.</p>
         {active.when.kind === 'unresolved' && <p className={styles.undated} data-undated>This event has no assigned date. The ruler stays at the previous dated selection.</p>}
       </div>
 

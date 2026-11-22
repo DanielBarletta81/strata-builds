@@ -384,11 +384,13 @@ test('GET /deep-time separates geological events, disputed dates and conceptual 
     'Deep Time Observatory', 'The planet was<br/>never still.', 'Concept illustration of an early ocean',
     'data-scale="billions"', 'data-selected-event="liquid-water"', '≈ 4.4 Ga',
     'Browse the full chronology table', 'Date unresolved', 'Evidence inspector',
+    '11.7 ka before 2000 CE · formal boundary',
     'Primordial Ocean', 'RNA-first', 'Metabolism-first', 'Protocell-first', 'Co-evolution',
     'How oxygen accumulated', 'data-phase="oxygen-poor"', 'Rock and sediment proxies',
     'Ancient Tethys Ocean', 'Reconstruction pending.', 'Scientific source register',
     'https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf',
   ]) assert.ok(html.includes(label), label);
+  assert.match(html, /Bars mark the age bounds of cited intervals\. Whether activity was continuous requires separate evidence\./);
   assert.ok(!html.includes('data-marker="origins"'));
 });
 
