@@ -6,7 +6,7 @@ import { EvidenceLabel } from '../evidence';
 import { hasTethysReconstruction, tethysSources } from './model';
 import styles from './tethys.module.css';
 
-const TethysMap = lazy(() => import('./map'));
+const SeawayLaboratory = lazy(() => import('./seaway/laboratory'));
 
 function SourceInspector() {
   const { ageMa, anchorPlate, comparisonAnchorPlate, models, citations, pipeline } = tethysSources;
@@ -66,7 +66,7 @@ export function TethysChapter({ active, onSelect }: { active: GeologicalEvent; o
 
       {available ? (
         <Suspense fallback={<p className={styles.status} role="status">Preparing the {ageMa} Ma model…</p>}>
-          <TethysMap />
+          <SeawayLaboratory ageMa={ageMa} />
         </Suspense>
       ) : (
         <div className={styles.status} data-tethys-unavailable>

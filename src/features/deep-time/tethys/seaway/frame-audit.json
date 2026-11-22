@@ -1,0 +1,22 @@
+{
+  "regionalArchive": {
+    "url": "https://www.geologist.nl/wp-content/uploads/2019/09/vanHinsbergen_GPlates_reconstructions.zip",
+    "sha256": "7ed6319f11b4f4626c8211359cfeb8b454cb4381a81ee368fa11effbf06c1eeb",
+    "reviewedUtc": "2026-11-22",
+    "rights": "Author requests publication citation. Archive includes no file-level reuse license. Numerical check only. No archive, geometry or rotations redistributed.",
+    "files": [
+      { "role": "lithosphere", "name": "Mediterranean.gpml", "sha256": "dc2cb1086ebec082ef9c71965002f6a7db0dd1e52b3b510d9984d583b8eddeb9" },
+      { "role": "rotation", "name": "190701_master.rot", "sha256": "d59e2927bc0591bdc290fce25376d49587710783cb10e2754d6227db440e343e" }
+    ]
+  },
+  "phase2ValidationSha256": "d628733dd1afccd5a7f1d83b9bb8ea49bfb044810a0dd1d73b5656a97d484e98",
+  "ageMa": 111,
+  "anchorPlate": 701,
+  "checkpoint": "apulia",
+  "modernLonLat": [16.5, 41.1],
+  "phase2Plate": 3307,
+  "regionalPlate": 3089,
+  "phase2AfricaFixedLonLat": [15.70984, 41.09483],
+  "regionalAfricaFixedLonLat": [14.53038, 40.67470],
+  "separationDegrees": 0.98571
+}
