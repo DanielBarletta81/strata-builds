@@ -1,151 +1,123 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { castEndpoints, castKey, casts, cellLocator, depthCounts, fields, isNumber, lowOxygenRows, oxygenReference, profileProgram, station, workbookHashes, workbookUrl, type DepthRecord, type Metric } from './casts';
+import { useReducer, type KeyboardEvent } from 'react';
+import { castKey, casts, fields, isNumber, station } from './casts';
+import { CastComparison, DepthTable, Investigate, MeasurementContext, Reading, SourceQuality } from './evidence-panels';
+import { changeSelection, evidenceTabs, initialSelection, metrics, selectedObservation, tabForKey, type EvidenceTab } from './explorer-model';
 import { ProfilePlot } from './profile-plot';
-import common from '../oceanography.module.css';
 import styles from './pawtuxet.module.css';
 
-const metrics: Metric[] = ['oxygen', 'salinity', 'temperature', 'density'];
-const initialCast = '2016-07-20 10:00:00';
-const publishedCount = casts.filter((entry) => entry.records.length > 0).length;
-
-function showValue(value: DepthRecord['salinity'] | undefined) {
-  return value === null || value === undefined ? 'Missing' : String(value);
-}
-
-function contrast(shallow: DepthRecord | undefined, deep: DepthRecord | undefined, field: Metric) {
-  const a = shallow?.[field] ?? null;
-  const b = deep?.[field] ?? null;
-  return isNumber(a) && isNumber(b) ? `${(b - a).toFixed(4)} ${fields[field].units}` : 'Unavailable';
-}
+const publishedCount = casts.filter(({ records }) => records.length > 0).length;
+const depthRowCount = casts.reduce((sum, { records }) => sum + records.length, 0);
 
 export function PawtuxetExplorer() {
-  const [eventKey, setEventKey] = useState(initialCast);
-  const [metric, setMetric] = useState<Metric>('oxygen');
-  const [rowNumber, setRowNumber] = useState<number>();
-  const cast = casts.find((entry) => castKey(entry) === eventKey) ?? casts[0];
-  const { shallow, deep } = castEndpoints(cast.records);
-  const depths = depthCounts(cast.records);
-  const lowRows = lowOxygenRows(cast.records);
-  const oxygenAssessable = cast.records.some(({ depth, oxygen }) => isNumber(depth) && depths.get(depth) === 1 && isNumber(oxygen));
-  const selected = cast.records.find(({ row }) => row === rowNumber) ?? deep ?? cast.records[0];
-  const repeated = [...depths.values()].some((count) => count > 1);
-  const meta = `${cast.year} Metadata!J${cast.metadataRow}`;
+  const [selection, dispatch] = useReducer(changeSelection, initialSelection);
+  const { metric, tab } = selection;
+  const view = selectedObservation(selection);
+  const { cast, ordered, row } = view;
+  const position = ordered.findIndex((record) => record.row === row?.row);
+  const previous = ordered[position - 1];
+  const next = ordered[position + 1];
+  const selectRow = (value: number) => dispatch({ type: 'row', value });
+
+  function moveTab(event: KeyboardEvent<HTMLButtonElement>, current: EvidenceTab) {
+    const nextTab = tabForKey(current, event.key);
+    if (nextTab === undefined) return;
+    event.preventDefault();
+    event.currentTarget.parentElement?.querySelector<HTMLButtonElement>(`#pawtuxet-tab-${nextTab}`)?.focus();
+  }
 
   return (
-    <main className={`${common.page} ${styles.page}`}>
-      <header className={common.hero}>
-        <p><Link className={styles.back} href="/oceanography">Estuarine Gradient Observatory</Link></p>
-        <h1>Pawtuxet Water Column Explorer</h1>
-        <p>Inspect discrete salinity, oxygen, temperature and density values from NBC profiler casts at Pawtuxet Cove.</p>
-      </header>
-
-      <section className={`${common.panel} ${styles.section}`} aria-labelledby="cast-heading">
-        <header className={common.panelHeader}>
-          <h2 id="cast-heading">Choose a sampling date</h2>
-          <p>{publishedCount} published casts from 2014 and 2016 · {casts.length - publishedCount} metadata-only visit</p>
+    <main className={styles.observatory}>
+      <div className={styles.page}>
+        <header className={styles.hero}>
+          <div>
+            <p className={styles.back}><Link href="/oceanography">← Estuarine Gradient Observatory</Link></p>
+            <p className={styles.kicker}>{station} · NBC profiles · 2014 &amp; 2016</p>
+            <h1>The Living Water Column</h1>
+            <p className={styles.intro}>Descend through recorded depths in Pawtuxet Cove. Select a measurement to compare it with other published bins and trace it back to the original workbook.</p>
+          </div>
+          <dl className={styles.archiveStats}>
+            <div><dt>Published casts</dt><dd>{publishedCount}</dd></div>
+            <div><dt>Depth rows</dt><dd>{depthRowCount}</dd></div>
+          </dl>
         </header>
-        <label htmlFor="pawtuxet-date">Sampling date · source clock</label>
-        <select id="pawtuxet-date" value={eventKey} onChange={(event) => {
-          setEventKey(event.target.value);
-          setRowNumber(undefined);
-        }}>
-          {casts.map((entry) => (
-            <option key={castKey(entry)} value={castKey(entry)}>{`${entry.date} · ${entry.clock ?? 'metadata only'}`}</option>
-          ))}
-        </select>
-        <p className={common.quiet}>{station} · {cast.clock ? 'Workbook clock. UTC offset unverified.' : 'Workbook metadata gives the date only.'}</p>
-        {cast.note && <p className={styles.archiveNote}>NBC metadata · {cast.note} ({meta})</p>}
-        {!cast.records.length && <p className={common.notice}>NBC lists a visit on this date. The public data sheet provides no depth readings for it.</p>}
-      </section>
 
-      {!!cast.records.length && <>
-        <div className={styles.grid}>
-          <section className={common.panel} aria-labelledby="profile-heading">
-            <header className={common.panelHeader}><h2 id="profile-heading">Published water-column readings</h2></header>
+        <section className={styles.instrument} aria-labelledby="pawtuxet-instrument">
+          <div className={styles.instrumentHeader}>
             <div>
-              <label htmlFor="pawtuxet-metric">Plot measurement</label>
-              <select id="pawtuxet-metric" value={metric} onChange={(event) => setMetric(event.target.value as Metric)}>
+              <h2 id="pawtuxet-instrument">Cast explorer</h2>
+              <p className={styles.muted}>{ordered.length ? `${ordered.length} published depth rows in this cast` : 'Metadata-only visit'}</p>
+            </div>
+          </div>
+          <div className={styles.controls}>
+            <div>
+              <label htmlFor="pawtuxet-date">Sampling date · source clock</label>
+              <select id="pawtuxet-date" value={castKey(cast)} onChange={(event) => dispatch({ type: 'cast', value: event.target.value })}>
+                {casts.map((entry) => (
+                  <option key={castKey(entry)} value={castKey(entry)}>{`${entry.date} · ${entry.clock ?? 'metadata only'}`}</option>
+                ))}
+              </select>
+              <p className={styles.controlNote}>{cast.clock ? 'Workbook clock · UTC offset unverified' : 'Workbook metadata gives the date only'}</p>
+            </div>
+            <div>
+              <label htmlFor="pawtuxet-metric">Measurement lens</label>
+              <select id="pawtuxet-metric" value={metric} onChange={(event) => {
+                const value = metrics.find((candidate) => candidate === event.target.value);
+                if (value) dispatch({ type: 'metric', value });
+              }}>
                 {metrics.map((item) => <option key={item} value={item}>{fields[item].label}</option>)}
               </select>
+              <p className={styles.controlNote}>Published units · {fields[metric].units}</p>
             </div>
-            <ProfilePlot records={cast.records} metric={metric} selectedRow={selected?.row} lowRows={lowRows} />
-            {repeated && <p className={styles.archiveNote}>Repeated depth labels are retained as separate source rows. A repeated endpoint is excluded from the depth comparison.</p>}
-            {lowRows.length > 0
-              ? <p className={styles.archiveNote}>
-                  <strong>{lowRows.length} published depth readings below 3 mg/L</strong> in one cast on <time dateTime={cast.date} className={styles.castDate}>{cast.date}</time>.
-                  {' '}The bins were at {lowRows.map(({ depth }) => depth).join(', ')} m.
-                </p>
-              : <p className={common.quiet}>{oxygenAssessable ? 'No unique-depth reading in this cast falls below 3 mg/L.' : 'Oxygen screening is unavailable for this cast.'}</p>}
-            <p className={common.quiet}><a href={oxygenReference}>RIDEM’s 3 mg/L reporting threshold</a> is used as a screening reference. A cast leaves duration, spatial extent and species-specific exposure unresolved.</p>
-          </section>
-
-          <section className={common.panel} aria-labelledby="pair-heading">
-            <header className={common.panelHeader}><h2 id="pair-heading">Compare sampled depths</h2></header>
-            <table className={`${common.table} ${styles.comparison}`}>
-              <caption>Shallowest and deepest published depth bins of the same cast</caption>
-              <thead><tr><th scope="col">Measure</th><th scope="col">Shallow</th><th scope="col">Deep</th></tr></thead>
-              <tbody>
-                {(['depth', ...metrics] as const).map((field) => (
-                  <tr key={field}><th scope="row">{`${fields[field].label} (${fields[field].units})`}</th>
-                    <td>{shallow ? showValue(shallow[field]) : 'Ambiguous'}</td>
-                    <td>{deep ? showValue(deep[field]) : 'Ambiguous'}</td>
-                  </tr>
+            <div>
+              <label htmlFor="pawtuxet-row">Depth reading</label>
+              <select id="pawtuxet-row" value={row?.row ?? ''} disabled={!row} onChange={(event) => selectRow(Number(event.target.value))}>
+                {!row && <option value="">No published depth rows</option>}
+                {ordered.map(({ row: workbookRow, depth }) => (
+                  <option key={workbookRow} value={workbookRow}>{isNumber(depth) ? `${depth} m` : 'Depth unavailable'} · row {workbookRow}</option>
                 ))}
-              </tbody>
-            </table>
-            <dl className={common.readout}>
-              <div><dt>Salinity difference · deep minus shallow</dt><dd>{contrast(shallow, deep, 'salinity')}</dd></div>
-              <div><dt>Published density difference · deep minus shallow</dt><dd>{contrast(shallow, deep, 'density')}</dd></div>
-            </dl>
-            <p className={common.quiet}>Salinity contrast describes salt content. Density evidence here comes from NBC’s separate density column. The comparison covers sampled bins within one cast, with no inferred boundary.</p>
-          </section>
-        </div>
-
-        <section className={`${common.panel} ${styles.section}`} aria-labelledby="record-heading">
-          <header className={common.panelHeader}><h2 id="record-heading">Inspect a source record</h2></header>
-          <label htmlFor="pawtuxet-row">Workbook data row</label>
-          <select id="pawtuxet-row" value={selected?.row} onChange={(event) => setRowNumber(Number(event.target.value))}>
-            {cast.records.map(({ row, depth }) => <option key={row} value={row}>{`Row ${row} · ${depth === null ? 'depth missing' : `${depth} m`}`}</option>)}
-          </select>
-          {selected && <dl className={`${common.readout} ${styles.recordValues}`}>
-            {(['depth', ...metrics] as const).map((field) => (
-              <div key={field}>
-                <dt>{`${fields[field].label} (${fields[field].units})`}</dt>
-                <dd>{showValue(selected[field])}<small>{cellLocator(cast.year, selected.row, field)}</small></dd>
+              </select>
+              <div className={styles.steps}>
+                <button type="button" disabled={!previous} onClick={() => previous && selectRow(previous.row)}>↑ Previous row</button>
+                <button type="button" disabled={!next} onClick={() => next && selectRow(next.row)}>↓ Next row</button>
               </div>
-            ))}
-          </dl>}
-          {selected && <p className={common.quiet}>Station, date and source clock · {cast.year} Data!A{selected.row}:C{selected.row}</p>}
-          <details>
-            <summary>All published depth rows for this metric</summary>
-            <table className={common.table}>
-              <caption>{fields[metric].label} in source row order</caption>
-              <thead><tr><th scope="col">Row</th><th scope="col">Depth (m)</th><th scope="col">{fields[metric].units}</th><th scope="col">Row notes</th></tr></thead>
-              <tbody>{cast.records.map((record) => (
-                <tr key={record.row}>
-                  <th scope="row">{record.row}</th><td>{showValue(record.depth)}</td><td>{showValue(record[metric])}</td>
-                  <td>{lowRows.includes(record) && 'Below 3 mg/L'}{isNumber(record.depth) && (depths.get(record.depth) ?? 0) > 1 && 'Repeated depth'}</td>
-                </tr>
-              ))}</tbody>
-            </table>
-          </details>
-        </section>
-      </>}
+            </div>
+          </div>
+          {cast.note && <p className={styles.caution}>NBC metadata · {cast.note} ({cast.year} Metadata!J{cast.metadataRow})</p>}
 
-      <section className={`${common.panel} ${styles.section}`} aria-labelledby="sources-heading">
-        <header className={common.panelHeader}><h2 id="sources-heading">Source and site limits</h2></header>
-        <p>The NBC cove casts may not represent conditions at the oyster-bearing rocks beneath the bridge. The researcher’s retrospective 2016 oyster observation is a separate record. It is outside the water-quality evidence shown here.</p>
-        <details>
-          <summary>Workbook provenance and quality information</summary>
-          <p><a href={workbookUrl(cast.year)}>{cast.year} NBC Water Column Profile Data</a> · {meta} has the station visit mark <strong>{cast.mark}</strong>.</p>
-          <p>Workbook SHA-256 <code>{workbookHashes[cast.year]}</code></p>
-          <p>{cast.records.length ? 'The reviewed measurement columns contain no per-reading quality flags. Repeated depth labels are noted as archive ambiguities.' : 'The sampling metadata is the available source for this visit.'}</p>
-          <p>The profiler program can average readings into depth bins. The workbook leaves the density calculation and reference basis unspecified. The nutrient workbooks are separate sampling records. <a href={profileProgram}>NBC profiler methods</a></p>
-        </details>
-      </section>
+          <div className={styles.tabs} role="tablist" aria-label="Water-column evidence layers">
+            {evidenceTabs.map(({ id, label }) => (
+              <button key={id} id={`pawtuxet-tab-${id}`} type="button" role="tab" aria-selected={tab === id} aria-controls={`pawtuxet-panel-${id}`}
+                tabIndex={tab === id ? 0 : -1} onFocus={() => dispatch({ type: 'tab', value: id })}
+                onClick={() => dispatch({ type: 'tab', value: id })} onKeyDown={(event) => moveTab(event, id)}>
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {evidenceTabs.map(({ id }) => (
+            <div className={styles.tabPanel} key={id} id={`pawtuxet-panel-${id}`} role="tabpanel" aria-labelledby={`pawtuxet-tab-${id}`} tabIndex={0} hidden={tab !== id}>
+              {tab === id && id === 'observed' && (row ? (
+                <div className={styles.observedGrid}>
+                  <Reading view={view} metric={metric} />
+                  <div className={`${styles.card} ${styles.plotCard}`}>
+                    <ProfilePlot view={view} metric={metric} onSelect={selectRow} />
+                    <DepthTable view={view} metric={metric} onSelect={selectRow} />
+                  </div>
+                  <div className={`${styles.card} ${styles.contextCard}`}>
+                    <CastComparison view={view} metric={metric} />
+                    <MeasurementContext view={view} metric={metric} />
+                  </div>
+                </div>
+              ) : <p className={styles.caution} role="status">NBC lists a visit on this date. The public data sheet provides no depth readings for it. See Source &amp; Quality for the metadata locator.</p>)}
+              {tab === id && id === 'source' && <SourceQuality view={view} metric={metric} />}
+              {tab === id && id === 'investigate' && <Investigate view={view} metric={metric} />}
+            </div>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }
