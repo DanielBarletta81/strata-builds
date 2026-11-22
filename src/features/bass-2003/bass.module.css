@@ -474,6 +474,24 @@
   overflow-wrap: anywhere;
 }
 
+.figure4Pilot {
+  margin-top: 1rem;
+  border-block-start: 1px solid var(--line);
+  padding-block-start: 0.9rem;
+}
+
+.figure4Pilot .context {
+  margin-top: 0.3rem;
+}
+
+.figure4Table {
+  margin-block: 0.7rem;
+}
+
+.figure4Table th:first-child {
+  width: 28%;
+}
+
 @media (max-width: 680px) {
   .studyGroups,
   .growthComparison,
@@ -514,5 +532,9 @@
 
   .sourceTable :is(td, th):nth-child(-n+2) {
     overflow-wrap: anywhere;
+  }
+
+  .figure4Table th:first-child {
+    width: 34%;
   }
 }

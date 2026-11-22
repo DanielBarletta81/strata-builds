@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 import { catchCurveAudit, catchCurveTableRecord, photoReceipts, printedFitAges, selectedCatchCurve, type CatchCurveFigure } from './catch-curves';
+import { figure4AuditFor } from './figure4-audit';
+import { Figure4UncertaintyInspector } from './figure4-uncertainty-inspector';
 import { methodsReferences, mortalityRowId, report } from './report';
 import styles from './bass.module.css';
 
 export function CatchCurveLaboratory({ figures }: { figures: readonly CatchCurveFigure[] }) {
   const [selectedId, setSelectedId] = useState(figures[0]?.id ?? '');
   const figure = selectedCatchCurve(figures, selectedId);
+  const pilot = figure && figure4AuditFor(figure);
 
   return (
     <section className={styles.panel} id="catch-curves" aria-labelledby="catch-title">
@@ -29,6 +32,7 @@ export function CatchCurveLaboratory({ figures }: { figures: readonly CatchCurve
             </div>
             <CatchCurveReadout figure={figure} />
           </div>
+          {pilot && <Figure4UncertaintyInspector audit={pilot} />}
           <CatchCurveProvenance figure={figure} />
         </>
       ) : <p className={styles.notice} role="status">No verified catch-curve figures are available. The historical Table 1 estimates remain available above.</p>}

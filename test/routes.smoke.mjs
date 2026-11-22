@@ -379,6 +379,7 @@ test('GET /research/bass-2003 renders the study, exact reported tables and evide
     'Original kept in the private archive', 'Strata research philosophy', 'value="figure-4"',
   ]) assert.ok(html.includes(marker), marker);
   assert.doesNotMatch(html, /\/(?:originals|\.research-local)\/IMG_/);
+  assert.doesNotMatch(html, /id="bass-figure4-title"/);
   const studio = await fetchRoute('/studio', 'text/html');
   assert.match(studio, /href="\/research\/bass-2003"/);
 });
