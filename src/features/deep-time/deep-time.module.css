@@ -121,7 +121,6 @@
 .engine,
 .chapter,
 .oxygen,
-.tethys,
 .sourceRegister {
   min-width: 0;
   padding: clamp(0.9rem, 3.1vw, 2.2rem);
@@ -325,8 +324,7 @@
   margin-bottom: 0.85rem;
 }
 
-.selectedGrid,
-.modelGrid {
+.selectedGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.7rem;
@@ -334,8 +332,7 @@
 
 .featured,
 .evidence,
-.materialGrid article,
-.modelGrid article {
+.materialGrid article {
   min-width: 0;
   padding: clamp(0.78rem, 2vw, 1.2rem);
   border: 1px solid var(--line);
@@ -482,8 +479,7 @@
   margin-top: 0.7rem;
 }
 
-.materialGrid article p,
-.modelGrid article p {
+.materialGrid article p {
   margin-bottom: 0.42rem;
 }
 
@@ -542,49 +538,6 @@
   border-color: #baa58a;
 }
 
-.tethys {
-  background: radial-gradient(ellipse at 93% 10%, #3f4037, transparent 58%), var(--panel);
-}
-
-.tethysLead {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.3rem 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.tethysTime {
-  margin: 0;
-  color: var(--ochre);
-  font: 400 clamp(2.45rem, 7vw, 5.05rem)/1 Georgia, 'Times New Roman', serif;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.045em;
-}
-
-.tethysTime span {
-  font: 650 0.95rem ui-monospace, SFMono-Regular, Consolas, monospace;
-  letter-spacing: 0;
-}
-
-.tethys > p:not(.modelStatus) {
-  margin-top: 0.65rem;
-  max-width: 68ch;
-}
-
-.tethys code {
-  overflow-wrap: anywhere;
-}
-
-.modelStatus {
-  margin: 0.88rem 0 0;
-  padding: 0.62rem 0.75rem;
-  background: #273536;
-  border-inline-start: 2px solid var(--ochre);
-  color: #f0dac4;
-}
-
 .sourceRegister .sourceLinks {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -625,7 +578,6 @@
   .materialGrid,
   .hypothesisGrid,
   .layers,
-  .modelGrid,
   .sourceRegister .sourceLinks {
     grid-template-columns: minmax(0, 1fr);
   }

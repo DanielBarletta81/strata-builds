@@ -387,11 +387,14 @@ test('GET /deep-time separates geological events, disputed dates and conceptual 
     '11.7 ka before 2000 CE · formal boundary',
     'Primordial Ocean', 'RNA-first', 'Metabolism-first', 'Protocell-first', 'Co-evolution',
     'How oxygen accumulated', 'data-phase="oxygen-poor"', 'Rock and sediment proxies',
-    'Ancient Tethys Ocean', 'Reconstruction pending.', 'Scientific source register',
+    'Ancient Tethys Ocean', 'The Tethys Ocean · 111 Ma', 'Scientific source register',
+    'Reconstruction unavailable for the selected event', 'Select 111 Ma in the timeline',
+    'Sources, methods and attribution', 'CC BY 3.0 Unported', 'CC BY 4.0 International',
     'https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf',
   ]) assert.ok(html.includes(label), label);
   assert.match(html, /Bars mark the age bounds of cited intervals\. Whether activity was continuous requires separate evidence\./);
   assert.ok(!html.includes('data-marker="origins"'));
+  assert.doesNotMatch(html, /data-tethys-map=/);
 });
 
 test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {

@@ -127,9 +127,9 @@ export const chronology: readonly GeologicalEvent[] = [
     id: 'tethys', title: 'Ancient Tethys Ocean', theme: 'Continents', chapter: 'tethys',
     when: { kind: 'approximate', years: 111_000_000, label: '≈ 111 Ma · Albian chapter' },
     classification: 'modeled',
-    supported: 'Global plate-motion models cover this Albian time slice and provide a basis for reconstructing the ancient Tethyan region.',
-    unresolved: 'The geography depends on the model, chosen frame and preservation of geological evidence. This chapter has no rendered paleogeographic reconstruction.',
-    next: 'Pin a plate-model package, check redistribution rights for every layer and validate a 111 Ma export independently.',
+    supported: 'The 111 Ma reconstruction projects the EarthByte model’s lithosphere and resolved plate boundaries for this Albian time slice.',
+    unresolved: 'The geometry depends on the rotation model, reference frame and preservation of geological evidence. Seaway depth and shoreline position need separate evidence.',
+    next: 'Compare dated regional structural and stratigraphic records against alternate tectonic models and independently constrained paleoshorelines.',
     sources: ['ics', 'earthbyte', 'muller'],
   },
   {
