@@ -1,6 +1,6 @@
 import { seawayEvidence } from './evidence.ts';
 
-export type Layer = 'plate' | 'marine' | 'questions';
+export type Layer = 'plate' | 'marine' | 'questions' | 'transect';
 export type Evidence = typeof seawayEvidence[number];
 
 export type Inspection = {
@@ -15,12 +15,12 @@ export const initialInspection: Inspection = {
   evidence: seawayEvidence[3],
 };
 
-type Action =
+export type SeawayAction =
   | { type: 'layer'; layer: Layer }
   | { type: 'checkpoint'; id: string }
   | { type: 'evidence'; evidence: Evidence };
 
-export function inspect(state: Inspection, action: Action): Inspection {
+export function inspect(state: Inspection, action: SeawayAction): Inspection {
   switch (action.type) {
     case 'layer':
       return { ...state, layer: action.layer };
