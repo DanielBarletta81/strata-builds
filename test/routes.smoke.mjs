@@ -181,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all ten canonical URLs', async () => {
+test('GET /sitemap.xml publishes all eleven canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/research/bass-2003', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/orbital/voyager', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/research/bass-2003', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
   );
 });
 
@@ -365,6 +365,17 @@ test('GET /oceanography/pawtuxet exposes profiler observations, limits and sourc
   ]) assert.ok(html.includes(label), label);
   assert.match(html, /id="pawtuxet-tab-observed" type="button" role="tab" aria-selected="true"/);
   assert.match(html, /data-reading-row="2046" data-low="true"[^>]+aria-pressed="true"/);
+});
+
+test('GET /orbital/voyager presents the common date, distinct ranges and evidence', async () => {
+  const html = (await fetchRoute('/orbital/voyager', 'text/html')).replaceAll('<!-- -->', '');
+  for (const label of [
+    'One light-day.', 'One changing Earth.', 'Shared timeline date', 'Earth lens',
+    'One light-day from Earth', 'COP31 convenes in Antalya', '24.00 h', 'From Earth’s center', 'From the Sun’s center',
+    'data-sample-date="2026-11-18" data-selected="true"', 'data-selected-date="2026-11-18"',
+    'Modeled positions and ranges', 'carrier without usable science or engineering data',
+    'Pale Blue Dot, 1990', 'Earth on a deeper clock', 'Horizons Sun-centered request', '2026-11-22T15:27:40.734Z',
+  ]) assert.ok(html.includes(label), label);
 });
 
 test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {

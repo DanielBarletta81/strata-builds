@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/atlas', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/signals', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/orbital', changeFrequency: 'monthly', priority: 0.9 },
+    { url: '/orbital/voyager', changeFrequency: 'monthly', priority: 0.8 },
     { url: '/oceanography', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/oceanography/pawtuxet', changeFrequency: 'monthly', priority: 0.8 },
     { url: '/research/bass-2003', changeFrequency: 'monthly', priority: 0.8 },

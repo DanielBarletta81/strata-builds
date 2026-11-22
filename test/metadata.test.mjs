@@ -24,6 +24,7 @@ test('sitemap keeps the canonical URLs, crawl hints, and modification dates', ()
       { url: 'https://strata-builds.tech/atlas', changeFrequency: 'monthly', priority: 0.9 },
       { url: 'https://strata-builds.tech/signals', changeFrequency: 'monthly', priority: 0.9 },
       { url: 'https://strata-builds.tech/orbital', changeFrequency: 'monthly', priority: 0.9 },
+      { url: 'https://strata-builds.tech/orbital/voyager', changeFrequency: 'monthly', priority: 0.8 },
       { url: 'https://strata-builds.tech/oceanography', changeFrequency: 'monthly', priority: 0.9 },
       { url: 'https://strata-builds.tech/oceanography/pawtuxet', changeFrequency: 'monthly', priority: 0.8 },
       { url: 'https://strata-builds.tech/research/bass-2003', changeFrequency: 'monthly', priority: 0.8 },
