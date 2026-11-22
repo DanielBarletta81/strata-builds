@@ -181,12 +181,12 @@ test('GET /robots.txt preserves the public crawl and sitemap directives', async 
   assert.match(robots, /^Sitemap: https:\/\/strata-builds\.tech\/sitemap\.xml$/m);
 });
 
-test('GET /sitemap.xml publishes all eleven canonical URLs', async () => {
+test('GET /sitemap.xml publishes all twelve canonical URLs', async () => {
   const sitemap = await fetchRoute('/sitemap.xml', 'application/xml');
   assert.match(sitemap, /<urlset\b/);
   assert.deepEqual(
     [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
-    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/orbital/voyager', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/research/bass-2003', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation'],
+    ['https://strata-builds.tech', 'https://strata-builds.tech/studio', 'https://strata-builds.tech/atlas', 'https://strata-builds.tech/signals', 'https://strata-builds.tech/orbital', 'https://strata-builds.tech/orbital/voyager', 'https://strata-builds.tech/oceanography', 'https://strata-builds.tech/oceanography/pawtuxet', 'https://strata-builds.tech/research/bass-2003', 'https://strata-builds.tech/frontier', 'https://strata-builds.tech/frontier/reconciliation', 'https://strata-builds.tech/deep-time'],
   );
 });
 
@@ -376,6 +376,20 @@ test('GET /orbital/voyager presents the common date, distinct ranges and evidenc
     'Modeled positions and ranges', 'carrier without usable science or engineering data',
     'Pale Blue Dot, 1990', 'Earth on a deeper clock', 'Horizons Sun-centered request', '2026-11-22T15:27:40.734Z',
   ]) assert.ok(html.includes(label), label);
+});
+
+test('GET /deep-time separates geological events, disputed dates and conceptual illustrations', async () => {
+  const html = (await fetchRoute('/deep-time', 'text/html')).replaceAll('<!-- -->', '');
+  for (const label of [
+    'Deep Time Observatory', 'The planet was<br/>never still.', 'Concept illustration of an early ocean',
+    'data-scale="billions"', 'data-selected-event="liquid-water"', '≈ 4.4 Ga',
+    'Browse the full chronology table', 'Date unresolved', 'Evidence inspector',
+    'Primordial Ocean', 'RNA-first', 'Metabolism-first', 'Protocell-first', 'Co-evolution',
+    'How oxygen accumulated', 'data-phase="oxygen-poor"', 'Rock and sediment proxies',
+    'Ancient Tethys Ocean', 'Reconstruction pending.', 'Scientific source register',
+    'https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf',
+  ]) assert.ok(html.includes(label), label);
+  assert.ok(!html.includes('data-marker="origins"'));
 });
 
 test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {
