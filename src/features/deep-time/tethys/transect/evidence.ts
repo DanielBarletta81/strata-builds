@@ -247,7 +247,7 @@ export const transectEvidence: readonly TransectRecord[] = [
     age: {
       basis: 'bracket', range: { youngerMa: 110.70, olderMa: 112.80 }, label: '112.80–110.70 Ma in the published tuned model',
       method: 'Foraminiferal marker positions are mapped to the authors’ astronomically tuned core timescale. Table 2 also reports a nannofossil-zone framework.',
-      uncertainty: 'The paper labels uncertainty in kyr in the table note and Ma in the discussion. The values shown here are the nominal zone boundaries.',
+      uncertainty: 'The Table 2 note lists ±0.203 kyr. The discussion reports approximately ±0.203 Ma. The displayed ages are the nominal zone boundaries.',
     },
     observed: 'The authors report planktonic-foraminiferal zone markers at different positions in the core. The cited depths locate fossils in rock.',
     interpreted: 'The published age model places 111 Ma within this local marine interval.',

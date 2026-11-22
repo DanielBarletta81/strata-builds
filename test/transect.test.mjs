@@ -5,7 +5,7 @@ import test from 'node:test';
 import { URL } from 'node:url';
 import { seawayEvidence, oaeEstimates } from '../src/features/deep-time/tethys/seaway/evidence.ts';
 import { faciesSettings, targetMa, transectEvidence, transectSources } from '../src/features/deep-time/tethys/transect/evidence.ts';
-import { ageCoverage, initialLaboratory, inspectLaboratory } from '../src/features/deep-time/tethys/transect/model.ts';
+import { ageCoverage, coverageLabels, initialLaboratory, inspectLaboratory } from '../src/features/deep-time/tethys/transect/model.ts';
 
 const byId = (id) => transectEvidence.find((record) => record.id === id);
 
@@ -41,7 +41,9 @@ test('111 Ma gate distinguishes a source bracket, broad coverage, older and unre
   const fossilZone = byId('rischi-biozone');
   assert.deepEqual(fossilZone.age.range, { youngerMa: 110.70, olderMa: 112.80 });
   assert.equal(ageCoverage(fossilZone.age), 'verified');
-  assert.ok(fossilZone.age.uncertainty.includes('kyr') && fossilZone.age.uncertainty.includes('Ma'));
+  assert.equal(coverageLabels.verified, '111 Ma within published age bracket');
+  assert.match(fossilZone.age.uncertainty, /Table 2 note lists ±0\.203 kyr/);
+  assert.match(fossilZone.age.uncertainty, /discussion reports approximately ±0\.203 Ma/);
   assert.equal(ageCoverage(byId('subtidal-limestone').age), 'broad');
   assert.equal(ageCoverage(byId('aptian-drowning').age), 'outside');
   assert.equal(ageCoverage(byId('exposure-breccia').age), 'unresolved');

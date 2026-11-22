@@ -3,7 +3,7 @@ import { initialInspection, inspect, type Inspection, type SeawayAction } from '
 import { targetMa, transectEvidence, type ReportedAge, type TransectRecord } from './evidence.ts';
 
 export const coverageLabels = {
-  verified: 'Verified at target interval',
+  verified: '111 Ma within published age bracket',
   broad: 'Broadly age-compatible',
   outside: 'Outside target interval',
   unresolved: 'Unresolved',

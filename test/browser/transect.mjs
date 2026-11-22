@@ -112,7 +112,10 @@ try {
     assert.notEqual(await biozone.evaluate(node=>getComputedStyle(node).transitionDuration),'0s');
     await page.emulateMedia({reducedMotion:'reduce'});
     await activate(biozone);
+    await panel.getByText('111 Ma within published age bracket', { exact: true }).waitFor();
     await panel.getByText('112.80–110.70 Ma in the published tuned model',{exact:true}).waitFor();
+    await activate(open);
+    await panel.getByText(/Table 2 note lists ±0\.203 kyr.*discussion reports approximately ±0\.203 Ma/).waitFor();
     await layers.getByRole('button',{name:'Regional Marine Evidence'}).press('Enter');
     assert.equal(await lab.locator('[data-seaway-record]').getAttribute('data-seaway-record'),'poggio-le-guaine');
     await layers.getByRole('button',{name:'Open Questions'}).press('Enter');
