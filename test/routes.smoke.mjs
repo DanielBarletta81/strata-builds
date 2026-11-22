@@ -375,11 +375,14 @@ test('GET /research/bass-2003 renders the study, exact reported tables and evide
     'Catch Curve Laboratory', 'Catch-curve figure', 'Figure annotation Z', 'Table 1 estimate Z', '0.604',
     'Catch-curve source inspector', 'How to read a catch curve', 'IMG_3954.jpg', 'ff5470607326715580',
     'id="table-1-1995-electrofishing"', 'href="#table-1-1995-electrofishing"',
-    'Figure metadata verified', 'Whether they come from the same fit remains unverified',
+    'Published evidence', 'Source quality', 'Open questions', 'Coordinates withheld',
+    'Whether they come from the same fit remains unverified', 'Fish Scale Laboratory', 'Coming next',
     'Original kept in the private archive', 'Strata research philosophy', 'value="figure-4"',
   ]) assert.ok(html.includes(marker), marker);
   assert.doesNotMatch(html, /\/(?:originals|\.research-local)\/IMG_/);
-  assert.doesNotMatch(html, /id="bass-figure4-title"/);
+  assert.match(html, /id="bass-tab-published" role="tab" aria-selected="true" aria-controls="bass-layer-published" tabindex="0"/);
+  assert.match(html, /id="bass-layer-source-quality" role="tabpanel" aria-labelledby="bass-tab-source-quality" tabindex="0" hidden=""/);
+  assert.doesNotMatch(html, /<summary>Inspect Figure 4 source quality<\/summary>/);
   const studio = await fetchRoute('/studio', 'text/html');
   assert.match(studio, /href="\/research\/bass-2003"/);
 });

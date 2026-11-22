@@ -4,9 +4,39 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { URL } from 'node:url';
 import registry from '../src/features/bass-2003/photo-registry.json' with { type: 'json' };
+import { catchCurveSourceStates, evidenceLayerForKey, evidenceLayers } from '../src/features/bass-2003/catch-curve-evidence.ts';
 import { catchCurveAudit, catchCurveTableRecord, catchCurves, photoReceipts, printedFitAges, selectedCatchCurve } from '../src/features/bass-2003/catch-curves.ts';
 import { figure4AuditFor } from '../src/features/bass-2003/figure4-audit.ts';
 import { comparisonSeries, growth, growthUnits, mortality, mortalityMetrics, mortalityRecord, mortalityRowId, periodsFor, recordsForPeriod, report } from '../src/features/bass-2003/report.ts';
+
+test('evidence tabs use wrapping arrow navigation and support Home and End', () => {
+  assert.deepEqual(evidenceLayers.map(({ id }) => id), ['published', 'source-quality', 'open-questions']);
+  assert.equal(evidenceLayerForKey('published', 'ArrowLeft'), 'open-questions');
+  assert.equal(evidenceLayerForKey('published', 'ArrowRight'), 'source-quality');
+  assert.equal(evidenceLayerForKey('source-quality', 'ArrowRight'), 'open-questions');
+  assert.equal(evidenceLayerForKey('open-questions', 'ArrowRight'), 'published');
+  assert.equal(evidenceLayerForKey('source-quality', 'Home'), 'published');
+  assert.equal(evidenceLayerForKey('published', 'End'), 'open-questions');
+  assert.equal(evidenceLayerForKey('published', 'Tab'), undefined);
+});
+
+test('source-quality rows distinguish verified records, readable ticks, and withheld reconstruction', () => {
+  const figure4 = selectedCatchCurve(catchCurves, 'figure-4');
+  assert.deepEqual(catchCurveSourceStates(figure4), [
+    { label: 'Printed metadata', status: 'Verified' },
+    { label: 'Source photograph', status: 'Verified' },
+    { label: 'Axis tick labels', status: 'Readable' },
+    { label: 'Pixel calibration', status: 'Unresolved' },
+    { label: 'Independent reading', status: 'Unresolved' },
+    { label: 'Digitized observations', status: 'Withheld' },
+    { label: 'Regression reconstruction', status: 'Withheld' },
+  ]);
+  assert.equal(figure4AuditFor(figure4).points, null);
+  assert.equal(figure4AuditFor(figure4).tracedRegression, null);
+  for (const figure of catchCurves.filter(({ id }) => id !== 'figure-4')) {
+    assert.deepEqual(catchCurveSourceStates(figure).map(({ status }) => status), ['Verified', 'Verified', 'Withheld', 'Withheld']);
+  }
+});
 
 test('Table 1 preserves every printed estimate, period, method and season', () => {
   assert.equal(mortality.locator, 'Table 1');
