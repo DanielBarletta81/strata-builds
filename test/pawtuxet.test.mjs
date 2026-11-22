@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { castEndpoints, castKey, casts, cellLocator, depthCounts, fields, isNumber, lowOxygenRows, station, workbookHashes } from '../src/features/oceanography/pawtuxet/casts.ts';
+import { changeSelection, depthPosition, initialSelection, metricPosition, metrics, profilePoints, readCast, selectedObservation, tabForKey } from '../src/features/oceanography/pawtuxet/explorer-model.ts';
 
 test('pins both NBC sources, the exact station labels and source cast keys', () => {
   assert.equal(workbookHashes[2014], '7bdd16823a2d46199e6a4eb0939067b4b20d7a1d1a2858443779a10c20ddeaed');
@@ -58,4 +59,80 @@ test('the strict oxygen threshold flags only the verified low-oxygen cast and nu
     { depth: 6, oxygen: 0 },
   ]), [{ depth: 6, oxygen: 0 }]);
   assert.equal(isNumber(Infinity), false);
+});
+
+test('cast, lens, row and tab changes retain the same source observation until the cast changes', () => {
+  const initial = selectedObservation(initialSelection);
+  assert.equal(initial.row.row, 2046);
+  assert.equal(cellLocator(initial.cast.year, initial.row.row, 'oxygen'), '2016 Data!J2046');
+  const row = changeSelection(initialSelection, { type: 'row', value: 2044 });
+  const lens = changeSelection(row, { type: 'metric', value: 'density' });
+  const source = changeSelection(lens, { type: 'tab', value: 'source' });
+  const view = selectedObservation(source);
+  assert.equal(view.row.row, 2044);
+  assert.equal(view.row.depth, 3.25);
+  assert.equal(view.row.oxygen, 2.79513);
+  assert.equal(cellLocator(view.cast.year, view.row.row, source.metric), '2016 Data!L2044');
+  assert.equal(source.cast, initialSelection.cast);
+  assert.equal(source.metric, 'density');
+  const differentCast = changeSelection(source, { type: 'cast', value: '2014-10-15 13:41:00' });
+  assert.equal(differentCast.row, null);
+  assert.equal(differentCast.metric, 'density');
+  assert.equal(differentCast.tab, 'source');
+  assert.equal(selectedObservation(differentCast).row.row, 4001);
+});
+
+test('published depths are ordered numerically and each repeated endpoint retains its workbook row', () => {
+  const selection = changeSelection(initialSelection, { type: 'cast', value: '2014-10-08 14:53:00' });
+  const view = selectedObservation(selection);
+  assert.deepEqual(view.ordered.filter(({ depth }) => depth === 2.75).map(({ row }) => row), [3830, 3832]);
+  assert.equal(view.difference, null);
+  for (const row of [3830, 3832]) {
+    const picked = selectedObservation(changeSelection(selection, { type: 'row', value: row }));
+    assert.equal(picked.row.row, row);
+    assert.equal(cellLocator(picked.cast.year, row, 'oxygen'), `2014 Data!J${row}`);
+    assert.equal(picked.lowRows.has(row), false);
+  }
+});
+
+test('metadata-only visits and unavailable measurements retain their distinct states', () => {
+  const metadata = selectedObservation(changeSelection(initialSelection, { type: 'cast', value: '2014-01-15' }));
+  assert.equal(metadata.row, undefined);
+  assert.deepEqual(metadata.ordered, []);
+  assert.equal(metadata.cast.metadataRow, 3);
+  const sample = selectedObservation(initialSelection);
+  const missing = { ...sample.row, row: 1, oxygen: null };
+  const unusableDepth = { ...sample.row, row: 2, depth: null };
+  const numericZero = { ...sample.row, row: 3, depth: 4, oxygen: 0 };
+  const records = [unusableDepth, numericZero, missing];
+  const view = readCast({ ...sample.cast, records }, 1, 'oxygen');
+  assert.equal(view.row, missing);
+  assert.deepEqual(view.ordered.map(({ row }) => row), [1, 3, 2]);
+  assert.equal(view.difference, null);
+  assert.deepEqual(profilePoints(view.ordered, 'oxygen'), [{ row: 3, depth: 4, value: 0, x: 0, y: depthPosition(4) }]);
+});
+
+test('fixed scales plot every published reading once at its own exact depth and preserve source units', () => {
+  assert.deepEqual(metrics.map((metric) => fields[metric].units), ['mg/L', 'psu', '°C', 'kg/m³']);
+  assert.equal(depthPosition(0), 0);
+  assert.equal(depthPosition(6), 100);
+  assert.equal(metricPosition(1000, 'density'), 0);
+  assert.equal(metricPosition(1024, 'density'), 100);
+  for (const cast of casts) {
+    for (const metric of metrics) {
+      const points = profilePoints(cast.records, metric);
+      assert.deepEqual(points.map(({ row, depth, value }) => [row, depth, value]), cast.records.map((r) => [r.row, r.depth, r[metric]]));
+    }
+  }
+  const comparison = selectedObservation({ ...initialSelection, metric: 'salinity' });
+  assert.equal(comparison.difference.toFixed(4), '2.7282');
+});
+
+test('evidence tabs wrap with horizontal arrow keys and retain native Tab movement', () => {
+  assert.equal(tabForKey('observed', 'ArrowLeft'), 'investigate');
+  assert.equal(tabForKey('observed', 'ArrowRight'), 'source');
+  assert.equal(tabForKey('investigate', 'ArrowRight'), 'observed');
+  assert.equal(tabForKey('source', 'Home'), 'observed');
+  assert.equal(tabForKey('source', 'End'), 'investigate');
+  assert.equal(tabForKey('source', 'Tab'), undefined);
 });

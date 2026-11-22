@@ -1,78 +1,95 @@
-import { fields, isNumber, lowOxygenLimit, type DepthRecord, type Metric } from './casts';
+import type { KeyboardEvent } from 'react';
+import { fields, isNumber, lowOxygenLimit, type Metric } from './casts';
+import { depthPosition, depthTicks, metricPosition, metricTicks, profilePoints, type CastView } from './explorer-model';
 import styles from './pawtuxet.module.css';
 
-const scales: Record<Metric, number[]> = {
-  salinity: [0, 8, 16, 24, 32],
-  oxygen: [0, 4, 8, 12, 16],
-  temperature: [0, 8, 16, 24, 32],
-  density: [1000, 1006, 1012, 1018, 1024],
-};
-
-export function ProfilePlot({ records, metric, selectedRow, lowRows }: {
-  records: readonly DepthRecord[];
+export function ProfilePlot({ view, metric, onSelect }: {
+  view: CastView;
   metric: Metric;
-  selectedRow?: number;
-  lowRows: readonly DepthRecord[];
+  onSelect: (row: number) => void;
 }) {
-  const title = fields[metric];
-  const ticks = scales[metric];
-  const left = 55;
-  const right = 379;
-  const top = 48;
-  const bottom = 263;
-  const x = (value: number) => left + (value - ticks[0]) / (ticks[ticks.length - 1] - ticks[0]) * (right - left);
-  const y = (depth: number) => top + depth / 6 * (bottom - top);
-  const selected = records.find(({ row }) => row === selectedRow);
-  const selectedDepth = selected?.depth ?? null;
-  const selectedValue = selected?.[metric] ?? null;
+  const field = fields[metric];
+  const points = profilePoints(view.ordered, metric);
+  const selected = view.row;
+  const keyboardPoint = points.find(({ row }) => row === selected?.row) ?? points[0];
+  const selectionDepth = selected?.depth ?? null;
+  const reticleY = isNumber(selectionDepth) ? depthPosition(selectionDepth) : undefined;
+  const oxygen = metric === 'oxygen';
+
+  function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const steps: Partial<Record<string, number>> = {
+      ArrowUp: index - 1,
+      ArrowDown: index + 1,
+      Home: 0,
+      End: points.length - 1,
+    };
+    const next = steps[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+
+    const point = points[next];
+    if (point) {
+      onSelect(point.row);
+      event.currentTarget.parentElement?.querySelector<HTMLButtonElement>(`[data-reading-row="${point.row}"]`)?.focus();
+    }
+  }
 
   return (
-    <figure className={styles.plot}>
-      <svg viewBox="0 0 404 287" role="img" aria-labelledby="pawtuxet-plot-title pawtuxet-plot-description">
-        <title id="pawtuxet-plot-title">{`${title.label} by published depth`}</title>
-        <desc id="pawtuxet-plot-description">
-          {`Separate points represent published depth bins. Depth increases downward. A ring marks the selected reading. ${metric === 'oxygen' ? 'Diamonds mark readings below 3 mg/L. ' : ''}Use the source record selector and depth table for the values.`}
-        </desc>
-        <text x="108" y="17">{`${title.label} (${title.units})`}</text>
-        <text x="4" y="17">Depth (m)</text>
-        {ticks.map((tick) => (
-          <g key={tick}>
-            <line x1={x(tick)} x2={x(tick)} y1={top} y2={bottom} />
-            <text x={x(tick)} y="36" textAnchor="middle">{tick}</text>
-          </g>
-        ))}
-        {[0, 1, 2, 3, 4, 5, 6].map((depth) => (
-          <g key={depth}>
-            <line x1={left} x2={right} y1={y(depth)} y2={y(depth)} />
-            <text x={left - 13} y={y(depth) + 4} textAnchor="end">{depth}</text>
-          </g>
-        ))}
-        {metric === 'oxygen' && <line className={styles.threshold} x1={x(lowOxygenLimit)} x2={x(lowOxygenLimit)} y1={top} y2={bottom} />}
-        {records.map((record) => {
-          const value = record[metric];
-          if (!isNumber(record.depth) || !isNumber(value)) return null;
-          const low = metric === 'oxygen' && lowRows.includes(record);
-          const pointX = x(value);
-          const pointY = y(record.depth);
-          return (
-            <g key={record.row} data-reading-row={record.row}>
-              <title>{`Row ${record.row} · ${value} ${title.units} at ${record.depth} m`}</title>
-              {low
-                ? <path d={`M ${pointX} ${pointY - 5} l 5 5 -5 5 -5 -5 Z`} className={styles.lowPoint} />
-                : <circle cx={pointX} cy={pointY} r="4.5" className={styles.point} />}
-            </g>
-          );
-        })}
-        {isNumber(selectedDepth) && isNumber(selectedValue) && (
-          <circle cx={x(selectedValue)} cy={y(selectedDepth)} r="8" className={styles.selectedPoint} aria-hidden="true" />
-        )}
-      </svg>
-      <figcaption>
-        Points show published bins. {metric === 'oxygen' && 'Dashed line marks 3 mg/L. '}The plot leaves gaps between bins.
+    <figure className={styles.plot} aria-labelledby="pawtuxet-plot-title" aria-describedby="pawtuxet-plot-caption">
+      <div className={styles.axisLabels}>
+        <span>Depth (m) ↓</span>
+        <h3 id="pawtuxet-plot-title">{field.label} ({field.units})</h3>
+      </div>
+      <div className={styles.tickBand} aria-hidden="true">
+        <div className={styles.metricTicks}>
+          {metricTicks[metric].map((tick) => (
+            <span key={tick} style={{ left: `${metricPosition(tick, metric)}%` }}>{tick}</span>
+          ))}
+        </div>
+      </div>
+      <div className={styles.plotFrame}>
+        <div className={styles.depthRuler} aria-hidden="true">
+          {depthTicks.map((depth) => (
+            <span key={depth} style={{ top: `${depthPosition(depth)}%` }}>{depth}</span>
+          ))}
+        </div>
+        <div className={styles.plotArea} role="group" aria-label="Plotted readings">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            {depthTicks.map((depth) => {
+              const y = depthPosition(depth);
+              return <line key={depth} x1="0" x2="100" y1={y} y2={y} vectorEffect="non-scaling-stroke" />;
+            })}
+            {metricTicks[metric].map((tick) => {
+              const x = metricPosition(tick, metric);
+              return <line key={tick} x1={x} x2={x} y1="0" y2="100" vectorEffect="non-scaling-stroke" />;
+            })}
+            {oxygen && <line className={styles.threshold} x1={metricPosition(lowOxygenLimit, metric)} x2={metricPosition(lowOxygenLimit, metric)} y1="0" y2="100" vectorEffect="non-scaling-stroke" />}
+          </svg>
+          {reticleY !== undefined && reticleY >= 0 && reticleY <= 100 && <span className={styles.reticle} style={{ top: `${reticleY}%` }} aria-hidden="true" />}
+          {points.map(({ row, depth, value, x, y }, index) => (
+            <button
+              className={styles.marker}
+              key={row}
+              type="button"
+              style={{ left: `${x}%`, top: `${y}%` }}
+              data-reading-row={row}
+              data-low={oxygen && view.lowRows.has(row) ? 'true' : undefined}
+              aria-label={`${depth} m · ${value} ${field.units} · workbook row ${row}`}
+              aria-pressed={row === selected?.row}
+              tabIndex={row === keyboardPoint?.row ? 0 : -1}
+              onClick={() => onSelect(row)}
+              onKeyDown={(event) => navigate(event, index)}
+            />
+          ))}
+        </div>
+      </div>
+      <figcaption id="pawtuxet-plot-caption">
         <ul className={styles.plotKey}>
-          <li><span className={styles.selectedKey} aria-hidden="true" />Selected reading</li>
-          {metric === 'oxygen' && <li><span className={styles.lowKey} aria-hidden="true" />Below 3 mg/L</li>}
+          <li><span className={styles.binKey} aria-hidden="true" />Published bin</li>
+          <li><span className={styles.selectedKey} aria-hidden="true" />Selected depth</li>
+          {oxygen && <li><span className={styles.lowKey} aria-hidden="true" />Below 3 mg/L</li>}
         </ul>
+        {oxygen && 'The dashed line marks the 3 mg/L screen. '}Select a marker or step through the published rows. With a marker focused, Up and Down move between bins. Spaces between bins have no published value. Water lighting is illustrative.
       </figcaption>
     </figure>
   );

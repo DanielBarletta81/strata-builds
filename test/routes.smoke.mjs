@@ -358,11 +358,13 @@ test('GET /oceanography renders the station locator, paired records and depth pr
 test('GET /oceanography/pawtuxet exposes profiler observations, limits and source locators', async () => {
   const html = (await fetchRoute('/oceanography/pawtuxet', 'text/html')).replaceAll('<!-- -->', '');
   for (const label of [
-    'Pawtuxet Water Column Explorer', '49 published casts', '2014-01-15 · metadata only',
-    '3 published depth readings below 3 mg/L</strong> in one cast on <time', '>2016-07-20</time>',
-    '2.69799', '1016.7244', '1019.2272', '2016 Data!J2046', 'Selected reading',
-    'Published density difference', 'oyster-bearing rocks beneath the bridge', 'https://dem.ri.gov/latest-bay-area-report',
+    'Pawtuxet Water Column Explorer', 'The Living Water Column', 'Published casts</dt><dd>49', 'Depth rows</dt><dd>591', '2014-01-15 · metadata only',
+    '3 published readings below 3 mg/L</strong> in one cast on <time', '>2016-07-20</time>',
+    '2.69799', '2016 Data!J2046', 'Selected reading', 'Water lighting is illustrative',
+    'Depth reading', 'Numerical depth table', 'Source &amp; Quality', 'Investigate', 'https://dem.ri.gov/latest-bay-area-report',
   ]) assert.ok(html.includes(label), label);
+  assert.match(html, /id="pawtuxet-tab-observed" type="button" role="tab" aria-selected="true"/);
+  assert.match(html, /data-reading-row="2046" data-low="true"[^>]+aria-pressed="true"/);
 });
 
 test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {
