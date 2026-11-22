@@ -21,7 +21,7 @@ Make existing, excluded, inaccessible, and undiscovered evidence distinguishable
 - `/orbital` — Orbital Observatory with bounded, modeled JPL states for 1 Ceres (implemented).
 - `/frontier` — Evidence Frontier, source coverage and gaps in Narragansett Bay (implemented).
 - `/collections` — Smithsonian collections and research context (planned).
-- `/deep-time` — Earth systems across geological history (planned).
+- `/deep-time` — Geological time engine, Primordial Ocean, qualitative oxygenation, and Tethys model review (implemented in STRATA-014). A plate-reconstruction globe is planned.
 - `/methods` — source provenance, assumptions, models, and limitations (planned).
 
 **Do not assume planned routes or integrations already exist.** Verify repository state and deployment before making claims.

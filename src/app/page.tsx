@@ -45,6 +45,11 @@ export default function Home() {
             description="Trace documented gaps in Narragansett Bay monitoring to source records, schedules, and the next useful investigation."
             href="/frontier"
           />
+          <ProjectCard
+            title="Deep Time Observatory"
+            description="Explore the geology behind Earth’s changing oceans, atmosphere, continents and biosphere."
+            href="/deep-time"
+          />
         </div>
       </section>
     </main>

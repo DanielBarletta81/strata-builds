@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/research/bass-2003', changeFrequency: 'monthly', priority: 0.8 },
     { url: '/frontier', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/frontier/reconciliation', changeFrequency: 'monthly', priority: 0.8 },
+    { url: '/deep-time', changeFrequency: 'monthly', priority: 0.9 },
   ] as const;
 
   return routes.map(({ url, changeFrequency, priority }) => ({

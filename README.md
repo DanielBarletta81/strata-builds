@@ -26,7 +26,7 @@ We build research instruments rather than decorative dashboards: interfaces that
 | Estuarine Gradient Observatory | `/oceanography` | Narragansett Bay nutrient pairs and water-column observations | First slice implemented in STRATA-008 |
 | Bass Population Observatory | `/research/bass-2003` | Historical Rhode Island largemouth bass mortality and growth estimates | Table-based reconstruction in STRATA-009 |
 | Collections Lab | `/collections` | Smithsonian collections, records, and research context | Planned |
-| Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Planned |
+| Deep Time | `/deep-time` | Earth's evolving atmosphere, oceans, continents, and life | Geological time engine and first chapters implemented in STRATA-014 |
 | Methods | `/methods` | Data source, model, quality, and uncertainty documentation | Planned |
 
 This table describes the checked-out code. The running site reflects the current production deployment.
@@ -51,7 +51,7 @@ Inspect 1 Ceres in a saved NASA/JPL Horizons ephemeris. The first instrument pro
 
 ### Deep Time Observatory
 
-**STRATA — DEEP TIME**: *The Planet Was Never Still.* A future inspectable globe will explore major Earth-system changes and geological events. Geographic reconstructions, modeled climate/atmosphere, geological evidence, and artistic illustration must remain distinguishable.
+**STRATA — DEEP TIME**: *The Planet Was Never Still.* Explore a sourced geological chronology, early-ocean evidence and origin hypotheses, and qualitative oxygenation. The Tethys chapter reviews candidate plate models for a future globe. [STRATA-014 source and model contract](docs/STRATA-014.md)
 
 ### Smithsonian Collections
 
