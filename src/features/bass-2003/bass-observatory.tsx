@@ -45,59 +45,72 @@ function GrowthObservatory() {
 
 export function BassObservatory() {
   return (
-    <main className={styles.page}>
-      <header className={styles.hero}>
-        <p className={styles.back}><Link href="/studio">Strata Studio</Link></p>
-        <p className={styles.eyebrow}>Rhode Island freshwater fisheries · {report.publicationDate}</p>
-        <h1>Bass Population Observatory</h1>
-        <p className={styles.reportTitle}>{titleBeforeSpecies}<i>Micropterus salmoides</i>{titleAfterSpecies}</p>
-        <p className={styles.authors}>{report.authors.join(', ')}</p>
-        <p className={styles.publisher}>{report.publisher} · {report.reference}</p>
-        <p className={styles.sourceStatus}>Values checked against recovered report photographs</p>
-        <nav aria-label="On this page" className={styles.contents}>
-          <a href="#study">The study</a>
-          <a href="#mortality">Mortality</a>
-          <a href="#growth">Growth</a>
-          <a href="#catch-curves">Catch curves</a>
-          <a href="#open-questions">Open questions</a>
-        </nav>
-      </header>
-
-      <section className={styles.panel} id="study" aria-labelledby="study-title">
-        <header className={styles.sectionHeader}>
-          <h2 id="study-title">The study</h2>
-          <p>Rhode Island’s 1999 management initiative asked whether supplemental stocking increased the number of legal-size largemouth bass per acre. The appendix reports estimates of age structure, mortality and growth. Establishing the stocking objective would require comparable estimates of legal-size abundance per acre.</p>
+    <main className={styles.observatory}>
+      <div className={styles.page}>
+        <header className={styles.hero}>
+          <p className={styles.back}><Link href="/studio">Strata Studio</Link></p>
+          <p className={styles.eyebrow}>Rhode Island freshwater fisheries · {report.publicationDate}</p>
+          <h1>Bass Population Observatory</h1>
+          <p className={styles.reportTitle}>{titleBeforeSpecies}<i>Micropterus salmoides</i>{titleAfterSpecies}</p>
+          <p className={styles.authors}>{report.authors.join(', ')}</p>
+          <p className={styles.publisher}>{report.publisher} · {report.reference}</p>
+          <p className={styles.sourceStatus}>Values checked against recovered report photographs</p>
+          <nav aria-label="On this page" className={styles.contents}>
+            <a href="#catch-curves">Catch curves</a>
+            <a href="#study">The study</a>
+            <a href="#mortality">Mortality</a>
+            <a href="#growth">Growth</a>
+            <a href="#open-questions">Open questions</a>
+            <a href="#fish-scale-laboratory">Fish scales</a>
+          </nav>
         </header>
-        <div className={styles.studyGroups}>
-          <article>
-            <h3>1995–1998 · Unstocked systems</h3>
-            <p>Alan Libby previously collected the baseline samples. Table 1 reports spring electrofishing, with annual and pooled estimates.</p>
-          </article>
-          <article>
-            <h3>1999–2002 · Stocked systems</h3>
-            <p>The study sampled five selected systems. Table 1 reports fall electrofishing and angling as separate series.</p>
-          </article>
-        </div>
-        <p className={styles.note}>Fish were measured for length and aged from scales. The catch curves used ages 3–10 to estimate instantaneous mortality Z. Table 1 also reports annual survival S and annual mortality A.</p>
-      </section>
 
-      <MortalityObservatory />
-      <GrowthObservatory />
-      <CatchCurveLaboratory figures={catchCurves} />
+        <CatchCurveLaboratory figures={catchCurves} />
 
-      <section className={styles.panel} id="open-questions" aria-labelledby="questions-title">
-        <header className={styles.sectionHeader}><h2 id="questions-title">Open research questions</h2></header>
-        <div className={styles.studyGroups}>
-          <article>
-            <h3>2003 interpretation</h3>
-            <p>The authors discussed competition and limited forage as possible explanations for differences in age and growth. They also considered gear selectivity when comparing mortality estimates. The discussion leaves the strength of these explanations in individual ponds open.</p>
-          </article>
-          <article>
-            <h3>2026 research questions</h3>
-            <p>Would matched seasons, gears and effort give comparable age distributions and mortality estimates? Can prey abundance and fish density distinguish forage limits from competition? Which original records could quantify legal-size bass per acre?</p>
-          </article>
-        </div>
-      </section>
+        <section className={styles.panel} id="study" aria-labelledby="study-title">
+          <header className={styles.sectionHeader}>
+            <h2 id="study-title">The study</h2>
+            <p>Rhode Island’s 1999 management initiative asked whether supplemental stocking increased the number of legal-size largemouth bass per acre. The appendix reports estimates of age structure, mortality and growth. Establishing the stocking objective would require comparable estimates of legal-size abundance per acre.</p>
+          </header>
+          <div className={styles.studyGroups}>
+            <article>
+              <h3>1995–1998 · Unstocked systems</h3>
+              <p>Alan Libby previously collected the baseline samples. Table 1 reports spring electrofishing, with annual and pooled estimates.</p>
+            </article>
+            <article>
+              <h3>1999–2002 · Stocked systems</h3>
+              <p>The study sampled five selected systems. Table 1 reports fall electrofishing and angling as separate series.</p>
+            </article>
+          </div>
+          <p className={styles.note}>Fish were measured for length and aged from scales. The catch curves used ages 3–10 to estimate instantaneous mortality Z. Table 1 also reports annual survival S and annual mortality A.</p>
+        </section>
+
+        <MortalityObservatory />
+        <GrowthObservatory />
+
+        <section className={styles.panel} id="open-questions" aria-labelledby="questions-title">
+          <header className={styles.sectionHeader}><h2 id="questions-title">Open research questions</h2></header>
+          <div className={styles.studyGroups}>
+            <article>
+              <h3>2003 interpretation</h3>
+              <p>The authors discussed competition and limited forage as possible explanations for differences in age and growth. They also considered gear selectivity when comparing mortality estimates. The discussion leaves the strength of these explanations in individual ponds open.</p>
+            </article>
+            <article>
+              <h3>2026 research questions</h3>
+              <p>Would matched seasons, gears and effort give comparable age distributions and mortality estimates? Can prey abundance and fish density distinguish forage limits from competition? Which original records could quantify legal-size bass per acre?</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={`${styles.panel} ${styles.scalePreview}`} id="fish-scale-laboratory" aria-labelledby="fish-scale-title">
+          <header className={styles.sectionHeader}>
+            <p className={styles.kicker}>Coming next</p>
+            <h2 id="fish-scale-title">Fish Scale Laboratory</h2>
+          </header>
+          <p>Researchers can estimate a fish’s age by identifying annuli, the marks left by annual changes in growth. Documented age readings help describe a population’s age composition and support analyses such as catch curves.</p>
+          <p className={styles.context}>Specimen analysis awaits verified scale micrographs and individual fish records. <a href="https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/equipment-and-techniques-age-determination-methods-northwest">NOAA Fisheries age-determination methods</a></p>
+        </section>
+      </div>
     </main>
   );
 }
