@@ -9,7 +9,7 @@
 
 ## Deliverables Overview
 
-STRATA-016 Stage A delivers a complete visual design strategy and two distinct interactive concepts for the NOAA Signals Lab "Listening Station" transformation. All artifacts preserve scientific data integrity, maintain accessibility standards (WCAG 2.2 AA), and define responsive, mobile-first layouts.
+STRATA-016 Stage A delivers a complete visual design strategy and two distinct interactive concepts for the NOAA Signals Lab "Listening Station" transformation, plus an optional Evidence Trail mini-feature for scientific transparency. All artifacts preserve scientific data integrity, maintain accessibility standards (WCAG 2.2 AA), and define responsive, mobile-first layouts.
 
 **Stage A Scope:** Design and visual concepts only. **No implementation.** No production UI changes.
 
@@ -60,9 +60,22 @@ STRATA-016 Stage A delivers a complete visual design strategy and two distinct i
 
 ---
 
+### Mini-Feature Design
+
+5. **STRATA-016-EVIDENCE-TRAIL.md** ⭐ Optional Enhancement
+   - Compact provenance visualizer (science transparency layer)
+   - Shows path: source → retrieval → validation → transformation → presentation → limitations
+   - Desktop (expanded modal) and mobile (stacked sections) treatments
+   - Reusable data model for all STRATA instruments (Deep Time, Orbital, Atlas)
+   - Keyboard/screen reader accessible; native HTML details/summary
+   - Export provenance as JSON for research archival
+   - Mermaid diagram of evidence flow model
+   - Integrates into Concept A SelectionInspector as optional expanded section
+   - 📄 ~8KB | 🔗 Recommended enhancement (nice-to-have)
+
 ### Technical Architecture Diagrams
 
-5. **data-lineage.md**
+6. **data-lineage.md**
    - End-to-end data flow: request → validation → visualization
    - Observation validation and exclusion pipeline
    - Proposed observation selection and inspector flow
@@ -339,7 +352,8 @@ src/features/signals/
 | data-lineage.md | ~350 | Data flow & validation | ✅ |
 | interaction-states.md | ~400 | State machine & visual treatment | ✅ |
 | selection-flow.md | ~400 | Selection interaction & keyboard | ✅ |
-| **Total** | **~2,400** | **Complete Stage A** | ✅ |
+| STRATA-016-EVIDENCE-TRAIL.md | ~350 | Evidence Trail mini-feature | ✅ |
+| **Total** | **~2,750** | **Complete Stage A + Enhancement** | ✅ |
 
 ---
 

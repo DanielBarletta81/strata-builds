@@ -146,10 +146,11 @@
 - Bounded implementation scope makes Stage B achievable without scope creep
 
 **Recommended Enhancements to Concept A:**
-1. **Desktop Side Panel Option:** At 1024px and above, consider a persistent right-side inspector panel (togglable). This reduces scroll burden while maintaining the chart focus.
-2. **Search/Filter on Table:** Allow users to jump to a specific observation without scrolling through all rows.
-3. **Export Integration:** Add "Export selected range" or "Copy observation as JSON" for research use.
-4. **Keyboard Shortcut for Latest:** Spacebar to jump to the most recent observation.
+1. **Evidence Trail (Compact Provenance Visualizer):** Show the path from NOAA source collection → retrieval → validation → transformation → presentation → limitations. Expandable section below chart or in inspector. Reusable model for all STRATA instruments (Deep Time, Orbital, Atlas). See `STRATA-016-EVIDENCE-TRAIL.md` for full design and Mermaid diagram.
+2. **Desktop Side Panel Option:** At 1024px and above, consider a persistent right-side inspector panel (togglable). This reduces scroll burden while maintaining the chart focus.
+3. **Search/Filter on Table:** Allow users to jump to a specific observation without scrolling through all rows.
+4. **Export Integration:** Add "Export selected range" or "Copy observation as JSON" for research use. Evidence Trail enables "Download provenance as JSON" for archival.
+5. **Keyboard Shortcut for Latest:** Spacebar to jump to the most recent observation.
 
 **Concept B as Alternative:** If Fleet Command prefers an operational dashboard aesthetic or if user research indicates the four-panel layout resonates more strongly, Concept B is a viable alternate. No major code impact; primary difference is CSS layout and removal of point selection logic.
 
