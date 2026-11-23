@@ -161,7 +161,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
           </p>
         </section>
       </div>
-      <EvidenceInspector snapshot={snapshot} selectedObservationAt={selectedObservationAt} />
+      <EvidenceInspector snapshot={snapshot} />
       <section className={styles.panel} id="signals-observations" aria-labelledby="signals-records-heading">
         <h2 id="signals-records-heading">Observation table</h2>
         {snapshot.observations.length ? (
