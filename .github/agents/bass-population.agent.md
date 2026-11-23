@@ -2,6 +2,7 @@
 name: "STRATA Bass Population Observatory"
 description: "Historical Rhode Island bass-mortality and growth reconstruction"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Bass Population Observatory
