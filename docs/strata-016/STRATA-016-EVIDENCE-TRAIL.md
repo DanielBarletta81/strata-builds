@@ -40,17 +40,17 @@ graph TD
     
     A --> G["Limitations<br/>- Uncertainty<br/>- Sampling gaps<br/>- Validity scope<br/>- Next evidence to check"]
     
-    B --> H["NOAA Station ID<br/>Product: water_temperature<br/>tidesandcurrents.noaa.gov<br/>Retrieved: 2024-11-06 15:02 UTC"]
+    B --> H["NOAA Station ID<br/>Product: water_temperature<br/>tidesandcurrents.noaa.gov<br/>Retrieved: [UTC timestamp]"]
     
-    C --> I["Fetch timestamp: 2024-11-06 15:02:35 UTC<br/>REST API, v1<br/>HTTP 200 OK<br/>24 rows received"]
+    C --> I["Fetch timestamp: [UTC timestamp]<br/>REST API, v1<br/>HTTP 200 OK<br/>[row count] rows received"]
     
-    D --> J["✓ All rows have UTC<br/>✓ All values numeric<br/>✓ No duplicates<br/>⚠ 8 rows excluded<br/>  (see evidence gaps)"]
+    D --> J["✓ All rows have UTC<br/>✓ All values numeric<br/>✓ No duplicates<br/>⚠ [excluded count] rows excluded<br/>  (see evidence gaps)"]
     
-    E --> K["signals/adapter.ts v1.2<br/>Assumption: f/q flags<br/>  not interpreted<br/>Units: °C (native)<br/>UTC native"]
+    E --> K["noaa.ts (unversioned)<br/>Assumption: f/q flags<br/>  not interpreted<br/>Units: °C (native)<br/>UTC native"]
     
     F --> L["SVG polyline + points<br/>Rounded to 1 decimal<br/>No interpolation<br/>Teal trace + gap hatch"]
     
-    G --> M["Sensor precision: ±0.1°C<br/>Hourly bucket (UTC)<br/>Valid for coastal water<br/>Check tidal corrections<br/>  if modeling currents"]
+    G --> M["Sensor precision: Unspecified<br/>Hourly bucket (UTC)<br/>Valid for coastal water<br/>Check tidal corrections<br/>  if modeling currents"]
     
     style B fill:#e1f5ff
     style C fill:#fff3e0
@@ -93,7 +93,7 @@ interface EvidenceTrail {
   };
 
   transformation: {
-    parserVersion: string;   // "signals-adapter@1.2.0"
+    parserVersion: string;   // "noaa.ts (unversioned)"
     assumptions: string[];   // ["f/q flags preserved as-is", ...]
     unitsFrom?: string;      // Input units (if conversion)
     unitsTo: string;         // Output units (°C, m, etc.)
@@ -112,7 +112,7 @@ interface EvidenceTrail {
   };
 
   limitations: {
-    uncertainty: string;     // "±0.1°C sensor precision"
+    uncertainty: string;     // "Unspecified; requires NOAA metadata"
     samplingScope: string;   // "Coastal surface water"
     validityConditions: string[]; // When this analysis applies
     nextEvidence: string[];  // What to check next
@@ -151,7 +151,7 @@ interface EvidenceTrail {
 │ ▼ SOURCE COLLECTION                                    │
 │   Provider: NOAA CO-OPS (tidesandcurrents.noaa.gov)   │
 │   Dataset: Station 8454000, Water Temperature         │
-│   Retrieved: 2024-11-06 15:02:35 UTC                  │
+│   Retrieved: [UTC timestamp]                        │
 │   License: Public Domain (U.S. Government)            │
 │   Citation: NOAA, U.S. Dept. of Commerce              │
 │   [View original NOAA response]                        │
@@ -161,7 +161,7 @@ interface EvidenceTrail {
 │   Response: 200 OK                                     │
 │   Rows received: 24                                    │
 │   Cache status: Hit (reused from 15:02 UTC slot)      │
-│   Next fresh data available: 15:28 UTC (12 min)       │
+│   Next fresh data available: [next check UTC]       │
 │   Cache policy: Equivalent requests reuse for 15 min  │
 │                                                        │
 │ ▼ STRUCTURAL VALIDATION & FILTERING                    │
@@ -187,7 +187,7 @@ interface EvidenceTrail {
 │   [Show detailed exclusion list] ▶                     │
 │                                                        │
 │ ▼ DATA TRANSFORMATION & NORMALIZATION                  │
-│   Parser: signals-adapter@1.2.0                       │
+│   Parser: noaa.ts (unversioned)                      │
 │   Parsing assumptions:                                │
 │   • NOAA f and q flags are preserved as-is            │
 │   • Flags are NOT interpreted; left for review        │
@@ -287,7 +287,7 @@ interface EvidenceTrail {
 │   [All details ▶]            │
 │                              │
 │ ▼ TRANSFORMATION             │
-│   Parser: adapter@1.2.0      │
+│   Parser: noaa.ts            │
 │                              │
 │   Assumptions:               │
 │   • Flags preserved          │
@@ -303,7 +303,7 @@ interface EvidenceTrail {
 │   No interpolation           │
 │                              │
 │ ▼ LIMITATIONS                │
-│   Sensor: ±0.1°C             │
+│   Sensor: Unspecified       │
 │   Scope: Coastal surface     │
 │   Hourly buckets (UTC)       │
 │                              │
@@ -432,11 +432,11 @@ Evidence Trail is designed to work across all instruments:
 ```
 SOURCE: NOAA CO-OPS API
   → Station 8454000, water_temperature
-RETRIEVAL: HTTP 200, 24 rows
-VALIDATION: 23 passed, 8 excluded (malformed)
+RETRIEVAL: HTTP 200, [row count] rows
+VALIDATION: [accepted count] passed, [excluded count] excluded (validation rules)
 TRANSFORMATION: UTC native, °C native, flags preserved
 PRESENTATION: SVG polyline, 1 decimal precision
-LIMITATIONS: ±0.1°C sensor, coastal only, hourly buckets
+LIMITATIONS: Sensor accuracy unspecified, coastal only, hourly buckets
 ```
 
 ### Deep Time Observatory
@@ -452,7 +452,7 @@ LIMITATIONS: Model-derived (not observed), smoothed topography
 ### Orbital Observatory (1 Ceres)
 ```
 SOURCE: JPL Horizons API, 1 Ceres ephemeris
-RETRIEVAL: Frozen snapshot (epoch 2024-11-06 00:00 UTC)
+RETRIEVAL: Frozen snapshot (epoch [date/time])
 VALIDATION: Position verified against reference, no outliers
 TRANSFORMATION: ICRF frame, state vector computed
 PRESENTATION: 3D coordinates, frozen trajectory line
@@ -484,7 +484,7 @@ LIMITATIONS: Synthetic for education only, not real research
       "provider": "NOAA CO-OPS",
       "datasetId": "8454000",
       "url": "https://tidesandcurrents.noaa.gov/api/prod/datagetter?...",
-      "retrievedAt": "2024-11-06T15:02:35Z",
+      "retrievedAt": "[UTC timestamp]",
       "license": "Public Domain",
       "attribution": "NOAA, U.S. Department of Commerce"
     },
@@ -493,7 +493,7 @@ LIMITATIONS: Synthetic for education only, not real research
       "statusCode": 200,
       "rowsReceived": 24,
       "cacheStatus": "hit",
-      "nextFreshAt": "2024-11-06T15:28:00Z"
+      "nextFreshAt": "[next check UTC]"
     },
     "validation": {
       "totalRows": 24,
@@ -507,7 +507,7 @@ LIMITATIONS: Synthetic for education only, not real research
       ]
     },
     "transformation": {
-      "parserVersion": "signals-adapter@1.2.0",
+      "parserVersion": "noaa.ts (unversioned)",
       "assumptions": [
         "NOAA f/q flags preserved as-is, not interpreted",
         "UTC times assumed GMT",
@@ -526,7 +526,7 @@ LIMITATIONS: Synthetic for education only, not real research
       }
     },
     "limitations": {
-      "uncertainty": "±0.1°C sensor precision",
+      "uncertainty": "Sensor accuracy unspecified; requires NOAA metadata",
       "samplingScope": "Coastal surface water",
       "validityConditions": [
         "Estuarine research in Narragansett Bay",
@@ -544,10 +544,10 @@ LIMITATIONS: Synthetic for education only, not real research
     "metadata": {
       "instrumentName": "NOAA Signals Lab",
       "stageVersion": "Stage A design",
-      "lastModified": "2024-11-06T15:02:35Z"
+      "lastModified": "[UTC timestamp]"
     }
   },
-  "exportedAt": "2024-11-06T15:03:42Z",
+  "exportedAt": "[UTC timestamp]",
   "exportedBy": "STRATA Builds / Listening Station"
 }
 ```
@@ -589,7 +589,7 @@ Evidence Trail meets WCAG 2.2 AA:
 
 1. **Implement for NOAA Signals Lab** (Stage B or C)
    - Extend SelectionInspector with EvidenceTrail section
-   - Populate EvidenceTrail data from signals-adapter
+   - Populate EvidenceTrail data from noaa.ts
    - Add "Download provenance as JSON" button
    - Test keyboard and screen reader
 

@@ -224,32 +224,32 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 
 - **Dataset/Model:** NOAA CO-OPS water temperature, Station 8454000
 - **Source URL:** https://tidesandcurrents.noaa.gov/api/prod/datagetter?...
-- **Retrieved:** 2024-11-06 15:02:35 UTC
+- **Retrieved:** [UTC timestamp]
 - **License:** Public Domain (U.S. Government)
 - **Attribution:** NOAA, U.S. Department of Commerce
-- **Original format:** CSV (24 rows, 5 columns)
+- **Original format:** CSV ([row count], 5 columns)
 
 ## 2. Transformations
 
 | Step | Input | Transformation | Output | Assumption |
 | --- | --- | --- | --- | --- |
 | Parse | Raw CSV | Row-by-row parsing | Observation[] | f/q flags preserved, not interpreted |
-| Validate | 24 rows | Structural checks | 23 accepted, 8 excluded | First duplicate wins |
+| Validate | [row count] rows | Structural checks | [accepted count] accepted, [excluded count] excluded | First duplicate wins |
 | Normalize | Valid rows | UTC native, °C native | ObservationRecord[] | No unit conversion needed |
 | Aggregate | Records | Hourly binning | Coverage stats | Each hour exactly one value |
 
 ## 3. Evidence Classifications
 
-- **Observed:** All 23 accepted temperature readings (NOAA direct measurement)
+- **Observed:** All [accepted count] accepted temperature readings (NOAA direct measurement)
 - **Modeled:** None
 - **Synthetic:** None
-- **Unresolved:** 8 rows excluded (see exclusion reasons)
+- **Unresolved:** [excluded count] rows excluded (see exclusion reasons)
 
 ## 4. Known Uncertainty & Limitations
 
 | Item | Value | Source | Impact |
 | --- | --- | --- | --- |
-| Sensor precision | ±0.1°C | NOAA spec sheet | Rounding to 1 decimal justified |
+| Sensor precision | Unspecified | Requires NOAA metadata | Precision rounding rules documented separately |
 | Sampling scope | Coastal surface | Station location | Not representative of open ocean |
 | Temporal resolution | Hourly (UTC) | NOAA API constraint | Sub-hourly variation not captured |
 | Spatial coverage | Single station | Deployment design | No interpolation to other points |
@@ -274,7 +274,7 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 
 ## 7. Reproducibility
 
-- **Parser version:** `signals-adapter@1.2.0` (pinned in package.json)
+- **Parser:** `noaa.ts` (unversioned)
 - **Test fixture:** `src/features/signals/__fixtures__/noaa-response-24h.json`
 - **Deterministic:** Yes (always produces same output from same input)
 - **Reversibility:** Raw values recoverable from archive export
@@ -326,7 +326,7 @@ SOURCE (API, file, model)
   ↓ PRESENTATION (chart, table, map)
 ```
 
-**Example (NOAA Signals — illustrative structure):**
+**Example (NOAA Signals — illustrative structure, implemented in noaa.ts):**
 ```mermaid
 graph TD
     A["NOAA CO-OPS API<br/>GET /datagetter"] -->|HTTP 200| B["JSON Response<br/>variable row count<br/>Each row: {t,v,f,q,...}"]
@@ -381,7 +381,7 @@ graph TD
 | **Source** | "NOAA CO-OPS, Station 8454000" | "GET /api/prod/datagetter?id=8454000&range=24h" |
 | **Retrieval** | "Retrieved [timestamp] from NOAA API" | "HTTP 200, [row count], [ISO timestamp], cached" |
 | **Validation** | "[N] observations accepted, [M] excluded" | "Struct ✓, timestamp ✓, range ✓, dedup ✓; excluded reasons documented" |
-| **Transform** | "UTC times, °C values, quality flags preserved" | "noaa.ts: UTC native, no convert, first-wins dedup, f/q flags preserved" |
+| **Transform** | "UTC times, °C values, quality flags preserved" | "`noaa.ts`: UTC native, no convert, first-wins dedup, f/q flags preserved" |
 | **Present** | "SVG line chart, 1 decimal precision" | "ViewBox 720×224, polyline + circles, gaps hatched, color #55D6C2" |
 
 ---
@@ -446,7 +446,7 @@ If you answered YES to any:
 
 4. **Document AI involvement** in Scientific Integrity Record
    - Add: "AI assistance: [scope]. Verification: [method/reference]"
-   - Example: "Claude generated data-lineage.md. Verified against signals-adapter.ts code review."
+   - Example: "Claude generated data-lineage.md. Verified against noaa.ts code review."
 
 5. **Responsibility stays with humans**
    - AI can draft, suggest, explain
@@ -472,10 +472,10 @@ If you answered YES to any:
 ```
 "STRATA-016 Stage B: Listening Station implementation must include:
 ✅ Full provenance in Evidence Trail (Principle 1)
-✅ Transformation documented in signals-adapter.ts (Principle 2)
+✅ Transformation documented in noaa.ts (Principle 2)
 ✅ Evidence classification: Observed only, never modeled (Principle 3)
-✅ Uncertainty visible: ±0.1°C sensor, hourly scope (Principle 4)
-✅ Deterministic test fixtures, versioned parser (Principle 5)
+✅ Uncertainty visible: Sensor specs documented as available, hourly scope (Principle 4)
+✅ Deterministic test fixtures, source control versioning (Principle 5)
 ✅ Observatory aesthetic, no decorative patterns (Principle 6)
 ✅ Spot-checked against NOAA reference data (Principle 7)
 "
