@@ -2,6 +2,7 @@
 name: "STRATA Evidence Frontier & Reconciliation"
 description: "Narragansett Bay monitoring coverage, station schedules and case-file reconciliation"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Evidence Frontier & Reconciliation
