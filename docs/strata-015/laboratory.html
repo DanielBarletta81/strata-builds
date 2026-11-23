@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Laboratory direction · STRATA proposal</title>
+    <link rel="icon" href="assets/symbol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="review.css" />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <div class="review-note">
+      STRATA-015 · CHECKPOINT A · Design proposal, not the application.<a
+        href="index.html"
+        >Review board</a
+      >
+    </div>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="home.html" aria-label="STRATA proposed homepage"
+          ><img
+            src="assets/horizontal-lockup.svg"
+            width="216"
+            height="32"
+            alt="STRATA"
+          /><small>BUILDS</small></a
+        >
+        <nav aria-label="Design review">
+          <a href="index.html">Identity</a><a href="home.html">Homepage</a
+          ><a href="laboratory.html" aria-current="page">Laboratory</a>
+        </nav>
+      </header>
+    </div>
+    <main id="content" tabindex="-1">
+      <section>
+        <p class="eyebrow">Deep Time / Ancient Seaway Laboratory</p>
+        <div class="lab-header">
+          <div>
+            <h1>Inspect the evidence.<br />Keep its limits in view.</h1>
+            <p class="muted" style="margin-top: 20px">
+              Representative source inspector · proposed composition
+            </p>
+          </div>
+          <div>
+            <span class="tag model">Modeled age</span>
+            <p class="number">111 <small>Ma</small></p>
+          </div>
+        </div>
+        <p class="notice">
+          Design specimen, not a replacement instrument. The four view controls
+          below preview explanatory states; they do not execute scientific
+          computations. No map or geological section has been invented.
+        </p>
+        <div class="controls" role="group" aria-label="Proposed evidence views">
+          <button aria-pressed="false" data-view="plate">
+            Plate Reconstruction</button
+          ><button aria-pressed="false" data-view="marine">
+            Regional Marine Evidence</button
+          ><button aria-pressed="true" data-view="transect">
+            Platform-to-Basin Transect</button
+          ><button aria-pressed="false" data-view="questions">
+            Open Questions
+          </button>
+        </div>
+        <div id="transect" data-panel>
+          <div class="lab-layout">
+            <aside class="records">
+              <p class="eyebrow">Marine basin</p>
+              <h2>Poggio le Guaine</h2>
+              <p>Independent source records, not a continuous section.</p>
+              <a
+                class="record"
+                href="https://strata-builds.tech/deep-time#tethys"
+                >Pelagic marl and limestone ↗</a
+              ><a class="record" aria-current="true" href="#inspector"
+                >Planktonic fossil zone</a
+              ><a
+                class="record"
+                href="https://strata-builds.tech/deep-time#tethys"
+                >Leenhardt organic-rich shale ↗</a
+              >
+              <p class="caption">
+                Other records link to the existing application. Select 111 Ma
+                there.
+              </p>
+            </aside>
+            <article id="inspector" tabindex="-1">
+              <p class="eyebrow">Poggio le Guaine core · Umbria–Marche Basin</p>
+              <h2>Planktonic fossil zone</h2>
+              <div class="evidence">
+                <h3>Observed in the source</h3>
+                <p>
+                  The authors report planktonic-foraminiferal zone markers at
+                  different positions in the core. The cited depths locate
+                  fossils in rock.
+                </p>
+              </div>
+              <div class="evidence interpretation">
+                <h3>Geological interpretation</h3>
+                <p>
+                  The published age model places 111 Ma within this local marine
+                  interval.
+                </p>
+              </div>
+              <div class="evidence uncertain">
+                <h3>Still unresolved</h3>
+                <p>
+                  No individual fossil sample or lithology at exactly 111 Ma is
+                  identified here. Ancient water depth and connections to the
+                  platform remain unresolved.
+                </p>
+              </div>
+              <div class="inspector">
+                <span class="tag model"
+                  >111 Ma within published age bracket</span
+                >
+                <p style="font: 20px var(--mono); margin-top: 14px">
+                  112.80–110.70 Ma
+                </p>
+                <p class="caption">In the published tuned model</p>
+                <div class="notice">
+                  <strong>Geographic restoration unavailable</strong>
+                  <p>
+                    Independent age ties and local sample-level observations
+                    within the bracket, plus coeval records on the margin and
+                    platform.
+                  </p>
+                </div>
+                <details open>
+                  <summary>Stratigraphy, dating and source rights</summary>
+                  <h3>Age uncertainty</h3>
+                  <p>
+                    The Table 2 note lists ±0.203 kyr. The discussion reports
+                    approximately ±0.203 Ma. The displayed ages are the nominal
+                    zone boundaries.
+                  </p>
+                  <p>
+                    <strong>Restoration needed</strong><br />Restore the drilled
+                    section through Apennine deformation and validate its
+                    plate-circuit placement.
+                  </p>
+                  <p>
+                    Full citations, locators and reuse rights remain in the
+                    <a href="https://strata-builds.tech/deep-time#tethys"
+                      >existing source inspector</a
+                    >. This specimen preserves selected text, not the full
+                    scientific interface.
+                  </p>
+                </details>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div id="plate" data-panel hidden class="panel">
+          <span class="tag model">Published reconstruction</span>
+          <h2>Plate Reconstruction</h2>
+          <p>
+            Keep the validated map geometry, checkpoint controls and
+            published-frame comparison unchanged. Apply shared framing around
+            the instrument only after compatibility review.
+          </p>
+          <a href="https://strata-builds.tech/deep-time#tethys"
+            >Open existing model →</a
+          >
+        </div>
+        <div id="marine" data-panel hidden class="panel">
+          <h2>Regional Marine Evidence</h2>
+          <p>
+            Preserve the regional records and their source locators. The
+            Leenhardt alternatives remain distinct: 111.28 ± 0.12 Ma and
+            111.40–111.44 Ma.
+          </p>
+          <a href="https://strata-builds.tech/deep-time#tethys"
+            >Open existing evidence →</a
+          >
+        </div>
+        <div id="questions" data-panel hidden class="panel">
+          <span class="tag unresolved">Still unresolved</span>
+          <h2>Open Questions</h2>
+          <p>
+            No demonstrated sediment pathway at 111 Ma. Keep unavailable
+            geography and unanswered questions visible, with evidence needed to
+            resolve them.
+          </p>
+          <a href="https://strata-builds.tech/deep-time#tethys"
+            >Open existing questions →</a
+          >
+        </div>
+      </section>
+      <script>
+        document.querySelectorAll("[data-view]").forEach((button) =>
+          button.addEventListener("click", () => {
+            document
+              .querySelectorAll("[data-view]")
+              .forEach((b) =>
+                b.setAttribute("aria-pressed", String(b === button)),
+              );
+            document
+              .querySelectorAll("[data-panel]")
+              .forEach(
+                (panel) => (panel.hidden = panel.id !== button.dataset.view),
+              );
+          }),
+        );
+      </script>
+      <footer>
+        <p>
+          STRATA Builds<br />Evidence first. Questions next. Conclusions earned.
+        </p>
+        <p>
+          Checkpoint A · Owner review required<br />Original proposals /
+          Existing science preserved
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

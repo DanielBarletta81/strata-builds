@@ -1,0 +1,242 @@
+[
+  {
+    "path": "baseline/atlas-1440.jpg",
+    "bytes": 307727,
+    "sha256": "bde470deba024a6dd758f4f0b48f985dd951226d799f7b9f847916c497303647"
+  },
+  {
+    "path": "baseline/atlas-375.jpg",
+    "bytes": 240389,
+    "sha256": "92c98bb70d73cfbbe03222feba7a9a8e885253f95967b939b584d486432be0b9"
+  },
+  {
+    "path": "baseline/atlas-768.jpg",
+    "bytes": 296833,
+    "sha256": "e0dd79883278191257113cbaaac756a4e8c8ce7c53645265b4e293c05ae774bd"
+  },
+  {
+    "path": "baseline/deep-time-1440.jpg",
+    "bytes": 552704,
+    "sha256": "dda1ac4a00799f9765fd161903e8a184d495b3f055056685586d870a84b866e3"
+  },
+  {
+    "path": "baseline/deep-time-375.jpg",
+    "bytes": 416604,
+    "sha256": "d80f75417b178bf327362bea8ffd41cd3f2dfac8691877998db47dd87f0f0869"
+  },
+  {
+    "path": "baseline/deep-time-768.jpg",
+    "bytes": 475372,
+    "sha256": "9fa7fbc601b0c6ac6f3d7bac96d08fbe9bf2046536c2a52f00a3cf8624958835"
+  },
+  {
+    "path": "baseline/frontier-1440.jpg",
+    "bytes": 324551,
+    "sha256": "e13d382746d9873b98c774babf9c1ba720145dd5533ead291f6629e1b178b197"
+  },
+  {
+    "path": "baseline/frontier-375.jpg",
+    "bytes": 267107,
+    "sha256": "13c558bc7248bef2eb216643b6448a2a0045e1dcbb5bf2b0ccecd94db1309560"
+  },
+  {
+    "path": "baseline/frontier-768.jpg",
+    "bytes": 289884,
+    "sha256": "3a4e6979f01a465afc824a66d855907a8adfe477591e1682754a815650a50314"
+  },
+  {
+    "path": "baseline/home-1440.jpg",
+    "bytes": 98368,
+    "sha256": "ddb253b04dc9c0117f3d97c502fce55054c72c12ac932309b5680012c8111e63"
+  },
+  {
+    "path": "baseline/home-375.jpg",
+    "bytes": 89394,
+    "sha256": "96cab88072ffe23357f8830906fd2714cd08e8dd4018eca71effec52d24c9b45"
+  },
+  {
+    "path": "baseline/home-768.jpg",
+    "bytes": 92704,
+    "sha256": "5686dd54a7d3cb9db0796a553985bb9cbc9fcdab15ce2aa824c1da4613bcb618"
+  },
+  {
+    "path": "baseline/navigation-1440.jpg",
+    "bytes": 7747,
+    "sha256": "175a8018fa50368a2a8b0e8666afdc8c7d2abc815b12808246cecc21abfcae71"
+  },
+  {
+    "path": "baseline/navigation-375.jpg",
+    "bytes": 5880,
+    "sha256": "f91730c85c9136865b6ce80a11ca6c80005834c07ad878bbbe4f230a71478d83"
+  },
+  {
+    "path": "baseline/navigation-768.jpg",
+    "bytes": 6444,
+    "sha256": "00b90183e58f3752655c37dfcfe2550807b61754339f30a708bd743139b33034"
+  },
+  {
+    "path": "baseline/oceanography-1440.jpg",
+    "bytes": 342847,
+    "sha256": "1e42925dfc18be2b15e01c3c88cbf581de9269bac464493b931d3c521759f5fd"
+  },
+  {
+    "path": "baseline/oceanography-375.jpg",
+    "bytes": 273617,
+    "sha256": "56c34073734cb9bbd0d60e8fdc5664ecd8cf3822e389043cb5887f2c526de65c"
+  },
+  {
+    "path": "baseline/oceanography-768.jpg",
+    "bytes": 284861,
+    "sha256": "7a5903527fcfe4dad974ccc2c5ad4ecb444a0ad76129fe65bfd699511b04759c"
+  },
+  {
+    "path": "baseline/orbital-1440.jpg",
+    "bytes": 269840,
+    "sha256": "efaa44eb40f5ddad024d0cc57ba2058398ce4a299d9f8db72c2c6089ad83fc02"
+  },
+  {
+    "path": "baseline/orbital-375.jpg",
+    "bytes": 227177,
+    "sha256": "8dca93f2ef5fb753e4a0b68bcf2f7349acda14667b3e507ad2d8c68579afcea0"
+  },
+  {
+    "path": "baseline/orbital-768.jpg",
+    "bytes": 250254,
+    "sha256": "40f484a4d1c74cc2ef201ed72de36b6b0b6cfb61d4e91dd70c2ba360b5dd8540"
+  },
+  {
+    "path": "baseline/signals-1440.jpg",
+    "bytes": 231284,
+    "sha256": "fc05682aa116de7b7f97b78d2b07b1bda5cd256cd0b4307dd0060151f13460c7"
+  },
+  {
+    "path": "baseline/signals-375.jpg",
+    "bytes": 168938,
+    "sha256": "89c79b32941b6afeb8710a9272f8187018f84d8092293e0641313bd1849d40d4"
+  },
+  {
+    "path": "baseline/signals-768.jpg",
+    "bytes": 207646,
+    "sha256": "9b99a064f72e304205b7e3d15ec06f633b64c971cc0c59b3e1f7c58957e4e4b9"
+  },
+  {
+    "path": "baseline/studio-1440.jpg",
+    "bytes": 43800,
+    "sha256": "eeaca190e5642035955a085ea779bfc40717dd0ef407ee3399507523cb3b64f4"
+  },
+  {
+    "path": "baseline/studio-375.jpg",
+    "bytes": 32084,
+    "sha256": "eebb2de094ed61a9e98d8418ad64d4543c6ef8a2a7c491b0d8b15aaeaa0d0dc4"
+  },
+  {
+    "path": "baseline/studio-768.jpg",
+    "bytes": 36696,
+    "sha256": "de84833b29f28decf8af60e42e9bdea707c1155159ce27cc2640d1799b0efd45"
+  },
+  {
+    "path": "proposals/home-1024.jpg",
+    "bytes": 259514,
+    "sha256": "0c79f0d2619127c864775bad77ec7829096b2727f651e44d79b90edc9ac33394"
+  },
+  {
+    "path": "proposals/home-1440.jpg",
+    "bytes": 291909,
+    "sha256": "0b1f6afc1f2f5bf1dac7ce0649637c55132ca435c382828986af48e54b4b2d0a"
+  },
+  {
+    "path": "proposals/home-320.jpg",
+    "bytes": 216902,
+    "sha256": "28ae7ccd9feda894f5e524e46b463ef104d4190fd010ffe87277634e5803bb4b"
+  },
+  {
+    "path": "proposals/home-375.jpg",
+    "bytes": 218685,
+    "sha256": "da2b329ef93b23b22ab021d31bf8533247d1b6b33d2e072cce272514c0d8e653"
+  },
+  {
+    "path": "proposals/home-768.jpg",
+    "bytes": 242828,
+    "sha256": "c2d79a18baa8ff912913734002b165fb2ff947838ed2d7ef49d647839a2318fa"
+  },
+  {
+    "path": "proposals/index-1024.jpg",
+    "bytes": 412613,
+    "sha256": "e441ebf07cd1229cb189eb78a76009d4f11c3547c3001d13674eb8d2f998f327"
+  },
+  {
+    "path": "proposals/index-1440.jpg",
+    "bytes": 462172,
+    "sha256": "6d35f1d137a47a94e7efe6d983aa126ff5a7a9ab387ab833ce1d62497d8f933a"
+  },
+  {
+    "path": "proposals/index-320.jpg",
+    "bytes": 356717,
+    "sha256": "a03ca3643b22369f236641f6bd6d16868fd72e41fda6dfd2362f3299705600c2"
+  },
+  {
+    "path": "proposals/index-375.jpg",
+    "bytes": 363348,
+    "sha256": "059e67e310aa57d818f888369c212fa825b0d05d55c7a2f034c302654b39557e"
+  },
+  {
+    "path": "proposals/index-768.jpg",
+    "bytes": 399976,
+    "sha256": "e62df18c1da7739646cb9d4394f7d1e1202162775670aac6866ac8d6f61aecce"
+  },
+  {
+    "path": "proposals/laboratory-1024.jpg",
+    "bytes": 197473,
+    "sha256": "249238b61d1ff58457d3e737cc9c462245a7d7a495a812adac5fd8e9fe96de07"
+  },
+  {
+    "path": "proposals/laboratory-1440.jpg",
+    "bytes": 217165,
+    "sha256": "1e548b66fccd45baff1075474204b95fe3203a52a3b31e5293d96369debb946b"
+  },
+  {
+    "path": "proposals/laboratory-320.jpg",
+    "bytes": 177186,
+    "sha256": "7c7fb955d655e80823dc3fb3b76362249c52c9d7f12c3ad8a5c56d1b162c9d9c"
+  },
+  {
+    "path": "proposals/laboratory-375.jpg",
+    "bytes": 178292,
+    "sha256": "b6a24b44c6d956b41d843135467632aae027cd6939895d1483b066b2213ac516"
+  },
+  {
+    "path": "proposals/laboratory-768.jpg",
+    "bytes": 189010,
+    "sha256": "adefca514bf0b42f52a70d6b0c5a4d2f6ffd27771730a2c1f1cdfa9d227b65bb"
+  },
+  {
+    "path": "proposals/logo-concepts.jpg",
+    "bytes": 141494,
+    "sha256": "bd7788a3cde57387df7e228e7ec61f6aba4f178f4a0d86e28eee0362dad869c6"
+  },
+  {
+    "path": "proposals/navigation-1024.jpg",
+    "bytes": 99257,
+    "sha256": "51210c0562a48a64a9b261e0060a62b1404c2ff8fdf2dbf765e31c1c87588d9a"
+  },
+  {
+    "path": "proposals/navigation-1440.jpg",
+    "bytes": 111337,
+    "sha256": "52a7468c3ce55d790d2a1fbf66c82f97987b50d80c7db3a29daacff10b735c67"
+  },
+  {
+    "path": "proposals/navigation-320.jpg",
+    "bytes": 47858,
+    "sha256": "70f1d98f41e949421fa47e406f9346ac4f420dc8ad8629f7fbf86b3169989f4d"
+  },
+  {
+    "path": "proposals/navigation-375.jpg",
+    "bytes": 51570,
+    "sha256": "dd0693de11a70cad7fc2562ce677086739ed64485cf74ce3fa5ba7ff7af9c0b5"
+  },
+  {
+    "path": "proposals/navigation-768.jpg",
+    "bytes": 89598,
+    "sha256": "f8696fce4d5308264a5f8d392a539ecdcf805e1dc50c66514be84e5dcdf072cd"
+  }
+]

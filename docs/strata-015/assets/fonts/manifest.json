@@ -1,0 +1,20 @@
+[
+  {
+    "file": "SourceSans3-Regular.otf.woff2",
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/OTF/SourceSans3-Regular.otf.woff2",
+    "sha256": "63de0da0cc05298e2e9c6e5cef506d8454ca665f6e668a99d94f51174b9256ed",
+    "bytes": 153800
+  },
+  {
+    "file": "SourceSans3-Semibold.otf.woff2",
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/OTF/SourceSans3-Semibold.otf.woff2",
+    "sha256": "c248b0a178c362916db7c853ed640db77f184d19a0ed9fa5591fa707d3089635",
+    "bytes": 155624
+  },
+  {
+    "file": "SourceCodePro-Regular.otf.woff2",
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-code-pro/803b7e23ec97ae58b6232ea76519a76d428ba268/WOFF2/OTF/SourceCodePro-Regular.otf.woff2",
+    "sha256": "23a0d7981dc90c0a8ec7d8a6ca7ee5dc439c777f3e2aabcf1009fdcf0e821b79",
+    "bytes": 76348
+  }
+]

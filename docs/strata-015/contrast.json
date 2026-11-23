@@ -1,0 +1,422 @@
+[
+  {
+    "foreground": "text",
+    "background": "bg",
+    "ratio": 16.88,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "text",
+    "background": "surface",
+    "ratio": 15.01,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "text",
+    "background": "surface-secondary",
+    "ratio": 13.41,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "text",
+    "background": "surface-raised",
+    "ratio": 11.77,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "secondary",
+    "background": "bg",
+    "ratio": 11.79,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "secondary",
+    "background": "surface",
+    "ratio": 10.49,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "secondary",
+    "background": "surface-secondary",
+    "ratio": 9.36,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "secondary",
+    "background": "surface-raised",
+    "ratio": 8.22,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "subdued",
+    "background": "bg",
+    "ratio": 8.75,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "subdued",
+    "background": "surface",
+    "ratio": 7.79,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "subdued",
+    "background": "surface-secondary",
+    "ratio": 6.95,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "subdued",
+    "background": "surface-raised",
+    "ratio": 6.1,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "accent",
+    "background": "bg",
+    "ratio": 10.55,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "accent",
+    "background": "surface",
+    "ratio": 9.38,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "accent",
+    "background": "surface-secondary",
+    "ratio": 8.38,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "accent",
+    "background": "surface-raised",
+    "ratio": 7.36,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "observed",
+    "background": "bg",
+    "ratio": 12.89,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "observed",
+    "background": "surface",
+    "ratio": 11.47,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "observed",
+    "background": "surface-secondary",
+    "ratio": 10.24,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "observed",
+    "background": "surface-raised",
+    "ratio": 8.99,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "interpretation",
+    "background": "bg",
+    "ratio": 11.18,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "interpretation",
+    "background": "surface",
+    "ratio": 9.95,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "interpretation",
+    "background": "surface-secondary",
+    "ratio": 8.88,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "interpretation",
+    "background": "surface-raised",
+    "ratio": 7.8,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "uncertain",
+    "background": "bg",
+    "ratio": 10.27,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "uncertain",
+    "background": "surface",
+    "ratio": 9.14,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "uncertain",
+    "background": "surface-secondary",
+    "ratio": 8.16,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "uncertain",
+    "background": "surface-raised",
+    "ratio": 7.16,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "synthetic",
+    "background": "bg",
+    "ratio": 10.86,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "synthetic",
+    "background": "surface",
+    "ratio": 9.66,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "synthetic",
+    "background": "surface-secondary",
+    "ratio": 8.62,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "synthetic",
+    "background": "surface-raised",
+    "ratio": 7.57,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "success",
+    "background": "bg",
+    "ratio": 11.64,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "success",
+    "background": "surface",
+    "ratio": 10.36,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "success",
+    "background": "surface-secondary",
+    "ratio": 9.25,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "success",
+    "background": "surface-raised",
+    "ratio": 8.12,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "warning",
+    "background": "bg",
+    "ratio": 10.27,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "warning",
+    "background": "surface",
+    "ratio": 9.14,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "warning",
+    "background": "surface-secondary",
+    "ratio": 8.16,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "warning",
+    "background": "surface-raised",
+    "ratio": 7.16,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "error",
+    "background": "bg",
+    "ratio": 10.52,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "error",
+    "background": "surface",
+    "ratio": 9.36,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "error",
+    "background": "surface-secondary",
+    "ratio": 8.35,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "error",
+    "background": "surface-raised",
+    "ratio": 7.33,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "info",
+    "background": "bg",
+    "ratio": 11.18,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "info",
+    "background": "surface",
+    "ratio": 9.95,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "info",
+    "background": "surface-secondary",
+    "ratio": 8.88,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "info",
+    "background": "surface-raised",
+    "ratio": 7.8,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "bg",
+    "background": "accent",
+    "ratio": 10.55,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "bg",
+    "background": "hover",
+    "ratio": 12.55,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "bg",
+    "background": "pressed",
+    "ratio": 7.83,
+    "minimum": 4.5,
+    "passAA": true
+  },
+  {
+    "foreground": "focus",
+    "background": "bg",
+    "ratio": 12.71,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "focus",
+    "background": "surface",
+    "ratio": 11.31,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "focus",
+    "background": "surface-raised",
+    "ratio": 8.86,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "focus",
+    "background": "selected",
+    "ratio": 6.25,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "bg",
+    "ratio": 6.53,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "surface",
+    "ratio": 5.81,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "surface-raised",
+    "ratio": 4.56,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "selected",
+    "ratio": 3.21,
+    "minimum": 3,
+    "passAA": true
+  },
+  {
+    "foreground": "text",
+    "background": "selected",
+    "ratio": 8.3,
+    "minimum": 4.5,
+    "passAA": true
+  }
+]

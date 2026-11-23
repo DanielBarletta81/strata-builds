@@ -1,0 +1,156 @@
+{
+  "capturedAt": "2026-11-23T01:52:07.196Z",
+  "browser": "158.0.8127.37",
+  "results": [
+    {
+      "route": "index",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "home",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "laboratory",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "checked",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "index",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "home",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "laboratory",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "checked",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "index",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "home",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "laboratory",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "checked",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "index",
+      "width": 1024,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "home",
+      "width": 1024,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "laboratory",
+      "width": 1024,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "checked",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "index",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "home",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "emulated",
+      "consoleErrors": [],
+      "brokenAssets": []
+    },
+    {
+      "route": "laboratory",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "keyboard": true,
+      "reducedMotion": "checked",
+      "consoleErrors": [],
+      "brokenAssets": []
+    }
+  ]
+}
