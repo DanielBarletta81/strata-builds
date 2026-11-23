@@ -87,3 +87,33 @@ The draft PR is a review vehicle only. No merge or production release is authori
 [Concept E presentation](strata-015/proposals/stone-concept.png) shows the two-path symbol, wordmark and 16/24/32/48 px specimens. Single-color light/dark assets are on the review board. This remains a concept; the review header retains the previous D option.
 
 Concept E validation: exactly two slab paths in color and both monochrome assets; stone/background contrast 12.23:1 and 9.36:1, monochrome 16.88:1. The 15 prototype responsive/keyboard/reduced-motion checks and lint passed again after adding E. The concept presentation was visually inspected; owner recognition/final selection is still pending. The screenshot index now contains 59 images.
+
+
+## Final identity refinement and approval gate
+
+Fleet Command accepts the semantic token architecture, typography hierarchy, evidence-state treatments, accessibility requirements and legacy light canvas strategy as implementation direction. Final identity approval and Checkpoint B authorization remain pending.
+
+- **Recommendation:** refined E / Fractured strata with the unframed horizontal lockup. Equal-area slabs, a wider S seam and true monochrome geometry. D / Rocket-bolt remains an unchanged alternative. No hybrid.
+- **Review first:** [single final comparison board](strata-015/identity-final.html), [comparison image](strata-015/proposals/final-identity-comparison.png), [full board](strata-015/proposals/final-board-1440.png), and [exact B implementation manifest](STRATA-015-CHECKPOINT-B-MANIFEST.md).
+- The final board supersedes the earlier stone-concept and identity-density screenshots. Historical captures remain labeled by their earlier filenames; the `final-*` captures show this refinement.
+- The B manifest lists exact shell/component/icon/compatibility/test files, protects every scientific feature and source, and retains global legacy rules. It proposes system-font fallback for the first B implementation to honor the font budget; shipping font subsets requires a revised asset manifest.
+- No application, scientific data, evidence disclosure, source attribution, dependency or deployment configuration changed. PR #18 remains draft; no merge or B work is authorized by this refinement.
+
+Validation and capture metadata are in `strata-015/proposals/final-identity-results.json`, `final-geometry-results.json`, `results.json`, and `strata-015/contrast.json`. Human recognition, screen-reader, physical-device and trademark checks remain unverified. TOOLING-014-01 is separate; no retry of that browser adapter was used.
+
+
+### Final refinement verification performed
+
+| Command / inspection | Actual result |
+| --- | --- |
+| `npm run lint` | Passed after adding the explicit Node URL import to the review runner. |
+| `python3 docs/strata-015/check-contrast.py` | 60 token contrast pairings passed. |
+| `python3 docs/strata-015/check-identity-geometry.py` | Equal 502-unit slab areas; 4.243-unit minimum seam; two matching single-color paths; six mark/background pairings passed. |
+| `node docs/strata-015/check-identity-final.mjs` | 20 E/D navigation checks at 320/375/649/768/1440 px × 1×/2×; five full-board viewport checks passed. Native symbol widths, loaded images, keyboard focus/disclosure and overflow checked. |
+| `node docs/strata-015/check-review.mjs` | 15 homepage/laboratory/identity combinations at 320/375/768/1024/1440 px passed, including keyboard and reduced-motion behavior. |
+| Visual inspection of saved captures | Comparison symbols/wordmarks, mobile full board, 375 px header and 1440 px homepage inspected. Human unaided recognition is still pending. |
+| `git diff --check` and application/source diff against baseline | Passed; only documentation paths changed. Scientific and application files remain unchanged. |
+
+Browser scripts accept `STRATA_PLAYWRIGHT_MODULE`, `STRATA_CHROMIUM_EXECUTABLE`, and optional `STRATA_REVIEW_ORIGIN`; the local checks used installed Playwright Core and Chromium. Results JSON records exact browser version and capture time. The 649 px open-menu overflow was fixed only in the review stylesheet and the affected checks rerun. Full app unit/build/smoke results above are from the earlier A run, not a new full-suite run for this documentation refinement.
+
+Stop for owner approval of the final identity and Checkpoint B manifest. PR stays draft. No merge.

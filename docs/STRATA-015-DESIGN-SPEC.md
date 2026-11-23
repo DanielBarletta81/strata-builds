@@ -1,6 +1,6 @@
 # STRATA-015 — Identity and design specification
 
-**Checkpoint A · proposed, not approved.** Baseline `7690b59f4525516bff95c7bb633b41272739f76a`. [Audit](STRATA-015-DESIGN-AUDIT.md) · [Interactive review board](strata-015/index.html) · [Homepage](strata-015/home.html) · [Laboratory](strata-015/laboratory.html).
+**Checkpoint A · design-system direction accepted; final identity and Checkpoint B approval pending.** Baseline `7690b59f4525516bff95c7bb633b41272739f76a`. [Audit](STRATA-015-DESIGN-AUDIT.md) · [Interactive review board](strata-015/index.html) · [Homepage](strata-015/home.html) · [Laboratory](strata-015/laboratory.html).
 
 ## Brand architecture
 
@@ -18,9 +18,9 @@ STRATA is the organizing identity; Builds names the engineering platform. Instru
 
 | D · Rocket-bolt S | One angular zigzag, ascending nose and cut tail on a 48-unit grid | More energetic; uninterrupted silhouette without fragile detail | Arrow/lightning reading is stronger than literal S at 16 px | Current owner-requested exploration; not final |
 
-| E · Fractured strata | Exactly two clipped slab paths separated by a continuous angular S-shaped gap | The negative-space letter directly connects to geological layers; survives in monochrome | Interlocking slabs are symbolic, not a measured geological cross-section | Recommended next review direction after owner stone-slab suggestion |
+| E · Fractured strata | Two equal-area, rotationally matched slab paths separated by an open angular S-shaped gap | The negative-space letter directly connects to geological layers; survives in monochrome | Interlocking slabs are symbolic, not a measured geological cross-section | Leading candidate; refined unframed lockup recommended |
 
-Assets in `strata-015/assets/`: `concept-a.svg`, `concept-b.svg`, `concept-c.svg`, `concept-d.svg`, `concept-e.svg`, `stone-lockup.svg`, `stone-mono-light.svg`, `stone-mono-dark.svg`, `symbol.svg`, `mono-light.svg`, `mono-dark.svg`, `horizontal-lockup.svg`. All symbol geometry is original. Following the owner’s request for sharper lettering and a thunderbolt-shaped rocket S, the working header uses Concept D and Source Sans 3 Semibold letters converted to paths from the pinned licensed font below. Those letterforms are Adobe’s, not claimed as original. There are no raster traces, gradients, filters, external references or runtime font dependencies in the SVG. `horizontal-lockup-v1.svg` preserves the earlier custom block lettering. `horizontal-lockup-framed.svg` offers an optional perimeter border; letter strokes are not outlined, to keep counters open. Kerning and recognition still require owner review.
+Assets in `strata-015/assets/`: `concept-a.svg`, `concept-b.svg`, `concept-c.svg`, `concept-d.svg`, `concept-e.svg`, `stone-lockup.svg`, `stone-mono-light.svg`, `stone-mono-dark.svg`, `symbol.svg`, `mono-light.svg`, `mono-dark.svg`, `horizontal-lockup.svg`. All symbol geometry is original. Following the owner’s request for sharper lettering and a thunderbolt-shaped rocket S, the working header now previews refined Concept E and Source Sans 3 Semibold letters converted to paths from the pinned licensed font below. Those letterforms are Adobe’s, not claimed as original. There are no raster traces, gradients, filters, external references or runtime font dependencies in the SVG. `horizontal-lockup-v1.svg` preserves the earlier custom block lettering. `horizontal-lockup-framed.svg` offers an optional perimeter border; letter strokes are not outlined, to keep counters open. Kerning and recognition still require owner review.
 
 A was initially recommended; D explores the rocket-bolt direction and E explores the newer stone-slab suggestion. None is approved or a proven legally unique trademark. No comprehensive trademark/confusability search or owner recognition test has been completed. Before final adoption, compare the chosen silhouette against relevant science/software brands and test unaided recognition; geometric stacked marks are a crowded category. Do not claim market uniqueness from an original drawing alone.
 
@@ -126,7 +126,7 @@ Server components own shell and static framing; a small client boundary may hand
 
 ## Implementation order and review gate
 
-1. Owner reviews A/B/C/D/E, the requested stone-slab and rocket-bolt S explorations and revised wordmark, palette, type pair and two representative compositions. This is the current stopping point.
+1. Fleet Command accepted the semantic token architecture, typography hierarchy, evidence treatments, accessibility requirements and isolated legacy light canvases as implementation direction. Owner reviews the final E/D comparison and exact B manifest; identity and B authorization remain the current stopping point.
 2. B: approved identity and icons; namespaced tokens; scope-preserving root shell and navigation; explicit legacy light canvas boundaries. Validate unchanged scientific text, source hashes and controls before homepage work.
 3. B: minimal foundational components and approved homepage. Add a clearly scoped `/design-system` showcase with noindex and deliberate discoverability policy. The A review lives only under `docs/strata-015`, outside Next routes/public assets.
 4. B: full quality suite, application screenshots corresponding to all baseline routes, 320/375/768/1024/1440 reflow, accessibility checks, cold-load font/bundle measurements, draft PR review. No merge without later authorization.
@@ -153,4 +153,19 @@ The owner commented on the header at a 649 px viewport: improve logo/text sharpn
 
 ## Second owner exploration · two fractured stone slabs
 
-Concept E uses exactly two filled paths on a 48-unit grid. Their separation traces an angular S from the upper right to lower left; clipped external corners suggest stone without rock texture. The optional two-color treatment is warm stone `#D6D0C2` and cool slate `#AFB9B8`. Both single-color variants retain the gap, so color is not required to recognize the letter. `stone-lockup.svg` reuses the clearer licensed Source Sans 3 letter outlines. The primary review header still uses D; adding E is not implicit owner approval or a global identity replacement. These slab shapes are a brand abstraction, not a scientific field section.
+Concept E uses exactly two filled paths on a 48-unit grid. Their separation traces an angular S from the upper right to lower left; clipped external corners suggest stone without rock texture. The optional two-color treatment is warm stone `#D6D0C2` and cool slate `#AFB9B8`. Both single-color variants retain the gap, so color is not required to recognize the letter. `stone-lockup.svg` reuses the clearer licensed Source Sans 3 letter outlines. The primary review header now previews refined E; this is not final identity approval or an application identity replacement. These slab shapes are a brand abstraction, not a scientific field section.
+
+
+## Final Checkpoint A refinement
+
+[Single E/D comparison board](strata-015/identity-final.html) · [Exact Checkpoint B file manifest](STRATA-015-CHECKPOINT-B-MANIFEST.md).
+
+Refined E has two original polygon paths related by a 180° rotation about (24,24). Each slab has area 502 square grid units. The shortest seam separation is 4.243 units on the 48-unit grid: about 1.414 CSS px at a 16 px symbol; the straight horizontal openings are 2 px at that size. The more even upper/lower mass and wider openings are intended to improve S recognition. This is a geometric and visual judgment, not a completed recognition study. `concept-e-v1.svg` preserves the prior drawing. No D geometry is incorporated into E.
+
+True monochrome exports use the same two paths with the same fill, no masking, background-colored knockout, stroke or overlay. Color and single-color samples are shown on both backgrounds at native 16/24/32/48 CSS px. Six mark/background contrast checks pass; the two optional stone colors retain 12.23:1 and 9.36:1 on the dark background. Use the dark monochrome on light surfaces, not the pale stone colors.
+
+Retain the reviewed larger Source Sans 3 Semibold wordmark outlines and spacing. Inspect the R/A enlargement and full lockups: open counters need no border or added stroke. Recommend **unframed E** as the default horizontal lockup. At equal letter height the frame adds 24 viewBox units of width and 20 of height; forcing it into a fixed-width slot reduces letter size. No demonstrated recognition improvement warrants a permanent frame. The frame remains an optional treatment for controlled placement, not part of the symbol or favicon.
+
+The comparison board pairs E/D navigation captures at 320/375/649/768/1440 px with 1× and 2× captures available, plus homepage header specimens. The new 649 px open-menu check exposed a 7 px prototype overflow; a documentation-only breakpoint now places mobile navigation on its own row. Repeat checks pass. This does not modify application navigation.
+
+The exact B manifest deliberately keeps the first implementation on system body/mono fonts while applying the accepted hierarchy; the path wordmark is unchanged. Shipping font subsets requires an amended asset manifest and the previously stated size/glyph/license/loading checks. No broad CSS migration has begun.
