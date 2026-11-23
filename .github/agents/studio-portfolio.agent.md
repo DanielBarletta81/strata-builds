@@ -2,6 +2,7 @@
 name: "STRATA Studio Portfolio"
 description: "Portfolio, case studies, navigation, documentation and polished project storytelling"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Studio Portfolio
