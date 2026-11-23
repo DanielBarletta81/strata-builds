@@ -1,0 +1,40 @@
+{
+  "baseline": "7690b59f4525516bff95c7bb633b41272739f76a",
+  "before": {
+    ".js": {
+      "files": 21,
+      "bytes": 1287727,
+      "gzipBytes": 387339
+    },
+    ".css": {
+      "files": 11,
+      "bytes": 94359,
+      "gzipBytes": 27500
+    }
+  },
+  "after": {
+    ".js": {
+      "files": 22,
+      "bytes": 1262865,
+      "gzipBytes": 380251
+    },
+    ".css": {
+      "files": 13,
+      "bytes": 107219,
+      "gzipBytes": 30998
+    }
+  },
+  "delta": {
+    ".js": {
+      "files": 1,
+      "bytes": -24862,
+      "gzipBytes": -7088
+    },
+    ".css": {
+      "files": 2,
+      "bytes": 12860,
+      "gzipBytes": 3498
+    }
+  },
+  "scope": "All .next/static JS and CSS assets; gzip totals are per-file estimates, not per-route transfer or field performance. No runtime font files."
+}

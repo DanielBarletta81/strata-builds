@@ -1,0 +1,70 @@
+{
+  "approvedProposal": "223e22ecc3baaf49d2279591bc6115261cd0c9f3",
+  "identity": "Refined Concept E; unframed",
+  "geometry": "Two original filled polygons; unchanged approved coordinates",
+  "wordmark": {
+    "font": "Source Sans 3 Semibold",
+    "upstream": "https://github.com/adobe-fonts/source-sans",
+    "commit": "87b37a2daaed80fcb8e8ccb0085c4d72ddade12e",
+    "license": "OFL-1.1; see OFL-SourceSans.txt",
+    "runtimeFont": false
+  },
+  "raster": {
+    "renderer": "Chromium 158.0.8127.37",
+    "density": 1,
+    "icoSizes": [
+      16,
+      32,
+      48
+    ],
+    "appleSize": 180,
+    "manifestSizes": [
+      192,
+      512
+    ],
+    "background": "#07131a",
+    "padding": "Original 48-unit master viewBox (4-unit margin); no geometry scaling changes"
+  },
+  "assets": [
+    {
+      "file": "public/brand/strata-lockup.svg",
+      "bytes": 3977,
+      "sha256": "88fea01fac47c4c077b7c8490d4205ec16ec82e48e2095025556e1e370ce89b2"
+    },
+    {
+      "file": "public/brand/strata-symbol.svg",
+      "bytes": 359,
+      "sha256": "9f052280ba3ec567f4e0471192cd5d4161be829c2956d67ef79595557b613631"
+    },
+    {
+      "file": "public/brand/strata-symbol-dark.svg",
+      "bytes": 359,
+      "sha256": "04f2f301d1cd7ca134302c90aa03a3dedbb4b47ed7d37392ee248836cf1c679b"
+    },
+    {
+      "file": "src/app/icon.svg",
+      "bytes": 383,
+      "sha256": "39238d03e8c8dc753cde8cd9a853831639c498c1b2572298c72a8e3b3f11e59b"
+    },
+    {
+      "file": "src/app/favicon.ico",
+      "bytes": 1443,
+      "sha256": "d1504e6bb4ddeaf8f9359cce2e41d363deb7f0c397af2fe568fbf22181870b55"
+    },
+    {
+      "file": "src/app/apple-icon.png",
+      "bytes": 2257,
+      "sha256": "6cb044406996e653a712b53c62678d859782579ebef7d832ee8101be799e8ac2"
+    },
+    {
+      "file": "public/icons/strata-192.png",
+      "bytes": 2302,
+      "sha256": "b35389c6875b7353a6f647207c6c1ab71b02f9e7dedba849effc2f157e518351"
+    },
+    {
+      "file": "public/icons/strata-512.png",
+      "bytes": 6873,
+      "sha256": "36e9ed5d97c796207a90169c7e865b57dfc00c14a8d2aa7c6dc499323241364d"
+    }
+  ]
+}

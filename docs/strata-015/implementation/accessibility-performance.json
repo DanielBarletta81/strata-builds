@@ -1,0 +1,199 @@
+{
+  "capturedAt": "2026-11-23T03:43:42.140Z",
+  "browser": "158.0.8127.37",
+  "note": "Local Chromium lab measurements, not production field performance. Browser zoom and human screen-reader/physical-device checks are not claimed.",
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 320,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 375,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/",
+      "width": 649,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 649,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 768,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 1024,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    },
+    {
+      "route": "/design-system",
+      "width": 1440,
+      "textEnlargement200Percent": true,
+      "textSpacing": true,
+      "keyboardReachesFooter": true,
+      "cold": {
+        "cls": 0,
+        "resources": [],
+        "paint": []
+      },
+      "warm": {
+        "cls": 0,
+        "resources": []
+      }
+    }
+  ]
+}

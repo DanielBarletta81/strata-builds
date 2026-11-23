@@ -1,6 +1,6 @@
 # STRATA-015 — Identity and design specification
 
-**Checkpoint A · design-system direction accepted; final identity and Checkpoint B approval pending.** Baseline `7690b59f4525516bff95c7bb633b41272739f76a`. [Audit](STRATA-015-DESIGN-AUDIT.md) · [Interactive review board](strata-015/index.html) · [Homepage](strata-015/home.html) · [Laboratory](strata-015/laboratory.html).
+**Checkpoint A approved: refined E, unframed lockup; system-font fallback and B scope authorized.** Baseline `7690b59f4525516bff95c7bb633b41272739f76a`. [Audit](STRATA-015-DESIGN-AUDIT.md) · [Interactive review board](strata-015/index.html) · [Homepage](strata-015/home.html) · [Laboratory](strata-015/laboratory.html).
 
 ## Brand architecture
 
@@ -169,3 +169,8 @@ Retain the reviewed larger Source Sans 3 Semibold wordmark outlines and spacing.
 The comparison board pairs E/D navigation captures at 320/375/649/768/1440 px with 1× and 2× captures available, plus homepage header specimens. The new 649 px open-menu check exposed a 7 px prototype overflow; a documentation-only breakpoint now places mobile navigation on its own row. Repeat checks pass. This does not modify application navigation.
 
 The exact B manifest deliberately keeps the first implementation on system body/mono fonts while applying the accepted hierarchy; the path wordmark is unchanged. Shipping font subsets requires an amended asset manifest and the previously stated size/glyph/license/loading checks. No broad CSS migration has begun.
+
+
+## Implemented B decision
+
+Refined E is the sole production candidate; D is historical only. The shared shell, scoped tokens, homepage, explicit legacy-light wrappers and noindex showcase are implemented on a separate stacked branch. System UI/mono fonts are used; approved Source Sans wordmark paths retain their license and source pin. [B results and exact inventory](STRATA-015-CHECKPOINT-B-RESULTS.md). No merge is authorized.

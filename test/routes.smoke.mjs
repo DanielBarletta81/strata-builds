@@ -23,6 +23,7 @@ before(async () => {
     recursive: true,
     filter: (source) => source !== join(build, 'cache'),
   });
+  await cp(resolve('public'), join(buildDirectory, 'public'), { recursive: true });
   await cp(resolve('package.json'), join(buildDirectory, 'package.json'));
   await cp(resolve('next.config.mjs'), join(buildDirectory, 'next.config.mjs'));
   await symlink(resolve('node_modules'), join(buildDirectory, 'node_modules'), 'dir');
@@ -107,7 +108,7 @@ async function fetchRoute(path, contentType) {
 }
 
 const pages = [
-  ['/', 'Strata Builds', 'Featured Projects'],
+  ['/', 'Evidence first.', 'Choose a question.'],
   ['/atlas', 'Microsat Atlas', 'SYNTHETIC DEMONSTRATION DATA'],
   ['/studio', 'Studio', 'Strata Works portfolio coming soon'],
   ['/signals', 'NOAA Signals Lab', 'Loading NOAA observations'],
@@ -131,13 +132,17 @@ for (const [path, heading, content] of pages) {
       assert.match(html, /<title>Strata Builds<\/title>/);
       assert.match(html, /<meta name="description" content="Design, data, structure — visualizations and digital products"/);
     }
-    assert.match(html, new RegExp(`<h1\\b[^>]*>${heading}</h1>`));
+    if (path === '/') assert.equal(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)?.[1].replace(/<[^>]+>/g, ''), 'Evidence first.Questions next.Conclusions earned.');
+    else assert.match(html, new RegExp(`<h1\\b[^>]*>${heading}</h1>`));
     assert.ok(html.includes(content));
 
     const nav = html.match(/<nav\b[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([^<]+)<\/a>/g)]
       .map(([, href, label]) => [href, label]);
-    assert.deepEqual(links, [['/', 'Strata Builds'], ['/studio', 'Studio'], ['/atlas', 'Atlas'], ['/signals', 'Signals'], ['/orbital', 'Orbital'], ['/frontier', 'Frontier']]);
+    assert.deepEqual(links.map(([href]) => href), ['/', '/deep-time', '/signals', '/oceanography', '/atlas', '/orbital', '/frontier', '/orbital/voyager', '/oceanography/pawtuxet', '/frontier/reconciliation', '/research/bass-2003', '/studio']);
+    assert.match(html, /aria-label="STRATA Builds — Home"/);
+    assert.match(html, /href="#main-content"/);
+    assert.match(html, /id="main-content" tabindex="-1"/);
   });
 }
 
@@ -419,4 +424,45 @@ test('GET /research/bass-2003 renders the study, exact reported tables and evide
   assert.doesNotMatch(html, /<summary>Inspect Figure 4 source quality<\/summary>/);
   const studio = await fetchRoute('/studio', 'text/html');
   assert.match(studio, /href="\/research\/bass-2003"/);
+});
+
+test("design-system showcase is illustrative and excluded from indexing and sitemap", async () => {
+  const html = await fetchRoute("/design-system", "text/html");
+  assert.match(html, /<meta name="robots" content="noindex, nofollow"/);
+  assert.match(html, /Every value and scenario on this page is illustrative/);
+  assert.match(html, /12.4 ± 0.3/);
+  const sitemap = await fetchRoute("/sitemap.xml", "application/xml");
+  assert.ok(!sitemap.includes("/design-system"));
+});
+
+test("brand icons and web manifest are served with correct types", async () => {
+  for (const [path, mime] of [
+    ["/icon.svg", "image/svg+xml"],
+    ["/favicon.ico", "image/"],
+    ["/apple-icon.png", "image/png"],
+    ["/icons/strata-192.png", "image/png"],
+    ["/icons/strata-512.png", "image/png"],
+    ["/brand/strata-lockup.svg", "image/svg+xml"],
+  ]) {
+    const response = await fetch(origin + path);
+    assert.equal(response.status, 200, path);
+    assert.ok(response.headers.get("content-type").includes(mime), path);
+    assert.ok((await response.arrayBuffer()).byteLength > 100, path);
+  }
+  const response = await fetch(origin + "/manifest.webmanifest");
+  assert.equal(response.status, 200);
+  const manifest = await response.json();
+  assert.equal(manifest.name, "Strata Builds");
+  assert.deepEqual(
+    manifest.icons.map((i) => i.sizes),
+    ["192x192", "512x512"],
+  );
+  const html = await fetchRoute("/", "text/html");
+  for (const path of [
+    "/favicon.ico",
+    "/icon.svg",
+    "/apple-icon.png",
+    "/manifest.webmanifest",
+  ])
+    assert.ok(html.includes(path), path);
 });

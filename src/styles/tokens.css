@@ -1,0 +1,49 @@
+/* Scoped consumers opt in; feature-local variables and body styles are untouched. */
+:root {
+  --strata-ink-950: #07131a;
+  --strata-ink-900: #0d2029;
+  --strata-ink-850: #112a35;
+  --strata-ink-800: #19343e;
+  --strata-paper: #eaf5f3;
+  --strata-teal: #55d6c2;
+  --strata-bg: var(--strata-ink-950);
+  --strata-surface: var(--strata-ink-900);
+  --strata-surface-secondary: var(--strata-ink-850);
+  --strata-surface-raised: var(--strata-ink-800);
+  --strata-text: var(--strata-paper);
+  --strata-text-secondary: #bfd0d2;
+  --strata-text-subdued: #9db5bd;
+  --strata-border: #405b65;
+  --strata-control-border: #809da7;
+  --strata-action: var(--strata-teal);
+  --strata-action-hover: #83e4d5;
+  --strata-action-pressed: #38baa6;
+  --strata-selected: #214e50;
+  --strata-focus: #f4cf94;
+  --strata-success: #9ed9b0;
+  --strata-warning: #e8b778;
+  --strata-error: #ffacac;
+  --strata-info: #abcce4;
+  --strata-evidence-observed: #b7ded3;
+  --strata-evidence-interpretation: #abcce4;
+  --strata-evidence-modeled: #abcce4;
+  --strata-evidence-synthetic: #d0bde8;
+  --strata-evidence-unresolved: #e8b778;
+  --strata-font:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --strata-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --strata-space-1: 4px;
+  --strata-space-2: 8px;
+  --strata-space-3: 12px;
+  --strata-space-4: 16px;
+  --strata-space-6: 24px;
+  --strata-space-8: 32px;
+  --strata-space-12: 48px;
+  --strata-space-16: 64px;
+  --strata-radius: 6px;
+  --strata-control-radius: 4px;
+  --strata-gutter: clamp(20px, 5vw, 64px);
+  --strata-max-width: 1280px;
+  --strata-motion-fast: 120ms;
+  --strata-motion-normal: 180ms;
+}

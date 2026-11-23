@@ -39,3 +39,19 @@ test('sitemap keeps the canonical URLs, crawl hints, and modification dates', ()
     assert.ok(lastModified.getTime() >= before && lastModified.getTime() <= after, url);
   }
 });
+
+test("brand manifest uses approved colors and supplied icons without claiming an installed app", async () => {
+  const { default: manifest } = await import("../src/app/manifest.ts");
+  const result = manifest();
+  assert.equal(result.display, "browser");
+  assert.equal(result.background_color, "#07131a");
+  assert.equal(result.theme_color, "#07131a");
+  assert.equal(result.start_url, "/");
+  assert.deepEqual(
+    result.icons.map(({ src, sizes, purpose }) => ({ src, sizes, purpose })),
+    [
+      { src: "/icons/strata-192.png", sizes: "192x192", purpose: "any" },
+      { src: "/icons/strata-512.png", sizes: "512x512", purpose: "any" },
+    ],
+  );
+});
