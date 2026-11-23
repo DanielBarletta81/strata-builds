@@ -34,3 +34,13 @@ This agent-definition PR is independent of the existing STRATA-016 development P
 Agent guidance uses `target: github-copilot` and descriptions; no unknown or unavailable tool names are hardcoded. The `model` property can be set through VS Code’s supported model-picker/autocomplete after confirming model availability.
 
 Official docs: https://code.visualstudio.com/docs/agent-customization/custom-agents
+
+## Tool access and review boundary
+
+All 12 custom agents now declare supported Copilot `tools` aliases in frontmatter. **Fleet Command and Scientific QA** get `read` and `search` only; they cannot invoke `edit` or `execute` directly through their configured agent tool set. **Implementation agents** get `read`, `search`, `edit`, and `execute` to edit scoped code and run tests. No agent is granted `agent` delegation, `web`, or broad MCP tool aliases here.
+
+**Important limitation:** This is *tool configuration*, not an operating-system security sandbox. In an implementation agent with `execute`, a terminal command could still perform Git or destructive operations depending on host approvals. Maintain terminal approvals and appropriate local permissions, review commands, and never treat “no merge” in an instruction as technically enforced. Models and available tools may vary by harness/installation.
+
+**No concurrent ownership conflicts:** Fleet owns mission scope and release-readiness synthesis; Scientific QA owns scientific findings and regression review. For PR #20, NOAA Listening Station owns Signals component integration and tests; Visual Instrument Designer owns only explicitly assigned CSS and accessible visual treatments; Evidence Trail Curator validates the provenance field contract and does not simultaneously implement the same Signals component. Assign exact files before coding, and never let agents edit the same file concurrently.
+
+**Activation gate:** Check out this branch in VS Code, confirm agent discovery, verify the actual exposed tools and model selected, run a read-only trial, and review this draft PR before any merge. Runtime behavior was not verified by this repository-only change.
