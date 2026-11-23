@@ -2,6 +2,7 @@
 name: "STRATA Orbital Navigation"
 description: "JPL Horizons Ceres and Voyager ephemeris exploration"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Orbital Navigation
