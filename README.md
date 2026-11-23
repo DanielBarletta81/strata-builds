@@ -51,7 +51,7 @@ Inspect 1 Ceres in a saved NASA/JPL Horizons ephemeris. The first instrument pro
 
 ### Deep Time Observatory
 
-**STRATA — DEEP TIME**: *The Planet Was Never Still.* Explore a sourced geological chronology, early-ocean evidence and origin hypotheses, and qualitative oxygenation. At 111 Ma, inspect a regional model of Tethyan lithosphere and plate boundaries. [STRATA-014 source contract](docs/STRATA-014.md) · [Tethys reconstruction and model comparison](docs/STRATA-014-TETHYS.md)
+**STRATA — DEEP TIME**: *The Planet Was Never Still.* Explore a sourced geological chronology, early-ocean evidence and origin hypotheses, and qualitative oxygenation. At 111 Ma, inspect the regional Tethys plate model and compare it with published Adria–Apulia marine evidence in the Ancient Seaway Laboratory. [STRATA-014 source contract](docs/STRATA-014.md) · [Tethys reconstruction and model comparison](docs/STRATA-014-TETHYS.md) · [Ancient Seaway source audit](docs/STRATA-014-SEAWAY.md)
 
 ### Smithsonian Collections
 

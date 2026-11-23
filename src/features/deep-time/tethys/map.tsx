@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import reconstruction from './data/reconstruction-111.json';
 import validation from './data/validation-111.json';
 import { formatCoordinates, tethysSources } from './model';
@@ -109,8 +108,7 @@ function Comparison({ checkpoint }: { checkpoint: Checkpoint }) {
   );
 }
 
-export default function TethysMap() {
-  const [id, select] = useState(checkpoints[0].id);
+export default function TethysMap({ id, select }: { id: string; select: (id: string) => void }) {
   const selected = checkpoints.find((checkpoint) => checkpoint.id === id) ?? checkpoints[0];
   const carrier = selected.primary.adjacentPlateIds?.join(' / ') ?? selected.primary.plateId;
 

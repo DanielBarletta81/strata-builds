@@ -395,6 +395,7 @@ test('GET /deep-time separates geological events, disputed dates and conceptual 
   assert.match(html, /Bars mark the age bounds of cited intervals\. Whether activity was continuous requires separate evidence\./);
   assert.ok(!html.includes('data-marker="origins"'));
   assert.doesNotMatch(html, /data-tethys-map=/);
+  assert.doesNotMatch(html, /Seaway evidence layers|data-seaway-record=/);
 });
 
 test('GET /research/bass-2003 renders the study, exact reported tables and evidence gaps', async () => {
