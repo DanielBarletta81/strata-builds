@@ -156,33 +156,33 @@
   },
   {
     "path": "proposals/home-768.jpg",
-    "bytes": 242505,
-    "sha256": "1cdeb5c4567c496ce0becd73b14b2ec13de70fa3abdf315a79237f8e153290d5"
+    "bytes": 242411,
+    "sha256": "1849b203c18e6aa48911f6c76d00c6f39d87dbb627cfc411d74eeec32f107227"
   },
   {
     "path": "proposals/index-1024.jpg",
-    "bytes": 487840,
-    "sha256": "e517385d61a27850f59f85077c93b7bd1a46a6af7f4cdddde9613ccfff575eef"
+    "bytes": 533978,
+    "sha256": "efbeb947bbc277a6fedb02abceb54661970b7fb1ebd6ac788352113b1ef4e934"
   },
   {
     "path": "proposals/index-1440.jpg",
-    "bytes": 563489,
-    "sha256": "3e9698d4ee1099cf83392c85275b4bd1ff54bde7f1768bfb07a13dd35ba39bb3"
+    "bytes": 604991,
+    "sha256": "cc3843e5800fdabb4a5340090c623970f7446f2ab75694eadaf95f5cdf48a58a"
   },
   {
     "path": "proposals/index-320.jpg",
-    "bytes": 433698,
-    "sha256": "1932a20a66db4aa559961afe00577ef9d6df3e0ee0a211b4c2c1902d8727d32e"
+    "bytes": 469528,
+    "sha256": "418ed792049609039c8e94e45ebc09a02f8010ed09bed1540284a1044ca008ee"
   },
   {
     "path": "proposals/index-375.jpg",
-    "bytes": 442576,
-    "sha256": "4be9b2047a2a92e9cc806961a1dbead7434b620c6262aa9a953a731eeb4cf3d1"
+    "bytes": 482687,
+    "sha256": "5d1cab116f1975f975a4f03ee22ad47b3e24c37098bb7904c8e60124a9971081"
   },
   {
     "path": "proposals/index-768.jpg",
-    "bytes": 471892,
-    "sha256": "b151f5859a87cf0f4d69bc7eff10f84577ec7cf497e53018103ae25e4d64f4d6"
+    "bytes": 521866,
+    "sha256": "de0371840fd573620560db2bc6be9928d83908b48fca30a252ddbf64ebe1e69d"
   },
   {
     "path": "proposals/laboratory-1024.jpg",
@@ -211,8 +211,8 @@
   },
   {
     "path": "proposals/logo-concepts.jpg",
-    "bytes": 198011,
-    "sha256": "995f65dffb9929748e2114bba584c7053247dc4bef62c67af235545de378aa3a"
+    "bytes": 270235,
+    "sha256": "88579508960e4c08fed2279003e5dfc64ff5dffa8e3990958f7567fb2000326c"
   },
   {
     "path": "proposals/navigation-1024.jpg",
@@ -288,5 +288,10 @@
     "path": "proposals/identity-768-2x.png",
     "bytes": 16251,
     "sha256": "bf7351b4daa42d1dedbc98c34dad92949ce805bfc3511c043731ec828039df34"
+  },
+  {
+    "path": "proposals/stone-concept.png",
+    "bytes": 18904,
+    "sha256": "fa0ec49fa8402737c1cb37c90dfd8050f0bcb4b61d0ce93791e87a704d4ee2eb"
   }
 ]

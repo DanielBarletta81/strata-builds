@@ -18,13 +18,15 @@ STRATA is the organizing identity; Builds names the engineering platform. Instru
 
 | D · Rocket-bolt S | One angular zigzag, ascending nose and cut tail on a 48-unit grid | More energetic; uninterrupted silhouette without fragile detail | Arrow/lightning reading is stronger than literal S at 16 px | Current owner-requested exploration; not final |
 
-Assets in `strata-015/assets/`: `concept-a.svg`, `concept-b.svg`, `concept-c.svg`, `concept-d.svg`, `symbol.svg`, `mono-light.svg`, `mono-dark.svg`, `horizontal-lockup.svg`. All symbol geometry is original. Following the owner’s request for sharper lettering and a thunderbolt-shaped rocket S, the working header uses Concept D and Source Sans 3 Semibold letters converted to paths from the pinned licensed font below. Those letterforms are Adobe’s, not claimed as original. There are no raster traces, gradients, filters, external references or runtime font dependencies in the SVG. `horizontal-lockup-v1.svg` preserves the earlier custom block lettering. `horizontal-lockup-framed.svg` offers an optional perimeter border; letter strokes are not outlined, to keep counters open. Kerning and recognition still require owner review.
+| E · Fractured strata | Exactly two clipped slab paths separated by a continuous angular S-shaped gap | The negative-space letter directly connects to geological layers; survives in monochrome | Interlocking slabs are symbolic, not a measured geological cross-section | Recommended next review direction after owner stone-slab suggestion |
 
-A was initially recommended; D now explores the owner’s explicit direction. Neither is approved or a proven legally unique trademark. No comprehensive trademark/confusability search or owner recognition test has been completed. Before final adoption, compare the chosen silhouette against relevant science/software brands and test unaided recognition; geometric stacked marks are a crowded category. Do not claim market uniqueness from an original drawing alone.
+Assets in `strata-015/assets/`: `concept-a.svg`, `concept-b.svg`, `concept-c.svg`, `concept-d.svg`, `concept-e.svg`, `stone-lockup.svg`, `stone-mono-light.svg`, `stone-mono-dark.svg`, `symbol.svg`, `mono-light.svg`, `mono-dark.svg`, `horizontal-lockup.svg`. All symbol geometry is original. Following the owner’s request for sharper lettering and a thunderbolt-shaped rocket S, the working header uses Concept D and Source Sans 3 Semibold letters converted to paths from the pinned licensed font below. Those letterforms are Adobe’s, not claimed as original. There are no raster traces, gradients, filters, external references or runtime font dependencies in the SVG. `horizontal-lockup-v1.svg` preserves the earlier custom block lettering. `horizontal-lockup-framed.svg` offers an optional perimeter border; letter strokes are not outlined, to keep counters open. Kerning and recognition still require owner review.
+
+A was initially recommended; D explores the rocket-bolt direction and E explores the newer stone-slab suggestion. None is approved or a proven legally unique trademark. No comprehensive trademark/confusability search or owner recognition test has been completed. Before final adoption, compare the chosen silhouette against relevant science/software brands and test unaided recognition; geometric stacked marks are a crowded category. Do not claim market uniqueness from an original drawing alone.
 
 ### Usage rules proposed for approval
 
-- A–C use a 32-unit grid; D uses 48 units. Clear space outside the asset: ¼ symbol width (12 units for D). Do not stretch the geometry or close the interior turns.
+- A–C use a 32-unit grid; D and E use 48 units. Clear space outside the asset: ¼ symbol width (12 units for D). Do not stretch the geometry or close the interior turns.
 - Symbol sizes: 16, 24, 32, 48 px. Use the standalone symbol below a 192 px lockup width. Review both 1× and 2× displays; header captures now cover both 1× and 2× pixel density. Header lockup is 248 px desktop and 232 px mobile; the prior header was 192 px.
 - Dark: teal symbol with pale wordmark. Light: dark monochrome symbol/wordmark. Single-color print: dark or reversed white. Never use teal body text on a pale background without measured contrast.
 - Do not stretch, rotate, add bevels/glow, put inside decorative badges or recolor individual layers as scientific categories.
@@ -124,7 +126,7 @@ Server components own shell and static framing; a small client boundary may hand
 
 ## Implementation order and review gate
 
-1. Owner reviews A/B/C/D, the requested rocket-bolt S exploration and revised wordmark, palette, type pair and two representative compositions. This is the current stopping point.
+1. Owner reviews A/B/C/D/E, the requested stone-slab and rocket-bolt S explorations and revised wordmark, palette, type pair and two representative compositions. This is the current stopping point.
 2. B: approved identity and icons; namespaced tokens; scope-preserving root shell and navigation; explicit legacy light canvas boundaries. Validate unchanged scientific text, source hashes and controls before homepage work.
 3. B: minimal foundational components and approved homepage. Add a clearly scoped `/design-system` showcase with noindex and deliberate discoverability policy. The A review lives only under `docs/strata-015`, outside Next routes/public assets.
 4. B: full quality suite, application screenshots corresponding to all baseline routes, 320/375/768/1024/1440 reflow, accessibility checks, cold-load font/bundle measurements, draft PR review. No merge without later authorization.
@@ -148,3 +150,7 @@ Automated checks support these tests but do not complete them. WCAG 2.2 AA is th
 ## Owner feedback iteration · sharper identity
 
 The owner commented on the header at a 649 px viewport: improve logo/text sharpness and explore a thunderbolt-shaped rocket S, with a border or another legibility treatment. The revised lockup uses a 32-unit cap height, wider open counters, six licensed outline glyphs and larger displayed dimensions. SVG remains resolution-independent; no `crispEdges` override is used because it would damage the diagonal silhouette. The optional frame surrounds the entire mark/name, not individual glyphs. A–C remain available so the new direction is a comparison, not an unreviewed final selection. All changes remain documentation-only.
+
+## Second owner exploration · two fractured stone slabs
+
+Concept E uses exactly two filled paths on a 48-unit grid. Their separation traces an angular S from the upper right to lower left; clipped external corners suggest stone without rock texture. The optional two-color treatment is warm stone `#D6D0C2` and cool slate `#AFB9B8`. Both single-color variants retain the gap, so color is not required to recognize the letter. `stone-lockup.svg` reuses the clearer licensed Source Sans 3 letter outlines. The primary review header still uses D; adding E is not implicit owner approval or a global identity replacement. These slab shapes are a brand abstraction, not a scientific field section.

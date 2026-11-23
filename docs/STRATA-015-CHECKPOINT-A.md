@@ -6,7 +6,7 @@ Branch: `strata-015/brand-design-system` from production `7690b59f4525516bff95c7
 
 ## Review in this order
 
-1. [Four logo directions](strata-015/proposals/logo-concepts.jpg): **D / Rocket-bolt S** explores the owner’s requested direction, with clearer Source Sans 3 outline lettering and optional framing. A / Offset strata, B / Reference section and C / Layered signal remain available for comparison. No mark is final.
+1. [Five logo directions](strata-015/proposals/logo-concepts.jpg): **E / Fractured strata** explores the latest suggestion: two stone slabs with an S-shaped fracture. **D / Rocket-bolt S** remains available with clearer Source Sans 3 outline lettering and optional framing. A / Offset strata, B / Reference section and C / Layered signal remain available for comparison. No mark is final.
 2. [Homepage proposal, desktop](strata-015/proposals/home-1440.jpg) · [mobile](strata-015/proposals/home-375.jpg).
 3. [Laboratory specimen, desktop](strata-015/proposals/laboratory-1440.jpg) · [mobile](strata-015/proposals/laboratory-375.jpg). This preserves representative existing text; it is not a replacement scientific instrument.
 4. [Design audit](STRATA-015-DESIGN-AUDIT.md) and [full specification](STRATA-015-DESIGN-SPEC.md), including proposed shared architecture, rollout and incomplete human accessibility checklist.
@@ -23,7 +23,7 @@ Open `http://127.0.0.1:3257/strata-015/index.html`. This is a local documentatio
 ## What is supplied
 
 - Five prioritized audit findings, actual route inventory, cascade analysis and safe migration boundaries.
-- Four original symbol concepts, revised outlined wordmark, proposed symbol, primary horizontal lockup and light/dark monochrome variants; 16/24/32/48 px specimens.
+- Five original symbol concepts, revised outlined wordmark, proposed symbol, primary horizontal lockup and light/dark monochrome variants; 16/24/32/48 px specimens.
 - Token, typography, evidence-state, motion and accessibility contracts.
 - Standalone homepage and laboratory HTML/CSS specimens, native navigation/disclosures and a small illustrative four-view switch.
 - 27 baseline images (eight routes plus navigation at 375/768/1440), 15 proposal page images at 320/375/768/1024/1440, five open-menu images, a logo comparison image, and ten revised-header captures at five widths and 1×/2× density.
@@ -74,10 +74,16 @@ Review fonts total **385,772 bytes**, locally served to the review only. This ex
 
 ## Decision requested
 
-Review the requested D rocket-bolt mark and revised lettering, color/type direction, homepage hierarchy and laboratory evidence treatment. Approve or revise this design specification before any broad CSS change or Checkpoint B implementation. This stop is explicitly required by the supplied STRATA-015 brief: **“STOP for owner review before broad CSS changes.”**
+Review the new E stone-slab mark alongside D and the revised lettering, color/type direction, homepage hierarchy and laboratory evidence treatment. Approve or revise this design specification before any broad CSS change or Checkpoint B implementation. This stop is explicitly required by the supplied STRATA-015 brief: **“STOP for owner review before broad CSS changes.”**
 
 The draft PR is a review vehicle only. No merge or production release is authorized by this checkpoint. TOOLING-014-01 remains separate; no retry of its failed adapter workflow was made. Future scientific work remains out of scope.
 
 ## Header revision after owner comment
 
 [649 px / 1× header](strata-015/proposals/identity-649-1x.png) · [320 px / 2× header](strata-015/proposals/identity-320-2x.png) · [density check results](strata-015/proposals/identity-results.json). The primary wordmark now uses licensed Source Sans 3 Semibold outlines rather than the original block glyphs. No additional font request is required by the SVG. The prior block wordmark is archived and an optional bordered version appears on the review board. Application code remains unchanged. The header was checked at 320/375/649/768/1440 px with 1× and 2× density (10 captures); all loaded correctly without page-wide overflow. The 649 px 1× and 320 px 2× captures were visually inspected. The existing 15 prototype responsive/keyboard/reduced-motion checks, 60 token contrast pairs and lint were rerun successfully for this revision.
+
+## Stone-slab alternative
+
+[Concept E presentation](strata-015/proposals/stone-concept.png) shows the two-path symbol, wordmark and 16/24/32/48 px specimens. Single-color light/dark assets are on the review board. This remains a concept; the review header retains the previous D option.
+
+Concept E validation: exactly two slab paths in color and both monochrome assets; stone/background contrast 12.23:1 and 9.36:1, monochrome 16.88:1. The 15 prototype responsive/keyboard/reduced-motion checks and lint passed again after adding E. The concept presentation was visually inspected; owner recognition/final selection is still pending. The screenshot index now contains 59 images.

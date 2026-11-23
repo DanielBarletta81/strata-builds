@@ -1,0 +1,26 @@
+[
+  {
+    "foreground": "#d6d0c2",
+    "background": "#07131a",
+    "ratio": 12.23,
+    "iconMinimum": 3
+  },
+  {
+    "foreground": "#afb9b8",
+    "background": "#07131a",
+    "ratio": 9.36,
+    "iconMinimum": 3
+  },
+  {
+    "foreground": "#eaf5f3",
+    "background": "#07131a",
+    "ratio": 16.88,
+    "iconMinimum": 3
+  },
+  {
+    "foreground": "#07131a",
+    "background": "#eaf5f3",
+    "ratio": 16.88,
+    "iconMinimum": 3
+  }
+]
