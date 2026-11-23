@@ -70,7 +70,7 @@ Pinned unmodified review assets:
 
 - Source Sans release `87b37a2daaed80fcb8e8ccb0085c4d72ddade12e`: Regular 153,800 bytes; Semibold 155,624 bytes.
 - Source Code Pro release `803b7e23ec97ae58b6232ea76519a76d428ba268`: Regular 76,348 bytes.
-- Total **385,772 bytes**; source URLs and SHA-256 in `strata-015/assets/fonts/manifest.json`. Full review fonts are local, not CDN requests. License files are adjacent. No renamed/subset derivatives were created in A. The Source Code Pro license text is preserved with CRLF normalized to LF for repository whitespace checks.
+- Total **385,772 bytes**; source URLs and SHA-256 in `strata-015/assets/fonts/manifest.json`. Full review fonts are local, not CDN requests. License files are adjacent. No renamed/subset derivatives were created in A. License wording is preserved; CRLF line endings and one trailing space are normalized for repository whitespace checks.
 
 This is too large for the proposed initial production font budget of **100 KB compressed total** (budget, not a measured result). In B evaluate upstream Latin subsets or a reproducible subset including Greek, ±, degree, en/em dash, arrows and scientific symbols actually used. Respect reserved font names and preserve OFL licenses. If the budget cannot be met, use system body/mono for the first foundation rollout rather than ship the full review files. Do not remove required glyphs or silently use a different scientific symbol.
 
