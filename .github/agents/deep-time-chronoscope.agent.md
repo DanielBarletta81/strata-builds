@@ -2,6 +2,7 @@
 name: "STRATA Deep Time Chronoscope"
 description: "Geological chronology, primordial oceans and sourced paleogeographic reconstructions"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Deep Time Chronoscope
