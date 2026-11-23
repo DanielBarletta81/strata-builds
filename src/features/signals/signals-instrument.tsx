@@ -108,6 +108,9 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
   const flagged = snapshot.observations.filter(({ flags }) => hasUninterpretedQuality(flags)).length;
   const [selectedObservationAt, setSelectedObservationAt] = useState<string | null>(null);
 
+  const isSelectionStale = selectedObservationAt && !snapshot.observations.some(obs => obs.observedAt === selectedObservationAt);
+  const effectiveSelection = isSelectionStale ? null : selectedObservationAt;
+
   return (
     <>
       <div className={styles.dashboard}>
@@ -134,7 +137,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
                   <div><dt>Accepted</dt><dd>{summary.count}</dd></div>
                 </dl>
               </div>
-              <TemperatureChart snapshot={snapshot} selectedObservationAt={selectedObservationAt} onSelectObservation={setSelectedObservationAt} />
+              <TemperatureChart snapshot={snapshot} selectedObservationAt={effectiveSelection} onSelectObservation={setSelectedObservationAt} />
             </>
           ) : (
             <p className={styles.empty}>No accepted temperatures are available for this response. Inspect coverage and raw-row findings below.</p>
@@ -173,7 +176,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
               </thead>
               <tbody>
                 {snapshot.observations.map((row) => (
-                  <tr key={row.observedAt} data-observation={row.observedAt} aria-selected={selectedObservationAt === row.observedAt} onClick={() => setSelectedObservationAt(row.observedAt)}>
+                  <tr key={row.observedAt} data-observation={row.observedAt} aria-selected={effectiveSelection === row.observedAt}>
                     <th scope="row"><time dateTime={row.observedAt}>{formatFullUtc(row.observedAt).replace(' UTC', '')}</time></th>
                     <td>{formatTemperature(row.value)}</td>
                     <td>{formatRaw(row.rawValue)}</td>

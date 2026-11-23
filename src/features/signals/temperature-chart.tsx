@@ -10,6 +10,24 @@ export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObse
   const { window, observations, coverage, summary } = snapshot;
   if (!summary) return null;
 
+  const handleChartKeyDown = (e: React.KeyboardEvent<SVGSVGElement>) => {
+    if (!observations.length) return;
+    const selectedIndex = observations.findIndex(obs => obs.observedAt === selectedObservationAt);
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextIndex = (selectedIndex + 1) % observations.length;
+      onSelectObservation(observations[nextIndex].observedAt);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prevIndex = selectedIndex <= 0 ? observations.length - 1 : selectedIndex - 1;
+      onSelectObservation(observations[prevIndex].observedAt);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      onSelectObservation(null);
+    }
+  };
+
   const start = Date.parse(window.startUtc);
   const step = WIDTH / window.hours;
   const min = summary.min;
@@ -39,6 +57,9 @@ export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObse
           preserveAspectRatio="none"
           role="img"
           aria-labelledby="signals-chart-title signals-chart-description"
+          tabIndex={0}
+          onKeyDown={handleChartKeyDown}
+          aria-label={selectedObservationAt ? `Chart with selection. Use arrow keys to navigate, Escape to deselect.` : `Chart. Use arrow keys to select observations.`}
         >
           <title id="signals-chart-title">Hourly water temperature in degrees Celsius</title>
           <desc id="signals-chart-description">
@@ -75,15 +96,8 @@ export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObse
               aria-current={selectedObservationAt === point.observedAt ? 'true' : 'false'}
               className={styles.point}
               onClick={() => onSelectObservation(selectedObservationAt === point.observedAt ? null : point.observedAt)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  onSelectObservation(selectedObservationAt === point.observedAt ? null : point.observedAt);
-                }
-              }}
               aria-label={`${formatTemperature(point.value)}°C at ${formatUtc(point.observedAt)}`}
+              style={{ cursor: 'pointer' }}
             />
           ))}
         </svg>

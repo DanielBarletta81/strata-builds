@@ -524,15 +524,10 @@
 
 .table tbody tr {
   border-top: 1px solid var(--line);
-  cursor: pointer;
 }
 
 .table tbody tr[aria-selected="true"] {
   background: #d0e8e5;
-}
-
-.table tbody tr:hover {
-  background: #e8f5f3;
 }
 
 .table tbody th {
