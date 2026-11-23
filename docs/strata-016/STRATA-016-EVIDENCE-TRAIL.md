@@ -204,7 +204,7 @@ interface EvidenceTrail {
 │   No interpolation between points                      │
 │                                                        │
 │ ▼ KNOWN LIMITATIONS & INTERPRETATION REQUIRED          │
-│   Measurement precision: ±0.1°C (sensor accuracy)     │
+│   Measurement precision: Unspecified (requires NOAA)   │
 │   Sampling scope: Coastal surface water (station loc) │
 │   Temporal scope: UTC hour boundaries (60 min bins)   │
 │   Validity conditions:                                │
@@ -247,7 +247,7 @@ interface EvidenceTrail {
 ```
 ┌──────────────────────────────┐
 │ Evidence Trail ▼             │
-│ NOAA CO-OPS · 2 min ago      │
+│ NOAA CO-OPS · Retrieved      │
 │ [Tap to expand]              │
 └──────────────────────────────┘
 ```
@@ -262,7 +262,7 @@ interface EvidenceTrail {
 │ ▼ SOURCE                     │
 │   NOAA CO-OPS                │
 │   Station 8454000            │
-│   Retrieved: 15:02:35 UTC    │
+│   Retrieved: [UTC timestamp] │
 │   Public Domain              │
 │                              │
 │   [View original]            │
@@ -270,9 +270,9 @@ interface EvidenceTrail {
 │ ▼ RETRIEVAL                  │
 │   REST API                   │
 │   200 OK                      │
-│   24 rows                     │
+│   [row count] rows           │
 │   Cache: Hit                  │
-│   Fresh at: 15:28 UTC        │
+│   Fresh at: [next check UTC] │
 │                              │
 │ ▼ VALIDATION                 │
 │   Input: 24                  │
