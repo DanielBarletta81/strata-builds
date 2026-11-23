@@ -294,6 +294,18 @@
   fill: var(--signal);
   stroke: var(--signal);
   stroke-width: 2;
+  cursor: pointer;
+}
+
+.point[aria-current="true"] {
+  r: 4;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 3px var(--accent));
+}
+
+.point:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
 }
 
 .hatch {
@@ -512,6 +524,15 @@
 
 .table tbody tr {
   border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.table tbody tr[aria-selected="true"] {
+  background: #d0e8e5;
+}
+
+.table tbody tr:hover {
+  background: #e8f5f3;
 }
 
 .table tbody th {

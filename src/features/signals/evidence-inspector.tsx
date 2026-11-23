@@ -20,7 +20,7 @@ function GapExplanation({ gap }: { gap: SourceGap }) {
   );
 }
 
-export function EvidenceInspector({ snapshot }: { snapshot: SignalsSnapshot }) {
+export function EvidenceInspector({ snapshot, selectedObservationAt }: { snapshot: SignalsSnapshot; selectedObservationAt: string | null }) {
   const missing = snapshot.gaps.filter((gap) => gap.type === 'observation_gap');
   const unknown = snapshot.gaps.find((gap) => gap.type === 'source_coverage_unknown');
   const exclusions = snapshot.gaps.filter((gap) => gap.type === 'excluded_observation');

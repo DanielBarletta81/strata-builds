@@ -106,6 +106,7 @@ export function SignalsInstrument() {
 function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: boolean }) {
   const { summary, window, coverage, receivedRows, exclusions } = snapshot;
   const flagged = snapshot.observations.filter(({ flags }) => hasUninterpretedQuality(flags)).length;
+  const [selectedObservationAt, setSelectedObservationAt] = useState<string | null>(null);
 
   return (
     <>
@@ -133,7 +134,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
                   <div><dt>Accepted</dt><dd>{summary.count}</dd></div>
                 </dl>
               </div>
-              <TemperatureChart snapshot={snapshot} />
+              <TemperatureChart snapshot={snapshot} selectedObservationAt={selectedObservationAt} onSelectObservation={setSelectedObservationAt} />
             </>
           ) : (
             <p className={styles.empty}>No accepted temperatures are available for this response. Inspect coverage and raw-row findings below.</p>
@@ -160,7 +161,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
           </p>
         </section>
       </div>
-      <EvidenceInspector snapshot={snapshot} />
+      <EvidenceInspector snapshot={snapshot} selectedObservationAt={selectedObservationAt} />
       <section className={styles.panel} id="signals-observations" aria-labelledby="signals-records-heading">
         <h2 id="signals-records-heading">Observation table</h2>
         {snapshot.observations.length ? (
@@ -172,7 +173,7 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
               </thead>
               <tbody>
                 {snapshot.observations.map((row) => (
-                  <tr key={row.observedAt} data-observation={row.observedAt}>
+                  <tr key={row.observedAt} data-observation={row.observedAt} aria-selected={selectedObservationAt === row.observedAt} onClick={() => setSelectedObservationAt(row.observedAt)}>
                     <th scope="row"><time dateTime={row.observedAt}>{formatFullUtc(row.observedAt).replace(' UTC', '')}</time></th>
                     <td>{formatTemperature(row.value)}</td>
                     <td>{formatRaw(row.rawValue)}</td>

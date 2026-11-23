@@ -6,7 +6,7 @@ const WIDTH = 720;
 const HEIGHT = 224;
 const PAD = 10;
 
-export function TemperatureChart({ snapshot }: { snapshot: SignalsSnapshot }) {
+export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObservation }: { snapshot: SignalsSnapshot; selectedObservationAt: string | null; onSelectObservation: (at: string | null) => void }) {
   const { window, observations, coverage, summary } = snapshot;
   if (!summary) return null;
 
@@ -72,7 +72,18 @@ export function TemperatureChart({ snapshot }: { snapshot: SignalsSnapshot }) {
               cx={x(point.observedAt)}
               cy={y(point.value)}
               r="2"
+              aria-current={selectedObservationAt === point.observedAt ? 'true' : 'false'}
               className={styles.point}
+              onClick={() => onSelectObservation(selectedObservationAt === point.observedAt ? null : point.observedAt)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onSelectObservation(selectedObservationAt === point.observedAt ? null : point.observedAt);
+                }
+              }}
+              aria-label={`${formatTemperature(point.value)}°C at ${formatUtc(point.observedAt)}`}
             />
           ))}
         </svg>
