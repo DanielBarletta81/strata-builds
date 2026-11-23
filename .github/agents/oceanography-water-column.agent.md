@@ -2,6 +2,7 @@
 name: "STRATA Oceanography Water Column"
 description: "Narragansett estuarine gradients, nutrient/station/depth interfaces"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Oceanography Water Column
