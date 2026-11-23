@@ -3,15 +3,18 @@
 import { useReducer } from 'react';
 import TethysMap from '../map';
 import { formatCoordinates } from '../model';
+import { TransectExplorer } from '../transect/explorer';
+import { initialLaboratory, inspectLaboratory } from '../transect/model';
 import { oaeEstimates, seawayEvidence, seawayQuestions, seawaySources } from './evidence';
 import frameAudit from './frame-audit.json';
-import { assessAge, initialInspection, inspect, type Evidence, type Layer } from './model';
+import { assessAge, type Evidence, type Layer } from './model';
 import styles from './seaway.module.css';
 
 const layers: { id: Layer; label: string }[] = [
   { id: 'plate', label: 'Plate Reconstruction' },
   { id: 'marine', label: 'Regional Marine Evidence' },
   { id: 'questions', label: 'Open Questions' },
+  { id: 'transect', label: 'Platform-to-Basin Transect' },
 ];
 
 function EvidenceSources({ record }: { record: Evidence }) {
@@ -138,7 +141,7 @@ function OpenQuestions({ record }: { record: Evidence }) {
 }
 
 export default function SeawayLaboratory({ ageMa }: { ageMa: number }) {
-  const [inspection, dispatch] = useReducer(inspect, initialInspection);
+  const [{ inspection, record }, dispatch] = useReducer(inspectLaboratory, initialLaboratory);
   const { layer, checkpoint, evidence } = inspection;
   const select = (record: Evidence) => dispatch({ type: 'evidence', evidence: record });
 
@@ -155,6 +158,8 @@ export default function SeawayLaboratory({ ageMa }: { ageMa: number }) {
       </div>
       {layer === 'plate' ? (
         <TethysMap id={checkpoint} select={(id) => dispatch({ type: 'checkpoint', id })} />
+      ) : layer === 'transect' ? (
+        <TransectExplorer record={record} onSelect={(selection) => dispatch({ type: 'transect-record', record: selection })} />
       ) : (
         <>
           <p className={styles.coverage}>Regional evidence is displayed by published locality. No 111 Ma shoreline, basin-depth layer or restored locality markers have been validated.</p>

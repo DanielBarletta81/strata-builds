@@ -1,0 +1,264 @@
+.transect {
+  --surface: #0b2129;
+  --line: #446b70;
+  --aqua: #a8e7d9;
+  --amber: #ffd39b;
+  min-width: 0;
+  padding: clamp(0.6rem, 2.4vw, 1.15rem);
+  border: 1px solid var(--line);
+  border-radius: 0.48rem;
+  background: radial-gradient(ellipse at 15% 0, #214849 0, transparent 55%), #0a222a;
+}
+
+.intro h4 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.026em;
+}
+
+.intro p {
+  max-width: 77ch;
+  margin: 0.45rem 0 0.9rem;
+  color: var(--muted);
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.32rem, 1.4vw, 0.7rem);
+}
+
+.settings button,
+.records button {
+  min-height: 44px;
+  text-align: left;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.settings button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+  padding: 0.4rem;
+  line-height: 1.3;
+  background: #102c34;
+}
+
+.settings button > :last-child {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.swatch {
+  display: block;
+  width: 100%;
+  height: clamp(3.1rem, 8.2vw, 6.6rem);
+  margin-bottom: 0.3rem;
+  border: 1px solid #ffffff3d;
+  border-radius: 0.22rem;
+}
+
+[data-setting='interior'] .swatch {
+  background:
+    radial-gradient(ellipse at 19% 58%, #f7dfab 0 3%, transparent 4%),
+    radial-gradient(ellipse at 72% 32%, #f5ddaa 0 3%, transparent 4%),
+    radial-gradient(ellipse at 31% 21%, #412a20 0 4%, transparent 5%),
+    repeating-linear-gradient(173deg, #d7b77e 0 3px, #a37753 4px 8px, #ebca8c 9px 12px, #81614a 13px 16px);
+  background-size: 56px 33px, 71px 27px, 44px 28px, auto;
+}
+
+[data-setting='margin'] .swatch {
+  background:
+    conic-gradient(from 10deg at 52% 42%, #603a2b 0 18%, #d39b72 20% 45%, transparent 47% 69%, #96664e 70% 99%),
+    conic-gradient(from 53deg at 38% 68%, #2d3032 0 26%, #bc8269 28% 65%, #684f45 67% 100%);
+  background-size: 52px 35px, 43px 29px;
+}
+
+[data-setting='basin'] .swatch {
+  background:
+    repeating-linear-gradient(1deg, #143e48 0 3px, #689b98 4px 5px, #253741 6px 10px, #4c736a 11px 15px),
+    radial-gradient(ellipse at 62% 55%, #d4d0a9 0 4%, transparent 5%);
+  background-blend-mode: screen;
+  background-size: auto, 34px 23px;
+}
+
+.transect :is(.settings, .records) button[aria-pressed='true'] {
+  border-color: var(--aqua);
+  background: #244747;
+  color: #f4f5ec;
+  box-shadow: inset 0 -2px var(--aqua);
+}
+
+.connections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.65rem;
+  align-items: baseline;
+  margin: 0.8rem 0;
+  padding: 0.55rem 0.65rem;
+  border-left: 2px dashed var(--amber);
+  background: #0b2229;
+  color: var(--muted);
+}
+
+.connections strong,
+.age strong {
+  color: var(--ink);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(13.5rem, 0.9fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 0.75rem;
+}
+
+.options,
+.inspector {
+  min-width: 0;
+  padding: clamp(0.62rem, 2vw, 0.95rem);
+  border: 1px solid var(--line);
+  border-radius: 0.42rem;
+  background: var(--surface);
+}
+
+.options h5,
+.inspector h5 {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.options p {
+  margin: 0.4rem 0 0.65rem;
+  color: var(--muted);
+}
+
+.records {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.locality {
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.inspector h5 {
+  font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+}
+
+.reasoning {
+  display: grid;
+  gap: 0.45rem;
+  margin-block: 0.7rem;
+}
+
+.reasoning > div {
+  padding: 0.48rem 0.65rem;
+  border-left: 2px solid var(--aqua);
+  background: #102d34;
+}
+
+.reasoning [data-kind='interpreted'] { border-color: var(--amber); }
+.reasoning [data-kind='unresolved'] { border-inline-start: 2px dashed #b6c5c3; }
+
+.reasoning dt,
+.details dt {
+  font-weight: 750;
+}
+
+.reasoning dd,
+.details dd {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.age {
+  display: grid;
+  gap: 0.45rem;
+  padding-block: 0.55rem;
+  border-block: 1px solid var(--line);
+}
+
+.age p {
+  margin: 0;
+}
+
+.age :is(strong, span),
+.cite span,
+.details li span {
+  display: block;
+}
+
+.age [data-coverage='verified'] { color: var(--aqua); }
+.age [data-coverage='outside'] { color: var(--amber); }
+
+.age span,
+.cite span,
+.details li span {
+  color: var(--muted);
+}
+
+.cite {
+  margin: 0.7rem 0;
+}
+
+.cite,
+.details {
+  overflow-wrap: anywhere;
+}
+
+.details dl {
+  margin-block: 0.55rem;
+}
+
+.details dt:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.details ul {
+  margin: 0.65rem 0 0.25rem;
+  padding-left: 1.15rem;
+}
+
+.details li + li {
+  margin-top: 0.45rem;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 740px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .transect .settings button {
+    padding: 0.3rem;
+    font-size: 0.87rem;
+    overflow-wrap: anywhere;
+  }
+
+  .settings button > :last-child {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings button,
+  .records button {
+    transition: none;
+  }
+}
