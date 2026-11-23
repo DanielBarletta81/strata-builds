@@ -1,0 +1,251 @@
+.eyebrow {
+  font: 12px/1.6 var(--strata-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--strata-text-secondary);
+}
+.pageHeader h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  margin: 24px 0;
+}
+.pageHeader > p:not(.eyebrow) {
+  max-width: 65ch;
+  color: var(--strata-text-secondary);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.65;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid var(--strata-action);
+  border-radius: var(--strata-control-radius);
+  font: 600 16px/1.4 var(--strata-font);
+  background: var(--strata-action);
+  color: var(--strata-bg);
+  cursor: pointer;
+  text-decoration: none;
+}
+.button:hover {
+  background: var(--strata-action-hover);
+}
+.button:active {
+  background: var(--strata-action-pressed);
+}
+.secondary {
+  background: transparent;
+  border-color: var(--strata-control-border);
+  color: var(--strata-text);
+}
+.secondary:hover {
+  background: var(--strata-surface-raised);
+}
+.button:disabled {
+  cursor: not-allowed;
+  background: var(--strata-surface);
+  color: var(--strata-text-subdued);
+  border-color: var(--strata-control-border);
+}
+.button:focus-visible,
+.projectCard:focus-visible,
+.disclosure summary:focus-visible,
+.disclosure a:focus-visible,
+.segmented button:focus-visible {
+  outline: 3px solid var(--strata-focus);
+  outline-offset: 5px;
+}
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid var(--strata-border);
+  border-radius: var(--strata-radius);
+  background: var(--strata-surface);
+  color: var(--strata-text);
+  text-decoration: none;
+}
+.projectCard:hover {
+  border-color: var(--strata-control-border);
+  background: var(--strata-surface-secondary);
+}
+.projectCard h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.projectCard p {
+  color: var(--strata-text-secondary);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.cardAction {
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--strata-action);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+.panel {
+  padding: 24px;
+  border: 1px solid var(--strata-border);
+  background: var(--strata-surface);
+  border-radius: var(--strata-radius);
+}
+.panel h3 {
+  font-size: 1.25rem;
+  margin: 0 0 16px;
+}
+.readout p {
+  margin: 0 0 8px;
+}
+.readout .value {
+  font: 500 clamp(1.7rem, 4vw, 3rem) / 1.3 var(--strata-mono);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.value span {
+  font-size: 1rem;
+}
+.support {
+  color: var(--strata-text-secondary);
+  font-size: 0.9375rem;
+}
+.evidence {
+  padding: 20px 24px;
+  border-left: 4px solid;
+  background: var(--strata-surface);
+}
+.evidence h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+.evidence p {
+  margin: 0;
+  color: var(--strata-text-secondary);
+}
+.observed {
+  border-color: var(--strata-evidence-observed);
+}
+.observed h3 {
+  color: var(--strata-evidence-observed);
+}
+.interpretation {
+  border-color: var(--strata-evidence-interpretation);
+  border-left-style: double;
+  border-left-width: 6px;
+}
+.interpretation h3 {
+  color: var(--strata-evidence-interpretation);
+}
+.modeled {
+  border-color: var(--strata-evidence-modeled);
+}
+.modeled h3 {
+  color: var(--strata-evidence-modeled);
+}
+.synthetic {
+  border-color: var(--strata-evidence-synthetic);
+  border-left-style: dotted;
+}
+.synthetic h3 {
+  color: var(--strata-evidence-synthetic);
+}
+.unresolved {
+  border-color: var(--strata-evidence-unresolved);
+  border-left-style: dashed;
+}
+.unresolved h3 {
+  color: var(--strata-evidence-unresolved);
+}
+.disclosure {
+  padding: 20px;
+  border: 1px solid var(--strata-control-border);
+  border-radius: var(--strata-radius);
+}
+.disclosure summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 0;
+  font-weight: 600;
+}
+.disclosure > div {
+  padding-top: 16px;
+  color: var(--strata-text-secondary);
+}
+.disclosure a {
+  color: var(--strata-action);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+.notice {
+  padding: 20px;
+  border: 1px solid;
+  border-radius: var(--strata-radius);
+}
+.notice strong {
+  display: block;
+  margin-bottom: 8px;
+}
+.notice div {
+  color: var(--strata-text-secondary);
+}
+.info {
+  border-color: var(--strata-info);
+  color: var(--strata-info);
+}
+.success {
+  border-color: var(--strata-success);
+  color: var(--strata-success);
+}
+.warning {
+  border-color: var(--strata-warning);
+  color: var(--strata-warning);
+}
+.error {
+  border-color: var(--strata-error);
+  color: var(--strata-error);
+}
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.segmented button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--strata-control-border);
+  border-radius: var(--strata-control-radius);
+  font: 600 15px var(--strata-font);
+  background: var(--strata-surface);
+  color: var(--strata-text);
+  cursor: pointer;
+}
+.segmented button[aria-pressed="true"] {
+  background: var(--strata-selected);
+  box-shadow: inset 0 -3px var(--strata-action);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .button,
+  .projectCard,
+  .segmented button {
+    transition:
+      background var(--strata-motion-fast),
+      border-color var(--strata-motion-fast);
+  }
+}
+.secondary:active {
+  background: var(--strata-selected);
+}

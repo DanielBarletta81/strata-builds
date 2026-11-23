@@ -117,3 +117,8 @@ Validation and capture metadata are in `strata-015/proposals/final-identity-resu
 Browser scripts accept `STRATA_PLAYWRIGHT_MODULE`, `STRATA_CHROMIUM_EXECUTABLE`, and optional `STRATA_REVIEW_ORIGIN`; the local checks used installed Playwright Core and Chromium. Results JSON records exact browser version and capture time. The 649 px open-menu overflow was fixed only in the review stylesheet and the affected checks rerun. Full app unit/build/smoke results above are from the earlier A run, not a new full-suite run for this documentation refinement.
 
 Stop for owner approval of the final identity and Checkpoint B manifest. PR stays draft. No merge.
+
+
+## Owner approval and separate Checkpoint B implementation
+
+Fleet Command subsequently approved refined Concept E, the unframed lockup, the token/type/evidence direction and the exact B scope including system-font fallback. Concept D is retired from production consideration. The original review evidence above remains historical. Checkpoint B is implemented on the separate stacked branch `strata-015/checkpoint-b`; see [implementation results](STRATA-015-CHECKPOINT-B-RESULTS.md). This does not authorize a merge.

@@ -1,0 +1,161 @@
+{
+  "capturedAt": "2026-11-23T03:44:21.852Z",
+  "browser": "158.0.8127.37",
+  "results": [
+    {
+      "width": 320,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    },
+    {
+      "width": 375,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    },
+    {
+      "width": 649,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    },
+    {
+      "width": 768,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    },
+    {
+      "width": 1024,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    },
+    {
+      "width": 1440,
+      "entryBehavior": "Baseline opens liquid-water; use existing Select 111 Ma control",
+      "selectedAgeMa": 111,
+      "views": 4,
+      "selectableRecords": [
+        "subtidal-limestone",
+        "tidal-microbial-laminae",
+        "exposure-breccia",
+        "posta-megabreccia",
+        "mattinata-slope",
+        "aptian-drowning",
+        "pelagic-marl",
+        "rischi-biozone",
+        "leenhardt-shale"
+      ],
+      "fossilLabel": true,
+      "bothUncertaintyValues": true,
+      "sourceDisclosure": true,
+      "leenhardt": true,
+      "unsupportedAge": true,
+      "keyboard": true
+    }
+  ],
+  "nativeIcons": {
+    "sizes": [
+      16,
+      24,
+      32,
+      48
+    ],
+    "densities": [
+      1,
+      2
+    ],
+    "backgrounds": [
+      "dark",
+      "light"
+    ]
+  },
+  "clientNavigation": "Home → Pawtuxet via menu passed"
+}

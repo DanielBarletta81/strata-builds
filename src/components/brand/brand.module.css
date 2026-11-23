@@ -1,0 +1,33 @@
+.brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 16px;
+  min-height: 48px;
+  color: var(--strata-text);
+  text-decoration: none;
+}
+.brand img {
+  display: block;
+  width: 248px;
+  height: auto;
+}
+.brand span {
+  border-left: 1px solid var(--strata-border);
+  padding-left: 16px;
+  font: 11px var(--strata-mono);
+  letter-spacing: 0.14em;
+  color: var(--strata-text-secondary);
+}
+.brand:focus-visible {
+  outline: 3px solid var(--strata-focus);
+  outline-offset: 5px;
+}
+@media (max-width: 650px) {
+  .brand img {
+    width: 232px;
+  }
+  .brand span {
+    display: none;
+  }
+}
