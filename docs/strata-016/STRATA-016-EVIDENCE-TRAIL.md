@@ -162,7 +162,8 @@ interface EvidenceTrail {
 │   Rows received: 24                                    │
 │   Cache status: Hit (reused from 15:02 UTC slot)      │
 │   Next fresh data available: [next check UTC]       │
-│   Cache policy: Equivalent requests reuse for 15 min  │
+│   Cache policy: Requests reuse within 5-min slot;    │
+│                 data considered fresh for 15 min     │
 │                                                        │
 │ ▼ STRUCTURAL VALIDATION & FILTERING                    │
 │   Input rows: 24                                       │
