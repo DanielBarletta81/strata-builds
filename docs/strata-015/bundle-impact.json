@@ -1,0 +1,7 @@
+{
+  "baselineStaticBytes": 1382086,
+  "checkpointAStaticBytes": 1382086,
+  "byteDelta": 0,
+  "samePathsAndBytes": false,
+  "note": "Two local production builds. Build identifiers may differ. Documentation assets are not Next public assets or application imports."
+}

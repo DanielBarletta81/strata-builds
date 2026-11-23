@@ -1,0 +1,76 @@
+{
+  "browser": "158.0.8127.37",
+  "capturedAt": "2026-11-23T01:59:56.972Z",
+  "result": [
+    {
+      "width": 320,
+      "dpr": 1,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "dpr": 2,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "dpr": 1,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "dpr": 2,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 649,
+      "dpr": 1,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 649,
+      "dpr": 2,
+      "logoWidth": 232,
+      "logoHeight": 44.1875,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "dpr": 1,
+      "logoWidth": 248,
+      "logoHeight": 47.234375,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "dpr": 2,
+      "logoWidth": 248,
+      "logoHeight": 47.234375,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "dpr": 1,
+      "logoWidth": 248,
+      "logoHeight": 47.234375,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "dpr": 2,
+      "logoWidth": 248,
+      "logoHeight": 47.234375,
+      "overflow": false
+    }
+  ]
+}

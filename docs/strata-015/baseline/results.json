@@ -1,0 +1,200 @@
+{
+  "baseline": "7690b59f4525516bff95c7bb633b41272739f76a",
+  "servedTree": "5658614075ef1fbaf625a01f4f9b07230d285549",
+  "capturedAt": "2026-11-23T01:41:03.866Z",
+  "browser": "158.0.8127.37",
+  "results": [
+    {
+      "route": "/",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/deep-time",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/signals",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/oceanography",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/atlas",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/orbital",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/frontier",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/studio",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/deep-time",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/signals",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/oceanography",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/atlas",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/orbital",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/frontier",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/studio",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/deep-time",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/signals",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/oceanography",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/atlas",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/orbital",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/frontier",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    },
+    {
+      "route": "/studio",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "errors": [],
+      "nav": "Strata Builds\nStudio\nAtlas\nSignals\nOrbital\nFrontier"
+    }
+  ]
+}

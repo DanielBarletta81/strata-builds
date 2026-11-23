@@ -1,0 +1,92 @@
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.identity-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.identity-card h3 {
+  padding: 20px 24px 0;
+}
+.sample {
+  background: #07131a;
+  color: #eaf5f3;
+  padding: 28px 16px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.sample.light {
+  background: #eaf5f3;
+  color: #07131a;
+  color-scheme: light;
+}
+.lockup {
+  width: 252px;
+  max-width: 100%;
+  height: auto;
+}
+.framed-lockup {
+  width: 276px;
+  max-width: 100%;
+  height: auto;
+}
+.sample-label {
+  font-size: 14px;
+  margin: 0;
+}
+.native-sizes {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 24px;
+}
+.native-sizes figure {
+  margin: 0;
+  text-align: center;
+}
+.native-sizes img {
+  display: block;
+  max-width: none;
+}
+.native-sizes figcaption {
+  font: 14px var(--mono);
+  margin-top: 12px;
+}
+.counter-detail {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.counter-detail p {
+  max-width: 48ch;
+}
+.nav-pair {
+  margin-bottom: 32px;
+}
+.nav-pair img,
+.capture {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+@media (max-width: 700px) {
+  .identity-grid {
+    grid-template-columns: 1fr;
+  }
+  .sample {
+    padding: 24px 8px;
+  }
+  .native-sizes {
+    gap: 20px;
+  }
+}

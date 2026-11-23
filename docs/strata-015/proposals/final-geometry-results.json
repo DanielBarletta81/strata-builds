@@ -1,0 +1,56 @@
+{
+  "slabAreas": [
+    502.0,
+    502.0
+  ],
+  "rotationDegrees": 180,
+  "minimumGapUnits": 4.242640687119286,
+  "minimumGapAt16px": 1.4142135623730951,
+  "horizontalGapAt16px": 2,
+  "singleColorPathsVerified": true,
+  "contrast": [
+    {
+      "foreground": "#d6d0c2",
+      "background": "#07131a",
+      "ratio": 12.23,
+      "minimum": 3,
+      "passed": true
+    },
+    {
+      "foreground": "#afb9b8",
+      "background": "#07131a",
+      "ratio": 9.36,
+      "minimum": 3,
+      "passed": true
+    },
+    {
+      "foreground": "#eaf5f3",
+      "background": "#07131a",
+      "ratio": 16.88,
+      "minimum": 3,
+      "passed": true
+    },
+    {
+      "foreground": "#07131a",
+      "background": "#eaf5f3",
+      "ratio": 16.88,
+      "minimum": 3,
+      "passed": true
+    },
+    {
+      "foreground": "#55d6c2",
+      "background": "#07131a",
+      "ratio": 10.55,
+      "minimum": 3,
+      "passed": true
+    },
+    {
+      "foreground": "#809da7",
+      "background": "#07131a",
+      "ratio": 6.53,
+      "minimum": 3,
+      "passed": true
+    }
+  ],
+  "limitation": "Geometric/raster support, not a human recognition test."
+}
