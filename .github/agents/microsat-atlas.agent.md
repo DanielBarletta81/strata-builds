@@ -2,6 +2,7 @@
 name: "STRATA Microsat Atlas"
 description: "Population-genetics coastal map and sampling visualization"
 target: github-copilot
+tools: ['read', 'search', 'edit', 'execute']
 ---
 
 # STRATA Microsat Atlas
