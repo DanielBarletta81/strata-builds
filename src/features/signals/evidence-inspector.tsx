@@ -39,13 +39,13 @@ export function EvidenceInspector({ snapshot, selectedObservationAt }: { snapsho
         </div>
       )}
       {missing.length > 0 && (
-        <details className={styles.disclosure}>
+        <details className={styles.disclosure} open={selectedObservationAt ? missing.some((gap) => gap.interval?.startUtc === selectedObservationAt) : undefined}>
           <summary>Expected hours without an accepted value <strong>{missing.length}</strong></summary>
           <p className={styles.muted}>Choose an hour to inspect the evidence and what might resolve it.</p>
           <ul className={styles.gapList}>
             {missing.map((gap) => gap.interval && (
               <li key={gap.id}>
-                <details className={styles.hour}>
+                <details className={styles.hour} open={selectedObservationAt === gap.interval?.startUtc}>
                   <summary>
                     <time dateTime={gap.interval.startUtc}>{formatUtc(gap.interval.startUtc)}</time>
                     <span>{gap.sources[0].rowIndexes?.length ? 'Raw rows excluded' : 'No matching row'}</span>
