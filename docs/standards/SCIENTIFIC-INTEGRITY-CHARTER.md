@@ -44,7 +44,7 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 
 **Principle:** If data changes shape, type, unit, or structure, the transformation must be:
 - Documented (what rule was applied, why, when)
-- Reversible or traceable (can original be recovered)
+- Traceable (source and all decision points recorded)
 - Non-lossy of scientific meaning (no silent truncation or coercion)
 - Verifiable against published methods
 
@@ -54,16 +54,17 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 - No undocumented filtering or exclusion
 - Timestamps and coordinates remain exact
 - Rounding/precision explicitly stated, never inferred
+- Reversibility required only where scientifically meaningful; traceability always required
 
 **Acceptance Criteria:**
-- [ ] Every transformation has a name, version, and published specification
+- [ ] Every transformation has a name and published specification
 - [ ] Input/output schemas documented (types, ranges, precision)
 - [ ] Assumptions stated explicitly (not implied from context)
-- [ ] Reversibility verified in tests
-- [ ] No data loss or coercion without audit trail
-- [ ] Scientific meaning preserved (e.g., ±0.1°C precision remains visible)
+- [ ] All decision points (exclusions, deduplication, sorting) documented
+- [ ] No data loss or coercion without audit trail and recorded reason
+- [ ] Scientific meaning preserved; uncertainty not hidden in aggregation
 
-**Implementation:** signals-adapter.ts documents all NOAA→STRATA transformations; parser version pinned; test fixtures deterministic
+**Implementation:** noaa.ts documents all NOAA→STRATA transformations; decision rules (line 128: off_hour check, line 130: deduplication) documented; test fixtures deterministic
 
 ---
 
@@ -95,24 +96,25 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 **Principle:** Uncertainty, precision limits, missing data, and known gaps are part of the evidence. They must remain visible and inspectable at all times.
 
 **What this means:**
-- Sensor accuracy (e.g., ±0.1°C) always shown
+- Sensor accuracy (when available) always shown; unavailable specs must be documented as missing
 - Confidence intervals not hidden by default aggregation
 - Excluded or missing records never silently removed
-- Quality flags preserved and interpretable
-- Sampling limitations (e.g., "hourly only, no finer time scale")
+- Quality flags preserved and documented (whether interpreted or deferred)
+- Sampling limitations (e.g., "hourly only, no finer time scale") documented
 - Known outages, data gaps, and collection gaps documented
-- Assumptions about validity scope (e.g., "coastal surface water only")
+- Assumptions about validity scope (e.g., "coastal surface water only") stated explicitly
 
 **Acceptance Criteria:**
-- [ ] Uncertainty/precision stated in every readout (units + range)
+- [ ] Precision/rounding stated in every readout (units + exact rules)
 - [ ] Missing data shown as gaps, not coerced to zero or mean
 - [ ] Quality flags and exclusions always accessible (not hidden)
 - [ ] Sampling limitations documented (not inferred)
-- [ ] Instrument accuracy and drift stated
+- [ ] Instrument accuracy—when unavailable—explicitly marked as unavailable with reference source
 - [ ] Validity scope documented (geographic, temporal, physical)
 - [ ] No statistical aggregation without showing sample size and confidence
+- [ ] Unavailable metadata explicitly listed (not fabricated)
 
-**Implementation:** Evidence gaps section always present; exclusion reasons with counts; uncertainty in source disclosure; sampling notes in methods
+**Implementation:** Evidence gaps section always present; exclusion reasons with counts; uncertainty in source disclosure; sampling notes in methods; missing metadata documented in Scientific Integrity Record
 
 ---
 
@@ -120,30 +122,30 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 
 **Principle:** Any scientific analysis on STRATA data must be reproducible. This means:
 - Deterministic fixtures and test data
-- Versioned algorithms and transformations
+- Versioned algorithms and transformations (when semantic versioning is applicable)
 - Auditable decision logic
 - No random or non-deterministic operations
-- Full data export available
+- Full data export available with provenance
 
 **What this means:**
 - Test data never changes unexpectedly
-- Algorithms versioned and pinned (parser@1.2.0, model@2.0, etc.)
-- Decision rules (e.g., "first wins on duplicate timestamp") documented
+- Transformation logic versioned (source control, tagged releases) or documented with no-version-needed justification
+- Decision rules documented in code or specification
 - No floating-point rounding surprises
-- Seed values for any randomization fixed
+- Seed values for any randomization fixed and documented
 - Full provenance downloadable as machine-readable JSON
 - Enough detail to re-run transformation on original source
 
 **Acceptance Criteria:**
 - [ ] All test fixtures deterministic (same inputs → same outputs always)
-- [ ] Parser/adapter version pinned in package.json
-- [ ] Decision rules (duplicates, exclusions, etc.) in code comments or spec
+- [ ] Transformation logic documented or versioned
+- [ ] Decision rules (duplicates, exclusions, sorting) in code comments or specification
 - [ ] No randomized behavior in scientific calculations
-- [ ] Numerical precision documented (1 decimal, milliseconds, etc.)
-- [ ] Full provenance exportable (Evidence Trail → JSON download)
+- [ ] Numerical precision documented explicitly (e.g., "rounded to 2 decimals")
+- [ ] Full provenance exportable in structured format
 - [ ] Transformation can be re-run on original source independently
 
-**Implementation:** signals-adapter.ts with pinned version; test fixtures in __fixtures__; deterministic NOAA response mocks; JSON export with metadata
+**Implementation:** noaa.ts contains decision logic with inline comments; test fixtures deterministic; Evidence Trail export includes all transformation rules
 
 ---
 
@@ -184,24 +186,25 @@ STRATA Builds exists to make evidence inspectable, uncertainty visible, and the 
 
 **What this means:**
 - Reference data checked against published source
-- Methods validated against peer-reviewed literature
+- Methods validated against peer-reviewed literature or documented specifications
 - Calculations spot-checked against worked examples
-- Coordinate systems and units verified
-- Uncertainty estimates compared to literature
-- Known limitations documented
-- Scientific advisory review before merge
+- Coordinate systems and units verified correct
+- Uncertainty estimates justified against literature or first-principles analysis
+- Known limitations documented (never inferred or imagined)
+- Missing scientific metadata explicitly documented (never fabricated)
+- Scientific advisor review before merge
 
 **Acceptance Criteria:**
 - [ ] Source data spot-checked against published reference
 - [ ] Methods cited (paper DOI, standard name, version)
 - [ ] Calculations verified with worked examples
-- [ ] Coordinate frames and units tested
-- [ ] Uncertainty estimates justified (literature or first-principles)
-- [ ] Known limitations documented in methods
+- [ ] Coordinate frames and units tested and documented
+- [ ] Uncertainty estimates justified with source citations
+- [ ] Known limitations documented in methods section
+- [ ] Unavailable metadata listed with reference source (not fabricated)
 - [ ] Scientific reviewer approval before production merge
-- [ ] No "looks reasonable" substituted for verification
 
-**Implementation:** Test fixtures include reference examples; methods section cites sources; spot-check scripts in test suite; scientific sign-off gate before merge
+**Implementation:** Test fixtures include reference examples; methods section cites sources; spot-check scripts in test suite; scientific sign-off gate before merge; Scientific Integrity Record documents missing metadata with status (⚠️ MISSING, ⏳ DEFERRED, etc.)
 
 ---
 
@@ -323,15 +326,15 @@ SOURCE (API, file, model)
   ↓ PRESENTATION (chart, table, map)
 ```
 
-**Example (NOAA Signals):**
+**Example (NOAA Signals — illustrative structure):**
 ```mermaid
 graph TD
-    A["NOAA CO-OPS API<br/>GET /datagetter?range=24"] -->|HTTP 200| B["CSV Response<br/>24 rows, 5 columns"]
+    A["NOAA CO-OPS API<br/>GET /datagetter"] -->|HTTP 200| B["JSON Response<br/>variable row count<br/>Each row: {t,v,f,q,...}"]
     B -->|Parse| C["Observation objects<br/>rowIndex, timestamp, value, flags"]
-    C -->|Structural checks| D["Validation<br/>23 passed, 8 excluded"]
+    C -->|Structural checks| D["Validation<br/>Pass/fail by rule"]
     D -->|Extract valid| E["ValidObservation[]<br/>with observedAt, value, flags"]
     E -->|Normalize| F["ObservationRecord<br/>UTC native, °C native"]
-    F -->|Bin hourly| G["Coverage analysis<br/>23/24 hours accepted"]
+    F -->|Bin hourly| G["Coverage analysis<br/>acceptedHours vs expectedHours"]
     G -->|Render| H["SVG Chart + Table<br/>Evidence gaps visible"]
     
     style A fill:#e1f5ff
@@ -344,9 +347,9 @@ graph TD
 ```
 
 **Guidance:**
-- Include data types and row counts at each stage
+- Include data types and row count variables (not specific numbers unless from actual fixtures)
 - Show validation decision points (passes/fails)
-- Label transformations with version and assumptions
+- Describe transformations generically (not with invented version numbers)
 - Distinguish data loss (exclusions) from transformations
 - Include storage/cache stages
 - End with presentation layer (what user sees)
@@ -376,9 +379,9 @@ graph TD
 | Aspect | Evidence Trail (Public) | Data Lineage (Engineering) |
 | --- | --- | --- |
 | **Source** | "NOAA CO-OPS, Station 8454000" | "GET /api/prod/datagetter?id=8454000&range=24h" |
-| **Retrieval** | "Retrieved 2 min ago from NOAA API" | "HTTP 200, 24 rows, 2024-11-06T15:02:35Z, cached" |
-| **Validation** | "23 observations accepted, 8 excluded" | "Struct ✓, timestamp ✓, range ✓, dedup ✓; excluded: malformed(1), off-hour(3), missing(2), dup(2)" |
-| **Transform** | "UTC times, °C values, quality flags preserved" | "signals-adapter@1.2.0: UTC native, no convert, first-wins, f/q flags['f','q']" |
+| **Retrieval** | "Retrieved [timestamp] from NOAA API" | "HTTP 200, [row count], [ISO timestamp], cached" |
+| **Validation** | "[N] observations accepted, [M] excluded" | "Struct ✓, timestamp ✓, range ✓, dedup ✓; excluded reasons documented" |
+| **Transform** | "UTC times, °C values, quality flags preserved" | "noaa.ts: UTC native, no convert, first-wins dedup, f/q flags preserved" |
 | **Present** | "SVG line chart, 1 decimal precision" | "ViewBox 720×224, polyline + circles, gaps hatched, color #55D6C2" |
 
 ---
