@@ -443,14 +443,22 @@ Ready for Fleet Command review and approval.
 
 ## Appendix: Reference Materials
 
-**Included in this delivery:**
+**Included in this delivery (Stage A design):**
 - STRATA-016-DESIGN-AUDIT.md — Current state visual audit
 - STRATA-016-CONCEPT-A.md — Panoramic Signal Observatory (detailed)
 - STRATA-016-CONCEPT-B.md — Coastal Monitoring Array (detailed)
+- STRATA-016-EVIDENCE-TRAIL.md — Compact provenance visualizer (mini-feature)
 - data-lineage.md — NOAA data flow and validation
 - interaction-states.md — State model and visual treatment
 - selection-flow.md — Observation selection interaction
 - This document: Stage A Design Specification
+
+**Scientific governance (NEW):**
+- `docs/standards/SCIENTIFIC-INTEGRITY-CHARTER.md` ⭐
+  - Seven mandatory principles for all scientific work
+  - Scientific Integrity Record template
+  - Rules for AI-assisted development
+  - All Stage B+ work must comply with this charter
 
 **Existing project documentation:**
 - STRATA-015-DESIGN-SPEC.md (Checkpoint A/B identity and tokens)
