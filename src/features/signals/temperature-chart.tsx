@@ -1,5 +1,7 @@
+import type { KeyboardEvent } from 'react';
 import { contiguousObservations, HOUR_MS, type SignalsSnapshot } from './observations';
 import { formatTemperature, formatUtc } from './display';
+import { moveObservationSelection, toggleObservationSelection } from './selection';
 import styles from './signals.module.css';
 
 const WIDTH = 720;
@@ -10,20 +12,16 @@ export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObse
   const { window, observations, coverage, summary } = snapshot;
   if (!summary) return null;
 
-  const handleChartKeyDown = (e: React.KeyboardEvent<SVGSVGElement>) => {
+  const handleChartKeyDown = (event: KeyboardEvent<SVGSVGElement>) => {
     if (!observations.length) return;
-    const selectedIndex = observations.findIndex(obs => obs.observedAt === selectedObservationAt);
-
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      e.preventDefault();
-      const nextIndex = (selectedIndex + 1) % observations.length;
-      onSelectObservation(observations[nextIndex].observedAt);
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      e.preventDefault();
-      const prevIndex = selectedIndex <= 0 ? observations.length - 1 : selectedIndex - 1;
-      onSelectObservation(observations[prevIndex].observedAt);
-    } else if (e.key === 'Escape') {
-      e.preventDefault();
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      onSelectObservation(moveObservationSelection(observations, selectedObservationAt, 'next'));
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      onSelectObservation(moveObservationSelection(observations, selectedObservationAt, 'previous'));
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
       onSelectObservation(null);
     }
   };
@@ -92,12 +90,11 @@ export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObse
               data-observation={point.observedAt}
               cx={x(point.observedAt)}
               cy={y(point.value)}
-              r="2"
+              r={selectedObservationAt === point.observedAt ? '4' : '2'}
               aria-current={selectedObservationAt === point.observedAt ? 'true' : 'false'}
               className={styles.point}
-              onClick={() => onSelectObservation(selectedObservationAt === point.observedAt ? null : point.observedAt)}
+              onClick={() => onSelectObservation(toggleObservationSelection(selectedObservationAt, point.observedAt))}
               aria-label={`${formatTemperature(point.value)}°C at ${formatUtc(point.observedAt)}`}
-              style={{ cursor: 'pointer' }}
             />
           ))}
         </svg>

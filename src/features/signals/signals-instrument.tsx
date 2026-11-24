@@ -8,6 +8,7 @@ import {
   DEFAULT_HOURS, MAX_HOURS, NOAA_SCHEMA, STATION,
   hasUninterpretedQuality, qualityLabel, type SignalsSnapshot,
 } from './observations';
+import { normalizeObservationSelection, toggleObservationSelection } from './selection';
 import { formatFullUtc, formatRaw, formatTemperature, formatUtc } from './display';
 import styles from './signals.module.css';
 
@@ -20,6 +21,7 @@ export function SignalsInstrument() {
   const [request, setRequest] = useState({ hours: DEFAULT_HOURS, id: 0 });
   const [result, setResult] = useState<Result | null>(null);
   const [lastSnapshot, setLastSnapshot] = useState<SignalsResponse | null>(null);
+  const [selectedObservationAt, setSelectedObservationAt] = useState<string | null>(null);
   const [clock, setClock] = useState(0);
 
   useEffect(() => {
@@ -41,6 +43,7 @@ export function SignalsInstrument() {
         const data = await response.json() as SignalsResponse;
         if (controller.signal.aborted) return;
         setLastSnapshot(data);
+        setSelectedObservationAt((previous) => normalizeObservationSelection(data.observations, previous));
         setClock(Date.now());
         setResult({ requestId: request.id, error: null });
       } catch {
@@ -64,6 +67,7 @@ export function SignalsInstrument() {
   const failedDelivery = pending ? undefined : result.failedDelivery;
   const status = signalsStatus({ response: snapshot, nowMs: clock, pending, error, failedDelivery });
   const nextCheckAt = (error ? failedDelivery : snapshot?.delivery)?.nextCheckAt;
+  const effectiveSelection = normalizeObservationSelection(snapshot?.observations ?? [], selectedObservationAt);
 
   return (
     <>
@@ -98,18 +102,34 @@ export function SignalsInstrument() {
           <a href={STATION.url}>Check the NOAA station page</a>
         </section>
       )}
-      {snapshot && <SnapshotView snapshot={snapshot} stale={status.stale} />}
+      {snapshot && (
+        <SnapshotView
+          snapshot={snapshot}
+          stale={status.stale}
+          selectedObservationAt={effectiveSelection}
+          onSelectObservation={setSelectedObservationAt}
+        />
+      )}
     </>
   );
 }
 
-function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: boolean }) {
+function SnapshotView({
+  snapshot,
+  stale,
+  selectedObservationAt,
+  onSelectObservation,
+}: {
+  snapshot: SignalsSnapshot;
+  stale: boolean;
+  selectedObservationAt: string | null;
+  onSelectObservation: (observedAt: string | null) => void;
+}) {
   const { summary, window, coverage, receivedRows, exclusions } = snapshot;
   const flagged = snapshot.observations.filter(({ flags }) => hasUninterpretedQuality(flags)).length;
-  const [selectedObservationAt, setSelectedObservationAt] = useState<string | null>(null);
-
-  const isSelectionStale = selectedObservationAt && !snapshot.observations.some(obs => obs.observedAt === selectedObservationAt);
-  const effectiveSelection = isSelectionStale ? null : selectedObservationAt;
+  const selected = selectedObservationAt
+    ? snapshot.observations.find((observation) => observation.observedAt === selectedObservationAt) ?? null
+    : null;
 
   return (
     <>
@@ -137,7 +157,22 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
                   <div><dt>Accepted</dt><dd>{summary.count}</dd></div>
                 </dl>
               </div>
-              <TemperatureChart snapshot={snapshot} selectedObservationAt={effectiveSelection} onSelectObservation={setSelectedObservationAt} />
+              <TemperatureChart
+                snapshot={snapshot}
+                selectedObservationAt={selectedObservationAt}
+                onSelectObservation={onSelectObservation}
+              />
+              <section className={styles.selectionInspector} aria-labelledby="signals-selection-heading">
+                <h3 id="signals-selection-heading">Selected observation</h3>
+                {selected ? (
+                  <dl className={styles.selectionValues}>
+                    <div><dt>Observed (UTC)</dt><dd><time dateTime={selected.observedAt}>{formatFullUtc(selected.observedAt)}</time></dd></div>
+                    <div><dt>Accepted temperature</dt><dd>{formatTemperature(selected.value)} °C</dd></div>
+                    <div><dt>Raw value</dt><dd>{formatRaw(selected.rawValue)}</dd></div>
+                    <div><dt>NOAA flags (uninterpreted)</dt><dd>{qualityLabel(selected.flags)}</dd></div>
+                  </dl>
+                ) : <p className={styles.selectionHint}>Select an accepted observation in the chart or table to inspect its exact record.</p>}
+              </section>
             </>
           ) : (
             <p className={styles.empty}>No accepted temperatures are available for this response. Inspect coverage and raw-row findings below.</p>
@@ -176,8 +211,22 @@ function SnapshotView({ snapshot, stale }: { snapshot: SignalsSnapshot; stale: b
               </thead>
               <tbody>
                 {snapshot.observations.map((row) => (
-                  <tr key={row.observedAt} data-observation={row.observedAt} aria-selected={effectiveSelection === row.observedAt}>
-                    <th scope="row"><time dateTime={row.observedAt}>{formatFullUtc(row.observedAt).replace(' UTC', '')}</time></th>
+                  <tr
+                    key={row.observedAt}
+                    data-observation={row.observedAt}
+                    data-selected={selectedObservationAt === row.observedAt ? 'true' : 'false'}
+                    aria-selected={selectedObservationAt === row.observedAt}
+                  >
+                    <th scope="row">
+                      <button
+                        type="button"
+                        className={styles.rowSelect}
+                        aria-pressed={selectedObservationAt === row.observedAt}
+                        onClick={() => onSelectObservation(toggleObservationSelection(selectedObservationAt, row.observedAt))}
+                      >
+                        <time dateTime={row.observedAt}>{formatFullUtc(row.observedAt).replace(' UTC', '')}</time>
+                      </button>
+                    </th>
                     <td>{formatTemperature(row.value)}</td>
                     <td>{formatRaw(row.rawValue)}</td>
                     <td>{qualityLabel(row.flags)}</td>
