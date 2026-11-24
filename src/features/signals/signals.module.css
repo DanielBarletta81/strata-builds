@@ -294,6 +294,17 @@
   fill: var(--signal);
   stroke: var(--signal);
   stroke-width: 2;
+  cursor: pointer;
+}
+
+.point[aria-current="true"] {
+  stroke-width: 3;
+  filter: drop-shadow(0 0 3px var(--accent));
+}
+
+.point:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
 }
 
 .hatch {
@@ -514,8 +525,61 @@
   border-top: 1px solid var(--line);
 }
 
+.table tbody tr[data-selected="true"] {
+  background: #d0e8e5;
+}
+
 .table tbody th {
   font-weight: 550;
+}
+
+.rowSelect {
+  min-height: 44px;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectionInspector {
+  margin-top: 0.9rem;
+  border-top: 1px solid #40585e;
+  padding-top: 0.9rem;
+}
+
+.selectionInspector h3 {
+  margin: 0 0 0.55rem;
+  color: #d9ecef;
+}
+
+.selectionValues {
+  margin: 0;
+  display: grid;
+  gap: 0.2rem 0.8rem;
+}
+
+.selectionValues div {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.selectionValues dt {
+  color: var(--dark-muted);
+}
+
+.selectionValues dd {
+  margin: 0;
+  text-align: right;
+}
+
+.selectionHint {
+  margin: 0;
+  color: var(--dark-muted);
 }
 
 .methods {

@@ -1,14 +1,30 @@
+import type { KeyboardEvent } from 'react';
 import { contiguousObservations, HOUR_MS, type SignalsSnapshot } from './observations';
 import { formatTemperature, formatUtc } from './display';
+import { moveObservationSelection, toggleObservationSelection } from './selection';
 import styles from './signals.module.css';
 
 const WIDTH = 720;
 const HEIGHT = 224;
 const PAD = 10;
 
-export function TemperatureChart({ snapshot }: { snapshot: SignalsSnapshot }) {
+export function TemperatureChart({ snapshot, selectedObservationAt, onSelectObservation }: { snapshot: SignalsSnapshot; selectedObservationAt: string | null; onSelectObservation: (at: string | null) => void }) {
   const { window, observations, coverage, summary } = snapshot;
   if (!summary) return null;
+
+  const handleChartKeyDown = (event: KeyboardEvent<SVGSVGElement>) => {
+    if (!observations.length) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      onSelectObservation(moveObservationSelection(observations, selectedObservationAt, 'next'));
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      onSelectObservation(moveObservationSelection(observations, selectedObservationAt, 'previous'));
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      onSelectObservation(null);
+    }
+  };
 
   const start = Date.parse(window.startUtc);
   const step = WIDTH / window.hours;
@@ -39,6 +55,9 @@ export function TemperatureChart({ snapshot }: { snapshot: SignalsSnapshot }) {
           preserveAspectRatio="none"
           role="img"
           aria-labelledby="signals-chart-title signals-chart-description"
+          tabIndex={0}
+          onKeyDown={handleChartKeyDown}
+          aria-label={selectedObservationAt ? `Chart with selection. Use arrow keys to navigate, Escape to deselect.` : `Chart. Use arrow keys to select observations.`}
         >
           <title id="signals-chart-title">Hourly water temperature in degrees Celsius</title>
           <desc id="signals-chart-description">
@@ -71,8 +90,11 @@ export function TemperatureChart({ snapshot }: { snapshot: SignalsSnapshot }) {
               data-observation={point.observedAt}
               cx={x(point.observedAt)}
               cy={y(point.value)}
-              r="2"
+              r={selectedObservationAt === point.observedAt ? '4' : '2'}
+              aria-current={selectedObservationAt === point.observedAt ? 'true' : 'false'}
               className={styles.point}
+              onClick={() => onSelectObservation(toggleObservationSelection(selectedObservationAt, point.observedAt))}
+              aria-label={`${formatTemperature(point.value)}°C at ${formatUtc(point.observedAt)}`}
             />
           ))}
         </svg>
